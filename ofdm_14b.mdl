@@ -7,7 +7,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "2.32"
+    ComputedModelVersion    "2.35"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -52,7 +52,7 @@ Model {
       $ObjectID		      3
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [-4.0, -4.0, 1288.0, 764.0]
+      Location		      [-4.0, 0.0, 1288.0, 764.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		4
@@ -75,20 +75,20 @@ Model {
 	Object {
 	  $ObjectID		  6
 	  IsActive		  [0]
-	  ViewObjType		  "SimulinkTopLevel"
-	  LoadSaveID		  "0"
-	  Extents		  [1244.0, 601.0]
-	  ZoomFactor		  [0.89837083010085317]
-	  Offset		  [-34.122409326424872, -11.083765112262597]
-	}
-	Object {
-	  $ObjectID		  7
-	  IsActive		  [1]
 	  ViewObjType		  "SimulinkSubsys"
 	  LoadSaveID		  "280"
 	  Extents		  [1244.0, 601.0]
 	  ZoomFactor		  [1.0]
 	  Offset		  [-3.75, -102.48750075697899]
+	}
+	Object {
+	  $ObjectID		  7
+	  IsActive		  [1]
+	  ViewObjType		  "SimulinkSubsys"
+	  LoadSaveID		  "297"
+	  Extents		  [1244.0, 601.0]
+	  ZoomFactor		  [1.0]
+	  Offset		  [0.0, 234.0]
 	}
 	PropName		"EditorsInfo"
       }
@@ -100,10 +100,10 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "C4Josh"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sun Apr 24 13:23:25 2016"
-  RTWModifiedTimeStamp	  383404903
+  LastModifiedDate	  "Sun Apr 24 13:52:19 2016"
+  RTWModifiedTimeStamp	  383406661
   ModifiedHistory	  "12/8/07  D&C \n12/03/08  Added BER, tuned control loops, enhanced channel model."
-  ModelVersionFormat	  "2.%<AutoIncrement:32>"
+  ModelVersionFormat	  "2.%<AutoIncrement:35>"
   ConfigurationManager	  "none"
   SampleTimeColors	  on
   SampleTimeAnnotations	  off
@@ -1177,8 +1177,8 @@ Model {
   }
   System {
     Name		    "ofdm_14b"
-    Location		    [-4, -4, 1284, 760]
-    Open		    on
+    Location		    [-4, 0, 1284, 764]
+    Open		    off
     ModelBrowserVisibility  off
     ModelBrowserWidth	    212
     ScreenColor		    "white"
@@ -1191,7 +1191,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "90"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "545"
+    SIDHighWatermark	    "548"
     Block {
       BlockType		      Reference
       Name		      "Carrier Freq\nIn Hz"
@@ -4113,19 +4113,19 @@ Model {
 	  "extmgr.Configuration('Core','General UI',true,'MessageLogAutoOpenMode','for warn/fail messages','ShowConfiguration'"
 	  ",true,'ShowCloseAll',true,'ShowBringAllForward',true),extmgr.Configuration('Core','Source UI',true,'PlaybackToolbar"
 	  "',true,'ShowPlaybackCmdMode',false),extmgr.Configuration('Sources','WiredSimulink',true),extmgr.Configuration('Visu"
-	  "als','Constellation',true,'MinYLim','-1.6529','MaxYLim','1.6053','MinXLim','-1.3271','MaxXLim','1.2795','SymbolsToD"
-	  "isplayFromInput',false,'SymbolsToDisplay','100','Marker','square','ShowRefConstellation',false,'Title','Scatter Plo"
-	  "t','LineProperties',struct('DisplayName','','Color',[1 1 0.0666666666666667],'LineStyle','none','LineWidth',0.5,'Ma"
-	  "rker','.','MarkerSize',6,'MarkerEdgeColor','auto','MarkerFaceColor','none','Visible','on'),'AxesProperties',struct("
-	  "'Color',[0 0 0],'XColor',[0.686274509803922 0.686274509803922 0.686274509803922],'YColor',[0.686274509803922 0.6862"
-	  "74509803922 0.686274509803922],'ZColor',[0.686274509803922 0.686274509803922 0.686274509803922],'XGrid','on','YGrid"
-	  "','on','ZGrid','off','Box','on','XScale','linear','YScale','linear','ZScale','linear','XDir','normal','YDir','norma"
-	  "l','ZDir','normal','XTickMode','auto','YTickMode','auto','ZTickMode','auto','XTickLabelMode','auto','YTickLabelMode"
-	  "','auto','ZTickLabelMode','auto','FontName','Helvetica','FontSize',10,'FontUnits','points','FontWeight','normal','T"
-	  "itle','Scatter Plot','XLabel','In-phase Amplitude','YLabel','Quadrature Amplitude','ZLabel','')),extmgr.Configurati"
-	  "on('Tools','Measurements',true,'Threshold','0','NumPeaks','Inf','MinPeakDistance','1','MinPeakHeight','-Inf','ShowT"
-	  "ext',false,'TextFormat','%.1f,%.1f','TextValues','xy','Version','2015a'),extmgr.Configuration('Tools','Plot Navigat"
-	  "ion',true,'OnceAtStop',true)),'Version','2015a','Position',[1100 115 194 194],'VisibleAtModelOpen','on')"
+	  "als','Constellation',true,'MinYLim','-1.603','MaxYLim','1.585','MinXLim','-1.2842','MaxXLim','1.2662','SymbolsToDis"
+	  "playFromInput',false,'SymbolsToDisplay','100','Marker','square','ShowRefConstellation',false,'Title','Scatter Plot'"
+	  ",'LineProperties',struct('DisplayName','','Color',[1 1 0.0666666666666667],'LineStyle','none','LineWidth',0.5,'Mark"
+	  "er','.','MarkerSize',6,'MarkerEdgeColor','auto','MarkerFaceColor','none','Visible','on'),'AxesProperties',struct('C"
+	  "olor',[0 0 0],'XColor',[0.686274509803922 0.686274509803922 0.686274509803922],'YColor',[0.686274509803922 0.686274"
+	  "509803922 0.686274509803922],'ZColor',[0.686274509803922 0.686274509803922 0.686274509803922],'XGrid','on','YGrid',"
+	  "'on','ZGrid','off','Box','on','XScale','linear','YScale','linear','ZScale','linear','XDir','normal','YDir','normal'"
+	  ",'ZDir','normal','XTickMode','auto','YTickMode','auto','ZTickMode','auto','XTickLabelMode','auto','YTickLabelMode',"
+	  "'auto','ZTickLabelMode','auto','FontName','Helvetica','FontSize',10,'FontUnits','points','FontWeight','normal','Tit"
+	  "le','Scatter Plot','XLabel','In-phase Amplitude','YLabel','Quadrature Amplitude','ZLabel','')),extmgr.Configuration"
+	  "('Tools','Measurements',true,'Threshold','0','NumPeaks','Inf','MinPeakDistance','1','MinPeakHeight','-Inf','ShowTex"
+	  "t',false,'TextFormat','%.1f,%.1f','TextValues','xy','Version','2015a'),extmgr.Configuration('Tools','Plot Navigatio"
+	  "n',true,'OnceAtStop',true)),'Version','2015a','Position',[756 183 194 194],'VisibleAtModelOpen','on')"
 	}
 	Block {
 	  BlockType		  Reference
@@ -5969,19 +5969,19 @@ Model {
 	  "extmgr.Configuration('Core','General UI',true,'MessageLogAutoOpenMode','for warn/fail messages','ShowConfiguration'"
 	  ",true,'ShowCloseAll',true,'ShowBringAllForward',true),extmgr.Configuration('Core','Source UI',true,'PlaybackToolbar"
 	  "',true,'ShowPlaybackCmdMode',false),extmgr.Configuration('Sources','WiredSimulink',true),extmgr.Configuration('Visu"
-	  "als','Constellation',true,'MinYLim','-1.3745','MaxYLim','1.3374','MinXLim','-1.1033','MaxXLim','1.0662','SymbolsToD"
-	  "isplayFromInput',false,'SymbolsToDisplay','100','Marker','*','ShowRefConstellation',false,'Title','Scatter Plot','L"
-	  "ineProperties',struct('DisplayName','','Color',[1 1 0.0666666666666667],'LineStyle','none','LineWidth',0.5,'Marker'"
-	  ",'.','MarkerSize',6,'MarkerEdgeColor','auto','MarkerFaceColor','none','Visible','on'),'AxesProperties',struct('Colo"
-	  "r',[0 0 0],'XColor',[0.686274509803922 0.686274509803922 0.686274509803922],'YColor',[0.686274509803922 0.686274509"
-	  "803922 0.686274509803922],'ZColor',[0.686274509803922 0.686274509803922 0.686274509803922],'XGrid','on','YGrid','on"
-	  "','ZGrid','off','Box','on','XScale','linear','YScale','linear','ZScale','linear','XDir','normal','YDir','normal','Z"
-	  "Dir','normal','XTickMode','auto','YTickMode','auto','ZTickMode','auto','XTickLabelMode','auto','YTickLabelMode','au"
-	  "to','ZTickLabelMode','auto','FontName','Helvetica','FontSize',10,'FontUnits','points','FontWeight','normal','Title'"
-	  ",'Scatter Plot','XLabel','In-phase Amplitude','YLabel','Quadrature Amplitude','ZLabel','')),extmgr.Configuration('T"
-	  "ools','Measurements',true,'Threshold','0','NumPeaks','Inf','MinPeakDistance','1','MinPeakHeight','-Inf','ShowText',"
-	  "false,'TextFormat','%.1f,%.1f','TextValues','xy','Version','2015a'),extmgr.Configuration('Tools','Plot Navigation',"
-	  "true,'OnceAtStop',true)),'Version','2015a','Position',[545 305 191 191],'VisibleAtModelOpen','on')"
+	  "als','Constellation',true,'MinYLim','-1.3251','MaxYLim','1.3752','MinXLim','-1.055','MaxXLim','1.1052','SymbolsToDi"
+	  "splayFromInput',false,'SymbolsToDisplay','100','Marker','*','ShowRefConstellation',false,'Title','Scatter Plot','Li"
+	  "neProperties',struct('DisplayName','','Color',[1 1 0.0666666666666667],'LineStyle','none','LineWidth',0.5,'Marker',"
+	  "'.','MarkerSize',6,'MarkerEdgeColor','auto','MarkerFaceColor','none','Visible','on'),'AxesProperties',struct('Color"
+	  "',[0 0 0],'XColor',[0.686274509803922 0.686274509803922 0.686274509803922],'YColor',[0.686274509803922 0.6862745098"
+	  "03922 0.686274509803922],'ZColor',[0.686274509803922 0.686274509803922 0.686274509803922],'XGrid','on','YGrid','on'"
+	  ",'ZGrid','off','Box','on','XScale','linear','YScale','linear','ZScale','linear','XDir','normal','YDir','normal','ZD"
+	  "ir','normal','XTickMode','auto','YTickMode','auto','ZTickMode','auto','XTickLabelMode','auto','YTickLabelMode','aut"
+	  "o','ZTickLabelMode','auto','FontName','Helvetica','FontSize',10,'FontUnits','points','FontWeight','normal','Title',"
+	  "'Scatter Plot','XLabel','In-phase Amplitude','YLabel','Quadrature Amplitude','ZLabel','')),extmgr.Configuration('To"
+	  "ols','Measurements',true,'Threshold','0','NumPeaks','Inf','MinPeakDistance','1','MinPeakHeight','-Inf','ShowText',f"
+	  "alse,'TextFormat','%.1f,%.1f','TextValues','xy','Version','2015a'),extmgr.Configuration('Tools','Plot Navigation',t"
+	  "rue,'OnceAtStop',true)),'Version','2015a','Position',[545 305 191 191],'VisibleAtModelOpen','on')"
 	}
 	Block {
 	  BlockType		  Selector
@@ -6618,7 +6618,7 @@ Model {
       RequestExecContextInheritance off
       System {
 	Name			"OFDM Transmitter with Variable\nSymbol Timing and Carrier Frequency Error"
-	Location		[-4, -4, 1284, 760]
+	Location		[-4, 0, 1284, 764]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -6647,6 +6647,25 @@ Model {
 	  ZOrder		  -2
 	  Port			  "2"
 	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Bernoulli Random\nBinary Generator"
+	  SID			  "293"
+	  Ports			  [0, 1]
+	  Position		  [175, 148, 255, 192]
+	  ZOrder		  2
+	  LibraryVersion	  "1.112"
+	  SourceBlock		  "commrandsrc2/Bernoulli Binary\nGenerator"
+	  SourceType		  "Bernoulli Binary Generator"
+	  ContentPreviewEnabled	  off
+	  P			  "0.5"
+	  seed			  "123"
+	  Ts			  "-1 "
+	  frameBased		  on
+	  sampPerFrame		  "1"
+	  orient		  off
+	  outDataType		  "uint8"
 	}
 	Block {
 	  BlockType		  Buffer
@@ -7092,7 +7111,7 @@ Model {
 	  RequestExecContextInheritance	off
 	  System {
 	    Name		    "Farrow Variable Delay"
-	    Location		    [35, 390, 597, 877]
+	    Location		    [-4, 0, 1284, 764]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -7292,7 +7311,7 @@ Model {
 	      RequestExecContextInheritance off
 	      System {
 		Name			"MADS"
-		Location		[134, 60, 915, 476]
+		Location		[-4, 0, 1284, 764]
 		Open			off
 		ModelBrowserVisibility	off
 		ModelBrowserWidth	200
@@ -7450,7 +7469,7 @@ Model {
 		  ZOrder		  5
 		  SrcBlock		  "mu"
 		  SrcPort		  1
-		  Points		  [0, 0; 195, 0]
+		  Points		  [195, 0]
 		  Branch {
 		    ZOrder		    6
 		    Points		    [125, 0]
@@ -7596,13 +7615,13 @@ Model {
 	  BlockType		  SubSystem
 	  Name			  "OFDM Symbol Gen"
 	  SID			  "280"
-	  Ports			  [0, 1, 1]
+	  Ports			  [1, 1, 1]
 	  Position		  [350, 73, 450, 137]
 	  ZOrder		  -9
 	  RequestExecContextInheritance	off
 	  System {
 	    Name		    "OFDM Symbol Gen"
-	    Location		    [-4, -4, 1284, 760]
+	    Location		    [-4, 0, 1284, 764]
 	    Open		    on
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -7615,6 +7634,15 @@ Model {
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
 	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "in_data"
+	      SID		      "548"
+	      Position		      [55, 228, 85, 242]
+	      ZOrder		      19
+	      IconDisplay	      "Port number"
+	      OutDataTypeStr	      "uint8"
+	    }
 	    Block {
 	      BlockType		      EnablePort
 	      Name		      "Enable"
@@ -7661,13 +7689,13 @@ Model {
 	      BlockType		      SubSystem
 	      Name		      "OFDM Generator"
 	      SID		      "291"
-	      Ports		      [0, 1, 1]
-	      Position		      [180, 280, 290, 340]
+	      Ports		      [1, 1, 1]
+	      Position		      [155, 205, 265, 265]
 	      ZOrder		      -3
 	      RequestExecContextInheritance off
 	      System {
 		Name			"OFDM Generator"
-		Location		[14, 3, 973, 783]
+		Location		[-4, 0, 1284, 764]
 		Open			off
 		ModelBrowserVisibility	off
 		ModelBrowserWidth	200
@@ -7681,6 +7709,15 @@ Model {
 		ShowPageBoundaries	off
 		ZoomFactor		"97"
 		Block {
+		  BlockType		  Inport
+		  Name			  "in_data"
+		  SID			  "546"
+		  Position		  [30, 48, 60, 62]
+		  ZOrder		  4
+		  IconDisplay		  "Port number"
+		  OutDataTypeStr	  "uint8"
+		}
+		Block {
 		  BlockType		  EnablePort
 		  Name			  "Enable"
 		  SID			  "292"
@@ -7689,23 +7726,13 @@ Model {
 		  ZOrder		  -1
 		}
 		Block {
-		  BlockType		  Reference
-		  Name			  "Bernoulli Random\nBinary Generator"
-		  SID			  "293"
-		  Ports			  [0, 1]
-		  Position		  [25, 38, 105, 82]
-		  ZOrder		  -2
-		  LibraryVersion	  "1.112"
-		  SourceBlock		  "commrandsrc2/Bernoulli Binary\nGenerator"
-		  SourceType		  "Bernoulli Binary Generator"
-		  ContentPreviewEnabled	  off
-		  P			  "0.5"
-		  seed			  "123"
-		  Ts			  "-1 "
-		  frameBased		  on
-		  sampPerFrame		  "Bits_per_Frame"
-		  orient		  off
-		  outDataType		  "double"
+		  BlockType		  Buffer
+		  Name			  "Buffer"
+		  SID			  "547"
+		  Position		  [95, 74, 145, 126]
+		  ZOrder		  5
+		  N			  "Bits_per_Frame"
+		  TreatMby1Signals	  "One channel"
 		}
 		Block {
 		  BlockType		  FrameConversion
@@ -7753,8 +7780,8 @@ Model {
 		  }
 		  System {
 		    Name		    "OFDM Transmitter1"
-		    Location		    [14, 3, 973, 783]
-		    Open		    off
+		    Location		    [-4, 0, 1284, 764]
+		    Open		    on
 		    ModelBrowserVisibility  off
 		    ModelBrowserWidth	    200
 		    ScreenColor		    "white"
@@ -7791,6 +7818,7 @@ Model {
 		    Position		    [140, 125, 170, 155]
 		    ZOrder		    -3
 		    Value		    "[0,0]"
+		    OutDataTypeStr	    "fixdt(1,12,7)"
 		    }
 		    Block {
 		    BlockType		    Constant
@@ -7799,6 +7827,7 @@ Model {
 		    Position		    [125, 765, 155, 795]
 		    ZOrder		    -4
 		    Value		    "0"
+		    OutDataTypeStr	    "fixdt(1,12,7)"
 		    }
 		    Block {
 		    BlockType		    Demux
@@ -7879,6 +7908,7 @@ Model {
 		    Position		    [65, 35, 165, 65]
 		    ZOrder		    -8
 		    Value		    "[1 j -1 -j   ]*Pilot_Level"
+		    OutDataTypeStr	    "fixdt(1,12,7)"
 		    }
 		    Block {
 		    BlockType		    Selector
@@ -8525,11 +8555,11 @@ Model {
 		  AvgPow		  "1"
 		  PeakPow		  "1"
 		  Ph			  "0"
-		  outDtype		  "double"
-		  outWordLen		  "16"
+		  outDtype		  "Fixed-point"
+		  outWordLen		  "12"
 		  outUDDataType		  "sfix(16)"
-		  outFracLenMode	  "Best precision"
-		  outFracLen		  "15"
+		  outFracLenMode	  "User-defined"
+		  outFracLen		  "7"
 		}
 		Block {
 		  BlockType		  Outport
@@ -8540,9 +8570,10 @@ Model {
 		  IconDisplay		  "Port number"
 		}
 		Line {
-		  ZOrder		  1
-		  SrcBlock		  "Bernoulli Random\nBinary Generator"
+		  ZOrder		  8
+		  SrcBlock		  "Buffer"
 		  SrcPort		  1
+		  Points		  [9, 0; 0, -40]
 		  DstBlock		  "Rectangular QAM\nModulator\nBaseband1"
 		  DstPort		  1
 		}
@@ -8581,6 +8612,14 @@ Model {
 		  DstBlock		  "Out1"
 		  DstPort		  1
 		}
+		Line {
+		  ZOrder		  9
+		  SrcBlock		  "in_data"
+		  SrcPort		  1
+		  Points		  [13, 0; 0, 45]
+		  DstBlock		  "Buffer"
+		  DstPort		  1
+		}
 		Annotation {
 		  SID			  "514"
 		  Name			  "set data signal level"
@@ -8608,7 +8647,7 @@ Model {
 	      Name		      "Scope"
 	      SID		      "545"
 	      Ports		      [2]
-	      Position		      [435, 16, 465, 49]
+	      Position		      [435, 31, 465, 64]
 	      ZOrder		      18
 	      Floating		      off
 	      Location		      [1, 45, 1281, 755]
@@ -8638,7 +8677,7 @@ Model {
 	      Name		      "Selector"
 	      SID		      "325"
 	      Ports		      [2, 1]
-	      Position		      [345, 301, 385, 339]
+	      Position		      [410, 171, 450, 209]
 	      ZOrder		      -4
 	      InputPortWidth	      "80"
 	      IndexOptions	      "Index vector (port)"
@@ -8648,7 +8687,7 @@ Model {
 	      BlockType		      Outport
 	      Name		      "Serial Samples Out"
 	      SID		      "326"
-	      Position		      [440, 313, 470, 327]
+	      Position		      [560, 183, 590, 197]
 	      ZOrder		      -5
 	      IconDisplay	      "Port number"
 	      OutputWhenDisabled      "reset"
@@ -8658,6 +8697,7 @@ Model {
 	      ZOrder		      1
 	      SrcBlock		      "OFDM Generator"
 	      SrcPort		      1
+	      Points		      [85, 0; 0, -55]
 	      DstBlock		      "Selector"
 	      DstPort		      1
 	    }
@@ -8692,16 +8732,16 @@ Model {
 	      Points		      [12, 0]
 	      Branch {
 		ZOrder			69
-		Points			[131, 0]
+		Points			[150, 0]
 		Branch {
 		  ZOrder		  75
-		  Points		  [0, -15]
+		  Points		  [118, 0]
 		  DstBlock		  "Scope"
 		  DstPort		  2
 		}
 		Branch {
 		  ZOrder		  74
-		  Points		  [19, 0; 0, 275]
+		  Points		  [0, 145]
 		  DstBlock		  "Selector"
 		  DstPort		  2
 		}
@@ -8717,16 +8757,15 @@ Model {
 	      ZOrder		      42
 	      SrcBlock		      "Relational\nOperator"
 	      SrcPort		      1
-	      Points		      [27, 0]
+	      Points		      [5, 0]
 	      Branch {
-		ZOrder			77
-		Points			[0, -100]
+		ZOrder			83
+		Points			[22, 0; 0, -85]
 		DstBlock		"Scope"
 		DstPort			1
 	      }
 	      Branch {
 		ZOrder			76
-		Points			[3, 0]
 		DstBlock		"OFDM Generator"
 		DstPort			enable
 	      }
@@ -8736,6 +8775,13 @@ Model {
 	      SrcBlock		      "Counter\nLimited"
 	      SrcPort		      1
 	      DstBlock		      "Add"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      82
+	      SrcBlock		      "in_data"
+	      SrcPort		      1
+	      DstBlock		      "OFDM Generator"
 	      DstPort		      1
 	    }
 	    Annotation {
@@ -8751,7 +8797,7 @@ Model {
 	      SID		      "516"
 	      Name		      "Note: Ouptut is SET TO ZERO\nwhen not enabled. \nThis effecitvly inserts ZEROS in the stream \nfor"
 	      " proper interpolation. "
-	      Position		      [404, 387, 608, 441]
+	      Position		      [389, 327, 593, 381]
 	      InternalMargins	      [0, 0, 0, 0]
 	      FixedHeight	      off
 	      FixedWidth	      off
@@ -9286,6 +9332,14 @@ Model {
 	  DstBlock		  "Farrow Variable Delay"
 	  DstPort		  1
 	}
+	Line {
+	  ZOrder		  14
+	  SrcBlock		  "Bernoulli Random\nBinary Generator"
+	  SrcPort		  1
+	  Points		  [33, 0; 0, -65]
+	  DstBlock		  "OFDM Symbol Gen"
+	  DstPort		  1
+	}
 	Annotation {
 	  SID			  "519"
 	  Name			  "Use Farrow Fractional Delay and NCO to create Tx with variable symbol rate."
@@ -9639,7 +9693,7 @@ Model {
       "alid',true,'IsSpanCFSettingDirty',true,'IsFstartFstopSettingDirty',true,'TreatMby1SignalsAsOneChannel',false,'Se"
       "gLen','80','WindowLength','80','FrequencyResolutionMethod','WindowLength','IsValidSettingsDialogReadouts',false)"
       ",extmgr.Configuration('Tools','Plot Navigation',true,'AutoscaleMode','Manual','OnceAtStop',false),extmgr.Configu"
-      "ration('Tools','Measurements',true,'Version','2015a')),'Version','2015a','Position',[1120 458 194 174],'VisibleA"
+      "ration('Tools','Measurements',true,'Version','2015a')),'Version','2015a','Position',[1001 449 194 174],'VisibleA"
       "tModelOpen','on')"
     }
     Block {
