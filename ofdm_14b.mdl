@@ -7,7 +7,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "2.30"
+    ComputedModelVersion    "2.32"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -52,7 +52,7 @@ Model {
       $ObjectID		      3
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [1358.0, -8.0, 1040.0, 784.0]
+      Location		      [-4.0, -4.0, 1288.0, 764.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		4
@@ -77,18 +77,18 @@ Model {
 	  IsActive		  [0]
 	  ViewObjType		  "SimulinkTopLevel"
 	  LoadSaveID		  "0"
-	  Extents		  [990.0, 607.0]
-	  ZoomFactor		  [0.89837083010085328]
-	  Offset		  [-34.122409326424851, -11.083765112262521]
+	  Extents		  [1244.0, 601.0]
+	  ZoomFactor		  [0.89837083010085317]
+	  Offset		  [-34.122409326424872, -11.083765112262597]
 	}
 	Object {
 	  $ObjectID		  7
 	  IsActive		  [1]
 	  ViewObjType		  "SimulinkSubsys"
-	  LoadSaveID		  "85"
-	  Extents		  [990.0, 607.0]
+	  LoadSaveID		  "280"
+	  Extents		  [1244.0, 601.0]
 	  ZoomFactor		  [1.0]
-	  Offset		  [0.0, 0.0]
+	  Offset		  [-3.75, -102.48750075697899]
 	}
 	PropName		"EditorsInfo"
       }
@@ -98,12 +98,12 @@ Model {
   Creator		  "Dick Benson"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
-  LastModifiedBy	  "JohnE"
+  LastModifiedBy	  "C4Josh"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Feb 17 18:51:36 2016"
-  RTWModifiedTimeStamp	  377635831
+  LastModifiedDate	  "Sun Apr 24 13:23:25 2016"
+  RTWModifiedTimeStamp	  383404903
   ModifiedHistory	  "12/8/07  D&C \n12/03/08  Added BER, tuned control loops, enhanced channel model."
-  ModelVersionFormat	  "2.%<AutoIncrement:30>"
+  ModelVersionFormat	  "2.%<AutoIncrement:32>"
   ConfigurationManager	  "none"
   SampleTimeColors	  on
   SampleTimeAnnotations	  off
@@ -891,11 +891,6 @@ Model {
       Interpolate	      on
     }
     Block {
-      BlockType		      Fcn
-      Expr		      "sin(u[1])"
-      SampleTime	      "-1"
-    }
-    Block {
       BlockType		      FrameConversion
       InheritSamplingMode     off
       OutFrame		      "Frame-based"
@@ -1182,7 +1177,7 @@ Model {
   }
   System {
     Name		    "ofdm_14b"
-    Location		    [1358, -8, 2398, 776]
+    Location		    [-4, -4, 1284, 760]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    212
@@ -1196,7 +1191,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "90"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "538"
+    SIDHighWatermark	    "545"
     Block {
       BlockType		      Reference
       Name		      "Carrier Freq\nIn Hz"
@@ -1221,7 +1216,7 @@ Model {
       Position		      [705, 509, 735, 541]
       ZOrder		      -2
       Floating		      off
-      Location		      [1039, 219, 1346, 354]
+      Location		      [964, 219, 1271, 354]
       Open		      on
       NumInputPorts	      "1"
       ZoomMode		      "xonly"
@@ -2965,8 +2960,8 @@ Model {
 	  RequestExecContextInheritance	off
 	  System {
 	    Name		    "Calculate Filter"
-	    Location		    [1358, -8, 2398, 776]
-	    Open		    on
+	    Location		    [-4, -4, 1284, 760]
+	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
 	    ScreenColor		    "white"
@@ -3076,7 +3071,7 @@ Model {
 	      Position		      [745, 51, 800, 279]
 	      ZOrder		      4
 	      Floating		      off
-	      Location		      [958, 60, 1282, 723]
+	      Location		      [947, 60, 1271, 723]
 	      Open		      on
 	      NumInputPorts	      "8"
 	      List {
@@ -5986,7 +5981,7 @@ Model {
 	  ",'Scatter Plot','XLabel','In-phase Amplitude','YLabel','Quadrature Amplitude','ZLabel','')),extmgr.Configuration('T"
 	  "ools','Measurements',true,'Threshold','0','NumPeaks','Inf','MinPeakDistance','1','MinPeakHeight','-Inf','ShowText',"
 	  "false,'TextFormat','%.1f,%.1f','TextValues','xy','Version','2015a'),extmgr.Configuration('Tools','Plot Navigation',"
-	  "true,'OnceAtStop',true)),'Version','2015a','Position',[1302 117 191 191],'VisibleAtModelOpen','on')"
+	  "true,'OnceAtStop',true)),'Version','2015a','Position',[545 305 191 191],'VisibleAtModelOpen','on')"
 	}
 	Block {
 	  BlockType		  Selector
@@ -6623,7 +6618,7 @@ Model {
       RequestExecContextInheritance off
       System {
 	Name			"OFDM Transmitter with Variable\nSymbol Timing and Carrier Frequency Error"
-	Location		[14, 3, 1329, 783]
+	Location		[-4, -4, 1284, 760]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -7607,8 +7602,8 @@ Model {
 	  RequestExecContextInheritance	off
 	  System {
 	    Name		    "OFDM Symbol Gen"
-	    Location		    [14, 3, 973, 783]
-	    Open		    off
+	    Location		    [-4, -4, 1284, 760]
+	    Open		    on
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
 	    ScreenColor		    "white"
@@ -7625,203 +7620,49 @@ Model {
 	      Name		      "Enable"
 	      SID		      "281"
 	      Ports		      []
-	      Position		      [60, 150, 80, 170]
+	      Position		      [60, 325, 80, 345]
 	      ZOrder		      -1
 	    }
 	    Block {
-	      BlockType		      SubSystem
-	      Name		      "Divide by \nOFDM_Frame length"
-	      SID		      "282"
-	      Ports		      [0, 2]
-	      Position		      [35, 26, 80, 104]
-	      ZOrder		      -2
-	      TreatAsAtomicUnit	      on
-	      RequestExecContextInheritance off
-	      Object {
-		$PropName		"MaskObject"
-		$ObjectID		35
-		$ClassName		"Simulink.Mask"
-		Type			"Pulse Divider"
-		Array {
-		  Type			  "Simulink.MaskParameter"
-		  Dimension		  2
-		  Object {
-		    $ObjectID		    36
-		    Type		    "edit"
-		    Name		    "div"
-		    Prompt		    "Modulo:"
-		    Value		    "OFDM_Frame"
-		  }
-		  Object {
-		    $ObjectID		    37
-		    Type		    "edit"
-		    Name		    "ph"
-		    Prompt		    "Initial Phase Delay (cycles):"
-		    Value		    "0"
-		  }
-		  PropName		  "Parameters"
-		}
-	      }
-	      System {
-		Name			"Divide by \nOFDM_Frame length"
-		Location		[72, 73, 679, 416]
-		Open			off
-		ModelBrowserVisibility	off
-		ModelBrowserWidth	200
-		ScreenColor		"white"
-		PaperOrientation	"landscape"
-		PaperPositionMode	"auto"
-		PaperType		"usletter"
-		PaperUnits		"inches"
-		TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
-		TiledPageScale		1
-		ShowPageBoundaries	off
-		ZoomFactor		"100"
-		Block {
-		  BlockType		  Constant
-		  Name			  "Constant1"
-		  SID			  "283"
-		  Position		  [178, 90, 212, 110]
-		  ZOrder		  -1
-		  BlockRotation		  270
-		  ShowName		  off
-		  Value			  "div"
-		}
-		Block {
-		  BlockType		  Constant
-		  Name			  "Constant2"
-		  SID			  "284"
-		  Position		  [35, 35, 55, 55]
-		  ZOrder		  -2
-		  ShowName		  off
-		}
-		Block {
-		  BlockType		  Fcn
-		  Name			  "Fcn4"
-		  SID			  "285"
-		  Position		  [290, 42, 340, 68]
-		  ZOrder		  -3
-		  ShowName		  off
-		  Expr			  "u<1"
-		}
-		Block {
-		  BlockType		  Math
-		  Name			  "Math\nFunction"
-		  SID			  "286"
-		  Ports			  [2, 1]
-		  Position		  [220, 39, 245, 66]
-		  ZOrder		  -4
-		  ShowName		  off
-		  Operator		  "mod"
-		}
-		Block {
-		  BlockType		  Sum
-		  Name			  "Sum"
-		  SID			  "287"
-		  Ports			  [2, 1]
-		  Position		  [85, 35, 105, 55]
-		  ZOrder		  -5
-		  ShowName		  off
-		  IconShape		  "round"
-		  Inputs		  "|++"
-		}
-		Block {
-		  BlockType		  UnitDelay
-		  Name			  "Unit Delay"
-		  SID			  "288"
-		  Position		  [150, 25, 185, 65]
-		  ZOrder		  -6
-		  InitialCondition	  "div-ph"
-		  SampleTime		  "-1"
-		}
-		Block {
-		  BlockType		  Outport
-		  Name			  "Enable"
-		  SID			  "289"
-		  Position		  [380, 48, 410, 62]
-		  ZOrder		  -7
-		  IconDisplay		  "Port number"
-		}
-		Block {
-		  BlockType		  Outport
-		  Name			  "Count"
-		  SID			  "290"
-		  Position		  [380, 13, 410, 27]
-		  ZOrder		  -8
-		  Port			  "2"
-		  IconDisplay		  "Port number"
-		}
-		Line {
-		  ZOrder		  1
-		  SrcBlock		  "Sum"
-		  SrcPort		  1
-		  Points		  [10, 0]
-		  Branch {
-		    ZOrder		    2
-		    DstBlock		    "Unit Delay"
-		    DstPort		    1
-		  }
-		  Branch {
-		    ZOrder		    3
-		    Points		    [0, -25]
-		    DstBlock		    "Count"
-		    DstPort		    1
-		  }
-		}
-		Line {
-		  ZOrder		  4
-		  SrcBlock		  "Constant2"
-		  SrcPort		  1
-		  DstBlock		  "Sum"
-		  DstPort		  1
-		}
-		Line {
-		  ZOrder		  5
-		  SrcBlock		  "Unit Delay"
-		  SrcPort		  1
-		  DstBlock		  "Math\nFunction"
-		  DstPort		  1
-		}
-		Line {
-		  ZOrder		  6
-		  SrcBlock		  "Math\nFunction"
-		  SrcPort		  1
-		  Points		  [0, 0; 15, 0]
-		  Branch {
-		    ZOrder		    7
-		    Points		    [0, 65; -170, 0]
-		    DstBlock		    "Sum"
-		    DstPort		    2
-		  }
-		  Branch {
-		    ZOrder		    8
-		    DstBlock		    "Fcn4"
-		    DstPort		    1
-		  }
-		}
-		Line {
-		  ZOrder		  9
-		  SrcBlock		  "Constant1"
-		  SrcPort		  1
-		  Points		  [0, -25]
-		  DstBlock		  "Math\nFunction"
-		  DstPort		  2
-		}
-		Line {
-		  ZOrder		  10
-		  SrcBlock		  "Fcn4"
-		  SrcPort		  1
-		  DstBlock		  "Enable"
-		  DstPort		  1
-		}
-	      }
+	      BlockType		      Sum
+	      Name		      "Add"
+	      SID		      "542"
+	      Ports		      [2, 1]
+	      Position		      [105, 37, 135, 68]
+	      ZOrder		      9
+	      InputSameDT	      off
+	      AccumDataTypeStr	      "Inherit: Same as first input"
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant"
+	      SID		      "543"
+	      Position		      [25, 115, 55, 145]
+	      ZOrder		      10
+	      OutDataTypeStr	      "fixdt(1,12,0)"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Counter\nLimited"
+	      SID		      "539"
+	      Ports		      [0, 1]
+	      Position		      [25, 30, 55, 60]
+	      ZOrder		      6
+	      LibraryVersion	      "1.356"
+	      SourceBlock	      "simulink/Sources/Counter\nLimited"
+	      SourceType	      "Counter Limited"
+	      ContentPreviewEnabled   off
+	      uplimit		      "OFDM_Frame-1"
+	      tsamp		      "-1"
 	    }
 	    Block {
 	      BlockType		      SubSystem
 	      Name		      "OFDM Generator"
 	      SID		      "291"
 	      Ports		      [0, 1, 1]
-	      Position		      [145, 105, 255, 165]
+	      Position		      [180, 280, 290, 340]
 	      ZOrder		      -3
 	      RequestExecContextInheritance off
 	      System {
@@ -7906,7 +7747,7 @@ Model {
 		  RequestExecContextInheritance	off
 		  Object {
 		    $PropName		    "MaskObject"
-		    $ObjectID		    38
+		    $ObjectID		    35
 		    $ClassName		    "Simulink.Mask"
 		    Display		    "disp('OFDM\\nTransmitter')"
 		  }
@@ -8752,11 +8593,52 @@ Model {
 	      }
 	    }
 	    Block {
+	      BlockType		      RelationalOperator
+	      Name		      "Relational\nOperator"
+	      SID		      "544"
+	      Ports		      [2, 1]
+	      Position		      [170, 107, 200, 138]
+	      ZOrder		      17
+	      Operator		      "<="
+	      InputSameDT	      off
+	      OutDataTypeStr	      "boolean"
+	    }
+	    Block {
+	      BlockType		      Scope
+	      Name		      "Scope"
+	      SID		      "545"
+	      Ports		      [2]
+	      Position		      [435, 16, 465, 49]
+	      ZOrder		      18
+	      Floating		      off
+	      Location		      [1, 45, 1281, 755]
+	      Open		      off
+	      NumInputPorts	      "2"
+	      List {
+		ListType		AxesTitles
+		axes1			"%<SignalLabel>"
+		axes2			"%<SignalLabel>"
+	      }
+	      List {
+		ListType		ScopeGraphics
+		FigureColor		"[0.5 0.5 0.5]"
+		AxesColor		"[0 0 0]"
+		AxesTickColor		"[1 1 1]"
+		LineColors		"[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
+		LineStyles		"-|-|-|-|-|-"
+		LineWidths		"[0.5 0.5 0.5 0.5 0.5 0.5]"
+		MarkerStyles		"none|none|none|none|none|none"
+	      }
+	      YMin		      "0~0"
+	      YMax		      "1~80"
+	      SaveName		      "ScopeData3"
+	    }
+	    Block {
 	      BlockType		      Selector
 	      Name		      "Selector"
 	      SID		      "325"
 	      Ports		      [2, 1]
-	      Position		      [350, 126, 390, 164]
+	      Position		      [345, 301, 385, 339]
 	      ZOrder		      -4
 	      InputPortWidth	      "80"
 	      IndexOptions	      "Index vector (port)"
@@ -8766,7 +8648,7 @@ Model {
 	      BlockType		      Outport
 	      Name		      "Serial Samples Out"
 	      SID		      "326"
-	      Position		      [440, 138, 470, 152]
+	      Position		      [440, 313, 470, 327]
 	      ZOrder		      -5
 	      IconDisplay	      "Port number"
 	      OutputWhenDisabled      "reset"
@@ -8780,14 +8662,6 @@ Model {
 	      DstPort		      1
 	    }
 	    Line {
-	      ZOrder		      2
-	      SrcBlock		      "Divide by \nOFDM_Frame length"
-	      SrcPort		      1
-	      Points		      [115, 0]
-	      DstBlock		      "OFDM Generator"
-	      DstPort		      enable
-	    }
-	    Line {
 	      ZOrder		      3
 	      SrcBlock		      "Selector"
 	      SrcPort		      1
@@ -8795,17 +8669,79 @@ Model {
 	      DstPort		      1
 	    }
 	    Line {
-	      ZOrder		      4
-	      SrcBlock		      "Divide by \nOFDM_Frame length"
-	      SrcPort		      2
-	      Points		      [40, 0; 0, 110; 185, 0; 0, -40]
-	      DstBlock		      "Selector"
-	      DstPort		      2
+	      ZOrder		      36
+	      SrcBlock		      "Constant"
+	      SrcPort		      1
+	      Points		      [22, 0]
+	      Branch {
+		ZOrder			64
+		Points			[0, -70]
+		DstBlock		"Add"
+		DstPort			2
+	      }
+	      Branch {
+		ZOrder			63
+		DstBlock		"Relational\nOperator"
+		DstPort			2
+	      }
+	    }
+	    Line {
+	      ZOrder		      37
+	      SrcBlock		      "Add"
+	      SrcPort		      1
+	      Points		      [12, 0]
+	      Branch {
+		ZOrder			69
+		Points			[131, 0]
+		Branch {
+		  ZOrder		  75
+		  Points		  [0, -15]
+		  DstBlock		  "Scope"
+		  DstPort		  2
+		}
+		Branch {
+		  ZOrder		  74
+		  Points		  [19, 0; 0, 275]
+		  DstBlock		  "Selector"
+		  DstPort		  2
+		}
+	      }
+	      Branch {
+		ZOrder			67
+		Points			[0, 60]
+		DstBlock		"Relational\nOperator"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      ZOrder		      42
+	      SrcBlock		      "Relational\nOperator"
+	      SrcPort		      1
+	      Points		      [27, 0]
+	      Branch {
+		ZOrder			77
+		Points			[0, -100]
+		DstBlock		"Scope"
+		DstPort			1
+	      }
+	      Branch {
+		ZOrder			76
+		Points			[3, 0]
+		DstBlock		"OFDM Generator"
+		DstPort			enable
+	      }
+	    }
+	    Line {
+	      ZOrder		      65
+	      SrcBlock		      "Counter\nLimited"
+	      SrcPort		      1
+	      DstBlock		      "Add"
+	      DstPort		      1
 	    }
 	    Annotation {
 	      SID		      "515"
 	      Name		      "Output Samples Serially"
-	      Position		      [381, 109, 498, 124]
+	      Position		      [381, 284, 498, 299]
 	      InternalMargins	      [0, 0, 0, 0]
 	      FixedHeight	      off
 	      FixedWidth	      off
@@ -8815,7 +8751,7 @@ Model {
 	      SID		      "516"
 	      Name		      "Note: Ouptut is SET TO ZERO\nwhen not enabled. \nThis effecitvly inserts ZEROS in the stream \nfor"
 	      " proper interpolation. "
-	      Position		      [404, 212, 608, 266]
+	      Position		      [404, 387, 608, 441]
 	      InternalMargins	      [0, 0, 0, 0]
 	      FixedHeight	      off
 	      FixedWidth	      off
@@ -8853,7 +8789,7 @@ Model {
 	  RequestExecContextInheritance	off
 	  System {
 	    Name		    "Timing Control Unit1"
-	    Location		    [134, 52, 1076, 562]
+	    Location		    [-4, -4, 1284, 760]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -11644,7 +11580,7 @@ Model {
       Position		      [705, 579, 735, 611]
       ZOrder		      -26
       Floating		      off
-      Location		      [1035, 418, 1346, 554]
+      Location		      [960, 418, 1271, 554]
       Open		      on
       NumInputPorts	      "1"
       ZoomMode		      "xonly"
