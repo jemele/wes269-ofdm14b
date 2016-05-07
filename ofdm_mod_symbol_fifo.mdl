@@ -7,7 +7,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.396"
+    ComputedModelVersion    "1.526"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -65,9 +65,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "C4Josh"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sat May 07 13:20:32 2016"
-  RTWModifiedTimeStamp	  384528017
-  ModelVersionFormat	  "1.%<AutoIncrement:396>"
+  LastModifiedDate	  "Sat May 07 14:41:32 2016"
+  RTWModifiedTimeStamp	  384532842
+  ModelVersionFormat	  "1.%<AutoIncrement:526>"
   ConfigurationManager	  "none"
   SampleTimeColors	  on
   SampleTimeAnnotations	  on
@@ -1071,6 +1071,11 @@ Model {
 	MarkerStyles		"none|none|none|none|none|none"
       }
       ShowLegends	      on
+      LegendLocations	      "0.88646     0.91033    0.083594    0.028638\n0.82474     0.82441     0.14531    0.028638\n"
+      "0.83021     0.73991     0.13984    0.028638\n0.83177      0.6554     0.13828    0.028638\n0.78724     0.57089   "
+      "  0.18281    0.028638\n0.80286     0.48638     0.16719    0.028638\n0.79974     0.40188     0.17031    0.028638\n"
+      "0.88177     0.31737    0.088281    0.028638\n0.83255     0.23146      0.1375    0.028638\n0.84818     0.14695   "
+      "  0.12187    0.028638\n0.84505    0.062441       0.125    0.028638"
       YMin		      "0~0~0~-1~0.95~-1~-1~0.95~-5~-5~-5"
       YMax		      "1~250~1~1~1.05~1~1~1.05~5~5~5"
     }
@@ -2876,20 +2881,39 @@ Stateflow {
     eml {
       isEML		      1
       script		      "function [out_valid, out_i, out_q, out_request_symbol] = fcn(in_valid, in_i, in_q)\n%#codegen\n\n"
-      "% model parameters\nifft_size = 64;\n\n% default behavior\nout_request_symbol = true;\nout_valid = false;\nout_i"
-      " = fi(0,1,12,7);\nout_q = fi(0,1,12,7);\n\n% circular buffer for symbol storage\n% the buffer length should even"
-      "ly divide the number of symbols/byte\npersistent buffer_i\nif isempty(buffer_i)  \n    buffer_i = repmat(fi(0,1,"
-      "12,7),1,2*ifft_size);\nend\npersistent buffer_q\nif isempty(buffer_q)  \n    buffer_q = repmat(fi(0,1,12,7),1,2*"
-      "ifft_size);\nend\npersistent read_index\nif isempty(read_index)\n    read_index = 0;\nend\npersistent write_inde"
-      "x\nif isempty(write_index)\n    write_index = 0;\nend\n\n% write data if valid\n% data is only valid if we reque"
-      "st it\nif in_valid\n    buffer_i(write_index+1) = in_i;\n    buffer_q(write_index+1) = in_q;\n    write_index = "
-      "write_index + 1;\n    if write_index >= length(buffer_i)\n        write_index = 0;\n    end\nend\n\n% determine "
-      "how many symbols are buffered\nbuffered = 0;\nif (read_index > write_index)\n    buffered = (length(buffer_i) - "
-      "read_index) + write_index;\nelseif (read_index <= write_index)\n    buffered = (write_index - read_index);\nend\n"
-      "\n% we can write at *most* a null, a pilot, and a symbol\n% if there's room enough to support as much, request a"
-      " symbol\navailable = length(buffer_i) - buffered;\nout_request_symbol = (available >= 3);\n\n% output i/q if the"
-      "re's something buffered\nif read_index ~= write_index\n    out_valid = true;\n    out_i = buffer_i(read_index + "
-      "1);\n    out_q = buffer_q(read_index + 1);\nend"
+      "null = fi(0,1,12,7);\nframe_size = 64;\n% the number of symbols grouped in contiguous subcarries\nsymbols_per_ru"
+      "n = 3;\n% pilots are inserted between symbol runs\npilots_i = fi([1 0 -1 0],1,12,7);\npilots_q = fi([0 1 0 -1],1"
+      ",12,7);\n\n% this creates a frame that looks like:\n% [ null (pilot run)+ null ]\n% given the current parameters"
+      ", that means\n% 45 modulation symbols / ofdm frame\n% 2 bits / modulation symbol\n% 90 bits / ofdm frame\n\n% de"
+      "fault behavior\nout_request_symbol = true;\nout_valid = false;\nout_i = null;\nout_q = null;\n\n% circular buffe"
+      "r for symbol storage\npersistent buffer_i\nif isempty(buffer_i)  \n    buffer_i = repmat(null,1,frame_size);\nen"
+      "d\npersistent buffer_q\nif isempty(buffer_q)  \n    buffer_q = repmat(null,1,frame_size);\nend\npersistent read_"
+      "index\nif isempty(read_index)\n    read_index = 0;\nend\npersistent write_index\nif isempty(write_index)\n    wr"
+      "ite_index = 0;\nend\n\n% framing state\npersistent frame_index\npersistent pilot_index\nif isempty(pilot_index)\n"
+      "    pilot_index = 1;\nend\npersistent symbol_count\nif isempty(symbol_count)\n    symbol_count = 0;\nend\n\n% is"
+      " this the first symbol in a frame?\nframe_begin = (write_index == 0);\n% is this the last symbol in a run?\nsymb"
+      "ol_end = (symbol_count == (symbols_per_run - 1));\n% is this the last write in the frame?\n% the frame will end "
+      "with a (symbol)(pilot)(null)\nframe_end = ((write_index + 3) == (frame_size - 1));\n\n% The following scenarios "
+      "can occur:\n% (dc null)(pilot)(symbol)\n% (symbol)\n% (symbol)(pilot)\n% (symbol)(pilot)(dc null)\nif in_valid\n"
+      "    \n    % write the dc null and pilot if we're starting a frame\n    if frame_begin\n        buffer_i(write_in"
+      "dex+1) = null;\n        buffer_q(write_index+1) = null;\n        write_index = write_index + 1;\n        buffer_"
+      "i(write_index+1) = pilots_i(pilot_index);\n        buffer_q(write_index+1) = pilots_q(pilot_index);\n        wri"
+      "te_index = write_index + 1;\n        pilot_index = pilot_index + 1;\n        if pilot_index == length(pilots_i)\n"
+      "            pilot_index = 1;\n        end\n    end\n\n    % write the symbol\n    buffer_i(write_index+1) = in_i"
+      ";\n    buffer_q(write_index+1) = in_q;\n    write_index = write_index + 1;\n    symbol_count = symbol_count + 1;"
+      "\n    if symbol_count >= symbols_per_run\n        symbol_count = 0;\n    end\n    \n    % write the pilot at the"
+      " end of a run\n    if symbol_end\n        buffer_i(write_index+1) = pilots_i(pilot_index);\n        buffer_q(wri"
+      "te_index+1) = pilots_q(pilot_index);\n        write_index = write_index + 1;\n        pilot_index = pilot_index "
+      "+ 1;\n        if pilot_index == length(pilots_i)\n            pilot_index = 1;\n        end\n    end\n\n    % wr"
+      "ite the dc null on frame end\n    if frame_end\n        buffer_i(write_index+1) = null;\n        buffer_q(write_"
+      "index+1) = null;\n    end\n    if write_index >= length(buffer_i)\n        write_index = 0;\n    end\nend\n\n% d"
+      "etermine how many symbols are buffered\nbuffered = 0;\nif (read_index > write_index)\n    buffered = (length(buf"
+      "fer_i) - read_index) + write_index;\nelseif (read_index <= write_index)\n    buffered = (write_index - read_inde"
+      "x);\nend\n\n% we can write at *most* a null, a pilot, and a symbol\n% if there's room enough to support as much,"
+      " request a symbol\navailable = length(buffer_i) - buffered;\nout_request_symbol = (available >= 3);\n\n% output "
+      "i/q if there's something buffered\nif read_index ~= write_index\n    out_valid = true;\n    out_i = buffer_i(rea"
+      "d_index + 1);\n    out_q = buffer_q(read_index + 1);\n    read_index = read_index + 1;\n    if read_index >= len"
+      "gth(buffer_i)\n        read_index = 0;\n    end\nend"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
