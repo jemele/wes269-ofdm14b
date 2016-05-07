@@ -7,7 +7,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.262"
+    ComputedModelVersion    "1.362"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -29,7 +29,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [-4.0, -4.0, 1288.0, 764.0]
+      Location		      [-4.0, 0.0, 1288.0, 764.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -54,8 +54,8 @@ Model {
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
 	Extents			[1244.0, 604.0]
-	ZoomFactor		[0.774160242350015]
-	Offset			[4.1627535579290225, 41.166697329541933]
+	ZoomFactor		[0.55648990332360859]
+	Offset			[-5.1576891447368425, -24.187294407894647]
       }
     }
   }
@@ -65,9 +65,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "C4Josh"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Mon May 02 22:23:45 2016"
-  RTWModifiedTimeStamp	  384128624
-  ModelVersionFormat	  "1.%<AutoIncrement:262>"
+  LastModifiedDate	  "Sat May 07 12:35:52 2016"
+  RTWModifiedTimeStamp	  384525350
+  ModelVersionFormat	  "1.%<AutoIncrement:362>"
   ConfigurationManager	  "none"
   SampleTimeColors	  on
   SampleTimeAnnotations	  on
@@ -111,7 +111,7 @@ Model {
     $ObjectID		    6
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
     model_		    "ofdm_mod_symbol_fifo"
-    overrideMode_	    [0U]
+    overrideMode_	    [0.0]
     Array {
       Type		      "Cell"
       Dimension		      1
@@ -815,14 +815,6 @@ Model {
       BusSelectionMode	      off
     }
     Block {
-      BlockType		      Display
-      Format		      "short"
-      Decimation	      "10"
-      Floating		      off
-      Lockdown		      off
-      SampleTime	      "-1"
-    }
-    Block {
       BlockType		      Inport
       Port		      "1"
       OutputFunctionCall      off
@@ -947,7 +939,7 @@ Model {
   }
   System {
     Name		    "ofdm_mod_symbol_fifo"
-    Location		    [-4, -4, 1284, 760]
+    Location		    [-4, 0, 1284, 764]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -959,41 +951,32 @@ Model {
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "77"
+    ZoomFactor		    "56"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "41"
+    SIDHighWatermark	    "44"
     Block {
       BlockType		      ComplexToRealImag
       Name		      "Complex to\nReal-Imag"
       SID		      "3"
       Ports		      [1, 2]
-      Position		      [1950, 578, 1980, 607]
+      Position		      [1950, 608, 1980, 637]
       ZOrder		      43
     }
     Block {
       BlockType		      Constant
       Name		      "Constant1"
       SID		      "4"
-      Position		      [1220, 210, 1250, 240]
+      Position		      [1220, 240, 1250, 270]
       ZOrder		      48
       Value		      "0"
       OutDataTypeStr	      "fixdt(1,12,7)"
-    }
-    Block {
-      BlockType		      Display
-      Name		      "Display"
-      SID		      "41"
-      Ports		      [1]
-      Position		      [660, 380, 1110, 680]
-      ZOrder		      224
-      Decimation	      "1"
     }
     Block {
       BlockType		      Reference
       Name		      "IFFT\nHDL Optimized"
       SID		      "5"
       Ports		      [1, 2]
-      Position		      [1700, 575, 1870, 655]
+      Position		      [1700, 605, 1870, 685]
       ZOrder		      42
       LibraryVersion	      "1.485"
       SourceBlock	      "dspxfrm3/IFFT\nHDL Optimized"
@@ -1015,7 +998,7 @@ Model {
       Name		      "Matrix\nConcatenation"
       SID		      "6"
       Ports		      [33, 1]
-      Position		      [1490, 283, 1550, 947]
+      Position		      [1490, 313, 1550, 977]
       ZOrder		      44
       NumInputs		      "33"
       Mode		      "Multidimensional array"
@@ -1025,7 +1008,7 @@ Model {
       Name		      "Scope"
       SID		      "30"
       Ports		      [3]
-      Position		      [2175, 569, 2205, 601]
+      Position		      [2175, 599, 2205, 631]
       ZOrder		      213
       Floating		      off
       Location		      [1, 45, 1281, 755]
@@ -1055,13 +1038,13 @@ Model {
       BlockType		      Scope
       Name		      "Scope1"
       SID		      "35"
-      Ports		      [4]
-      Position		      [655, 18, 755, 247]
+      Ports		      [8]
+      Position		      [970, 20, 1070, 250]
       ZOrder		      218
       Floating		      off
-      Location		      [652, 236, 1154, 601]
+      Location		      [1, 45, 1281, 755]
       Open		      on
-      NumInputPorts	      "4"
+      NumInputPorts	      "8"
       ZoomMode		      "xonly"
       List {
 	ListType		AxesTitles
@@ -1069,6 +1052,10 @@ Model {
 	axes2			"%<SignalLabel>"
 	axes3			"%<SignalLabel>"
 	axes4			"%<SignalLabel>"
+	axes5			"%<SignalLabel>"
+	axes6			"%<SignalLabel>"
+	axes7			"%<SignalLabel>"
+	axes8			"%<SignalLabel>"
       }
       List {
 	ListType		ScopeGraphics
@@ -1080,15 +1067,15 @@ Model {
 	LineWidths		"[0.5 0.5 0.5 0.5 0.5 0.5]"
 	MarkerStyles		"none|none|none|none|none|none"
       }
-      YMin		      "0~0~0~-1"
-      YMax		      "1~300~1~1"
+      YMin		      "0~0~0~-1~0.95~-5~-5~-5"
+      YMax		      "1~250~1~1~1.05~5~5~5"
     }
     Block {
       BlockType		      Selector
       Name		      "Subcarrier\nOrdering1"
       SID		      "7"
       Ports		      [1, 1]
-      Position		      [1220, 358, 1265, 392]
+      Position		      [1220, 388, 1265, 422]
       ZOrder		      46
       ShowName		      off
       InputPortWidth	      "45"
@@ -1099,7 +1086,7 @@ Model {
       Name		      "Subcarrier\nOrdering10"
       SID		      "8"
       Ports		      [1, 1]
-      Position		      [1220, 678, 1265, 712]
+      Position		      [1220, 708, 1265, 742]
       ZOrder		      56
       ShowName		      off
       InputPortWidth	      "45"
@@ -1110,7 +1097,7 @@ Model {
       Name		      "Subcarrier\nOrdering11"
       SID		      "9"
       Ports		      [1, 1]
-      Position		      [1220, 718, 1265, 752]
+      Position		      [1220, 748, 1265, 782]
       ZOrder		      57
       ShowName		      off
       InputPortWidth	      "45"
@@ -1121,7 +1108,7 @@ Model {
       Name		      "Subcarrier\nOrdering12"
       SID		      "10"
       Ports		      [1, 1]
-      Position		      [1220, 758, 1265, 792]
+      Position		      [1220, 788, 1265, 822]
       ZOrder		      58
       ShowName		      off
       InputPortWidth	      "45"
@@ -1132,7 +1119,7 @@ Model {
       Name		      "Subcarrier\nOrdering13"
       SID		      "11"
       Ports		      [1, 1]
-      Position		      [1220, 798, 1265, 832]
+      Position		      [1220, 828, 1265, 862]
       ZOrder		      59
       ShowName		      off
       InputPortWidth	      "45"
@@ -1143,7 +1130,7 @@ Model {
       Name		      "Subcarrier\nOrdering14"
       SID		      "12"
       Ports		      [1, 1]
-      Position		      [1220, 838, 1265, 872]
+      Position		      [1220, 868, 1265, 902]
       ZOrder		      60
       ShowName		      off
       InputPortWidth	      "45"
@@ -1154,7 +1141,7 @@ Model {
       Name		      "Subcarrier\nOrdering15"
       SID		      "13"
       Ports		      [1, 1]
-      Position		      [1220, 878, 1265, 912]
+      Position		      [1220, 908, 1265, 942]
       ZOrder		      61
       ShowName		      off
       InputPortWidth	      "45"
@@ -1165,7 +1152,7 @@ Model {
       Name		      "Subcarrier\nOrdering2"
       SID		      "14"
       Ports		      [1, 1]
-      Position		      [1220, 318, 1265, 352]
+      Position		      [1220, 348, 1265, 382]
       ZOrder		      45
       ShowName		      off
       InputPortWidth	      "45"
@@ -1176,7 +1163,7 @@ Model {
       Name		      "Subcarrier\nOrdering3"
       SID		      "15"
       Ports		      [1, 1]
-      Position		      [1220, 398, 1265, 432]
+      Position		      [1220, 428, 1265, 462]
       ZOrder		      47
       ShowName		      off
       InputPortWidth	      "45"
@@ -1187,7 +1174,7 @@ Model {
       Name		      "Subcarrier\nOrdering4"
       SID		      "16"
       Ports		      [1, 1]
-      Position		      [1220, 438, 1265, 472]
+      Position		      [1220, 468, 1265, 502]
       ZOrder		      50
       ShowName		      off
       InputPortWidth	      "45"
@@ -1198,7 +1185,7 @@ Model {
       Name		      "Subcarrier\nOrdering5"
       SID		      "17"
       Ports		      [1, 1]
-      Position		      [1220, 478, 1265, 512]
+      Position		      [1220, 508, 1265, 542]
       ZOrder		      51
       ShowName		      off
       InputPortWidth	      "45"
@@ -1209,7 +1196,7 @@ Model {
       Name		      "Subcarrier\nOrdering6"
       SID		      "18"
       Ports		      [1, 1]
-      Position		      [1220, 518, 1265, 552]
+      Position		      [1220, 548, 1265, 582]
       ZOrder		      52
       ShowName		      off
       InputPortWidth	      "45"
@@ -1220,7 +1207,7 @@ Model {
       Name		      "Subcarrier\nOrdering7"
       SID		      "19"
       Ports		      [1, 1]
-      Position		      [1220, 558, 1265, 592]
+      Position		      [1220, 588, 1265, 622]
       ZOrder		      53
       ShowName		      off
       InputPortWidth	      "45"
@@ -1231,7 +1218,7 @@ Model {
       Name		      "Subcarrier\nOrdering8"
       SID		      "20"
       Ports		      [1, 1]
-      Position		      [1220, 598, 1265, 632]
+      Position		      [1220, 628, 1265, 662]
       ZOrder		      54
       ShowName		      off
       InputPortWidth	      "45"
@@ -1242,7 +1229,7 @@ Model {
       Name		      "Subcarrier\nOrdering9"
       SID		      "21"
       Ports		      [1, 1]
-      Position		      [1220, 638, 1265, 672]
+      Position		      [1220, 668, 1265, 702]
       ZOrder		      55
       ShowName		      off
       InputPortWidth	      "45"
@@ -1253,7 +1240,7 @@ Model {
       Name		      "Unbuffer"
       SID		      "22"
       Ports		      [1, 1]
-      Position		      [1605, 590, 1655, 640]
+      Position		      [1605, 620, 1655, 670]
       ZOrder		      66
       SampleBasedProcessing   "Same as frame based"
     }
@@ -1261,8 +1248,19 @@ Model {
       BlockType		      UnitDelay
       Name		      "Unit Delay"
       SID		      "39"
-      Position		      [390, 438, 425, 472]
+      Position		      [320, 613, 355, 647]
       ZOrder		      222
+      BlockMirror	      on
+      NamePlacement	      "alternate"
+      InputProcessing	      "Elements as channels (sample based)"
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      UnitDelay
+      Name		      "Unit Delay1"
+      SID		      "44"
+      Position		      [740, 498, 775, 532]
+      ZOrder		      227
       BlockMirror	      on
       NamePlacement	      "alternate"
       InputProcessing	      "Elements as channels (sample based)"
@@ -1273,7 +1271,7 @@ Model {
       Name		      "ofdm_input_fifo"
       SID		      "33"
       Ports		      [1, 3]
-      Position		      [35, 291, 190, 389]
+      Position		      [35, 321, 190, 419]
       ZOrder		      216
       LibraryVersion	      "1.165"
       ErrorFcn		      "Stateflow.Translate.translate"
@@ -1432,8 +1430,8 @@ Model {
       BlockType		      SubSystem
       Name		      "ofdm_modulation_symbols"
       SID		      "34"
-      Ports		      [3, 2]
-      Position		      [335, 267, 485, 383]
+      Ports		      [4, 4]
+      Position		      [420, 327, 570, 443]
       ZOrder		      217
       LibraryVersion	      "1.165"
       ErrorFcn		      "Stateflow.Translate.translate"
@@ -1457,7 +1455,7 @@ Model {
 	TiledPageScale		1
 	ShowPageBoundaries	off
 	ZoomFactor		"100"
-	SIDHighWatermark	"66"
+	SIDHighWatermark	"69"
 	Block {
 	  BlockType		  Inport
 	  Name			  "in_byte"
@@ -1485,11 +1483,20 @@ Model {
 	  IconDisplay		  "Port number"
 	}
 	Block {
+	  BlockType		  Inport
+	  Name			  "in_request_symbol"
+	  SID			  "34::69"
+	  Position		  [20, 206, 40, 224]
+	  ZOrder		  58
+	  Port			  "4"
+	  IconDisplay		  "Port number"
+	}
+	Block {
 	  BlockType		  Demux
 	  Name			  " Demux "
 	  SID			  "34::59"
 	  Ports			  [1, 1]
-	  Position		  [270, 230, 320, 270]
+	  Position		  [270, 280, 320, 320]
 	  ZOrder		  50
 	  Outputs		  "1"
 	}
@@ -1498,11 +1505,11 @@ Model {
 	  Name			  " SFunction "
 	  SID			  "34::58"
 	  Tag			  "Stateflow S-Function ofdm_mod_symbol_fifo 1"
-	  Ports			  [3, 3]
-	  Position		  [180, 110, 230, 190]
+	  Ports			  [4, 5]
+	  Position		  [180, 115, 230, 235]
 	  ZOrder		  49
 	  FunctionName		  "sf_sfun"
-	  PortCounts		  "[3 3]"
+	  PortCounts		  "[4 5]"
 	  EnableBusSupport	  on
 	  Port {
 	    PortNumber		    2
@@ -1512,7 +1519,19 @@ Model {
 	  }
 	  Port {
 	    PortNumber		    3
-	    Name		    "out_symbols"
+	    Name		    "out_valid"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    4
+	    Name		    "out_i"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    5
+	    Name		    "out_q"
 	    RTWStorageClass	    "Auto"
 	    DataLoggingNameMode	    "SignalName"
 	  }
@@ -1521,7 +1540,7 @@ Model {
 	  BlockType		  Terminator
 	  Name			  " Terminator "
 	  SID			  "34::60"
-	  Position		  [460, 241, 480, 259]
+	  Position		  [460, 291, 480, 309]
 	  ZOrder		  51
 	}
 	Block {
@@ -1534,37 +1553,62 @@ Model {
 	}
 	Block {
 	  BlockType		  Outport
-	  Name			  "out_symbols"
-	  SID			  "34::63"
+	  Name			  "out_valid"
+	  SID			  "34::67"
 	  Position		  [460, 136, 480, 154]
-	  ZOrder		  54
+	  ZOrder		  56
 	  Port			  "2"
 	  IconDisplay		  "Port number"
 	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "out_i"
+	  SID			  "34::63"
+	  Position		  [460, 171, 480, 189]
+	  ZOrder		  54
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "out_q"
+	  SID			  "34::68"
+	  Position		  [460, 206, 480, 224]
+	  ZOrder		  57
+	  Port			  "4"
+	  IconDisplay		  "Port number"
+	}
 	Line {
-	  ZOrder		  79
+	  ZOrder		  122
 	  SrcBlock		  "in_byte"
 	  SrcPort		  1
 	  DstBlock		  " SFunction "
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  80
+	  ZOrder		  123
 	  SrcBlock		  "in_valid"
 	  SrcPort		  1
 	  DstBlock		  " SFunction "
 	  DstPort		  2
 	}
 	Line {
-	  ZOrder		  81
+	  ZOrder		  124
 	  SrcBlock		  "in_empty"
 	  SrcPort		  1
 	  DstBlock		  " SFunction "
 	  DstPort		  3
 	}
 	Line {
+	  ZOrder		  125
+	  SrcBlock		  "in_request_symbol"
+	  SrcPort		  1
+	  DstBlock		  " SFunction "
+	  DstPort		  4
+	}
+	Line {
 	  Name			  "out_request_byte"
-	  ZOrder		  82
+	  ZOrder		  126
 	  Labels		  [0, 0]
 	  SrcBlock		  " SFunction "
 	  SrcPort		  2
@@ -1572,23 +1616,185 @@ Model {
 	  DstPort		  1
 	}
 	Line {
-	  Name			  "out_symbols"
-	  ZOrder		  83
+	  Name			  "out_valid"
+	  ZOrder		  127
 	  Labels		  [0, 0]
 	  SrcBlock		  " SFunction "
 	  SrcPort		  3
-	  DstBlock		  "out_symbols"
+	  DstBlock		  "out_valid"
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  84
+	  Name			  "out_i"
+	  ZOrder		  128
+	  Labels		  [0, 0]
+	  SrcBlock		  " SFunction "
+	  SrcPort		  4
+	  DstBlock		  "out_i"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "out_q"
+	  ZOrder		  129
+	  Labels		  [0, 0]
+	  SrcBlock		  " SFunction "
+	  SrcPort		  5
+	  DstBlock		  "out_q"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  130
 	  SrcBlock		  " Demux "
 	  SrcPort		  1
 	  DstBlock		  " Terminator "
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  85
+	  ZOrder		  131
+	  SrcBlock		  " SFunction "
+	  SrcPort		  1
+	  DstBlock		  " Demux "
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "ofdym_framing"
+      SID		      "43"
+      Ports		      [3, 1]
+      Position		      [730, 310, 880, 390]
+      ZOrder		      226
+      LibraryVersion	      "1.32"
+      ErrorFcn		      "Stateflow.Translate.translate"
+      PermitHierarchicalResolution "ExplicitOnly"
+      TreatAsAtomicUnit	      on
+      RequestExecContextInheritance off
+      SFBlockType	      "MATLAB Function"
+      System {
+	Name			"ofdym_framing"
+	Location		[223, 338, 826, 833]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	SIDHighWatermark	"20"
+	Block {
+	  BlockType		  Inport
+	  Name			  "in_valid"
+	  SID			  "43::1"
+	  Position		  [20, 101, 40, 119]
+	  ZOrder		  -1
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "in_i"
+	  SID			  "43::19"
+	  Position		  [20, 136, 40, 154]
+	  ZOrder		  10
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "in_q"
+	  SID			  "43::20"
+	  Position		  [20, 171, 40, 189]
+	  ZOrder		  11
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Demux
+	  Name			  " Demux "
+	  SID			  "43::17"
+	  Ports			  [1, 1]
+	  Position		  [270, 230, 320, 270]
+	  ZOrder		  8
+	  Outputs		  "1"
+	}
+	Block {
+	  BlockType		  S-Function
+	  Name			  " SFunction "
+	  SID			  "43::16"
+	  Tag			  "Stateflow S-Function ofdm_mod_symbol_fifo 3"
+	  Ports			  [3, 2]
+	  Position		  [180, 100, 230, 180]
+	  ZOrder		  7
+	  FunctionName		  "sf_sfun"
+	  PortCounts		  "[3 2]"
+	  EnableBusSupport	  on
+	  Port {
+	    PortNumber		    2
+	    Name		    "out_request_symbol"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  " Terminator "
+	  SID			  "43::18"
+	  Position		  [460, 241, 480, 259]
+	  ZOrder		  9
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "out_request_symbol"
+	  SID			  "43::5"
+	  Position		  [460, 101, 480, 119]
+	  ZOrder		  -5
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  ZOrder		  14
+	  SrcBlock		  "in_valid"
+	  SrcPort		  1
+	  Points		  [120, 0]
+	  DstBlock		  " SFunction "
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  15
+	  SrcBlock		  "in_i"
+	  SrcPort		  1
+	  DstBlock		  " SFunction "
+	  DstPort		  2
+	}
+	Line {
+	  ZOrder		  16
+	  SrcBlock		  "in_q"
+	  SrcPort		  1
+	  DstBlock		  " SFunction "
+	  DstPort		  3
+	}
+	Line {
+	  Name			  "out_request_symbol"
+	  ZOrder		  17
+	  Labels		  [0, 0]
+	  SrcBlock		  " SFunction "
+	  SrcPort		  2
+	  DstBlock		  "out_request_symbol"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  18
+	  SrcBlock		  " Demux "
+	  SrcPort		  1
+	  DstBlock		  " Terminator "
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  19
 	  SrcBlock		  " SFunction "
 	  SrcPort		  1
 	  DstBlock		  " Demux "
@@ -1674,10 +1880,6 @@ Model {
       DstPort		      13
     }
     Line {
-      FontName		      "Helvetica"
-      FontSize		      9
-      FontWeight	      "normal"
-      FontAngle		      "normal"
       ZOrder		      12
       SrcBlock		      "IFFT\nHDL Optimized"
       SrcPort		      1
@@ -1685,10 +1887,6 @@ Model {
       DstPort		      1
     }
     Line {
-      FontName		      "Helvetica"
-      FontSize		      9
-      FontWeight	      "normal"
-      FontAngle		      "normal"
       ZOrder		      195
       SrcBlock		      "IFFT\nHDL Optimized"
       SrcPort		      2
@@ -1912,7 +2110,7 @@ Model {
       ZOrder		      198
       SrcBlock		      "ofdm_modulation_symbols"
       SrcPort		      1
-      Points		      [51, 0; 0, 160]
+      Points		      [75, 0; 0, 290]
       DstBlock		      "Unit Delay"
       DstPort		      1
     }
@@ -1923,13 +2121,12 @@ Model {
       Points		      [43, 0]
       Branch {
 	ZOrder			248
-	Points			[0, -155]
+	Points			[0, -280]
 	DstBlock		"Scope1"
 	DstPort			4
       }
       Branch {
 	ZOrder			247
-	Points			[82, 0]
 	DstBlock		"ofdm_modulation_symbols"
 	DstPort			3
       }
@@ -1941,13 +2138,12 @@ Model {
       Points		      [29, 0]
       Branch {
 	ZOrder			246
-	Points			[0, -180]
+	Points			[0, -280]
 	DstBlock		"Scope1"
 	DstPort			3
       }
       Branch {
 	ZOrder			241
-	Points			[96, 0]
 	DstBlock		"ofdm_modulation_symbols"
 	DstPort			2
       }
@@ -1959,13 +2155,12 @@ Model {
       Points		      [14, 0]
       Branch {
 	ZOrder			244
-	Points			[0, -205]
+	Points			[0, -280]
 	DstBlock		"Scope1"
 	DstPort			2
       }
       Branch {
 	ZOrder			243
-	Points			[111, 0]
 	DstBlock		"ofdm_modulation_symbols"
 	DstPort			1
       }
@@ -1974,16 +2169,16 @@ Model {
       ZOrder		      272
       SrcBlock		      "Unit Delay"
       SrcPort		      1
-      Points		      [-105, 0]
+      Points		      [-35, 0]
       Branch {
-	ZOrder			319
-	Points			[0, -405]
+	ZOrder			370
+	Points			[0, -600]
 	DstBlock		"Scope1"
 	DstPort			1
       }
       Branch {
-	ZOrder			318
-	Points			[-260, 0]
+	ZOrder			369
+	Points			[0, 2; -260, 0]
 	DstBlock		"ofdm_input_fifo"
 	DstPort			1
       }
@@ -1996,12 +2191,82 @@ Model {
       DstPort		      3
     }
     Line {
-      ZOrder		      324
+      ZOrder		      331
       SrcBlock		      "ofdm_modulation_symbols"
       SrcPort		      2
-      Points		      [0, -10; 139, 0; 0, 185]
-      DstBlock		      "Display"
-      DstPort		      1
+      Points		      [28, 0; 0, -75; -51, 0]
+      Branch {
+	ZOrder			362
+	Points			[-23, 0; 0, -145]
+	DstBlock		"Scope1"
+	DstPort			5
+      }
+      Branch {
+	ZOrder			349
+	Points			[0, 30]
+	DstBlock		"ofdym_framing"
+	DstPort			1
+      }
+    }
+    Line {
+      ZOrder		      360
+      SrcBlock		      "Unit Delay1"
+      SrcPort		      1
+      Points		      [-67, 0; 0, 1; -294, 0; 0, -86]
+      DstBlock		      "ofdm_modulation_symbols"
+      DstPort		      4
+    }
+    Line {
+      ZOrder		      346
+      SrcBlock		      "ofdm_modulation_symbols"
+      SrcPort		      3
+      Points		      [7, 0; 0, -50]
+      Branch {
+	ZOrder			366
+	Points			[0, -170]
+	DstBlock		"Scope1"
+	DstPort			6
+      }
+      Branch {
+	ZOrder			351
+	DstBlock		"ofdym_framing"
+	DstPort			2
+      }
+    }
+    Line {
+      ZOrder		      347
+      SrcBlock		      "ofdm_modulation_symbols"
+      SrcPort		      4
+      Points		      [14, 0; 0, -55]
+      Branch {
+	ZOrder			365
+	Points			[0, -165]
+	DstBlock		"Scope1"
+	DstPort			7
+      }
+      Branch {
+	ZOrder			353
+	DstBlock		"ofdym_framing"
+	DstPort			3
+      }
+    }
+    Line {
+      ZOrder		      359
+      SrcBlock		      "ofdym_framing"
+      SrcPort		      1
+      Points		      [7, 0]
+      Branch {
+	ZOrder			374
+	Points			[0, -110]
+	DstBlock		"Scope1"
+	DstPort			8
+      }
+      Branch {
+	ZOrder			373
+	Points			[2, 0; 0, 165]
+	DstBlock		"Unit Delay1"
+	DstPort			1
+      }
     }
   }
 }
@@ -2016,7 +2281,7 @@ Stateflow {
     name		    "ofdm_mod_symbol_fifo"
     created		    "30-Apr-2016 22:31:33"
     isLibrary		    0
-    firstTarget		    21
+    firstTarget		    33
     debug {
     }
     sfVersion		    80000005
@@ -2028,14 +2293,14 @@ Stateflow {
     viewLimits		    [0 156.75 0 153.75]
     screen		    [1 1 1280 1024 1.041666666666667]
     treeNode		    [0 3 0 0]
-    firstTransition	    10
-    firstJunction	    9
+    firstTransition	    13
+    firstJunction	    12
     viewObj		    2
     visible		    1
     machine		    1
     subviewS {
     }
-    ssIdHighWaterMark	    11
+    ssIdHighWaterMark	    14
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
     firstData		    4
@@ -2059,35 +2324,33 @@ Stateflow {
     decomposition	    CLUSTER_STATE
     eml {
       isEML		      1
-      script		      "function [out_request_byte, out_symbols] = fcn(in_byte, in_valid, in_empty)\n%#codegen\n% XXX con"
-      "vert to symbolic constants\n% XXX migrate constants to global project constants\n\n% by default, do nothing\nout"
-      "_request_byte = false;\nout_symbols = repmat(fi(complex(0),1,12,7),1,45);\n\n% circular buffer for symbol storag"
-      "e\n% the buffer length should evenly divide the number of symbols/byte\npersistent buffer\nif isempty(buffer)\n "
-      "   buffer = complex(zeros(1,96));\nend\npersistent read_index\nif isempty(read_index)\n    read_index = 0;\nend\n"
-      "persistent write_index\nif isempty(write_index)\n    write_index = 0;\nend\n\n% we only receive valid input if w"
-      "e requested it\n% if we have valid input, store the input\n% this should *never* overflow\nif in_valid == 1\n   "
-      " \n    % MODULATION SYMBOL FORMAT\n    % 4-QAM, Grey coded, Minimum distance 2\n    %symbols = fi([-1+j -1-j 1+j"
-      " 1-j],1,12,7);\n    symbols = fi(complex([0 1 2 3]),1,12,7);\n    \n    % There are four symbols per byte\n    %"
-      " Map two bits to each symbol\n    % This makes assumptions about the length of buffer\n    % @review Is this the"
-      " best way to do this?\n    buffer(write_index+1) = symbols(1+bitand(bitshift(in_byte,-0),3));\n    buffer(write_"
-      "index+2) = symbols(1+bitand(bitshift(in_byte,-2),3));\n    buffer(write_index+3) = symbols(1+bitand(bitshift(in_"
-      "byte,-4),3));\n    buffer(write_index+4) = symbols(1+bitand(bitshift(in_byte,-6),3));\n\n    % we just wrote fou"
-      "r symbols\n    write_index = write_index + 4;\n    if write_index >= length(buffer)\n        write_index = 0;\n "
-      "   end\nend\n\n% determine how many symbols are buffered\nbuffered = 0;\nif (read_index > write_index)\n    buff"
-      "ered = (length(buffer) - read_index) + write_index;\nelseif (read_index <= write_index)\n    buffered = (write_i"
-      "ndex - read_index);\nend\n\n% if we have room for four more symbols,\n% request another byte\nout_request_byte ="
-      " (in_empty == 0) && ((length(buffer) - buffered) >= 4);\nfprintf('request %d length %d buffered %d\\n', ...\n   "
-      "     int8(out_request_byte), int8(length(buffer)), int8(buffered));\n\n% if there's two frames worth of data, ad"
-      "vance the read\nif buffered >= (45*2)\n    read_index = read_index + 45;\n    if read_index > length(buffer)\n  "
-      "      read_index = read_index - length(buffer);\n    end\nend\nfprintf('buffered %d read index %d\\n', int8(buff"
-      "ered), int8(read_index));\n\n% if there's enough data for one frame, output the frame\nif buffered >= 45\n    if"
-      " (read_index > write_index)\n        contiguous = int8(min(45,length(buffer) - read_index));\n        remaining "
-      "= int8(max(45 - contiguous,0));\n        fprintf('read %d write %d contiguous %d remaining %d\\n', ...\n        "
-      "    int8(read_index), int8(write_index), contiguous, remaining);\n        out_symbols(1:contiguous) = buffer(rea"
-      "d_index+1:read_index+contiguous);\n        if remaining > 0\n            out_symbols(contiguous+1:contiguous+rem"
-      "aining) = buffer(1:remaining);\n        end\n    elseif (read_index <= write_index)\n        out_symbols = fi(bu"
-      "ffer(read_index+1:read_index+45),1,12,7);\n        fprintf('read %d write %d\\n', ...\n            int8(read_ind"
-      "ex), int8(write_index));\n    end\nend\n\n"
+      script		      "function [out_request_byte, out_valid, out_i, out_q] = fcn(in_byte, in_valid, in_empty, in_reques"
+      "t_symbol)\n%#codegen\n\n% MODULATION SYMBOL FORMAT\n% 4-QAM, Grey coded, Minimum distance 2\n%symbols = fi([-1+j"
+      " -1-j 1+j 1-j],1,12,7);\nsymbols_i = fi([-1 -1 1 1],1,12,7);\nsymbols_q = fi([1 -1 1 -1],1,12,7);\nbits_per_symb"
+      "ol = 2;\nsymbols_per_byte = 8/bits_per_symbol;\n    \n% by default, do nothing\nout_request_byte = false;\nout_i"
+      " = fi(0,1,12,7);\nout_q = fi(0,1,12,7);\nout_valid = false;\n\n% circular buffer for symbol storage\n% the buffe"
+      "r length should evenly divide the number of symbols/byte\npersistent buffer_i\nif isempty(buffer_i)  \n    buffe"
+      "r_i = repmat(fi(0,1,12,7),1,2*symbols_per_byte);\nend\npersistent buffer_q\nif isempty(buffer_q)  \n    buffer_q"
+      " = repmat(fi(0,1,12,7),1,2*symbols_per_byte);\nend\npersistent read_index\nif isempty(read_index)\n    read_inde"
+      "x = 0;\nend\npersistent write_index\nif isempty(write_index)\n    write_index = 0;\nend\n\n% we only receive val"
+      "id input if we requested it\n% if we have valid input, store the input\n% this should *never* overflow\nif in_va"
+      "lid == 1\n    \n    % There are four symbols per byte\n    % Map two bits to each symbol\n    % This makes assum"
+      "ptions about the length of buffer\n    % @review Is this the best way to do this?\n    symbol = 1+bitand(bitshif"
+      "t(in_byte,-0),3);\n    buffer_i(write_index+1) = symbols_i(symbol);\n    buffer_q(write_index+1) = symbols_q(sym"
+      "bol);\n    \n    symbol = 1+bitand(bitshift(in_byte,-2),3);\n    buffer_i(write_index+2) = symbols_i(symbol);\n "
+      "   buffer_q(write_index+2) = symbols_q(symbol);\n    \n    symbol = 1+bitand(bitshift(in_byte,-4),3);\n    buffe"
+      "r_i(write_index+2) = symbols_i(symbol);\n    buffer_q(write_index+2) = symbols_q(symbol);\n    \n    symbol = 1+"
+      "bitand(bitshift(in_byte,-6),3);\n    buffer_i(write_index+2) = symbols_i(symbol);\n    buffer_q(write_index+2) ="
+      " symbols_q(symbol);\n\n    % we just wrote four symbols\n    write_index = write_index + symbols_per_byte;\n    "
+      "if write_index >= length(buffer_i)\n        write_index = 0;\n    end\nend\n\n% determine how many symbols are b"
+      "uffered\nbuffered = 0;\nif (read_index > write_index)\n    buffered = (length(buffer_i) - read_index) + write_in"
+      "dex;\nelseif (read_index <= write_index)\n    buffered = (write_index - read_index);\nend\n\n% if we have room f"
+      "or more symbols, request another byte\navailable = length(buffer_i) - buffered;\nout_request_byte = (in_empty =="
+      " 0) && (available >= symbols_per_byte);\nfprintf('request %d length %d buffered %d\\n', ...\n        int8(out_re"
+      "quest_byte), int8(length(buffer_i)), int8(buffered));\n\n% if there's buffered data, output a symbol\nif in_requ"
+      "est_symbol && (read_index ~= write_index)\n    out_valid = true;\n    out_i = buffer_i(read_index + 1);\n    out"
+      "_q = buffer_q(read_index + 1);\n    read_index = read_index + 1;\n    if read_index >= length(buffer_i)\n       "
+      " read_index = 0;\n    end\nend\n\n"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
@@ -2112,9 +2375,30 @@ Stateflow {
   }
   data {
     id			    5
+    ssIdNumber		    12
+    name		    "out_valid"
+    linkNode		    [2 4 6]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"1"
+      }
+      type {
+	primitive		SF_BOOLEAN_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "boolean"
+  }
+  data {
+    id			    6
     ssIdNumber		    6
     name		    "in_byte"
-    linkNode		    [2 4 6]
+    linkNode		    [2 5 7]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -2132,30 +2416,9 @@ Stateflow {
     dataType		    "uint8"
   }
   data {
-    id			    6
+    id			    7
     ssIdNumber		    9
     name		    "in_valid"
-    linkNode		    [2 5 7]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"1"
-      }
-      type {
-	primitive		SF_BOOLEAN_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_INHERITED
-    }
-    dataType		    "boolean"
-  }
-  data {
-    id			    7
-    ssIdNumber		    7
-    name		    "in_empty"
     linkNode		    [2 6 8]
     scope		    INPUT_DATA
     machine		    1
@@ -2175,14 +2438,35 @@ Stateflow {
   }
   data {
     id			    8
+    ssIdNumber		    7
+    name		    "in_empty"
+    linkNode		    [2 7 9]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"1"
+      }
+      type {
+	primitive		SF_BOOLEAN_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "boolean"
+  }
+  data {
+    id			    9
     ssIdNumber		    8
-    name		    "out_symbols"
-    linkNode		    [2 7 0]
+    name		    "out_i"
+    linkNode		    [2 8 10]
     scope		    OUTPUT_DATA
     machine		    1
     props {
       array {
-	size			"[1 45]"
+	size			"1"
       }
       type {
 	method			SF_CUSTOM_INTEGER_TYPE
@@ -2201,8 +2485,57 @@ Stateflow {
     }
     dataType		    "fixdt(1,12,7)"
   }
+  data {
+    id			    10
+    ssIdNumber		    13
+    name		    "out_q"
+    linkNode		    [2 9 11]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"1"
+      }
+      type {
+	method			SF_CUSTOM_INTEGER_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"12"
+	fixpt {
+	  scalingMode		  SF_FIXPT_BINARY_POINT
+	  fractionLength	  "7"
+	  slope			  "2^0"
+	  bias			  "0"
+	}
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "fixdt(1,12,7)"
+  }
+  data {
+    id			    11
+    ssIdNumber		    14
+    name		    "in_request_symbol"
+    linkNode		    [2 10 0]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"1"
+      }
+      type {
+	primitive		SF_BOOLEAN_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "boolean"
+  }
   junction {
-    id			    9
+    id			    12
     position		    [23.5747 49.5747 7]
     chart		    2
     linkNode		    [2 0 0]
@@ -2211,7 +2544,7 @@ Stateflow {
     type		    CONNECTIVE_JUNCTION
   }
   transition {
-    id			    10
+    id			    13
     labelString		    "{eML_blk_kernel();}"
     labelPosition	    [32.125 19.875 102.544 14.964]
     fontSize		    12
@@ -2219,7 +2552,7 @@ Stateflow {
       intersection	      [0 0 1 0 23.5747 14.625 0 0]
     }
     dst {
-      id		      9
+      id		      12
       intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
     }
     midPoint		    [23.5747 24.9468]
@@ -2235,29 +2568,26 @@ Stateflow {
     ssIdNumber		    2
   }
   instance {
-    id			    11
+    id			    14
     name		    "ofdm_modulation_symbols"
     machine		    1
     chart		    2
   }
   chart {
-    id			    12
+    id			    15
     name		    "ofdm_input_fifo"
     windowPosition	    [357.12 483.496 167 391]
     viewLimits		    [0 156.75 0 153.75]
     screen		    [1 1 1280 1024 1.041666666666667]
-    treeNode		    [0 13 0 0]
-    firstTransition	    19
-    firstJunction	    18
-    viewObj		    12
-    visible		    1
+    treeNode		    [0 16 0 0]
+    firstTransition	    22
+    firstJunction	    21
+    viewObj		    15
     machine		    1
-    subviewS {
-    }
     ssIdHighWaterMark	    7
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
-    firstData		    14
+    firstData		    17
     chartFileNumber	    2
     disableImplicitCasting  1
     eml {
@@ -2265,14 +2595,14 @@ Stateflow {
     }
   }
   state {
-    id			    13
+    id			    16
     labelString		    "eML_blk_kernel()"
     position		    [18 64.5 118 66]
     fontSize		    12
-    chart		    12
-    treeNode		    [12 0 0 0]
+    chart		    15
+    treeNode		    [15 0 0 0]
     superState		    SUBCHART
-    subviewer		    12
+    subviewer		    15
     ssIdNumber		    1
     type		    FUNC_STATE
     decomposition	    CLUSTER_STATE
@@ -2287,10 +2617,10 @@ Stateflow {
     }
   }
   data {
-    id			    14
+    id			    17
     ssIdNumber		    4
     name		    "in_request_byte"
-    linkNode		    [12 0 15]
+    linkNode		    [15 0 18]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -2305,10 +2635,10 @@ Stateflow {
     dataType		    "boolean"
   }
   data {
-    id			    15
+    id			    18
     ssIdNumber		    5
     name		    "out_byte"
-    linkNode		    [12 14 16]
+    linkNode		    [15 17 19]
     scope		    OUTPUT_DATA
     machine		    1
     props {
@@ -2324,10 +2654,10 @@ Stateflow {
     dataType		    "uint8"
   }
   data {
-    id			    16
+    id			    19
     ssIdNumber		    7
     name		    "out_valid"
-    linkNode		    [12 15 17]
+    linkNode		    [15 18 20]
     scope		    OUTPUT_DATA
     machine		    1
     props {
@@ -2345,10 +2675,10 @@ Stateflow {
     dataType		    "boolean"
   }
   data {
-    id			    17
+    id			    20
     ssIdNumber		    6
     name		    "out_empty"
-    linkNode		    [12 16 0]
+    linkNode		    [15 19 0]
     scope		    OUTPUT_DATA
     machine		    1
     props {
@@ -2366,16 +2696,16 @@ Stateflow {
     dataType		    "boolean"
   }
   junction {
-    id			    18
+    id			    21
     position		    [23.5747 49.5747 7]
-    chart		    12
-    linkNode		    [12 0 0]
-    subviewer		    12
+    chart		    15
+    linkNode		    [15 0 0]
+    subviewer		    15
     ssIdNumber		    3
     type		    CONNECTIVE_JUNCTION
   }
   transition {
-    id			    19
+    id			    22
     labelString		    "{eML_blk_kernel();}"
     labelPosition	    [32.125 19.875 102.544 14.964]
     fontSize		    12
@@ -2383,14 +2713,14 @@ Stateflow {
       intersection	      [0 0 1 0 23.5747 14.625 0 0]
     }
     dst {
-      id		      18
+      id		      21
       intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
     }
     midPoint		    [23.5747 24.9468]
-    chart		    12
-    linkNode		    [12 0 0]
+    chart		    15
+    linkNode		    [15 0 0]
     dataLimits		    [21.175 25.975 14.625 42.575]
-    subviewer		    12
+    subviewer		    15
     drawStyle		    SMART
     slide {
       sticky		      BOTH_STICK
@@ -2399,13 +2729,178 @@ Stateflow {
     ssIdNumber		    2
   }
   instance {
-    id			    20
+    id			    23
     name		    "ofdm_input_fifo"
     machine		    1
-    chart		    12
+    chart		    15
+  }
+  chart {
+    id			    24
+    name		    "ofdym_framing"
+    windowPosition	    [422 539.941 189 413]
+    viewLimits		    [0 156.75 0 153.75]
+    screen		    [1 1 3600 1200 1.180555555555556]
+    treeNode		    [0 25 0 0]
+    firstTransition	    31
+    firstJunction	    30
+    viewObj		    24
+    visible		    1
+    machine		    1
+    subviewS {
+    }
+    ssIdHighWaterMark	    7
+    decomposition	    CLUSTER_CHART
+    type		    EML_CHART
+    firstData		    26
+    chartFileNumber	    3
+    disableImplicitCasting  1
+    eml {
+      name		      "fcn"
+    }
+  }
+  state {
+    id			    25
+    labelString		    "eML_blk_kernel()"
+    position		    [18 64.5 118 66]
+    fontSize		    12
+    chart		    24
+    treeNode		    [24 0 0 0]
+    superState		    SUBCHART
+    subviewer		    24
+    ssIdNumber		    1
+    type		    FUNC_STATE
+    decomposition	    CLUSTER_STATE
+    eml {
+      isEML		      1
+      script		      "function out_request_symbol  = fcn(in_valid, in_i, in_q)\n%#codegen\n\ny = 1;\nout_request_symbol"
+      " = true;\nend"
+      editorLayout	      "100 M4x1[10 5 700 500]"
+    }
+  }
+  data {
+    id			    26
+    ssIdNumber		    4
+    name		    "in_valid"
+    linkNode		    [24 0 27]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+      }
+      complexity	      SF_COMPLEX_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    27
+    ssIdNumber		    5
+    name		    "out_request_symbol"
+    linkNode		    [24 26 28]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    28
+    ssIdNumber		    6
+    name		    "in_i"
+    linkNode		    [24 27 29]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    29
+    ssIdNumber		    7
+    name		    "in_q"
+    linkNode		    [24 28 0]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  junction {
+    id			    30
+    position		    [23.5747 49.5747 7]
+    chart		    24
+    linkNode		    [24 0 0]
+    subviewer		    24
+    ssIdNumber		    3
+    type		    CONNECTIVE_JUNCTION
+  }
+  transition {
+    id			    31
+    labelString		    "{eML_blk_kernel();}"
+    labelPosition	    [28.125 13.875 102.544 14.964]
+    fontSize		    12
+    src {
+      intersection	      [0 0 1 0 23.5747 14.625 0 0]
+    }
+    dst {
+      id		      30
+      intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
+    }
+    midPoint		    [23.5747 24.9468]
+    chart		    24
+    linkNode		    [24 0 0]
+    dataLimits		    [21.175 25.975 14.625 42.575]
+    subviewer		    24
+    drawStyle		    SMART
+    slide {
+      sticky		      BOTH_STICK
+    }
+    executionOrder	    1
+    ssIdNumber		    2
+  }
+  instance {
+    id			    32
+    name		    "ofdym_framing"
+    machine		    1
+    chart		    24
   }
   target {
-    id			    21
+    id			    33
     name		    "sfun"
     description		    "Default Simulink S-Function Target."
     machine		    1
