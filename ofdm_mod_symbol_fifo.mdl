@@ -7,7 +7,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.362"
+    ComputedModelVersion    "1.378"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -54,8 +54,8 @@ Model {
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
 	Extents			[1244.0, 604.0]
-	ZoomFactor		[0.55648990332360859]
-	Offset			[-5.1576891447368425, -24.187294407894647]
+	ZoomFactor		[0.539216229699019]
+	Offset			[-5.9636101973684106, -46.572162828947256]
       }
     }
   }
@@ -65,9 +65,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "C4Josh"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sat May 07 12:35:52 2016"
-  RTWModifiedTimeStamp	  384525350
-  ModelVersionFormat	  "1.%<AutoIncrement:362>"
+  LastModifiedDate	  "Sat May 07 12:48:34 2016"
+  RTWModifiedTimeStamp	  384526112
+  ModelVersionFormat	  "1.%<AutoIncrement:378>"
   ConfigurationManager	  "none"
   SampleTimeColors	  on
   SampleTimeAnnotations	  on
@@ -182,7 +182,7 @@ Model {
 	  $ObjectID		  8
 	  Version		  "1.15.0"
 	  StartTime		  "0.0"
-	  StopTime		  "inf"
+	  StopTime		  "10"
 	  AbsTol		  "auto"
 	  FixedStep		  "auto"
 	  InitialStep		  "auto"
@@ -951,7 +951,7 @@ Model {
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "56"
+    ZoomFactor		    "54"
     ReportName		    "simulink-default.rpt"
     SIDHighWatermark	    "44"
     Block {
@@ -959,14 +959,14 @@ Model {
       Name		      "Complex to\nReal-Imag"
       SID		      "3"
       Ports		      [1, 2]
-      Position		      [1950, 608, 1980, 637]
+      Position		      [2020, 608, 2050, 637]
       ZOrder		      43
     }
     Block {
       BlockType		      Constant
       Name		      "Constant1"
       SID		      "4"
-      Position		      [1220, 240, 1250, 270]
+      Position		      [1290, 240, 1320, 270]
       ZOrder		      48
       Value		      "0"
       OutDataTypeStr	      "fixdt(1,12,7)"
@@ -976,7 +976,7 @@ Model {
       Name		      "IFFT\nHDL Optimized"
       SID		      "5"
       Ports		      [1, 2]
-      Position		      [1700, 605, 1870, 685]
+      Position		      [1770, 605, 1940, 685]
       ZOrder		      42
       LibraryVersion	      "1.485"
       SourceBlock	      "dspxfrm3/IFFT\nHDL Optimized"
@@ -998,7 +998,7 @@ Model {
       Name		      "Matrix\nConcatenation"
       SID		      "6"
       Ports		      [33, 1]
-      Position		      [1490, 313, 1550, 977]
+      Position		      [1560, 313, 1620, 977]
       ZOrder		      44
       NumInputs		      "33"
       Mode		      "Multidimensional array"
@@ -1008,7 +1008,7 @@ Model {
       Name		      "Scope"
       SID		      "30"
       Ports		      [3]
-      Position		      [2175, 599, 2205, 631]
+      Position		      [2245, 599, 2275, 631]
       ZOrder		      213
       Floating		      off
       Location		      [1, 45, 1281, 755]
@@ -1039,11 +1039,11 @@ Model {
       Name		      "Scope1"
       SID		      "35"
       Ports		      [8]
-      Position		      [970, 20, 1070, 250]
+      Position		      [1040, 20, 1140, 250]
       ZOrder		      218
       Floating		      off
       Location		      [1, 45, 1281, 755]
-      Open		      on
+      Open		      off
       NumInputPorts	      "8"
       ZoomMode		      "xonly"
       List {
@@ -1067,15 +1067,15 @@ Model {
 	LineWidths		"[0.5 0.5 0.5 0.5 0.5 0.5]"
 	MarkerStyles		"none|none|none|none|none|none"
       }
-      YMin		      "0~0~0~-1~0.95~-5~-5~-5"
-      YMax		      "1~250~1~1~1.05~5~5~5"
+      YMin		      "0~0~0~-1~1~-1~-1~1"
+      YMax		      "1~250~1~1~1~1~1~1"
     }
     Block {
       BlockType		      Selector
       Name		      "Subcarrier\nOrdering1"
       SID		      "7"
       Ports		      [1, 1]
-      Position		      [1220, 388, 1265, 422]
+      Position		      [1290, 388, 1335, 422]
       ZOrder		      46
       ShowName		      off
       InputPortWidth	      "45"
@@ -1086,7 +1086,7 @@ Model {
       Name		      "Subcarrier\nOrdering10"
       SID		      "8"
       Ports		      [1, 1]
-      Position		      [1220, 708, 1265, 742]
+      Position		      [1290, 708, 1335, 742]
       ZOrder		      56
       ShowName		      off
       InputPortWidth	      "45"
@@ -1097,7 +1097,7 @@ Model {
       Name		      "Subcarrier\nOrdering11"
       SID		      "9"
       Ports		      [1, 1]
-      Position		      [1220, 748, 1265, 782]
+      Position		      [1290, 748, 1335, 782]
       ZOrder		      57
       ShowName		      off
       InputPortWidth	      "45"
@@ -1108,7 +1108,7 @@ Model {
       Name		      "Subcarrier\nOrdering12"
       SID		      "10"
       Ports		      [1, 1]
-      Position		      [1220, 788, 1265, 822]
+      Position		      [1290, 788, 1335, 822]
       ZOrder		      58
       ShowName		      off
       InputPortWidth	      "45"
@@ -1119,7 +1119,7 @@ Model {
       Name		      "Subcarrier\nOrdering13"
       SID		      "11"
       Ports		      [1, 1]
-      Position		      [1220, 828, 1265, 862]
+      Position		      [1290, 828, 1335, 862]
       ZOrder		      59
       ShowName		      off
       InputPortWidth	      "45"
@@ -1130,7 +1130,7 @@ Model {
       Name		      "Subcarrier\nOrdering14"
       SID		      "12"
       Ports		      [1, 1]
-      Position		      [1220, 868, 1265, 902]
+      Position		      [1290, 868, 1335, 902]
       ZOrder		      60
       ShowName		      off
       InputPortWidth	      "45"
@@ -1141,7 +1141,7 @@ Model {
       Name		      "Subcarrier\nOrdering15"
       SID		      "13"
       Ports		      [1, 1]
-      Position		      [1220, 908, 1265, 942]
+      Position		      [1290, 908, 1335, 942]
       ZOrder		      61
       ShowName		      off
       InputPortWidth	      "45"
@@ -1152,7 +1152,7 @@ Model {
       Name		      "Subcarrier\nOrdering2"
       SID		      "14"
       Ports		      [1, 1]
-      Position		      [1220, 348, 1265, 382]
+      Position		      [1290, 348, 1335, 382]
       ZOrder		      45
       ShowName		      off
       InputPortWidth	      "45"
@@ -1163,7 +1163,7 @@ Model {
       Name		      "Subcarrier\nOrdering3"
       SID		      "15"
       Ports		      [1, 1]
-      Position		      [1220, 428, 1265, 462]
+      Position		      [1290, 428, 1335, 462]
       ZOrder		      47
       ShowName		      off
       InputPortWidth	      "45"
@@ -1174,7 +1174,7 @@ Model {
       Name		      "Subcarrier\nOrdering4"
       SID		      "16"
       Ports		      [1, 1]
-      Position		      [1220, 468, 1265, 502]
+      Position		      [1290, 468, 1335, 502]
       ZOrder		      50
       ShowName		      off
       InputPortWidth	      "45"
@@ -1185,7 +1185,7 @@ Model {
       Name		      "Subcarrier\nOrdering5"
       SID		      "17"
       Ports		      [1, 1]
-      Position		      [1220, 508, 1265, 542]
+      Position		      [1290, 508, 1335, 542]
       ZOrder		      51
       ShowName		      off
       InputPortWidth	      "45"
@@ -1196,7 +1196,7 @@ Model {
       Name		      "Subcarrier\nOrdering6"
       SID		      "18"
       Ports		      [1, 1]
-      Position		      [1220, 548, 1265, 582]
+      Position		      [1290, 548, 1335, 582]
       ZOrder		      52
       ShowName		      off
       InputPortWidth	      "45"
@@ -1207,7 +1207,7 @@ Model {
       Name		      "Subcarrier\nOrdering7"
       SID		      "19"
       Ports		      [1, 1]
-      Position		      [1220, 588, 1265, 622]
+      Position		      [1290, 588, 1335, 622]
       ZOrder		      53
       ShowName		      off
       InputPortWidth	      "45"
@@ -1218,7 +1218,7 @@ Model {
       Name		      "Subcarrier\nOrdering8"
       SID		      "20"
       Ports		      [1, 1]
-      Position		      [1220, 628, 1265, 662]
+      Position		      [1290, 628, 1335, 662]
       ZOrder		      54
       ShowName		      off
       InputPortWidth	      "45"
@@ -1229,7 +1229,7 @@ Model {
       Name		      "Subcarrier\nOrdering9"
       SID		      "21"
       Ports		      [1, 1]
-      Position		      [1220, 668, 1265, 702]
+      Position		      [1290, 668, 1335, 702]
       ZOrder		      55
       ShowName		      off
       InputPortWidth	      "45"
@@ -1240,7 +1240,7 @@ Model {
       Name		      "Unbuffer"
       SID		      "22"
       Ports		      [1, 1]
-      Position		      [1605, 620, 1655, 670]
+      Position		      [1675, 620, 1725, 670]
       ZOrder		      66
       SampleBasedProcessing   "Same as frame based"
     }
@@ -1248,7 +1248,7 @@ Model {
       BlockType		      UnitDelay
       Name		      "Unit Delay"
       SID		      "39"
-      Position		      [320, 613, 355, 647]
+      Position		      [390, 618, 425, 652]
       ZOrder		      222
       BlockMirror	      on
       NamePlacement	      "alternate"
@@ -1259,7 +1259,7 @@ Model {
       BlockType		      UnitDelay
       Name		      "Unit Delay1"
       SID		      "44"
-      Position		      [740, 498, 775, 532]
+      Position		      [810, 508, 845, 542]
       ZOrder		      227
       BlockMirror	      on
       NamePlacement	      "alternate"
@@ -1326,7 +1326,7 @@ Model {
 	  EnableBusSupport	  on
 	  Port {
 	    PortNumber		    2
-	    Name		    "out_byte"
+	    Name		    "out_empty"
 	    RTWStorageClass	    "Auto"
 	    DataLoggingNameMode	    "SignalName"
 	  }
@@ -1338,7 +1338,7 @@ Model {
 	  }
 	  Port {
 	    PortNumber		    4
-	    Name		    "out_empty"
+	    Name		    "out_byte"
 	    RTWStorageClass	    "Auto"
 	    DataLoggingNameMode	    "SignalName"
 	  }
@@ -1352,10 +1352,10 @@ Model {
 	}
 	Block {
 	  BlockType		  Outport
-	  Name			  "out_byte"
-	  SID			  "33::5"
+	  Name			  "out_empty"
+	  SID			  "33::61"
 	  Position		  [460, 101, 480, 119]
-	  ZOrder		  -5
+	  ZOrder		  52
 	  IconDisplay		  "Port number"
 	}
 	Block {
@@ -1369,32 +1369,32 @@ Model {
 	}
 	Block {
 	  BlockType		  Outport
-	  Name			  "out_empty"
-	  SID			  "33::61"
+	  Name			  "out_byte"
+	  SID			  "33::5"
 	  Position		  [460, 171, 480, 189]
-	  ZOrder		  52
+	  ZOrder		  -5
 	  Port			  "3"
 	  IconDisplay		  "Port number"
 	}
 	Line {
-	  ZOrder		  20
+	  ZOrder		  32
 	  SrcBlock		  "in_request_byte"
 	  SrcPort		  1
 	  DstBlock		  " SFunction "
 	  DstPort		  1
 	}
 	Line {
-	  Name			  "out_byte"
-	  ZOrder		  21
+	  Name			  "out_empty"
+	  ZOrder		  33
 	  Labels		  [0, 0]
 	  SrcBlock		  " SFunction "
 	  SrcPort		  2
-	  DstBlock		  "out_byte"
+	  DstBlock		  "out_empty"
 	  DstPort		  1
 	}
 	Line {
 	  Name			  "out_valid"
-	  ZOrder		  22
+	  ZOrder		  34
 	  Labels		  [0, 0]
 	  SrcBlock		  " SFunction "
 	  SrcPort		  3
@@ -1402,23 +1402,23 @@ Model {
 	  DstPort		  1
 	}
 	Line {
-	  Name			  "out_empty"
-	  ZOrder		  23
+	  Name			  "out_byte"
+	  ZOrder		  35
 	  Labels		  [0, 0]
 	  SrcBlock		  " SFunction "
 	  SrcPort		  4
-	  DstBlock		  "out_empty"
+	  DstBlock		  "out_byte"
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  24
+	  ZOrder		  36
 	  SrcBlock		  " Demux "
 	  SrcPort		  1
 	  DstBlock		  " Terminator "
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  25
+	  ZOrder		  37
 	  SrcBlock		  " SFunction "
 	  SrcPort		  1
 	  DstBlock		  " Demux "
@@ -1431,7 +1431,7 @@ Model {
       Name		      "ofdm_modulation_symbols"
       SID		      "34"
       Ports		      [4, 4]
-      Position		      [420, 327, 570, 443]
+      Position		      [490, 327, 640, 443]
       ZOrder		      217
       LibraryVersion	      "1.165"
       ErrorFcn		      "Stateflow.Translate.translate"
@@ -1458,10 +1458,10 @@ Model {
 	SIDHighWatermark	"69"
 	Block {
 	  BlockType		  Inport
-	  Name			  "in_byte"
-	  SID			  "34::61"
+	  Name			  "in_empty"
+	  SID			  "34::62"
 	  Position		  [20, 101, 40, 119]
-	  ZOrder		  52
+	  ZOrder		  53
 	  IconDisplay		  "Port number"
 	}
 	Block {
@@ -1475,10 +1475,10 @@ Model {
 	}
 	Block {
 	  BlockType		  Inport
-	  Name			  "in_empty"
-	  SID			  "34::62"
+	  Name			  "in_byte"
+	  SID			  "34::61"
 	  Position		  [20, 171, 40, 189]
-	  ZOrder		  53
+	  ZOrder		  52
 	  Port			  "3"
 	  IconDisplay		  "Port number"
 	}
@@ -1513,25 +1513,25 @@ Model {
 	  EnableBusSupport	  on
 	  Port {
 	    PortNumber		    2
-	    Name		    "out_request_byte"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    3
 	    Name		    "out_valid"
 	    RTWStorageClass	    "Auto"
 	    DataLoggingNameMode	    "SignalName"
 	  }
 	  Port {
-	    PortNumber		    4
+	    PortNumber		    3
 	    Name		    "out_i"
 	    RTWStorageClass	    "Auto"
 	    DataLoggingNameMode	    "SignalName"
 	  }
 	  Port {
-	    PortNumber		    5
+	    PortNumber		    4
 	    Name		    "out_q"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    5
+	    Name		    "out_request_byte"
 	    RTWStorageClass	    "Auto"
 	    DataLoggingNameMode	    "SignalName"
 	  }
@@ -1545,112 +1545,112 @@ Model {
 	}
 	Block {
 	  BlockType		  Outport
-	  Name			  "out_request_byte"
-	  SID			  "34::5"
-	  Position		  [460, 101, 480, 119]
-	  ZOrder		  -5
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Outport
 	  Name			  "out_valid"
 	  SID			  "34::67"
-	  Position		  [460, 136, 480, 154]
+	  Position		  [460, 101, 480, 119]
 	  ZOrder		  56
-	  Port			  "2"
 	  IconDisplay		  "Port number"
 	}
 	Block {
 	  BlockType		  Outport
 	  Name			  "out_i"
 	  SID			  "34::63"
-	  Position		  [460, 171, 480, 189]
+	  Position		  [460, 136, 480, 154]
 	  ZOrder		  54
-	  Port			  "3"
+	  Port			  "2"
 	  IconDisplay		  "Port number"
 	}
 	Block {
 	  BlockType		  Outport
 	  Name			  "out_q"
 	  SID			  "34::68"
-	  Position		  [460, 206, 480, 224]
+	  Position		  [460, 171, 480, 189]
 	  ZOrder		  57
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "out_request_byte"
+	  SID			  "34::5"
+	  Position		  [460, 206, 480, 224]
+	  ZOrder		  -5
 	  Port			  "4"
 	  IconDisplay		  "Port number"
 	}
 	Line {
-	  ZOrder		  122
-	  SrcBlock		  "in_byte"
+	  ZOrder		  172
+	  SrcBlock		  "in_empty"
 	  SrcPort		  1
 	  DstBlock		  " SFunction "
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  123
+	  ZOrder		  173
 	  SrcBlock		  "in_valid"
 	  SrcPort		  1
 	  DstBlock		  " SFunction "
 	  DstPort		  2
 	}
 	Line {
-	  ZOrder		  124
-	  SrcBlock		  "in_empty"
+	  ZOrder		  174
+	  SrcBlock		  "in_byte"
 	  SrcPort		  1
 	  DstBlock		  " SFunction "
 	  DstPort		  3
 	}
 	Line {
-	  ZOrder		  125
+	  ZOrder		  175
 	  SrcBlock		  "in_request_symbol"
 	  SrcPort		  1
 	  DstBlock		  " SFunction "
 	  DstPort		  4
 	}
 	Line {
-	  Name			  "out_request_byte"
-	  ZOrder		  126
+	  Name			  "out_valid"
+	  ZOrder		  176
 	  Labels		  [0, 0]
 	  SrcBlock		  " SFunction "
 	  SrcPort		  2
-	  DstBlock		  "out_request_byte"
-	  DstPort		  1
-	}
-	Line {
-	  Name			  "out_valid"
-	  ZOrder		  127
-	  Labels		  [0, 0]
-	  SrcBlock		  " SFunction "
-	  SrcPort		  3
 	  DstBlock		  "out_valid"
 	  DstPort		  1
 	}
 	Line {
 	  Name			  "out_i"
-	  ZOrder		  128
+	  ZOrder		  177
 	  Labels		  [0, 0]
 	  SrcBlock		  " SFunction "
-	  SrcPort		  4
+	  SrcPort		  3
 	  DstBlock		  "out_i"
 	  DstPort		  1
 	}
 	Line {
 	  Name			  "out_q"
-	  ZOrder		  129
+	  ZOrder		  178
 	  Labels		  [0, 0]
 	  SrcBlock		  " SFunction "
-	  SrcPort		  5
+	  SrcPort		  4
 	  DstBlock		  "out_q"
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  130
+	  Name			  "out_request_byte"
+	  ZOrder		  179
+	  Labels		  [0, 0]
+	  SrcBlock		  " SFunction "
+	  SrcPort		  5
+	  DstBlock		  "out_request_byte"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  180
 	  SrcBlock		  " Demux "
 	  SrcPort		  1
 	  DstBlock		  " Terminator "
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  131
+	  ZOrder		  181
 	  SrcBlock		  " SFunction "
 	  SrcPort		  1
 	  DstBlock		  " Demux "
@@ -1663,7 +1663,7 @@ Model {
       Name		      "ofdym_framing"
       SID		      "43"
       Ports		      [3, 1]
-      Position		      [730, 310, 880, 390]
+      Position		      [855, 322, 1020, 418]
       ZOrder		      226
       LibraryVersion	      "1.32"
       ErrorFcn		      "Stateflow.Translate.translate"
@@ -2109,41 +2109,41 @@ Model {
     Line {
       ZOrder		      198
       SrcBlock		      "ofdm_modulation_symbols"
-      SrcPort		      1
-      Points		      [75, 0; 0, 290]
+      SrcPort		      4
+      Points		      [75, 0; 0, 205]
       DstBlock		      "Unit Delay"
       DstPort		      1
     }
     Line {
       ZOrder		      199
       SrcBlock		      "ofdm_input_fifo"
-      SrcPort		      3
-      Points		      [43, 0]
+      SrcPort		      1
+      Points		      [42, 0]
       Branch {
-	ZOrder			248
+	ZOrder			396
 	Points			[0, -280]
 	DstBlock		"Scope1"
-	DstPort			4
+	DstPort			2
       }
       Branch {
-	ZOrder			247
+	ZOrder			395
 	DstBlock		"ofdm_modulation_symbols"
-	DstPort			3
+	DstPort			1
       }
     }
     Line {
       ZOrder		      200
       SrcBlock		      "ofdm_input_fifo"
       SrcPort		      2
-      Points		      [29, 0]
+      Points		      [68, 0]
       Branch {
-	ZOrder			246
+	ZOrder			398
 	Points			[0, -280]
 	DstBlock		"Scope1"
 	DstPort			3
       }
       Branch {
-	ZOrder			241
+	ZOrder			397
 	DstBlock		"ofdm_modulation_symbols"
 	DstPort			2
       }
@@ -2151,18 +2151,18 @@ Model {
     Line {
       ZOrder		      201
       SrcBlock		      "ofdm_input_fifo"
-      SrcPort		      1
-      Points		      [14, 0]
+      SrcPort		      3
+      Points		      [99, 0]
       Branch {
-	ZOrder			244
+	ZOrder			402
 	Points			[0, -280]
 	DstBlock		"Scope1"
-	DstPort			2
+	DstPort			4
       }
       Branch {
-	ZOrder			243
+	ZOrder			401
 	DstBlock		"ofdm_modulation_symbols"
-	DstPort			1
+	DstPort			3
       }
     }
     Line {
@@ -2171,14 +2171,14 @@ Model {
       SrcPort		      1
       Points		      [-35, 0]
       Branch {
-	ZOrder			370
-	Points			[0, -600]
+	ZOrder			391
+	Points			[0, -605]
 	DstBlock		"Scope1"
 	DstPort			1
       }
       Branch {
 	ZOrder			369
-	Points			[0, 2; -260, 0]
+	Points			[-260, 0; 0, -189; -70, 0]
 	DstBlock		"ofdm_input_fifo"
 	DstPort			1
       }
@@ -2193,59 +2193,68 @@ Model {
     Line {
       ZOrder		      331
       SrcBlock		      "ofdm_modulation_symbols"
-      SrcPort		      2
-      Points		      [28, 0; 0, -75; -51, 0]
+      SrcPort		      1
+      Points		      [37, 0]
       Branch {
-	ZOrder			362
-	Points			[-23, 0; 0, -145]
-	DstBlock		"Scope1"
-	DstPort			5
-      }
-      Branch {
-	ZOrder			349
-	Points			[0, 30]
+	ZOrder			384
 	DstBlock		"ofdym_framing"
 	DstPort			1
+      }
+      Branch {
+	ZOrder			383
+	Points			[0, -190]
+	DstBlock		"Scope1"
+	DstPort			5
       }
     }
     Line {
       ZOrder		      360
       SrcBlock		      "Unit Delay1"
       SrcPort		      1
-      Points		      [-67, 0; 0, 1; -294, 0; 0, -86]
-      DstBlock		      "ofdm_modulation_symbols"
-      DstPort		      4
+      Points		      [-30, 0]
+      Branch {
+	ZOrder			394
+	Points			[0, -285]
+	DstBlock		"Scope1"
+	DstPort			8
+      }
+      Branch {
+	ZOrder			393
+	Points			[-331, 0; 0, -95]
+	DstBlock		"ofdm_modulation_symbols"
+	DstPort			4
+      }
     }
     Line {
       ZOrder		      346
       SrcBlock		      "ofdm_modulation_symbols"
-      SrcPort		      3
-      Points		      [7, 0; 0, -50]
+      SrcPort		      2
+      Points		      [60, 0]
       Branch {
-	ZOrder			366
-	Points			[0, -170]
-	DstBlock		"Scope1"
-	DstPort			6
-      }
-      Branch {
-	ZOrder			351
+	ZOrder			386
 	DstBlock		"ofdym_framing"
 	DstPort			2
+      }
+      Branch {
+	ZOrder			385
+	Points			[0, -190]
+	DstBlock		"Scope1"
+	DstPort			6
       }
     }
     Line {
       ZOrder		      347
       SrcBlock		      "ofdm_modulation_symbols"
-      SrcPort		      4
-      Points		      [14, 0; 0, -55]
+      SrcPort		      3
+      Points		      [88, 0]
       Branch {
-	ZOrder			365
-	Points			[0, -165]
+	ZOrder			389
+	Points			[0, -190]
 	DstBlock		"Scope1"
 	DstPort			7
       }
       Branch {
-	ZOrder			353
+	ZOrder			388
 	DstBlock		"ofdym_framing"
 	DstPort			3
       }
@@ -2254,19 +2263,9 @@ Model {
       ZOrder		      359
       SrcBlock		      "ofdym_framing"
       SrcPort		      1
-      Points		      [7, 0]
-      Branch {
-	ZOrder			374
-	Points			[0, -110]
-	DstBlock		"Scope1"
-	DstPort			8
-      }
-      Branch {
-	ZOrder			373
-	Points			[2, 0; 0, 165]
-	DstBlock		"Unit Delay1"
-	DstPort			1
-      }
+      Points		      [34, 0; 0, 155]
+      DstBlock		      "Unit Delay1"
+      DstPort		      1
     }
   }
 }
@@ -2324,7 +2323,7 @@ Stateflow {
     decomposition	    CLUSTER_STATE
     eml {
       isEML		      1
-      script		      "function [out_request_byte, out_valid, out_i, out_q] = fcn(in_byte, in_valid, in_empty, in_reques"
+      script		      "function [out_valid, out_i, out_q, out_request_byte] = fcn(in_empty, in_valid, in_byte, in_reques"
       "t_symbol)\n%#codegen\n\n% MODULATION SYMBOL FORMAT\n% 4-QAM, Grey coded, Minimum distance 2\n%symbols = fi([-1+j"
       " -1-j 1+j 1-j],1,12,7);\nsymbols_i = fi([-1 -1 1 1],1,12,7);\nsymbols_q = fi([1 -1 1 -1],1,12,7);\nbits_per_symb"
       "ol = 2;\nsymbols_per_byte = 8/bits_per_symbol;\n    \n% by default, do nothing\nout_request_byte = false;\nout_i"
@@ -2356,8 +2355,8 @@ Stateflow {
   }
   data {
     id			    4
-    ssIdNumber		    5
-    name		    "out_request_byte"
+    ssIdNumber		    12
+    name		    "out_valid"
     linkNode		    [2 0 5]
     scope		    OUTPUT_DATA
     machine		    1
@@ -2367,6 +2366,8 @@ Stateflow {
       }
       type {
 	primitive		SF_BOOLEAN_TYPE
+	isSigned		1
+	wordLength		"16"
       }
       complexity	      SF_COMPLEX_INHERITED
       frame		      SF_FRAME_NO
@@ -2375,8 +2376,8 @@ Stateflow {
   }
   data {
     id			    5
-    ssIdNumber		    12
-    name		    "out_valid"
+    ssIdNumber		    8
+    name		    "out_i"
     linkNode		    [2 4 6]
     scope		    OUTPUT_DATA
     machine		    1
@@ -2385,40 +2386,54 @@ Stateflow {
 	size			"1"
       }
       type {
-	primitive		SF_BOOLEAN_TYPE
+	method			SF_CUSTOM_INTEGER_TYPE
+	primitive		SF_DOUBLE_TYPE
 	isSigned		1
-	wordLength		"16"
+	wordLength		"12"
+	fixpt {
+	  scalingMode		  SF_FIXPT_BINARY_POINT
+	  fractionLength	  "7"
+	  slope			  "2^0"
+	  bias			  "0"
+	}
       }
       complexity	      SF_COMPLEX_INHERITED
       frame		      SF_FRAME_NO
     }
-    dataType		    "boolean"
+    dataType		    "fixdt(1,12,7)"
   }
   data {
     id			    6
-    ssIdNumber		    6
-    name		    "in_byte"
+    ssIdNumber		    13
+    name		    "out_q"
     linkNode		    [2 5 7]
-    scope		    INPUT_DATA
+    scope		    OUTPUT_DATA
     machine		    1
     props {
       array {
 	size			"1"
       }
       type {
-	primitive		SF_UINT8_TYPE
+	method			SF_CUSTOM_INTEGER_TYPE
+	primitive		SF_DOUBLE_TYPE
 	isSigned		1
-	wordLength		"16"
+	wordLength		"12"
+	fixpt {
+	  scalingMode		  SF_FIXPT_BINARY_POINT
+	  fractionLength	  "7"
+	  slope			  "2^0"
+	  bias			  "0"
+	}
       }
       complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_INHERITED
+      frame		      SF_FRAME_NO
     }
-    dataType		    "uint8"
+    dataType		    "fixdt(1,12,7)"
   }
   data {
     id			    7
-    ssIdNumber		    9
-    name		    "in_valid"
+    ssIdNumber		    7
+    name		    "in_empty"
     linkNode		    [2 6 8]
     scope		    INPUT_DATA
     machine		    1
@@ -2438,8 +2453,8 @@ Stateflow {
   }
   data {
     id			    8
-    ssIdNumber		    7
-    name		    "in_empty"
+    ssIdNumber		    9
+    name		    "in_valid"
     linkNode		    [2 7 9]
     scope		    INPUT_DATA
     machine		    1
@@ -2459,8 +2474,8 @@ Stateflow {
   }
   data {
     id			    9
-    ssIdNumber		    8
-    name		    "out_i"
+    ssIdNumber		    5
+    name		    "out_request_byte"
     linkNode		    [2 8 10]
     scope		    OUTPUT_DATA
     machine		    1
@@ -2469,49 +2484,33 @@ Stateflow {
 	size			"1"
       }
       type {
-	method			SF_CUSTOM_INTEGER_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"12"
-	fixpt {
-	  scalingMode		  SF_FIXPT_BINARY_POINT
-	  fractionLength	  "7"
-	  slope			  "2^0"
-	  bias			  "0"
-	}
+	primitive		SF_BOOLEAN_TYPE
       }
       complexity	      SF_COMPLEX_INHERITED
       frame		      SF_FRAME_NO
     }
-    dataType		    "fixdt(1,12,7)"
+    dataType		    "boolean"
   }
   data {
     id			    10
-    ssIdNumber		    13
-    name		    "out_q"
+    ssIdNumber		    6
+    name		    "in_byte"
     linkNode		    [2 9 11]
-    scope		    OUTPUT_DATA
+    scope		    INPUT_DATA
     machine		    1
     props {
       array {
 	size			"1"
       }
       type {
-	method			SF_CUSTOM_INTEGER_TYPE
-	primitive		SF_DOUBLE_TYPE
+	primitive		SF_UINT8_TYPE
 	isSigned		1
-	wordLength		"12"
-	fixpt {
-	  scalingMode		  SF_FIXPT_BINARY_POINT
-	  fractionLength	  "7"
-	  slope			  "2^0"
-	  bias			  "0"
-	}
+	wordLength		"16"
       }
       complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
+      frame		      SF_FRAME_INHERITED
     }
-    dataType		    "fixdt(1,12,7)"
+    dataType		    "uint8"
   }
   data {
     id			    11
@@ -2583,7 +2582,10 @@ Stateflow {
     firstTransition	    22
     firstJunction	    21
     viewObj		    15
+    visible		    1
     machine		    1
+    subviewS {
+    }
     ssIdHighWaterMark	    7
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
@@ -2608,7 +2610,7 @@ Stateflow {
     decomposition	    CLUSTER_STATE
     eml {
       isEML		      1
-      script		      "function [out_byte, out_valid, out_empty] = fcn(in_request_byte)\n%#codegen\n\n% assume we never "
+      script		      "function [out_empty, out_valid, out_byte] = fcn(in_request_byte)\n%#codegen\n\n% assume we never "
       "empty\nout_empty = false;\n\n% we do not output by default\nout_byte = uint8(0);\nout_valid = false;\n\n% fake d"
       "ata for our never empty source\npersistent fake_data\nif isempty(fake_data)\n    fake_data = 3;\nend\n\n% if a b"
       "yte is requested, supply a byte's worth of data\nif in_request_byte\n    out_byte = uint8(228);\n    out_valid ="
@@ -2618,9 +2620,51 @@ Stateflow {
   }
   data {
     id			    17
+    ssIdNumber		    6
+    name		    "out_empty"
+    linkNode		    [15 0 18]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"1"
+      }
+      type {
+	primitive		SF_BOOLEAN_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "boolean"
+  }
+  data {
+    id			    18
+    ssIdNumber		    7
+    name		    "out_valid"
+    linkNode		    [15 17 19]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"1"
+      }
+      type {
+	primitive		SF_BOOLEAN_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "boolean"
+  }
+  data {
+    id			    19
     ssIdNumber		    4
     name		    "in_request_byte"
-    linkNode		    [15 0 18]
+    linkNode		    [15 18 20]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -2635,10 +2679,10 @@ Stateflow {
     dataType		    "boolean"
   }
   data {
-    id			    18
+    id			    20
     ssIdNumber		    5
     name		    "out_byte"
-    linkNode		    [15 17 19]
+    linkNode		    [15 19 0]
     scope		    OUTPUT_DATA
     machine		    1
     props {
@@ -2652,48 +2696,6 @@ Stateflow {
       frame		      SF_FRAME_NO
     }
     dataType		    "uint8"
-  }
-  data {
-    id			    19
-    ssIdNumber		    7
-    name		    "out_valid"
-    linkNode		    [15 18 20]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"1"
-      }
-      type {
-	primitive		SF_BOOLEAN_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "boolean"
-  }
-  data {
-    id			    20
-    ssIdNumber		    6
-    name		    "out_empty"
-    linkNode		    [15 19 0]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"1"
-      }
-      type {
-	primitive		SF_BOOLEAN_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "boolean"
   }
   junction {
     id			    21
@@ -2772,8 +2774,12 @@ Stateflow {
     decomposition	    CLUSTER_STATE
     eml {
       isEML		      1
-      script		      "function out_request_symbol  = fcn(in_valid, in_i, in_q)\n%#codegen\n\ny = 1;\nout_request_symbol"
-      " = true;\nend"
+      script		      "function out_request_symbol = fcn(in_valid, in_i, in_q)\n%#codegen\n\n% model parameters\nifft_si"
+      "ze = 64;\nout_request_symbol = true;\n\n% circular buffer for symbol storage\n% the buffer length should evenly "
+      "divide the number of symbols/byte\npersistent buffer_i\nif isempty(buffer_i)  \n    buffer_i = repmat(fi(0,1,12,"
+      "7),1,2*ifft_size);\nend\npersistent buffer_q\nif isempty(buffer_q)  \n    buffer_q = repmat(fi(0,1,12,7),1,2*iff"
+      "t_size);\nend\npersistent read_index\nif isempty(read_index)\n    read_index = 0;\nend\npersistent write_index\n"
+      "if isempty(write_index)\n    write_index = 0;\nend\n\n\nend"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
