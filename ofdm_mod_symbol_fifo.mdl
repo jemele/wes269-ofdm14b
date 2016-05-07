@@ -7,7 +7,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.378"
+    ComputedModelVersion    "1.382"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -55,7 +55,7 @@ Model {
 	LoadSaveID		"0"
 	Extents			[1244.0, 604.0]
 	ZoomFactor		[0.539216229699019]
-	Offset			[-5.9636101973684106, -46.572162828947256]
+	Offset			[-66.30306058368447, -232.30469917212179]
       }
     }
   }
@@ -65,9 +65,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "C4Josh"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sat May 07 12:48:34 2016"
-  RTWModifiedTimeStamp	  384526112
-  ModelVersionFormat	  "1.%<AutoIncrement:378>"
+  LastModifiedDate	  "Sat May 07 12:52:41 2016"
+  RTWModifiedTimeStamp	  384526361
+  ModelVersionFormat	  "1.%<AutoIncrement:382>"
   ConfigurationManager	  "none"
   SampleTimeColors	  on
   SampleTimeAnnotations	  on
@@ -959,14 +959,14 @@ Model {
       Name		      "Complex to\nReal-Imag"
       SID		      "3"
       Ports		      [1, 2]
-      Position		      [2020, 608, 2050, 637]
+      Position		      [2490, 393, 2520, 422]
       ZOrder		      43
     }
     Block {
       BlockType		      Constant
       Name		      "Constant1"
       SID		      "4"
-      Position		      [1290, 240, 1320, 270]
+      Position		      [1760, 25, 1790, 55]
       ZOrder		      48
       Value		      "0"
       OutDataTypeStr	      "fixdt(1,12,7)"
@@ -976,7 +976,7 @@ Model {
       Name		      "IFFT\nHDL Optimized"
       SID		      "5"
       Ports		      [1, 2]
-      Position		      [1770, 605, 1940, 685]
+      Position		      [2240, 390, 2410, 470]
       ZOrder		      42
       LibraryVersion	      "1.485"
       SourceBlock	      "dspxfrm3/IFFT\nHDL Optimized"
@@ -998,7 +998,7 @@ Model {
       Name		      "Matrix\nConcatenation"
       SID		      "6"
       Ports		      [33, 1]
-      Position		      [1560, 313, 1620, 977]
+      Position		      [2030, 98, 2090, 762]
       ZOrder		      44
       NumInputs		      "33"
       Mode		      "Multidimensional array"
@@ -1008,7 +1008,7 @@ Model {
       Name		      "Scope"
       SID		      "30"
       Ports		      [3]
-      Position		      [2245, 599, 2275, 631]
+      Position		      [2715, 384, 2745, 416]
       ZOrder		      213
       Floating		      off
       Location		      [1, 45, 1281, 755]
@@ -1039,7 +1039,7 @@ Model {
       Name		      "Scope1"
       SID		      "35"
       Ports		      [8]
-      Position		      [1040, 20, 1140, 250]
+      Position		      [1070, 20, 1170, 250]
       ZOrder		      218
       Floating		      off
       Location		      [1, 45, 1281, 755]
@@ -1075,7 +1075,7 @@ Model {
       Name		      "Subcarrier\nOrdering1"
       SID		      "7"
       Ports		      [1, 1]
-      Position		      [1290, 388, 1335, 422]
+      Position		      [1760, 173, 1805, 207]
       ZOrder		      46
       ShowName		      off
       InputPortWidth	      "45"
@@ -1086,7 +1086,7 @@ Model {
       Name		      "Subcarrier\nOrdering10"
       SID		      "8"
       Ports		      [1, 1]
-      Position		      [1290, 708, 1335, 742]
+      Position		      [1760, 493, 1805, 527]
       ZOrder		      56
       ShowName		      off
       InputPortWidth	      "45"
@@ -1097,7 +1097,7 @@ Model {
       Name		      "Subcarrier\nOrdering11"
       SID		      "9"
       Ports		      [1, 1]
-      Position		      [1290, 748, 1335, 782]
+      Position		      [1760, 533, 1805, 567]
       ZOrder		      57
       ShowName		      off
       InputPortWidth	      "45"
@@ -1108,7 +1108,7 @@ Model {
       Name		      "Subcarrier\nOrdering12"
       SID		      "10"
       Ports		      [1, 1]
-      Position		      [1290, 788, 1335, 822]
+      Position		      [1760, 573, 1805, 607]
       ZOrder		      58
       ShowName		      off
       InputPortWidth	      "45"
@@ -1119,7 +1119,7 @@ Model {
       Name		      "Subcarrier\nOrdering13"
       SID		      "11"
       Ports		      [1, 1]
-      Position		      [1290, 828, 1335, 862]
+      Position		      [1760, 613, 1805, 647]
       ZOrder		      59
       ShowName		      off
       InputPortWidth	      "45"
@@ -1130,7 +1130,7 @@ Model {
       Name		      "Subcarrier\nOrdering14"
       SID		      "12"
       Ports		      [1, 1]
-      Position		      [1290, 868, 1335, 902]
+      Position		      [1760, 653, 1805, 687]
       ZOrder		      60
       ShowName		      off
       InputPortWidth	      "45"
@@ -1141,7 +1141,7 @@ Model {
       Name		      "Subcarrier\nOrdering15"
       SID		      "13"
       Ports		      [1, 1]
-      Position		      [1290, 908, 1335, 942]
+      Position		      [1760, 693, 1805, 727]
       ZOrder		      61
       ShowName		      off
       InputPortWidth	      "45"
@@ -1152,7 +1152,7 @@ Model {
       Name		      "Subcarrier\nOrdering2"
       SID		      "14"
       Ports		      [1, 1]
-      Position		      [1290, 348, 1335, 382]
+      Position		      [1760, 133, 1805, 167]
       ZOrder		      45
       ShowName		      off
       InputPortWidth	      "45"
@@ -1163,7 +1163,7 @@ Model {
       Name		      "Subcarrier\nOrdering3"
       SID		      "15"
       Ports		      [1, 1]
-      Position		      [1290, 428, 1335, 462]
+      Position		      [1760, 213, 1805, 247]
       ZOrder		      47
       ShowName		      off
       InputPortWidth	      "45"
@@ -1174,7 +1174,7 @@ Model {
       Name		      "Subcarrier\nOrdering4"
       SID		      "16"
       Ports		      [1, 1]
-      Position		      [1290, 468, 1335, 502]
+      Position		      [1760, 253, 1805, 287]
       ZOrder		      50
       ShowName		      off
       InputPortWidth	      "45"
@@ -1185,7 +1185,7 @@ Model {
       Name		      "Subcarrier\nOrdering5"
       SID		      "17"
       Ports		      [1, 1]
-      Position		      [1290, 508, 1335, 542]
+      Position		      [1760, 293, 1805, 327]
       ZOrder		      51
       ShowName		      off
       InputPortWidth	      "45"
@@ -1196,7 +1196,7 @@ Model {
       Name		      "Subcarrier\nOrdering6"
       SID		      "18"
       Ports		      [1, 1]
-      Position		      [1290, 548, 1335, 582]
+      Position		      [1760, 333, 1805, 367]
       ZOrder		      52
       ShowName		      off
       InputPortWidth	      "45"
@@ -1207,7 +1207,7 @@ Model {
       Name		      "Subcarrier\nOrdering7"
       SID		      "19"
       Ports		      [1, 1]
-      Position		      [1290, 588, 1335, 622]
+      Position		      [1760, 373, 1805, 407]
       ZOrder		      53
       ShowName		      off
       InputPortWidth	      "45"
@@ -1218,7 +1218,7 @@ Model {
       Name		      "Subcarrier\nOrdering8"
       SID		      "20"
       Ports		      [1, 1]
-      Position		      [1290, 628, 1335, 662]
+      Position		      [1760, 413, 1805, 447]
       ZOrder		      54
       ShowName		      off
       InputPortWidth	      "45"
@@ -1229,7 +1229,7 @@ Model {
       Name		      "Subcarrier\nOrdering9"
       SID		      "21"
       Ports		      [1, 1]
-      Position		      [1290, 668, 1335, 702]
+      Position		      [1760, 453, 1805, 487]
       ZOrder		      55
       ShowName		      off
       InputPortWidth	      "45"
@@ -1240,7 +1240,7 @@ Model {
       Name		      "Unbuffer"
       SID		      "22"
       Ports		      [1, 1]
-      Position		      [1675, 620, 1725, 670]
+      Position		      [2145, 405, 2195, 455]
       ZOrder		      66
       SampleBasedProcessing   "Same as frame based"
     }
@@ -1248,7 +1248,7 @@ Model {
       BlockType		      UnitDelay
       Name		      "Unit Delay"
       SID		      "39"
-      Position		      [390, 618, 425, 652]
+      Position		      [225, 463, 260, 497]
       ZOrder		      222
       BlockMirror	      on
       NamePlacement	      "alternate"
@@ -1259,7 +1259,7 @@ Model {
       BlockType		      UnitDelay
       Name		      "Unit Delay1"
       SID		      "44"
-      Position		      [810, 508, 845, 542]
+      Position		      [840, 508, 875, 542]
       ZOrder		      227
       BlockMirror	      on
       NamePlacement	      "alternate"
@@ -1271,7 +1271,7 @@ Model {
       Name		      "ofdm_input_fifo"
       SID		      "33"
       Ports		      [1, 3]
-      Position		      [35, 321, 190, 419]
+      Position		      [65, 321, 220, 419]
       ZOrder		      216
       LibraryVersion	      "1.165"
       ErrorFcn		      "Stateflow.Translate.translate"
@@ -1431,7 +1431,7 @@ Model {
       Name		      "ofdm_modulation_symbols"
       SID		      "34"
       Ports		      [4, 4]
-      Position		      [490, 327, 640, 443]
+      Position		      [540, 327, 690, 443]
       ZOrder		      217
       LibraryVersion	      "1.165"
       ErrorFcn		      "Stateflow.Translate.translate"
@@ -1663,7 +1663,7 @@ Model {
       Name		      "ofdym_framing"
       SID		      "43"
       Ports		      [3, 1]
-      Position		      [855, 322, 1020, 418]
+      Position		      [945, 322, 1110, 418]
       ZOrder		      226
       LibraryVersion	      "1.32"
       ErrorFcn		      "Stateflow.Translate.translate"
@@ -2110,7 +2110,7 @@ Model {
       ZOrder		      198
       SrcBlock		      "ofdm_modulation_symbols"
       SrcPort		      4
-      Points		      [75, 0; 0, 205]
+      Points		      [55, 0; 0, 50]
       DstBlock		      "Unit Delay"
       DstPort		      1
     }
@@ -2169,16 +2169,15 @@ Model {
       ZOrder		      272
       SrcBlock		      "Unit Delay"
       SrcPort		      1
-      Points		      [-35, 0]
+      Points		      [-204, 0; 0, -110]
       Branch {
-	ZOrder			391
-	Points			[0, -605]
+	ZOrder			406
+	Points			[0, -340]
 	DstBlock		"Scope1"
 	DstPort			1
       }
       Branch {
-	ZOrder			369
-	Points			[-260, 0; 0, -189; -70, 0]
+	ZOrder			404
 	DstBlock		"ofdm_input_fifo"
 	DstPort			1
       }
@@ -2194,7 +2193,7 @@ Model {
       ZOrder		      331
       SrcBlock		      "ofdm_modulation_symbols"
       SrcPort		      1
-      Points		      [37, 0]
+      Points		      [17, 0]
       Branch {
 	ZOrder			384
 	DstBlock		"ofdym_framing"
@@ -2229,7 +2228,7 @@ Model {
       ZOrder		      346
       SrcBlock		      "ofdm_modulation_symbols"
       SrcPort		      2
-      Points		      [60, 0]
+      Points		      [40, 0]
       Branch {
 	ZOrder			386
 	DstBlock		"ofdym_framing"
@@ -2246,7 +2245,7 @@ Model {
       ZOrder		      347
       SrcBlock		      "ofdm_modulation_symbols"
       SrcPort		      3
-      Points		      [88, 0]
+      Points		      [68, 0]
       Branch {
 	ZOrder			389
 	Points			[0, -190]
@@ -2263,7 +2262,7 @@ Model {
       ZOrder		      359
       SrcBlock		      "ofdym_framing"
       SrcPort		      1
-      Points		      [34, 0; 0, 155]
+      Points		      [9, 0; 0, 155]
       DstBlock		      "Unit Delay1"
       DstPort		      1
     }
