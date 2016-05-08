@@ -7,7 +7,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.646"
+    ComputedModelVersion    "1.665"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -65,9 +65,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "C4Josh"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sat May 07 22:26:21 2016"
-  RTWModifiedTimeStamp	  384560663
-  ModelVersionFormat	  "1.%<AutoIncrement:646>"
+  LastModifiedDate	  "Sat May 07 22:49:09 2016"
+  RTWModifiedTimeStamp	  384562011
+  ModelVersionFormat	  "1.%<AutoIncrement:665>"
   ConfigurationManager	  "none"
   SampleTimeColors	  on
   SampleTimeAnnotations	  on
@@ -182,7 +182,7 @@ Model {
 	  $ObjectID		  8
 	  Version		  "1.15.0"
 	  StartTime		  "0.0"
-	  StopTime		  "(64+1024)/20e6"
+	  StopTime		  "(64+10000)/20e6"
 	  AbsTol		  "auto"
 	  FixedStep		  "auto"
 	  InitialStep		  "auto"
@@ -968,7 +968,59 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "55"
+    SIDHighWatermark	    "56"
+    Block {
+      BlockType		      TimeScope
+      Name		      " modulation symbol"
+      SID		      "56"
+      Ports		      [4]
+      Position		      [840, 210, 945, 345]
+      ZOrder		      279
+      UserDataPersistent      on
+      DefaultConfigurationName "spbscopes.TimeScopeBlockCfg"
+      ScopeSpecificationString "spbscopes.TimeScopeBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(extmgr.Con"
+      "figuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('Sources"
+      "','WiredSimulink',true,'DataLoggingVariableName','ScopeData1'),extmgr.Configuration('Visuals','Time Domain',true"
+      ",'DisplayLayoutDimensions',[4 1],'DisplayPropertyDefaults',struct('YLabelReal','Amplitude','AxesColor',[0 0 0],'"
+      "AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.07"
+      "45098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.07"
+      "45098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.6509803921568"
+      "63]),'SerializedDisplays',{struct('MinYLimReal','-0.125','MaxYLimReal','1.125','YLabelReal','Amplitude','MinYLim"
+      "Mag','0','MaxYLimMag','1.125','LegendVisibility','On','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor'"
+      ",[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.06666666666"
+      "66667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.8313725490"
+      "19608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650"
+      "980392156863],'Title','','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLines',1,'LineNames',{{'U"
+      "nit Delay1'}},'ShowContent',true,'Placement',1),struct('MinYLimReal','-1.25','MaxYLimReal','1.25','YLabelReal','"
+      "Amplitude','MinYLimMag','0','MaxYLimMag','1.25','LegendVisibility','Off','XGrid',true,'YGrid',true,'PlotMagPhase"
+      "',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder'"
+      ",[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862"
+      "745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.074"
+      "5098039215686 0.650980392156863],'Title','','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLines'"
+      ",1,'LineNames',{{'ofdm_modulation_symbols/out_valid'}},'ShowContent',true,'Placement',2),struct('MinYLimReal','-"
+      "1.06522','MaxYLimReal','1.1087','YLabelReal','Amplitude','MinYLimMag','0','MaxYLimMag','1.25','LegendVisibility'"
+      ",'Off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.6"
+      "86274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 "
+      "0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.27"
+      "4509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','','LinePropertiesCache',"
+      "{{}},'UserDefinedChannelNames',{{}},'NumLines',1,'LineNames',{{'ofdm_modulation_symbols/out_i'}},'ShowContent',t"
+      "rue,'Placement',3),struct('MinYLimReal','-0.125','MaxYLimReal','1.125','YLabelReal','Amplitude','MinYLimMag','0'"
+      ",'MaxYLimMag','1.25','LegendVisibility','Off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0]"
+      ",'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0."
+      "0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0."
+      "0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.65098039215"
+      "6863],'Title','','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLines',1,'LineNames',{{'ofdm_modu"
+      "lation_symbols/out_q'}},'ShowContent',true,'Placement',4)}),extmgr.Configuration('Tools','Plot Navigation',true,"
+      "'OnceAtStop',false,'PreviousAutoscale','XY'),extmgr.Configuration('Tools','Measurements',true,'Measurements',str"
+      "uct('triggers',struct('Mode','Auto','Position',0.5,'Type','Edge','Polarity','Positive','AutoLevel',true,'Level',"
+      "0.5,'Hysteresis',0,'UpperLevel',2.3,'LowerLevel',0.2,'MinTime',0,'MaxTime',Inf,'Timeout',0,'Delay',0,'Holdoff',0"
+      ",'SourceOffset',1,'MainPanelOpen',1,'TypePanelOpen',1,'SettingsPanelOpen',1,'OffsetPanelOpen',1),'traceselector'"
+      ",struct('Line',1),'tcursors',struct('XCoordinates',[2e-07 1.7375e-05],'YCoordinates',[0.1875 0.8125],'CursorChan"
+      "nels',[1 2],'WaveformCursors',true,'ShowHorizontal',false,'ShowVertical',true,'LockCursorSpacing',false,'SnapToD"
+      "ata',1,'SettingsPanelOpen',1,'MeasurementsPanelOpen',1)),'Version','2015a')),'Version','2015a','Position',[1 45 "
+      "1280 689],'VisibleAtModelOpen','on')"
+      NumInputPorts	      "4"
+    }
     Block {
       BlockType		      ComplexToRealImag
       Name		      "Complex to\nReal-Imag"
@@ -1148,7 +1200,7 @@ Model {
       "'on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','o"
       "n','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on'"
       ",'on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','"
-      "on'}),'MinYLim','-92.811104401250475','MaxYLim','1.6632190312927726','SampleRate','20000000','Span','20000000','"
+      "on'}),'MinYLim','-415.25975888477319','MaxYLim','40.775129511063199','SampleRate','20000000','Span','20000000','"
       "StartFrequency','-10000000','StopFrequency','10000000','IsSpanValuesValid',true),extmgr.Configuration('Tools','P"
       "lot Navigation',true),extmgr.Configuration('Tools','Measurements',true,'Version','2015a'),extmgr.Configuration('"
       "Sources','Simulink',false),extmgr.Configuration('Visuals','Constellation',false),extmgr.Configuration('Visuals',"
@@ -1395,41 +1447,6 @@ Model {
       YMax		      "5~5~5~5"
     }
     Block {
-      BlockType		      Scope
-      Name		      "modulation symbol"
-      SID		      "51"
-      Ports		      [4]
-      Position		      [825, 219, 920, 341]
-      ZOrder		      274
-      Floating		      off
-      Location		      [1, 45, 1281, 755]
-      Open		      off
-      NumInputPorts	      "4"
-      List {
-	ListType		AxesTitles
-	axes1			"%<SignalLabel>"
-	axes2			"%<SignalLabel>"
-	axes3			"%<SignalLabel>"
-	axes4			"%<SignalLabel>"
-      }
-      List {
-	ListType		ScopeGraphics
-	FigureColor		"[0.5 0.5 0.5]"
-	AxesColor		"[0 0 0]"
-	AxesTickColor		"[1 1 1]"
-	LineColors		"[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
-	LineStyles		"-|-|-|-|-|-"
-	LineWidths		"[0.5 0.5 0.5 0.5 0.5 0.5]"
-	MarkerStyles		"none|none|none|none|none|none"
-      }
-      ShowLegends	      on
-      LegendLocations	      "0.88177     0.91033    0.088281    0.028638\n0.78724     0.67653     0.18281    0.028638\n"
-      "0.80286     0.44413     0.16719    0.028638\n0.79974     0.21033     0.17031    0.028638"
-      YMin		      "-5~-5~-5~-5"
-      YMax		      "5~5~5~5"
-      SaveName		      "ScopeData1"
-    }
-    Block {
       BlockType		      TimeScope
       Name		      "ofdm frame"
       SID		      "55"
@@ -1458,27 +1475,27 @@ Model {
       ";0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647"
       " 1 1;1 0.0745098039215686 0.650980392156863],'Title','','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{}"
       "},'NumLines',1,'LineNames',{{'ofdym_framing/out_i'}},'ShowContent',true,'Placement',2),struct('MinYLimReal','-1."
-      "06522','MaxYLimReal','1.1087','YLabelReal','Amplitude','MinYLimMag','0','MaxYLimMag','1.25','LegendVisibility','"
-      "Off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686"
-      "274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0."
-      "411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.2745"
-      "09803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','','LinePropertiesCache',{{"
-      "}},'UserDefinedChannelNames',{{}},'NumLines',1,'LineNames',{{'ofdym_framing/out_q'}},'ShowContent',true,'Placeme"
-      "nt',3),struct('MinYLimReal','-0.125','MaxYLimReal','1.125','YLabelReal','Amplitude','MinYLimMag','0','MaxYLimMag"
-      "','1.25','LegendVisibility','Off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickCo"
-      "lor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.074509803921"
-      "5686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.074509803921"
-      "5686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title"
-      "','','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLines',1,'LineNames',{{'ofdym_framing/out_req"
-      "uest_symbol'}},'ShowContent',true,'Placement',4)}),extmgr.Configuration('Tools','Plot Navigation',true,'OnceAtSt"
-      "op',false,'PreviousAutoscale','XY'),extmgr.Configuration('Tools','Measurements',true,'Measurements',struct('trac"
-      "eselector',struct('Line',1),'tcursors',struct('XCoordinates',[2e-07 1.7375e-05],'YCoordinates',[1 0.499999999999"
-      "932],'CursorChannels',[1 2],'WaveformCursors',true,'ShowHorizontal',false,'ShowVertical',true,'LockCursorSpacing"
-      "',false,'SnapToData',1,'SettingsPanelOpen',1,'MeasurementsPanelOpen',1),'triggers',struct('Mode','Auto','Positio"
-      "n',0.5,'Type','Edge','Polarity','Positive','AutoLevel',true,'Level',0.5,'Hysteresis',0,'UpperLevel',2.3,'LowerLe"
-      "vel',0.2,'MinTime',0,'MaxTime',Inf,'Timeout',0,'Delay',0,'Holdoff',0,'SourceOffset',1,'MainPanelOpen',1,'TypePan"
-      "elOpen',1,'SettingsPanelOpen',1,'OffsetPanelOpen',1)),'Version','2015a')),'Version','2015a','Position',[1 45 128"
-      "0 689],'VisibleAtModelOpen','on')"
+      "25','MaxYLimReal','1.25','YLabelReal','Amplitude','MinYLimMag','0','MaxYLimMag','1.25','LegendVisibility','Off',"
+      "'XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.68627450"
+      "9803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.41176"
+      "4705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803"
+      "921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','','LinePropertiesCache',{{}},'U"
+      "serDefinedChannelNames',{{}},'NumLines',1,'LineNames',{{'ofdym_framing/out_q'}},'ShowContent',true,'Placement',3"
+      "),struct('MinYLimReal','-0.125','MaxYLimReal','1.125','YLabelReal','Amplitude','MinYLimMag','0','MaxYLimMag','1."
+      "25','LegendVisibility','Off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',"
+      "[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 "
+      "0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;"
+      "0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','',"
+      "'LinePropertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLines',1,'LineNames',{{'ofdym_framing/out_request_"
+      "symbol'}},'ShowContent',true,'Placement',4)}),extmgr.Configuration('Tools','Plot Navigation',true,'OnceAtStop',f"
+      "alse,'PreviousAutoscale','XY'),extmgr.Configuration('Tools','Measurements',true,'Measurements',struct('tracesele"
+      "ctor',struct('Line',1),'tcursors',struct('XCoordinates',[1e-06 1.7375e-05],'YCoordinates',[1 1],'CursorChannels'"
+      ",[1 2],'WaveformCursors',true,'ShowHorizontal',false,'ShowVertical',true,'LockCursorSpacing',false,'SnapToData',"
+      "1,'SettingsPanelOpen',1,'MeasurementsPanelOpen',1),'triggers',struct('Mode','Auto','Position',0.5,'Type','Edge',"
+      "'Polarity','Positive','AutoLevel',true,'Level',0.5,'Hysteresis',0,'UpperLevel',2.3,'LowerLevel',0.2,'MinTime',0,"
+      "'MaxTime',Inf,'Timeout',0,'Delay',0,'Holdoff',0,'SourceOffset',1,'MainPanelOpen',1,'TypePanelOpen',1,'SettingsPa"
+      "nelOpen',1,'OffsetPanelOpen',1)),'Version','2015a')),'Version','2015a','Position',[1 45 1280 689],'VisibleAtMode"
+      "lOpen','on')"
       NumInputPorts	      "4"
     }
     Block {
@@ -2206,9 +2223,9 @@ Model {
       SrcPort		      1
       Points		      [74, 0]
       Branch {
-	ZOrder			632
-	Points			[0, -130]
-	DstBlock		"modulation symbol"
+	ZOrder			680
+	Points			[0, -135]
+	DstBlock		" modulation symbol"
 	DstPort			2
       }
       Branch {
@@ -2223,9 +2240,9 @@ Model {
       SrcPort		      1
       Points		      [-386, 0; 0, -85; 40, 0]
       Branch {
-	ZOrder			630
-	Points			[0, -250]
-	DstBlock		"modulation symbol"
+	ZOrder			679
+	Points			[0, -260]
+	DstBlock		" modulation symbol"
 	DstPort			1
       }
       Branch {
@@ -2240,9 +2257,9 @@ Model {
       SrcPort		      2
       Points		      [88, 0]
       Branch {
-	ZOrder			634
+	ZOrder			681
 	Points			[0, -130]
-	DstBlock		"modulation symbol"
+	DstBlock		" modulation symbol"
 	DstPort			3
       }
       Branch {
@@ -2257,9 +2274,9 @@ Model {
       SrcPort		      3
       Points		      [106, 0]
       Branch {
-	ZOrder			636
-	Points			[0, -130]
-	DstBlock		"modulation symbol"
+	ZOrder			682
+	Points			[0, -125]
+	DstBlock		" modulation symbol"
 	DstPort			4
       }
       Branch {
@@ -2770,32 +2787,34 @@ Stateflow {
     eml {
       isEML		      1
       script		      "function [out_valid, out_i, out_q, out_request_byte] = fcn(in_empty, in_valid, in_byte, in_reques"
-      "t_symbol)\n%#codegen\n\n% MODULATION SYMBOL FORMAT\n% 4-QAM, Grey coded, Minimum distance 2\n%symbols = fi([-1+j"
-      " -1-j 1+j 1-j],1,12,7);\nsymbols_i = fi([-1 -1 1 1],1,12,7);\nsymbols_q = fi([1 -1 1 -1],1,12,7);\nbits_per_symb"
-      "ol = 2;\nsymbols_per_byte = 8/bits_per_symbol;\n    \n% by default, do nothing\nout_request_byte = false;\nout_i"
-      " = fi(0,1,12,7);\nout_q = fi(0,1,12,7);\nout_valid = false;\n\n% circular buffer for symbol storage\n% the buffe"
-      "r length should evenly divide the number of symbols/byte\npersistent buffer_i\nif isempty(buffer_i)  \n    buffe"
-      "r_i = repmat(fi(0,1,12,7),1,2*symbols_per_byte);\nend\npersistent buffer_q\nif isempty(buffer_q)  \n    buffer_q"
-      " = repmat(fi(0,1,12,7),1,2*symbols_per_byte);\nend\npersistent read_index\nif isempty(read_index)\n    read_inde"
-      "x = 0;\nend\npersistent write_index\nif isempty(write_index)\n    write_index = 0;\nend\n\n% we only receive val"
-      "id input if we requested it\n% if we have valid input, store the input\n% this should *never* overflow\nif in_va"
-      "lid == 1\n    \n    % There are four symbols per byte\n    % Map two bits to each symbol\n    % This makes assum"
-      "ptions about the length of buffer\n    % @review Is this the best way to do this?\n    symbol = 1+bitand(bitshif"
-      "t(in_byte,-0),3);\n    buffer_i(write_index+1) = symbols_i(symbol);\n    buffer_q(write_index+1) = symbols_q(sym"
-      "bol);\n    \n    symbol = 1+bitand(bitshift(in_byte,-2),3);\n    buffer_i(write_index+2) = symbols_i(symbol);\n "
-      "   buffer_q(write_index+2) = symbols_q(symbol);\n    \n    symbol = 1+bitand(bitshift(in_byte,-4),3);\n    buffe"
-      "r_i(write_index+2) = symbols_i(symbol);\n    buffer_q(write_index+2) = symbols_q(symbol);\n    \n    symbol = 1+"
-      "bitand(bitshift(in_byte,-6),3);\n    buffer_i(write_index+2) = symbols_i(symbol);\n    buffer_q(write_index+2) ="
-      " symbols_q(symbol);\n\n    % we just wrote four symbols\n    write_index = write_index + symbols_per_byte;\n    "
-      "if write_index >= length(buffer_i)\n        write_index = 0;\n    end\nend\n\n% determine how many symbols are b"
-      "uffered\nbuffered = 0;\nif (read_index > write_index)\n    buffered = (length(buffer_i) - read_index) + write_in"
-      "dex;\nelseif (read_index <= write_index)\n    buffered = (write_index - read_index);\nend\n\n% if we have room f"
-      "or more symbols, request another byte\navailable = length(buffer_i) - buffered;\nout_request_byte = (in_empty =="
-      " 0) && (available >= symbols_per_byte);\n%fprintf('request %d length %d buffered %d\\n', ...\n%        int8(out_"
-      "request_byte), int8(length(buffer_i)), int8(buffered));\n\n% if there's buffered data, output a symbol\nif in_re"
-      "quest_symbol && (read_index ~= write_index)\n    out_valid = true;\n    out_i = buffer_i(read_index + 1);\n    o"
-      "ut_q = buffer_q(read_index + 1);\n    read_index = read_index + 1;\n    if read_index >= length(buffer_i)\n     "
-      "   read_index = 0;\n    end\nend\n\n"
+      "t_symbol)\n%#codegen\n\nnull = fi(0,1,12,7);\n\n% MODULATION SYMBOL FORMAT\n% 4-QAM, Grey coded, Minimum distanc"
+      "e 2\n%symbols = fi([-1+j -1-j 1+j 1-j],1,12,7);\nsymbols_i = fi([-1 -1 1 1],1,12,7);\nsymbols_q = fi([1 -1 1 -1]"
+      ",1,12,7);\nbits_per_symbol = 2;\nsymbols_per_byte = 8/bits_per_symbol;\n    \n% by default, do nothing\nout_requ"
+      "est_byte = false;\nout_i = null;\nout_q = null;\nout_valid = false;\n\n% circular buffer for symbol storage\n% t"
+      "he buffer length should evenly divide the number of symbols/byte\npersistent buffer_i\nif isempty(buffer_i)  \n "
+      "   buffer_i = repmat(null,1,2*symbols_per_byte);\nend\npersistent buffer_q\nif isempty(buffer_q)  \n    buffer_q"
+      " = repmat(null,1,2*symbols_per_byte);\nend\npersistent read_index\nif isempty(read_index)\n    read_index = 0;\n"
+      "end\npersistent write_index\nif isempty(write_index)\n    write_index = 0;\nend\n\n% we only receive valid input"
+      " if we requested it\n% if we have valid input, store the input\n% this should *never* overflow\nif in_valid\n   "
+      " \n    % There are four symbols per byte\n    % Map two bits to each symbol\n    % This makes assumptions about "
+      "the length of buffer\n    % @review Is this the best way to do this?\n    symbol1 = 1+bitand(bitshift(in_byte,-0"
+      "),3);\n    buffer_i(write_index+1) = symbols_i(symbol1);\n    buffer_q(write_index+1) = symbols_q(symbol1);\n   "
+      " \n    symbol2 = 1+bitand(bitshift(in_byte,-2),3);\n    buffer_i(write_index+2) = symbols_i(symbol2);\n    buffe"
+      "r_q(write_index+2) = symbols_q(symbol2);\n    \n    symbol3 = 1+bitand(bitshift(in_byte,-4),3);\n    buffer_i(wr"
+      "ite_index+3) = symbols_i(symbol3);\n    buffer_q(write_index+3) = symbols_q(symbol3);\n    \n    symbol4 = 1+bit"
+      "and(bitshift(in_byte,-6),3);\n    buffer_i(write_index+4) = symbols_i(symbol4);\n    buffer_q(write_index+4) = s"
+      "ymbols_q(symbol4);\n\n    % we just wrote four symbols\n    write_index = write_index + symbols_per_byte;\n    i"
+      "f write_index >= length(buffer_i)\n        write_index = 0;\n    end\nend\n\n% determine how many symbols are bu"
+      "ffered\nbuffered = 0;\nif (read_index > write_index)\n    buffered = (length(buffer_i) - read_index) + write_ind"
+      "ex;\nelseif (read_index <= write_index)\n    buffered = (write_index - read_index);\nend\n\n% if we have room fo"
+      "r more symbols, request another byte\navailable = length(buffer_i) - buffered;\nout_request_byte = (in_empty == "
+      "0) && (available >= symbols_per_byte);\nfprintf('[mod]read %d write %d request %d length %d buffered %d\\n', ..."
+      "\n    int8(read_index), int8(write_index), ...\n    int8(out_request_byte), int8(length(buffer_i)), int8(buffere"
+      "d));\n\n% if there's buffered data, output a symbol\nif in_request_symbol && (read_index ~= write_index)\n    ou"
+      "t_valid = true;\n    out_i = buffer_i(read_index + 1);\n    out_q = buffer_q(read_index + 1);\n    fprintf('[mod"
+      "]read %d write %d symbol %d,%d\\n', ...\n        int8(read_index), int8(write_index), ...\n        int8(out_i), "
+      "int8(out_q));\n    read_index = read_index + 1;\n    if read_index >= length(buffer_i)\n        read_index = 0;\n"
+      "    end\nend\n\n"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
@@ -3233,39 +3252,39 @@ Stateflow {
       "\n    pilot_index = 1;\nend\npersistent symbol_count\nif isempty(symbol_count)\n    symbol_count = 0;\nend\n\n% "
       "is this the first symbol in a frame?\nframe_begin = (write_index == 0);\n% is this the last symbol in a run?\nru"
       "n_end = (symbol_count == (symbols_per_run - 1));\n% is this the last write in the frame?\n% the frame will end w"
-      "ith a (symbol)(pilot)(null)\nframe_end = ((write_index + 2) == (frame_size - 1));\nfprintf('valid %d %f,%f write"
-      " %d frame begin %d end %d run %d end %d\\n', ...\n    int8(in_valid), double(in_i), double(in_q), ...\n    int8("
-      "write_index), ...\n    int8(frame_begin), int8(frame_end), ...\n    int8(symbol_count), int8(run_end));\n\n% The"
-      " following scenarios can occur:\n% (null)(null)(pilot)(symbol)\n% (symbol)(pilot)(null)\n% (symbol)(pilot)\n% (s"
-      "ymbol)\nif in_valid\n    if frame_begin\n        % (null)(null)(pilot)(symbol)\n        fprintf('write %d nullx2"
-      " pilot %d %d,%d symbol %d %d,%d\\n', ...\n            int8(write_index), ...\n            int8(pilot_index), int"
-      "8(pilots_i(pilot_index)), int8(pilots_q(pilot_index)), ...\n            int8(symbol_count), int8(in_i), int8(in_"
-      "q));\n        buffer_i(write_index+1) = null;\n        buffer_q(write_index+1) = null;\n        buffer_i(write_i"
-      "ndex+2) = null;\n        buffer_q(write_index+2) = null;\n        buffer_i(write_index+3) = pilots_i(1);\n      "
-      "  buffer_q(write_index+3) = pilots_q(1);\n        buffer_i(write_index+4) = in_i;\n        buffer_q(write_index+"
-      "4) = in_q;\n        write_index = 4;\n        symbol_count = 1;\n        pilot_index = 2;\n    elseif frame_end\n"
-      "        % (symbol)(pilot)(null)\n        fprintf('write %d symbol %d %d,%d pilot %d %d,%d null\\n', ...\n       "
-      "     int8(write_index), ...\n            int8(symbol_count), int8(in_i), int8(in_q), ...\n            int8(pilot"
-      "_index), int8(pilots_i(pilot_index)), int8(pilots_q(pilot_index)));\n        buffer_i(write_index+1) = in_i;\n  "
-      "      buffer_q(write_index+1) = in_q;\n        buffer_i(write_index+2) = pilots_i(pilot_index);\n        buffer_"
-      "q(write_index+2) = pilots_q(pilot_index);\n        buffer_i(write_index+3) = null;\n        buffer_q(write_index"
-      "+3) = null;\n        write_index = 0;\n        symbol_count = 0;\n        pilot_index = 1;\n    elseif run_end\n"
-      "        % (symbol)(pilot)\n        fprintf('write %d symbol %d %d,%d pilot %d %d,%d\\n', ...\n            int8(w"
-      "rite_index), ...\n            int8(symbol_count), int8(in_i), int8(in_q), ...\n            int8(pilot_index), in"
-      "t8(pilots_i(pilot_index)), int8(pilots_q(pilot_index)));\n        buffer_i(write_index+1) = in_i;\n        buffe"
-      "r_q(write_index+1) = in_q;\n        buffer_i(write_index+2) = pilots_i(pilot_index);\n        buffer_q(write_ind"
-      "ex+2) = pilots_q(pilot_index);\n        write_index = write_index + 2;\n        symbol_count = 0;\n        pilot"
-      "_index = pilot_index + 1;\n        if pilot_index == length(pilots_i)\n            pilot_index = 1;\n        end"
-      "\n    else\n        % (symbol)\n        fprintf('write %d symbol %d %d,%d\\n', ...\n            int8(write_index"
-      "), ...\n            int8(symbol_count), int8(in_i), int8(in_q));\n        buffer_i(write_index+1) = in_i;\n     "
-      "   buffer_q(write_index+1) = in_q;\n        write_index = write_index + 1;\n        symbol_count = symbol_count "
-      "+ 1;\n    end\nend\n\n% determine how many symbols are buffered\nbuffered = 0;\nif (read_index > write_index)\n "
-      "   buffered = (length(buffer_i) - read_index) + write_index;\nelseif (read_index <= write_index)\n    buffered ="
-      " (write_index - read_index);\nend\n\n% we can write at *most* a 2xnull, a pilot, and a symbol\n% if there's room"
-      " enough to support as much, request a symbol\navailable = length(buffer_i) - buffered;\nout_request_symbol = (av"
-      "ailable >= 4);\n\n% output i/q if there's something buffered\nif read_index ~= write_index\n    out_valid = true"
-      ";\n    out_i = buffer_i(read_index + 1);\n    out_q = buffer_q(read_index + 1);\n    read_index = read_index + 1"
-      ";\n    if read_index >= length(buffer_i)\n        read_index = 0;\n    end\nend"
+      "ith a (symbol)(pilot)(null)\nframe_end = ((write_index + 2) == (frame_size - 1));\nfprintf('[frm]valid %d %f,%f "
+      "write %d frame begin %d end %d run %d end %d\\n', ...\n    int8(in_valid), double(in_i), double(in_q), ...\n    "
+      "int8(write_index), ...\n    int8(frame_begin), int8(frame_end), ...\n    int8(symbol_count), int8(run_end));\n\n"
+      "% The following scenarios can occur:\n% (null)(null)(pilot)(symbol)\n% (symbol)(pilot)(null)\n% (symbol)(pilot)\n"
+      "% (symbol)\nif in_valid\n    if frame_begin\n        % (null)(null)(pilot)(symbol)\n        fprintf('[frm]write "
+      "%d nullx2 pilot %d %d,%d symbol %d %d,%d\\n', ...\n            int8(write_index), ...\n            int8(pilot_in"
+      "dex), int8(pilots_i(pilot_index)), int8(pilots_q(pilot_index)), ...\n            int8(symbol_count), int8(in_i),"
+      " int8(in_q));\n        buffer_i(write_index+1) = null;\n        buffer_q(write_index+1) = null;\n        buffer_"
+      "i(write_index+2) = null;\n        buffer_q(write_index+2) = null;\n        buffer_i(write_index+3) = pilots_i(1)"
+      ";\n        buffer_q(write_index+3) = pilots_q(1);\n        buffer_i(write_index+4) = in_i;\n        buffer_q(wri"
+      "te_index+4) = in_q;\n        write_index = 4;\n        symbol_count = 1;\n        pilot_index = 2;\n    elseif f"
+      "rame_end\n        % (symbol)(pilot)(null)\n        fprintf('[frm]write %d symbol %d %d,%d pilot %d %d,%d null\\n"
+      "', ...\n            int8(write_index), ...\n            int8(symbol_count), int8(in_i), int8(in_q), ...\n       "
+      "     int8(pilot_index), int8(pilots_i(pilot_index)), int8(pilots_q(pilot_index)));\n        buffer_i(write_index"
+      "+1) = in_i;\n        buffer_q(write_index+1) = in_q;\n        buffer_i(write_index+2) = pilots_i(pilot_index);\n"
+      "        buffer_q(write_index+2) = pilots_q(pilot_index);\n        buffer_i(write_index+3) = null;\n        buffe"
+      "r_q(write_index+3) = null;\n        write_index = 0;\n        symbol_count = 0;\n        pilot_index = 1;\n    e"
+      "lseif run_end\n        % (symbol)(pilot)\n        fprintf('[frm]write %d symbol %d %d,%d pilot %d %d,%d\\n', ..."
+      "\n            int8(write_index), ...\n            int8(symbol_count), int8(in_i), int8(in_q), ...\n            i"
+      "nt8(pilot_index), int8(pilots_i(pilot_index)), int8(pilots_q(pilot_index)));\n        buffer_i(write_index+1) = "
+      "in_i;\n        buffer_q(write_index+1) = in_q;\n        buffer_i(write_index+2) = pilots_i(pilot_index);\n      "
+      "  buffer_q(write_index+2) = pilots_q(pilot_index);\n        write_index = write_index + 2;\n        symbol_count"
+      " = 0;\n        pilot_index = pilot_index + 1;\n        if pilot_index == length(pilots_i)\n            pilot_ind"
+      "ex = 1;\n        end\n    else\n        % (symbol)\n        fprintf('[frm]write %d symbol %d %d,%d\\n', ...\n   "
+      "         int8(write_index), ...\n            int8(symbol_count), int8(in_i), int8(in_q));\n        buffer_i(writ"
+      "e_index+1) = in_i;\n        buffer_q(write_index+1) = in_q;\n        write_index = write_index + 1;\n        sym"
+      "bol_count = symbol_count + 1;\n    end\nend\n\n% determine how many symbols are buffered\nbuffered = 0;\nif (rea"
+      "d_index > write_index)\n    buffered = (length(buffer_i) - read_index) + write_index;\nelseif (read_index <= wri"
+      "te_index)\n    buffered = (write_index - read_index);\nend\n\n% we can write at *most* a 2xnull, a pilot, and a "
+      "symbol\n% if there's room enough to support as much, request a symbol\navailable = length(buffer_i) - buffered;\n"
+      "out_request_symbol = (available >= 4);\n\n% output i/q if there's something buffered\nif read_index ~= write_ind"
+      "ex\n    out_valid = true;\n    out_i = buffer_i(read_index + 1);\n    out_q = buffer_q(read_index + 1);\n    rea"
+      "d_index = read_index + 1;\n    if read_index >= length(buffer_i)\n        read_index = 0;\n    end\nend"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
