@@ -7,7 +7,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.526"
+    ComputedModelVersion    "1.646"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -29,7 +29,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [-4.0, 0.0, 1288.0, 764.0]
+      Location		      [1.0, 1.0, 1278.0, 754.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -53,9 +53,9 @@ Model {
 	IsActive		[1]
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
-	Extents			[1244.0, 604.0]
-	ZoomFactor		[0.77457851009882173]
-	Offset			[-29.212188873158141, -176.54007172352641]
+	Extents			[1234.0, 594.0]
+	ZoomFactor		[1.0]
+	Offset			[618.4033430035438, 102.05102948298054]
       }
     }
   }
@@ -65,9 +65,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "C4Josh"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sat May 07 14:41:32 2016"
-  RTWModifiedTimeStamp	  384532842
-  ModelVersionFormat	  "1.%<AutoIncrement:526>"
+  LastModifiedDate	  "Sat May 07 22:26:21 2016"
+  RTWModifiedTimeStamp	  384560663
+  ModelVersionFormat	  "1.%<AutoIncrement:646>"
   ConfigurationManager	  "none"
   SampleTimeColors	  on
   SampleTimeAnnotations	  on
@@ -182,7 +182,7 @@ Model {
 	  $ObjectID		  8
 	  Version		  "1.15.0"
 	  StartTime		  "0.0"
-	  StopTime		  "10"
+	  StopTime		  "(64+1024)/20e6"
 	  AbsTol		  "auto"
 	  FixedStep		  "auto"
 	  InitialStep		  "auto"
@@ -850,6 +850,12 @@ Model {
       InitialOutput	      "[]"
     }
     Block {
+      BlockType		      RealImagToComplex
+      Input		      "Real and imag"
+      ConstantPart	      "0"
+      SampleTime	      "-1"
+    }
+    Block {
       BlockType		      S-Function
       FunctionName	      "system"
       SFunctionModules	      "''"
@@ -888,6 +894,10 @@ Model {
       OutputSizes	      "1"
     }
     Block {
+      BlockType		      SpectrumAnalyzer
+      DefaultConfigurationName "spbscopes.SpectrumAnalyzerBlockCfg"
+    }
+    Block {
       BlockType		      SubSystem
       ShowPortLabels	      "FromPortIcon"
       Permissions	      "ReadWrite"
@@ -923,6 +933,11 @@ Model {
       BlockType		      Terminator
     }
     Block {
+      BlockType		      TimeScope
+      DefaultConfigurationName "Simulink.scopes.TimeScopeBlockCfg"
+      Floating		      off
+    }
+    Block {
       BlockType		      Unbuffer
       ic		      "0"
       SampleBasedProcessing   "Pass through (this choice will be removed - see release notes)"
@@ -939,7 +954,7 @@ Model {
   }
   System {
     Name		    "ofdm_mod_symbol_fifo"
-    Location		    [-4, 0, 1284, 764]
+    Location		    [1, 1, 1279, 755]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -951,23 +966,31 @@ Model {
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "77"
+    ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "44"
+    SIDHighWatermark	    "55"
     Block {
       BlockType		      ComplexToRealImag
       Name		      "Complex to\nReal-Imag"
       SID		      "3"
       Ports		      [1, 2]
-      Position		      [2490, 388, 2520, 417]
-      ZOrder		      43
+      Position		      [1340, 1448, 1370, 1477]
+      ZOrder		      252
+    }
+    Block {
+      BlockType		      ComplexToRealImag
+      Name		      "Complex to\nReal-Imag1"
+      SID		      "47"
+      Ports		      [1, 2]
+      Position		      [1735, 353, 1780, 402]
+      ZOrder		      272
     }
     Block {
       BlockType		      Constant
       Name		      "Constant1"
       SID		      "4"
-      Position		      [1760, 20, 1790, 50]
-      ZOrder		      48
+      Position		      [610, 1080, 640, 1110]
+      ZOrder		      257
       Value		      "0"
       OutDataTypeStr	      "fixdt(1,12,7)"
     }
@@ -976,8 +999,8 @@ Model {
       Name		      "IFFT\nHDL Optimized"
       SID		      "5"
       Ports		      [1, 2]
-      Position		      [2240, 385, 2410, 465]
-      ZOrder		      42
+      Position		      [1090, 1445, 1260, 1525]
+      ZOrder		      251
       LibraryVersion	      "1.485"
       SourceBlock	      "dspxfrm3/IFFT\nHDL Optimized"
       SourceType	      "IFFT HDL Optimized"
@@ -994,22 +1017,53 @@ Model {
       SimulateUsing	      "Code generation"
     }
     Block {
+      BlockType		      Reference
+      Name		      "IFFT\nHDL Optimized1"
+      SID		      "45"
+      Ports		      [2, 4]
+      Position		      [1465, 353, 1660, 542]
+      ZOrder		      228
+      ForegroundColor	      "green"
+      LibraryVersion	      "1.485"
+      SourceBlock	      "dspxfrm3/IFFT\nHDL Optimized"
+      SourceType	      "IFFT HDL Optimized"
+      BitReversedOutput	      off
+      Normalize		      on
+      FFTLengthSource	      "Property"
+      FFTLength		      "64"
+      RoundingMethod	      "Floor"
+      OverflowAction	      "Saturate"
+      ValidInputPort	      on
+      ResetInputPort	      off
+      StartOutputPort	      on
+      EndOutputPort	      on
+      SimulateUsing	      "Code generation"
+    }
+    Block {
       BlockType		      Concatenate
       Name		      "Matrix\nConcatenation"
       SID		      "6"
       Ports		      [33, 1]
-      Position		      [2030, 93, 2090, 757]
-      ZOrder		      44
+      Position		      [880, 1153, 940, 1817]
+      ZOrder		      253
       NumInputs		      "33"
       Mode		      "Multidimensional array"
+    }
+    Block {
+      BlockType		      RealImagToComplex
+      Name		      "Real-Imag to\nComplex"
+      SID		      "46"
+      Ports		      [2, 1]
+      Position		      [1340, 370, 1390, 425]
+      ZOrder		      229
     }
     Block {
       BlockType		      Scope
       Name		      "Scope"
       SID		      "30"
       Ports		      [3]
-      Position		      [2715, 379, 2745, 411]
-      ZOrder		      213
+      Position		      [1565, 1439, 1595, 1471]
+      ZOrder		      271
       Floating		      off
       Location		      [1, 45, 1281, 755]
       Open		      off
@@ -1035,16 +1089,287 @@ Model {
       SaveName		      "ScopeData2"
     }
     Block {
+      BlockType		      SpectrumAnalyzer
+      Name		      "Spectrum\nAnalyzer"
+      SID		      "54"
+      Ports		      [1]
+      Position		      [1735, 174, 1780, 226]
+      ZOrder		      277
+      ScopeSpecificationString "spbscopes.SpectrumAnalyzerBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(ext"
+      "mgr.Configuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('"
+      "Sources','WiredSimulink',true),extmgr.Configuration('Visuals','Spectrum',true,'AxesProperties',struct('Color',[0"
+      " 0 0],'XColor',[0.686274509803922 0.686274509803922 0.686274509803922],'YColor',[0.686274509803922 0.68627450980"
+      "3922 0.686274509803922],'ZColor',[0.686274509803922 0.686274509803922 0.686274509803922],'XGrid','on','YGrid','o"
+      "n','ZGrid','off','Box','on','XScale','linear','YScale','linear','ZScale','linear','XDir','normal','YDir','normal"
+      "','ZDir','normal','XTickMode','auto','YTickMode','auto','ZTickMode','auto','XTickLabelMode','manual','YTickLabel"
+      "Mode','auto','ZTickLabelMode','manual','XTickLabel',['-10';' -8';' -6';' -4';' -2';'  0';'  2';'  4';'  6';'  8'"
+      ";' 10'],'ZTickLabel','','FontName','Helvetica','FontSize',8.5,'FontUnits','points','FontWeight','normal','Title'"
+      ",'','XLabel','Frequency (MHz)','YLabel',' dBm','ZLabel',''),'LineProperties',struct('DisplayName',{'','','','','"
+      "','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','',''"
+      ",'','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','',"
+      "'','','','','','','','','','','','','','','','','','','','',''},'Color',{[1 1 0.0666666666666667],[1 0 1],[0 1 1"
+      "],[1 0 0],[0 1 0],[0 0 1],[1 1 0],[1 0 1],[0 1 1],[1 0 0],[0 1 0],[0 0 1],[1 1 0],[1 0 1],[0 1 1],[1 0 0],[0 1 0"
+      "],[0 0 1],[1 1 0],[1 0 1],[0 1 1],[1 0 0],[0 1 0],[0 0 1],[1 1 0],[1 0 1],[0 1 1],[1 0 0],[0 1 0],[0 0 1],[1 1 0"
+      "],[1 0 1],[0 1 1],[1 0 0],[0 1 0],[0 0 1],[1 1 0],[1 0 1],[0 1 1],[1 0 0],[0 1 0],[0 0 1],[1 1 0],[1 0 1],[0 1 1"
+      "],[1 0 0],[0 1 0],[0 0 1],[1 1 0],[1 0 1],[0 1 1],[1 0 0],[0 1 0],[0 0 1],[1 1 0],[1 0 1],[0 1 1],[1 0 0],[0 1 0"
+      "],[0 0 1],[1 1 0],[1 0 1],[0 1 1],[1 0 0],[0 1 0],[0 0 1],[1 1 0],[1 0 1],[0 1 1],[1 0 0],[0 1 0],[0 0 1],[1 1 0"
+      "],[1 0 1],[0 1 1],[1 0 0],[0 1 0],[0 0 1],[1 1 0],[1 0 1],[0 1 1],[1 0 0],[0 1 0],[0 0 1],[1 1 0],[1 0 1],[0 1 1"
+      "],[1 0 0],[0 1 0],[0 0 1],[1 1 0],[1 0 1],[0 1 1],[1 0 0],[0 1 0],[0 0 1],[1 1 0],[1 0 1],[0 1 1],[1 0 0]},'Line"
+      "Style',{'-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-',"
+      "'-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-',"
+      "'-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-',"
+      "'-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-'},'LineWidth',{0.5,0.5,0.5,0.5,0.5,0.5,0."
+      "5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0."
+      "5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0."
+      "5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0."
+      "5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5},'Marker',{'none','none','none','none','none','none','none','none','none',"
+      "'none','none','none','none','none','none','none','none','none','none','none','none','none','none','none','none',"
+      "'none','none','none','none','none','none','none','none','none','none','none','none','none','none','none','none',"
+      "'none','none','none','none','none','none','none','none','none','none','none','none','none','none','none','none',"
+      "'none','none','none','none','none','none','none','none','none','none','none','none','none','none','none','none',"
+      "'none','none','none','none','none','none','none','none','none','none','none','none','none','none','none','none',"
+      "'none','none','none','none','none','none','none','none','none','none','none'},'MarkerSize',{6,6,6,6,6,6,6,6,6,6,"
+      "6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,"
+      "6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6},'MarkerEdgeColor',{'auto','auto','auto','au"
+      "to','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','au"
+      "to','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','au"
+      "to','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','au"
+      "to','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','au"
+      "to','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','au"
+      "to','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','au"
+      "to'},'MarkerFaceColor',{'none','none','none','none','none','none','none','none','none','none','none','none','non"
+      "e','none','none','none','none','none','none','none','none','none','none','none','none','none','none','none','non"
+      "e','none','none','none','none','none','none','none','none','none','none','none','none','none','none','none','non"
+      "e','none','none','none','none','none','none','none','none','none','none','none','none','none','none','none','non"
+      "e','none','none','none','none','none','none','none','none','none','none','none','none','none','none','none','non"
+      "e','none','none','none','none','none','none','none','none','none','none','none','none','none','none','none','non"
+      "e','none','none','none','none','none','none','none'},'Visible',{'on','on','on','on','on','on','on','on','on','on"
+      "','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on',"
+      "'on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','o"
+      "n','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on'"
+      ",'on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','"
+      "on'}),'MinYLim','-92.811104401250475','MaxYLim','1.6632190312927726','SampleRate','20000000','Span','20000000','"
+      "StartFrequency','-10000000','StopFrequency','10000000','IsSpanValuesValid',true),extmgr.Configuration('Tools','P"
+      "lot Navigation',true),extmgr.Configuration('Tools','Measurements',true,'Version','2015a'),extmgr.Configuration('"
+      "Sources','Simulink',false),extmgr.Configuration('Visuals','Constellation',false),extmgr.Configuration('Visuals',"
+      "'Eye Diagram',false),extmgr.Configuration('Visuals','Array Plot',false),extmgr.Configuration('Visuals','Logic An"
+      "alyzer',false),extmgr.Configuration('Sources','SimulinkEvent',false),extmgr.Configuration('Visuals','TimeVisual'"
+      ",false),extmgr.Configuration('Tools','Requirement viewer',false),extmgr.Configuration('Tools','Check block zoom'"
+      ",false),extmgr.Configuration('Sources','File',false),extmgr.Configuration('Sources','Workspace',false),extmgr.Co"
+      "nfiguration('Sources','Streaming',false),extmgr.Configuration('Visuals','Time Domain',false),extmgr.Configuratio"
+      "n('Visuals','Matrix',false),extmgr.Configuration('Tools','Instrumentation Sets',false),extmgr.Configuration('Sou"
+      "rces','SPTool',false),extmgr.Configuration('Visuals','BodeVisual',false),extmgr.Configuration('Visuals','PZMapVi"
+      "sual',false),extmgr.Configuration('Visuals','NicholsVisual',false),extmgr.Configuration('Visuals','MarginsVisual"
+      "',false),extmgr.Configuration('Visuals','SigmaVisual',false),extmgr.Configuration('Visuals','LinearStepVisual',f"
+      "alse)),'Version','2015a','VisibleAtModelOpen','on','OpenAtMdlStart',false)"
+    }
+    Block {
+      BlockType		      Selector
+      Name		      "Subcarrier\nOrdering1"
+      SID		      "7"
+      Ports		      [1, 1]
+      Position		      [610, 1228, 655, 1262]
+      ZOrder		      255
+      ShowName		      off
+      InputPortWidth	      "45"
+      Indices		      "4:6"
+    }
+    Block {
+      BlockType		      Selector
+      Name		      "Subcarrier\nOrdering10"
+      SID		      "8"
+      Ports		      [1, 1]
+      Position		      [610, 1548, 655, 1582]
+      ZOrder		      264
+      ShowName		      off
+      InputPortWidth	      "45"
+      Indices		      "28:30"
+    }
+    Block {
+      BlockType		      Selector
+      Name		      "Subcarrier\nOrdering11"
+      SID		      "9"
+      Ports		      [1, 1]
+      Position		      [610, 1588, 655, 1622]
+      ZOrder		      265
+      ShowName		      off
+      InputPortWidth	      "45"
+      Indices		      "31:33"
+    }
+    Block {
+      BlockType		      Selector
+      Name		      "Subcarrier\nOrdering12"
+      SID		      "10"
+      Ports		      [1, 1]
+      Position		      [610, 1628, 655, 1662]
+      ZOrder		      266
+      ShowName		      off
+      InputPortWidth	      "45"
+      Indices		      "34:36"
+    }
+    Block {
+      BlockType		      Selector
+      Name		      "Subcarrier\nOrdering13"
+      SID		      "11"
+      Ports		      [1, 1]
+      Position		      [610, 1668, 655, 1702]
+      ZOrder		      267
+      ShowName		      off
+      InputPortWidth	      "45"
+      Indices		      "37:39"
+    }
+    Block {
+      BlockType		      Selector
+      Name		      "Subcarrier\nOrdering14"
+      SID		      "12"
+      Ports		      [1, 1]
+      Position		      [610, 1708, 655, 1742]
+      ZOrder		      268
+      ShowName		      off
+      InputPortWidth	      "45"
+      Indices		      "40:42"
+    }
+    Block {
+      BlockType		      Selector
+      Name		      "Subcarrier\nOrdering15"
+      SID		      "13"
+      Ports		      [1, 1]
+      Position		      [610, 1748, 655, 1782]
+      ZOrder		      269
+      ShowName		      off
+      InputPortWidth	      "45"
+      Indices		      "40:42"
+    }
+    Block {
+      BlockType		      Selector
+      Name		      "Subcarrier\nOrdering2"
+      SID		      "14"
+      Ports		      [1, 1]
+      Position		      [610, 1188, 655, 1222]
+      ZOrder		      254
+      ShowName		      off
+      InputPortWidth	      "45"
+      Indices		      "1:3"
+    }
+    Block {
+      BlockType		      Selector
+      Name		      "Subcarrier\nOrdering3"
+      SID		      "15"
+      Ports		      [1, 1]
+      Position		      [610, 1268, 655, 1302]
+      ZOrder		      256
+      ShowName		      off
+      InputPortWidth	      "45"
+      Indices		      "7:9"
+    }
+    Block {
+      BlockType		      Selector
+      Name		      "Subcarrier\nOrdering4"
+      SID		      "16"
+      Ports		      [1, 1]
+      Position		      [610, 1308, 655, 1342]
+      ZOrder		      258
+      ShowName		      off
+      InputPortWidth	      "45"
+      Indices		      "10:12"
+    }
+    Block {
+      BlockType		      Selector
+      Name		      "Subcarrier\nOrdering5"
+      SID		      "17"
+      Ports		      [1, 1]
+      Position		      [610, 1348, 655, 1382]
+      ZOrder		      259
+      ShowName		      off
+      InputPortWidth	      "45"
+      Indices		      "13:15"
+    }
+    Block {
+      BlockType		      Selector
+      Name		      "Subcarrier\nOrdering6"
+      SID		      "18"
+      Ports		      [1, 1]
+      Position		      [610, 1388, 655, 1422]
+      ZOrder		      260
+      ShowName		      off
+      InputPortWidth	      "45"
+      Indices		      "16:18"
+    }
+    Block {
+      BlockType		      Selector
+      Name		      "Subcarrier\nOrdering7"
+      SID		      "19"
+      Ports		      [1, 1]
+      Position		      [610, 1428, 655, 1462]
+      ZOrder		      261
+      ShowName		      off
+      InputPortWidth	      "45"
+      Indices		      "19:21"
+    }
+    Block {
+      BlockType		      Selector
+      Name		      "Subcarrier\nOrdering8"
+      SID		      "20"
+      Ports		      [1, 1]
+      Position		      [610, 1468, 655, 1502]
+      ZOrder		      262
+      ShowName		      off
+      InputPortWidth	      "45"
+      Indices		      "22:24"
+    }
+    Block {
+      BlockType		      Selector
+      Name		      "Subcarrier\nOrdering9"
+      SID		      "21"
+      Ports		      [1, 1]
+      Position		      [610, 1508, 655, 1542]
+      ZOrder		      263
+      ShowName		      off
+      InputPortWidth	      "45"
+      Indices		      "25:27"
+    }
+    Block {
+      BlockType		      Unbuffer
+      Name		      "Unbuffer"
+      SID		      "22"
+      Ports		      [1, 1]
+      Position		      [995, 1460, 1045, 1510]
+      ZOrder		      270
+      SampleBasedProcessing   "Same as frame based"
+    }
+    Block {
+      BlockType		      UnitDelay
+      Name		      "Unit Delay"
+      SID		      "39"
+      Position		      [385, 513, 420, 547]
+      ZOrder		      222
+      BlockMirror	      on
+      NamePlacement	      "alternate"
+      InputProcessing	      "Elements as channels (sample based)"
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      UnitDelay
+      Name		      "Unit Delay1"
+      SID		      "44"
+      Position		      [865, 553, 900, 587]
+      ZOrder		      227
+      BlockMirror	      on
+      NamePlacement	      "alternate"
+      InputProcessing	      "Elements as channels (sample based)"
+      SampleTime	      "-1"
+    }
+    Block {
       BlockType		      Scope
-      Name		      "Scope1"
-      SID		      "35"
-      Ports		      [11]
-      Position		      [1280, 20, 1380, 250]
-      ZOrder		      218
+      Name		      "byte"
+      SID		      "50"
+      Ports		      [4]
+      Position		      [375, 219, 470, 341]
+      ZOrder		      273
       Floating		      off
       Location		      [1, 45, 1281, 755]
-      Open		      on
-      NumInputPorts	      "11"
+      Open		      off
+      NumInputPorts	      "4"
       ZoomMode		      "xonly"
       List {
 	ListType		AxesTitles
@@ -1052,13 +1377,6 @@ Model {
 	axes2			"%<SignalLabel>"
 	axes3			"%<SignalLabel>"
 	axes4			"%<SignalLabel>"
-	axes5			"%<SignalLabel>"
-	axes6			"%<SignalLabel>"
-	axes7			"%<SignalLabel>"
-	axes8			"%<SignalLabel>"
-	axes9			"%<SignalLabel>"
-	axes10			"%<SignalLabel>"
-	axes11			"%<SignalLabel>"
       }
       List {
 	ListType		ScopeGraphics
@@ -1071,222 +1389,147 @@ Model {
 	MarkerStyles		"none|none|none|none|none|none"
       }
       ShowLegends	      on
-      LegendLocations	      "0.88646     0.91033    0.083594    0.028638\n0.82474     0.82441     0.14531    0.028638\n"
-      "0.83021     0.73991     0.13984    0.028638\n0.83177      0.6554     0.13828    0.028638\n0.78724     0.57089   "
-      "  0.18281    0.028638\n0.80286     0.48638     0.16719    0.028638\n0.79974     0.40188     0.17031    0.028638\n"
-      "0.88177     0.31737    0.088281    0.028638\n0.83255     0.23146      0.1375    0.028638\n0.84818     0.14695   "
-      "  0.12187    0.028638\n0.84505    0.062441       0.125    0.028638"
-      YMin		      "0~0~0~-1~0.95~-1~-1~0.95~-5~-5~-5"
-      YMax		      "1~250~1~1~1.05~1~1~1.05~5~5~5"
+      LegendLocations	      "0.88646     0.91033    0.083594    0.028638\n0.82474     0.67653     0.14531    0.028638\n"
+      "0.83021     0.44413     0.13984    0.028638\n0.83177     0.21033     0.13828    0.028638"
+      YMin		      "-5~-5~-5~-5"
+      YMax		      "5~5~5~5"
     }
     Block {
-      BlockType		      Selector
-      Name		      "Subcarrier\nOrdering1"
-      SID		      "7"
-      Ports		      [1, 1]
-      Position		      [1760, 168, 1805, 202]
-      ZOrder		      46
-      ShowName		      off
-      InputPortWidth	      "45"
-      Indices		      "4:6"
+      BlockType		      Scope
+      Name		      "modulation symbol"
+      SID		      "51"
+      Ports		      [4]
+      Position		      [825, 219, 920, 341]
+      ZOrder		      274
+      Floating		      off
+      Location		      [1, 45, 1281, 755]
+      Open		      off
+      NumInputPorts	      "4"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+	axes2			"%<SignalLabel>"
+	axes3			"%<SignalLabel>"
+	axes4			"%<SignalLabel>"
+      }
+      List {
+	ListType		ScopeGraphics
+	FigureColor		"[0.5 0.5 0.5]"
+	AxesColor		"[0 0 0]"
+	AxesTickColor		"[1 1 1]"
+	LineColors		"[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
+	LineStyles		"-|-|-|-|-|-"
+	LineWidths		"[0.5 0.5 0.5 0.5 0.5 0.5]"
+	MarkerStyles		"none|none|none|none|none|none"
+      }
+      ShowLegends	      on
+      LegendLocations	      "0.88177     0.91033    0.088281    0.028638\n0.78724     0.67653     0.18281    0.028638\n"
+      "0.80286     0.44413     0.16719    0.028638\n0.79974     0.21033     0.17031    0.028638"
+      YMin		      "-5~-5~-5~-5"
+      YMax		      "5~5~5~5"
+      SaveName		      "ScopeData1"
     }
     Block {
-      BlockType		      Selector
-      Name		      "Subcarrier\nOrdering10"
-      SID		      "8"
-      Ports		      [1, 1]
-      Position		      [1760, 488, 1805, 522]
-      ZOrder		      56
-      ShowName		      off
-      InputPortWidth	      "45"
-      Indices		      "28:30"
+      BlockType		      TimeScope
+      Name		      "ofdm frame"
+      SID		      "55"
+      Ports		      [4]
+      Position		      [1310, 180, 1415, 315]
+      ZOrder		      278
+      UserDataPersistent      on
+      DefaultConfigurationName "spbscopes.TimeScopeBlockCfg"
+      ScopeSpecificationString "spbscopes.TimeScopeBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(extmgr.Con"
+      "figuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('Sources"
+      "','WiredSimulink',true,'DataLoggingVariableName','ScopeData4'),extmgr.Configuration('Visuals','Time Domain',true"
+      ",'DisplayLayoutDimensions',[4 1],'DisplayPropertyDefaults',struct('YLabelReal','Amplitude','AxesColor',[0 0 0],'"
+      "AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.07"
+      "45098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.07"
+      "45098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.6509803921568"
+      "63]),'SerializedDisplays',{struct('MinYLimReal','-0.125','MaxYLimReal','1.125','YLabelReal','Amplitude','MinYLim"
+      "Mag','0','MaxYLimMag','1.125','LegendVisibility','On','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor'"
+      ",[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.06666666666"
+      "66667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.8313725490"
+      "19608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650"
+      "980392156863],'Title','','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLines',1,'LineNames',{{'o"
+      "fdym_framing/out_valid'}},'ShowContent',true,'Placement',1),struct('MinYLimReal','-1.25','MaxYLimReal','1.25','Y"
+      "LabelReal','Amplitude','MinYLimMag','0','MaxYLimMag','1.25','LegendVisibility','Off','XGrid',true,'YGrid',true,'"
+      "PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],"
+      "'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549"
+      ";0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647"
+      " 1 1;1 0.0745098039215686 0.650980392156863],'Title','','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{}"
+      "},'NumLines',1,'LineNames',{{'ofdym_framing/out_i'}},'ShowContent',true,'Placement',2),struct('MinYLimReal','-1."
+      "06522','MaxYLimReal','1.1087','YLabelReal','Amplitude','MinYLimMag','0','MaxYLimMag','1.25','LegendVisibility','"
+      "Off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686"
+      "274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0."
+      "411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.2745"
+      "09803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','','LinePropertiesCache',{{"
+      "}},'UserDefinedChannelNames',{{}},'NumLines',1,'LineNames',{{'ofdym_framing/out_q'}},'ShowContent',true,'Placeme"
+      "nt',3),struct('MinYLimReal','-0.125','MaxYLimReal','1.125','YLabelReal','Amplitude','MinYLimMag','0','MaxYLimMag"
+      "','1.25','LegendVisibility','Off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickCo"
+      "lor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.074509803921"
+      "5686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.074509803921"
+      "5686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title"
+      "','','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLines',1,'LineNames',{{'ofdym_framing/out_req"
+      "uest_symbol'}},'ShowContent',true,'Placement',4)}),extmgr.Configuration('Tools','Plot Navigation',true,'OnceAtSt"
+      "op',false,'PreviousAutoscale','XY'),extmgr.Configuration('Tools','Measurements',true,'Measurements',struct('trac"
+      "eselector',struct('Line',1),'tcursors',struct('XCoordinates',[2e-07 1.7375e-05],'YCoordinates',[1 0.499999999999"
+      "932],'CursorChannels',[1 2],'WaveformCursors',true,'ShowHorizontal',false,'ShowVertical',true,'LockCursorSpacing"
+      "',false,'SnapToData',1,'SettingsPanelOpen',1,'MeasurementsPanelOpen',1),'triggers',struct('Mode','Auto','Positio"
+      "n',0.5,'Type','Edge','Polarity','Positive','AutoLevel',true,'Level',0.5,'Hysteresis',0,'UpperLevel',2.3,'LowerLe"
+      "vel',0.2,'MinTime',0,'MaxTime',Inf,'Timeout',0,'Delay',0,'Holdoff',0,'SourceOffset',1,'MainPanelOpen',1,'TypePan"
+      "elOpen',1,'SettingsPanelOpen',1,'OffsetPanelOpen',1)),'Version','2015a')),'Version','2015a','Position',[1 45 128"
+      "0 689],'VisibleAtModelOpen','on')"
+      NumInputPorts	      "4"
     }
     Block {
-      BlockType		      Selector
-      Name		      "Subcarrier\nOrdering11"
-      SID		      "9"
-      Ports		      [1, 1]
-      Position		      [1760, 528, 1805, 562]
-      ZOrder		      57
-      ShowName		      off
-      InputPortWidth	      "45"
-      Indices		      "31:33"
-    }
-    Block {
-      BlockType		      Selector
-      Name		      "Subcarrier\nOrdering12"
-      SID		      "10"
-      Ports		      [1, 1]
-      Position		      [1760, 568, 1805, 602]
-      ZOrder		      58
-      ShowName		      off
-      InputPortWidth	      "45"
-      Indices		      "34:36"
-    }
-    Block {
-      BlockType		      Selector
-      Name		      "Subcarrier\nOrdering13"
-      SID		      "11"
-      Ports		      [1, 1]
-      Position		      [1760, 608, 1805, 642]
-      ZOrder		      59
-      ShowName		      off
-      InputPortWidth	      "45"
-      Indices		      "37:39"
-    }
-    Block {
-      BlockType		      Selector
-      Name		      "Subcarrier\nOrdering14"
-      SID		      "12"
-      Ports		      [1, 1]
-      Position		      [1760, 648, 1805, 682]
-      ZOrder		      60
-      ShowName		      off
-      InputPortWidth	      "45"
-      Indices		      "40:42"
-    }
-    Block {
-      BlockType		      Selector
-      Name		      "Subcarrier\nOrdering15"
-      SID		      "13"
-      Ports		      [1, 1]
-      Position		      [1760, 688, 1805, 722]
-      ZOrder		      61
-      ShowName		      off
-      InputPortWidth	      "45"
-      Indices		      "40:42"
-    }
-    Block {
-      BlockType		      Selector
-      Name		      "Subcarrier\nOrdering2"
-      SID		      "14"
-      Ports		      [1, 1]
-      Position		      [1760, 128, 1805, 162]
-      ZOrder		      45
-      ShowName		      off
-      InputPortWidth	      "45"
-      Indices		      "1:3"
-    }
-    Block {
-      BlockType		      Selector
-      Name		      "Subcarrier\nOrdering3"
-      SID		      "15"
-      Ports		      [1, 1]
-      Position		      [1760, 208, 1805, 242]
-      ZOrder		      47
-      ShowName		      off
-      InputPortWidth	      "45"
-      Indices		      "7:9"
-    }
-    Block {
-      BlockType		      Selector
-      Name		      "Subcarrier\nOrdering4"
-      SID		      "16"
-      Ports		      [1, 1]
-      Position		      [1760, 248, 1805, 282]
-      ZOrder		      50
-      ShowName		      off
-      InputPortWidth	      "45"
-      Indices		      "10:12"
-    }
-    Block {
-      BlockType		      Selector
-      Name		      "Subcarrier\nOrdering5"
-      SID		      "17"
-      Ports		      [1, 1]
-      Position		      [1760, 288, 1805, 322]
-      ZOrder		      51
-      ShowName		      off
-      InputPortWidth	      "45"
-      Indices		      "13:15"
-    }
-    Block {
-      BlockType		      Selector
-      Name		      "Subcarrier\nOrdering6"
-      SID		      "18"
-      Ports		      [1, 1]
-      Position		      [1760, 328, 1805, 362]
-      ZOrder		      52
-      ShowName		      off
-      InputPortWidth	      "45"
-      Indices		      "16:18"
-    }
-    Block {
-      BlockType		      Selector
-      Name		      "Subcarrier\nOrdering7"
-      SID		      "19"
-      Ports		      [1, 1]
-      Position		      [1760, 368, 1805, 402]
-      ZOrder		      53
-      ShowName		      off
-      InputPortWidth	      "45"
-      Indices		      "19:21"
-    }
-    Block {
-      BlockType		      Selector
-      Name		      "Subcarrier\nOrdering8"
-      SID		      "20"
-      Ports		      [1, 1]
-      Position		      [1760, 408, 1805, 442]
-      ZOrder		      54
-      ShowName		      off
-      InputPortWidth	      "45"
-      Indices		      "22:24"
-    }
-    Block {
-      BlockType		      Selector
-      Name		      "Subcarrier\nOrdering9"
-      SID		      "21"
-      Ports		      [1, 1]
-      Position		      [1760, 448, 1805, 482]
-      ZOrder		      55
-      ShowName		      off
-      InputPortWidth	      "45"
-      Indices		      "25:27"
-    }
-    Block {
-      BlockType		      Unbuffer
-      Name		      "Unbuffer"
-      SID		      "22"
-      Ports		      [1, 1]
-      Position		      [2145, 400, 2195, 450]
-      ZOrder		      66
-      SampleBasedProcessing   "Same as frame based"
-    }
-    Block {
-      BlockType		      UnitDelay
-      Name		      "Unit Delay"
-      SID		      "39"
-      Position		      [225, 458, 260, 492]
-      ZOrder		      222
-      BlockMirror	      on
-      NamePlacement	      "alternate"
-      InputProcessing	      "Elements as channels (sample based)"
-      SampleTime	      "-1"
-    }
-    Block {
-      BlockType		      UnitDelay
-      Name		      "Unit Delay1"
-      SID		      "44"
-      Position		      [840, 503, 875, 537]
-      ZOrder		      227
-      BlockMirror	      on
-      NamePlacement	      "alternate"
-      InputProcessing	      "Elements as channels (sample based)"
-      SampleTime	      "-1"
+      BlockType		      Scope
+      Name		      "ofdm symbol"
+      SID		      "52"
+      Ports		      [5]
+      Position		      [2080, 116, 2205, 294]
+      ZOrder		      275
+      Floating		      off
+      Location		      [1, 45, 1281, 755]
+      Open		      off
+      NumInputPorts	      "5"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+	axes2			"%<SignalLabel>"
+	axes3			"%<SignalLabel>"
+	axes4			"%<SignalLabel>"
+	axes5			"%<SignalLabel>"
+      }
+      List {
+	ListType		ScopeGraphics
+	FigureColor		"[0.5 0.5 0.5]"
+	AxesColor		"[0 0 0]"
+	AxesTickColor		"[1 1 1]"
+	LineColors		"[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
+	LineStyles		"-|-|-|-|-|-"
+	LineWidths		"[0.5 0.5 0.5 0.5 0.5 0.5]"
+	MarkerStyles		"none|none|none|none|none|none"
+      }
+      ShowLegends	      on
+      LegendLocations	      "0.82865     0.91033     0.14141    0.028638\n0.82865       0.723     0.14141    0.028638\n"
+      " 0.8349     0.53709     0.13516    0.028638\n 0.8349     0.35117     0.13516    0.028638\n 0.8349     0.16385   "
+      "  0.13516    0.028638"
+      YMin		      "-0.3~-0.4~-5~-5~-5"
+      YMax		      "0.4~0.4~5~5~5"
+      SaveName		      "ScopeData3"
     }
     Block {
       BlockType		      SubSystem
       Name		      "ofdm_input_fifo"
       SID		      "33"
       Ports		      [1, 3]
-      Position		      [65, 316, 220, 414]
+      Position		      [65, 376, 220, 474]
       ZOrder		      216
       LibraryVersion	      "1.165"
       ErrorFcn		      "Stateflow.Translate.translate"
       PermitHierarchicalResolution "ExplicitOnly"
       TreatAsAtomicUnit	      on
-      SystemSampleTime	      "1"
+      SystemSampleTime	      "1/20e6"
       RequestExecContextInheritance off
       SFBlockType	      "MATLAB Function"
       System {
@@ -1440,13 +1683,12 @@ Model {
       Name		      "ofdm_modulation_symbols"
       SID		      "34"
       Ports		      [4, 4]
-      Position		      [540, 322, 690, 438]
+      Position		      [540, 382, 690, 498]
       ZOrder		      217
       LibraryVersion	      "1.165"
       ErrorFcn		      "Stateflow.Translate.translate"
       PermitHierarchicalResolution "ExplicitOnly"
       TreatAsAtomicUnit	      on
-      SystemSampleTime	      "1"
       RequestExecContextInheritance off
       SFBlockType	      "MATLAB Function"
       System {
@@ -1672,7 +1914,7 @@ Model {
       Name		      "ofdym_framing"
       SID		      "43"
       Ports		      [3, 4]
-      Position		      [945, 314, 1110, 411]
+      Position		      [940, 374, 1105, 471]
       ZOrder		      226
       LibraryVersion	      "1.32"
       ErrorFcn		      "Stateflow.Translate.translate"
@@ -1744,19 +1986,19 @@ Model {
 	  EnableBusSupport	  on
 	  Port {
 	    PortNumber		    2
-	    Name		    "out_valid"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    3
 	    Name		    "out_i"
 	    RTWStorageClass	    "Auto"
 	    DataLoggingNameMode	    "SignalName"
 	  }
 	  Port {
-	    PortNumber		    4
+	    PortNumber		    3
 	    Name		    "out_q"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    4
+	    Name		    "out_valid"
 	    RTWStorageClass	    "Auto"
 	    DataLoggingNameMode	    "SignalName"
 	  }
@@ -1776,27 +2018,27 @@ Model {
 	}
 	Block {
 	  BlockType		  Outport
-	  Name			  "out_valid"
-	  SID			  "43::21"
-	  Position		  [460, 101, 480, 119]
-	  ZOrder		  12
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Outport
 	  Name			  "out_i"
 	  SID			  "43::22"
-	  Position		  [460, 136, 480, 154]
+	  Position		  [460, 101, 480, 119]
 	  ZOrder		  13
-	  Port			  "2"
 	  IconDisplay		  "Port number"
 	}
 	Block {
 	  BlockType		  Outport
 	  Name			  "out_q"
 	  SID			  "43::23"
-	  Position		  [460, 171, 480, 189]
+	  Position		  [460, 136, 480, 154]
 	  ZOrder		  14
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "out_valid"
+	  SID			  "43::21"
+	  Position		  [460, 171, 480, 189]
+	  ZOrder		  12
 	  Port			  "3"
 	  IconDisplay		  "Port number"
 	}
@@ -1810,56 +2052,56 @@ Model {
 	  IconDisplay		  "Port number"
 	}
 	Line {
-	  ZOrder		  59
+	  ZOrder		  104
 	  SrcBlock		  "in_valid"
 	  SrcPort		  1
 	  DstBlock		  " SFunction "
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  60
+	  ZOrder		  105
 	  SrcBlock		  "in_i"
 	  SrcPort		  1
 	  DstBlock		  " SFunction "
 	  DstPort		  2
 	}
 	Line {
-	  ZOrder		  61
+	  ZOrder		  106
 	  SrcBlock		  "in_q"
 	  SrcPort		  1
 	  DstBlock		  " SFunction "
 	  DstPort		  3
 	}
 	Line {
-	  Name			  "out_valid"
-	  ZOrder		  62
+	  Name			  "out_i"
+	  ZOrder		  107
 	  Labels		  [0, 0]
 	  SrcBlock		  " SFunction "
 	  SrcPort		  2
-	  DstBlock		  "out_valid"
-	  DstPort		  1
-	}
-	Line {
-	  Name			  "out_i"
-	  ZOrder		  63
-	  Labels		  [0, 0]
-	  SrcBlock		  " SFunction "
-	  SrcPort		  3
 	  DstBlock		  "out_i"
 	  DstPort		  1
 	}
 	Line {
 	  Name			  "out_q"
-	  ZOrder		  64
+	  ZOrder		  108
 	  Labels		  [0, 0]
 	  SrcBlock		  " SFunction "
-	  SrcPort		  4
+	  SrcPort		  3
 	  DstBlock		  "out_q"
 	  DstPort		  1
 	}
 	Line {
+	  Name			  "out_valid"
+	  ZOrder		  109
+	  Labels		  [0, 0]
+	  SrcBlock		  " SFunction "
+	  SrcPort		  4
+	  DstBlock		  "out_valid"
+	  DstPort		  1
+	}
+	Line {
 	  Name			  "out_request_symbol"
-	  ZOrder		  65
+	  ZOrder		  110
 	  Labels		  [0, 0]
 	  SrcBlock		  " SFunction "
 	  SrcPort		  5
@@ -1867,14 +2109,14 @@ Model {
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  66
+	  ZOrder		  111
 	  SrcBlock		  " Demux "
 	  SrcPort		  1
 	  DstBlock		  " Terminator "
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  67
+	  ZOrder		  112
 	  SrcBlock		  " SFunction "
 	  SrcPort		  1
 	  DstBlock		  " Demux "
@@ -1883,314 +2125,10 @@ Model {
       }
     }
     Line {
-      ZOrder		      1
-      SrcBlock		      "Subcarrier\nOrdering4"
-      SrcPort		      1
-      DstBlock		      "Matrix\nConcatenation"
-      DstPort		      9
-    }
-    Line {
-      ZOrder		      2
-      SrcBlock		      "Subcarrier\nOrdering11"
-      SrcPort		      1
-      DstBlock		      "Matrix\nConcatenation"
-      DstPort		      23
-    }
-    Line {
-      ZOrder		      3
-      SrcBlock		      "Subcarrier\nOrdering10"
-      SrcPort		      1
-      DstBlock		      "Matrix\nConcatenation"
-      DstPort		      21
-    }
-    Line {
-      ZOrder		      4
-      SrcBlock		      "Subcarrier\nOrdering8"
-      SrcPort		      1
-      DstBlock		      "Matrix\nConcatenation"
-      DstPort		      17
-    }
-    Line {
-      ZOrder		      5
-      SrcBlock		      "Subcarrier\nOrdering7"
-      SrcPort		      1
-      DstBlock		      "Matrix\nConcatenation"
-      DstPort		      15
-    }
-    Line {
-      ZOrder		      6
-      SrcBlock		      "Subcarrier\nOrdering3"
-      SrcPort		      1
-      DstBlock		      "Matrix\nConcatenation"
-      DstPort		      7
-    }
-    Line {
-      ZOrder		      7
-      SrcBlock		      "Subcarrier\nOrdering5"
-      SrcPort		      1
-      DstBlock		      "Matrix\nConcatenation"
-      DstPort		      11
-    }
-    Line {
-      ZOrder		      8
-      SrcBlock		      "Subcarrier\nOrdering15"
-      SrcPort		      1
-      DstBlock		      "Matrix\nConcatenation"
-      DstPort		      31
-    }
-    Line {
-      ZOrder		      9
-      SrcBlock		      "Subcarrier\nOrdering13"
-      SrcPort		      1
-      DstBlock		      "Matrix\nConcatenation"
-      DstPort		      27
-    }
-    Line {
-      ZOrder		      10
-      SrcBlock		      "Subcarrier\nOrdering9"
-      SrcPort		      1
-      DstBlock		      "Matrix\nConcatenation"
-      DstPort		      19
-    }
-    Line {
-      ZOrder		      11
-      SrcBlock		      "Subcarrier\nOrdering6"
-      SrcPort		      1
-      DstBlock		      "Matrix\nConcatenation"
-      DstPort		      13
-    }
-    Line {
-      ZOrder		      12
-      SrcBlock		      "IFFT\nHDL Optimized"
-      SrcPort		      1
-      DstBlock		      "Complex to\nReal-Imag"
-      DstPort		      1
-    }
-    Line {
-      ZOrder		      195
-      SrcBlock		      "IFFT\nHDL Optimized"
-      SrcPort		      2
-      Points		      [32, 0; 0, 12; 244, 0; 0, -52]
-      DstBlock		      "Scope"
-      DstPort		      3
-    }
-    Line {
-      ZOrder		      77
-      SrcBlock		      "Constant1"
-      SrcPort		      1
-      Points		      [191, 0; 0, 70]
-      Branch {
-	ZOrder			76
-	Points			[0, 20]
-	Branch {
-	  ZOrder		  75
-	  DstBlock		  "Matrix\nConcatenation"
-	  DstPort		  2
-	}
-	Branch {
-	  ZOrder		  74
-	  Points		  [0, 40]
-	  Branch {
-	    ZOrder		    73
-	    DstBlock		    "Matrix\nConcatenation"
-	    DstPort		    4
-	  }
-	  Branch {
-	    ZOrder		    72
-	    Points		    [0, 40]
-	    Branch {
-	      ZOrder		      71
-	      DstBlock		      "Matrix\nConcatenation"
-	      DstPort		      6
-	    }
-	    Branch {
-	      ZOrder		      70
-	      Points		      [0, 40]
-	      Branch {
-		ZOrder			69
-		DstBlock		"Matrix\nConcatenation"
-		DstPort			8
-	      }
-	      Branch {
-		ZOrder			68
-		Points			[0, 40]
-		Branch {
-		  ZOrder		  67
-		  DstBlock		  "Matrix\nConcatenation"
-		  DstPort		  10
-		}
-		Branch {
-		  ZOrder		  66
-		  Points		  [0, 40]
-		  Branch {
-		    ZOrder		    65
-		    Points		    [0, 40]
-		    Branch {
-		    ZOrder		    64
-		    DstBlock		    "Matrix\nConcatenation"
-		    DstPort		    14
-		    }
-		    Branch {
-		    ZOrder		    63
-		    Points		    [0, 40]
-		    Branch {
-		    ZOrder		    62
-		    DstBlock		    "Matrix\nConcatenation"
-		    DstPort		    16
-		    }
-		    Branch {
-		    ZOrder		    61
-		    Points		    [0, 40]
-		    Branch {
-		    ZOrder		    60
-		    Points		    [0, 40]
-		    Branch {
-		    ZOrder		    59
-		    DstBlock		    "Matrix\nConcatenation"
-		    DstPort		    20
-		    }
-		    Branch {
-		    ZOrder		    58
-		    Points		    [0, 40]
-		    Branch {
-		    ZOrder		    57
-		    Points		    [0, 40]
-		    Branch {
-		    ZOrder		    56
-		    DstBlock		    "Matrix\nConcatenation"
-		    DstPort		    24
-		    }
-		    Branch {
-		    ZOrder		    55
-		    Points		    [0, 40]
-		    Branch {
-		    ZOrder		    54
-		    DstBlock		    "Matrix\nConcatenation"
-		    DstPort		    26
-		    }
-		    Branch {
-		    ZOrder		    53
-		    Points		    [0, 40]
-		    Branch {
-		    ZOrder		    52
-		    Points		    [0, 40]
-		    Branch {
-		    ZOrder		    51
-		    Points		    [0, 40]
-		    Branch {
-		    ZOrder		    50
-		    DstBlock		    "Matrix\nConcatenation"
-		    DstPort		    32
-		    }
-		    Branch {
-		    ZOrder		    49
-		    Points		    [0, 20]
-		    DstBlock		    "Matrix\nConcatenation"
-		    DstPort		    33
-		    }
-		    }
-		    Branch {
-		    ZOrder		    48
-		    DstBlock		    "Matrix\nConcatenation"
-		    DstPort		    30
-		    }
-		    }
-		    Branch {
-		    ZOrder		    47
-		    DstBlock		    "Matrix\nConcatenation"
-		    DstPort		    28
-		    }
-		    }
-		    }
-		    }
-		    Branch {
-		    ZOrder		    46
-		    DstBlock		    "Matrix\nConcatenation"
-		    DstPort		    22
-		    }
-		    }
-		    }
-		    Branch {
-		    ZOrder		    45
-		    DstBlock		    "Matrix\nConcatenation"
-		    DstPort		    18
-		    }
-		    }
-		    }
-		  }
-		  Branch {
-		    ZOrder		    44
-		    DstBlock		    "Matrix\nConcatenation"
-		    DstPort		    12
-		  }
-		}
-	      }
-	    }
-	  }
-	}
-      }
-      Branch {
-	ZOrder			43
-	DstBlock		"Matrix\nConcatenation"
-	DstPort			1
-      }
-    }
-    Line {
-      ZOrder		      193
-      SrcBlock		      "Complex to\nReal-Imag"
-      SrcPort		      1
-      Points		      [93, 0; 0, -10]
-      DstBlock		      "Scope"
-      DstPort		      1
-    }
-    Line {
-      ZOrder		      194
-      SrcBlock		      "Complex to\nReal-Imag"
-      SrcPort		      2
-      Points		      [142, 0; 0, -15]
-      DstBlock		      "Scope"
-      DstPort		      2
-    }
-    Line {
-      ZOrder		      81
-      SrcBlock		      "Subcarrier\nOrdering1"
-      SrcPort		      1
-      DstBlock		      "Matrix\nConcatenation"
-      DstPort		      5
-    }
-    Line {
-      ZOrder		      82
-      SrcBlock		      "Subcarrier\nOrdering14"
-      SrcPort		      1
-      DstBlock		      "Matrix\nConcatenation"
-      DstPort		      29
-    }
-    Line {
-      ZOrder		      83
-      SrcBlock		      "Subcarrier\nOrdering12"
-      SrcPort		      1
-      DstBlock		      "Matrix\nConcatenation"
-      DstPort		      25
-    }
-    Line {
-      ZOrder		      85
-      SrcBlock		      "Matrix\nConcatenation"
-      SrcPort		      1
-      DstBlock		      "Unbuffer"
-      DstPort		      1
-    }
-    Line {
-      ZOrder		      86
-      SrcBlock		      "Unbuffer"
-      SrcPort		      1
-      DstBlock		      "IFFT\nHDL Optimized"
-      DstPort		      1
-    }
-    Line {
       ZOrder		      198
       SrcBlock		      "ofdm_modulation_symbols"
       SrcPort		      4
-      Points		      [55, 0; 0, 50]
+      Points		      [55, 0; 0, 45]
       DstBlock		      "Unit Delay"
       DstPort		      1
     }
@@ -2200,9 +2138,9 @@ Model {
       SrcPort		      1
       Points		      [42, 0]
       Branch {
-	ZOrder			396
-	Points			[0, -280]
-	DstBlock		"Scope1"
+	ZOrder			627
+	Points			[0, -130]
+	DstBlock		"byte"
 	DstPort			2
       }
       Branch {
@@ -2217,9 +2155,9 @@ Model {
       SrcPort		      2
       Points		      [68, 0]
       Branch {
-	ZOrder			398
-	Points			[0, -290]
-	DstBlock		"Scope1"
+	ZOrder			626
+	Points			[0, -130]
+	DstBlock		"byte"
 	DstPort			3
       }
       Branch {
@@ -2232,11 +2170,11 @@ Model {
       ZOrder		      201
       SrcBlock		      "ofdm_input_fifo"
       SrcPort		      3
-      Points		      [99, 0]
+      Points		      [104, 0]
       Branch {
-	ZOrder			402
-	Points			[0, -300]
-	DstBlock		"Scope1"
+	ZOrder			625
+	Points			[0, -130]
+	DstBlock		"byte"
 	DstPort			4
       }
       Branch {
@@ -2249,11 +2187,11 @@ Model {
       ZOrder		      272
       SrcBlock		      "Unit Delay"
       SrcPort		      1
-      Points		      [-204, 0; 0, -110]
+      Points		      [-364, 0; 0, -105]
       Branch {
-	ZOrder			406
-	Points			[0, -330]
-	DstBlock		"Scope1"
+	ZOrder			628
+	Points			[0, -190]
+	DstBlock		"byte"
 	DstPort			1
       }
       Branch {
@@ -2263,44 +2201,35 @@ Model {
       }
     }
     Line {
-      ZOrder		      314
-      SrcBlock		      "Subcarrier\nOrdering2"
-      SrcPort		      1
-      DstBlock		      "Matrix\nConcatenation"
-      DstPort		      3
-    }
-    Line {
       ZOrder		      331
       SrcBlock		      "ofdm_modulation_symbols"
       SrcPort		      1
-      Points		      [17, 0]
+      Points		      [74, 0]
       Branch {
-	ZOrder			384
-	Points			[218, 0]
-	DstBlock		"ofdym_framing"
-	DstPort			1
+	ZOrder			632
+	Points			[0, -130]
+	DstBlock		"modulation symbol"
+	DstPort			2
       }
       Branch {
-	ZOrder			383
-	Points			[0, -220]
-	DstBlock		"Scope1"
-	DstPort			5
+	ZOrder			631
+	DstBlock		"ofdym_framing"
+	DstPort			1
       }
     }
     Line {
       ZOrder		      360
       SrcBlock		      "Unit Delay1"
       SrcPort		      1
-      Points		      [-30, 0]
+      Points		      [-386, 0; 0, -85; 40, 0]
       Branch {
-	ZOrder			394
-	Points			[0, -345]
-	DstBlock		"Scope1"
-	DstPort			8
+	ZOrder			630
+	Points			[0, -250]
+	DstBlock		"modulation symbol"
+	DstPort			1
       }
       Branch {
-	ZOrder			393
-	Points			[-331, 0; 0, -95]
+	ZOrder			629
 	DstBlock		"ofdm_modulation_symbols"
 	DstPort			4
       }
@@ -2309,34 +2238,32 @@ Model {
       ZOrder		      346
       SrcBlock		      "ofdm_modulation_symbols"
       SrcPort		      2
-      Points		      [40, 0]
+      Points		      [88, 0]
       Branch {
-	ZOrder			386
-	Points			[195, 0]
-	DstBlock		"ofdym_framing"
-	DstPort			2
+	ZOrder			634
+	Points			[0, -130]
+	DstBlock		"modulation symbol"
+	DstPort			3
       }
       Branch {
-	ZOrder			385
-	Points			[0, -230]
-	DstBlock		"Scope1"
-	DstPort			6
+	ZOrder			633
+	DstBlock		"ofdym_framing"
+	DstPort			2
       }
     }
     Line {
       ZOrder		      347
       SrcBlock		      "ofdm_modulation_symbols"
       SrcPort		      3
-      Points		      [68, 0]
+      Points		      [106, 0]
       Branch {
-	ZOrder			389
-	Points			[0, -240]
-	DstBlock		"Scope1"
-	DstPort			7
+	ZOrder			636
+	Points			[0, -130]
+	DstBlock		"modulation symbol"
+	DstPort			4
       }
       Branch {
-	ZOrder			388
-	Points			[167, 0]
+	ZOrder			635
 	DstBlock		"ofdym_framing"
 	DstPort			3
       }
@@ -2345,33 +2272,446 @@ Model {
       ZOrder		      359
       SrcBlock		      "ofdym_framing"
       SrcPort		      4
-      Points		      [9, 0; 0, 120]
-      DstBlock		      "Unit Delay1"
-      DstPort		      1
+      Points		      [72, 0]
+      Branch {
+	ZOrder			678
+	Points			[0, -160]
+	DstBlock		"ofdm frame"
+	DstPort			4
+      }
+      Branch {
+	ZOrder			677
+	Points			[52, 0; 0, 110]
+	DstBlock		"Unit Delay1"
+	DstPort			1
+      }
     }
     Line {
       ZOrder		      416
       SrcBlock		      "ofdym_framing"
-      SrcPort		      1
-      Points		      [34, 0; 0, -130]
-      DstBlock		      "Scope1"
-      DstPort		      9
+      SrcPort		      3
+      Points		      [15, 0]
+      Branch {
+	ZOrder			669
+	Points			[0, -240]
+	DstBlock		"ofdm frame"
+	DstPort			1
+      }
+      Branch {
+	ZOrder			668
+	Points			[195, 0; 0, 60]
+	DstBlock		"IFFT\nHDL Optimized1"
+	DstPort			2
+      }
     }
     Line {
       ZOrder		      417
       SrcBlock		      "ofdym_framing"
-      SrcPort		      2
-      Points		      [60, 0; 0, -135]
-      DstBlock		      "Scope1"
-      DstPort		      10
+      SrcPort		      1
+      Points		      [35, 0]
+      Branch {
+	ZOrder			672
+	Points			[0, -155]
+	DstBlock		"ofdm frame"
+	DstPort			2
+      }
+      Branch {
+	ZOrder			670
+	DstBlock		"Real-Imag to\nComplex"
+	DstPort			1
+      }
     }
     Line {
       ZOrder		      418
       SrcBlock		      "ofdym_framing"
-      SrcPort		      3
-      Points		      [90, 0; 0, -140]
-      DstBlock		      "Scope1"
+      SrcPort		      2
+      Points		      [56, 0]
+      Branch {
+	ZOrder			674
+	Points			[0, -145]
+	DstBlock		"ofdm frame"
+	DstPort			3
+      }
+      Branch {
+	ZOrder			673
+	DstBlock		"Real-Imag to\nComplex"
+	DstPort			2
+      }
+    }
+    Line {
+      ZOrder		      419
+      SrcBlock		      "Real-Imag to\nComplex"
+      SrcPort		      1
+      DstBlock		      "IFFT\nHDL Optimized1"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      512
+      SrcBlock		      "Subcarrier\nOrdering4"
+      SrcPort		      1
+      DstBlock		      "Matrix\nConcatenation"
+      DstPort		      9
+    }
+    Line {
+      ZOrder		      513
+      SrcBlock		      "Subcarrier\nOrdering11"
+      SrcPort		      1
+      DstBlock		      "Matrix\nConcatenation"
+      DstPort		      23
+    }
+    Line {
+      ZOrder		      514
+      SrcBlock		      "Subcarrier\nOrdering10"
+      SrcPort		      1
+      DstBlock		      "Matrix\nConcatenation"
+      DstPort		      21
+    }
+    Line {
+      ZOrder		      515
+      SrcBlock		      "Subcarrier\nOrdering8"
+      SrcPort		      1
+      DstBlock		      "Matrix\nConcatenation"
+      DstPort		      17
+    }
+    Line {
+      ZOrder		      516
+      SrcBlock		      "Subcarrier\nOrdering7"
+      SrcPort		      1
+      DstBlock		      "Matrix\nConcatenation"
+      DstPort		      15
+    }
+    Line {
+      ZOrder		      517
+      SrcBlock		      "Subcarrier\nOrdering3"
+      SrcPort		      1
+      DstBlock		      "Matrix\nConcatenation"
+      DstPort		      7
+    }
+    Line {
+      ZOrder		      518
+      SrcBlock		      "Subcarrier\nOrdering5"
+      SrcPort		      1
+      DstBlock		      "Matrix\nConcatenation"
       DstPort		      11
+    }
+    Line {
+      ZOrder		      519
+      SrcBlock		      "Subcarrier\nOrdering15"
+      SrcPort		      1
+      DstBlock		      "Matrix\nConcatenation"
+      DstPort		      31
+    }
+    Line {
+      ZOrder		      520
+      SrcBlock		      "Subcarrier\nOrdering13"
+      SrcPort		      1
+      DstBlock		      "Matrix\nConcatenation"
+      DstPort		      27
+    }
+    Line {
+      ZOrder		      521
+      SrcBlock		      "Subcarrier\nOrdering9"
+      SrcPort		      1
+      DstBlock		      "Matrix\nConcatenation"
+      DstPort		      19
+    }
+    Line {
+      ZOrder		      522
+      SrcBlock		      "Subcarrier\nOrdering6"
+      SrcPort		      1
+      DstBlock		      "Matrix\nConcatenation"
+      DstPort		      13
+    }
+    Line {
+      ZOrder		      523
+      SrcBlock		      "IFFT\nHDL Optimized"
+      SrcPort		      1
+      DstBlock		      "Complex to\nReal-Imag"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      524
+      SrcBlock		      "IFFT\nHDL Optimized"
+      SrcPort		      2
+      Points		      [32, 0; 0, 12; 244, 0; 0, -52]
+      DstBlock		      "Scope"
+      DstPort		      3
+    }
+    Line {
+      ZOrder		      559
+      SrcBlock		      "Constant1"
+      SrcPort		      1
+      Points		      [191, 0; 0, 70]
+      Branch {
+	ZOrder			558
+	Points			[0, 20]
+	Branch {
+	  ZOrder		  557
+	  DstBlock		  "Matrix\nConcatenation"
+	  DstPort		  2
+	}
+	Branch {
+	  ZOrder		  556
+	  Points		  [0, 40]
+	  Branch {
+	    ZOrder		    555
+	    DstBlock		    "Matrix\nConcatenation"
+	    DstPort		    4
+	  }
+	  Branch {
+	    ZOrder		    554
+	    Points		    [0, 40]
+	    Branch {
+	      ZOrder		      553
+	      DstBlock		      "Matrix\nConcatenation"
+	      DstPort		      6
+	    }
+	    Branch {
+	      ZOrder		      552
+	      Points		      [0, 40]
+	      Branch {
+		ZOrder			551
+		DstBlock		"Matrix\nConcatenation"
+		DstPort			8
+	      }
+	      Branch {
+		ZOrder			550
+		Points			[0, 40]
+		Branch {
+		  ZOrder		  549
+		  DstBlock		  "Matrix\nConcatenation"
+		  DstPort		  10
+		}
+		Branch {
+		  ZOrder		  548
+		  Points		  [0, 40]
+		  Branch {
+		    ZOrder		    547
+		    Points		    [0, 40]
+		    Branch {
+		    ZOrder		    546
+		    DstBlock		    "Matrix\nConcatenation"
+		    DstPort		    14
+		    }
+		    Branch {
+		    ZOrder		    545
+		    Points		    [0, 40]
+		    Branch {
+		    ZOrder		    544
+		    DstBlock		    "Matrix\nConcatenation"
+		    DstPort		    16
+		    }
+		    Branch {
+		    ZOrder		    543
+		    Points		    [0, 40]
+		    Branch {
+		    ZOrder		    542
+		    Points		    [0, 40]
+		    Branch {
+		    ZOrder		    541
+		    DstBlock		    "Matrix\nConcatenation"
+		    DstPort		    20
+		    }
+		    Branch {
+		    ZOrder		    540
+		    Points		    [0, 40]
+		    Branch {
+		    ZOrder		    539
+		    Points		    [0, 40]
+		    Branch {
+		    ZOrder		    538
+		    DstBlock		    "Matrix\nConcatenation"
+		    DstPort		    24
+		    }
+		    Branch {
+		    ZOrder		    537
+		    Points		    [0, 40]
+		    Branch {
+		    ZOrder		    536
+		    DstBlock		    "Matrix\nConcatenation"
+		    DstPort		    26
+		    }
+		    Branch {
+		    ZOrder		    535
+		    Points		    [0, 40]
+		    Branch {
+		    ZOrder		    534
+		    Points		    [0, 40]
+		    Branch {
+		    ZOrder		    533
+		    Points		    [0, 40]
+		    Branch {
+		    ZOrder		    532
+		    DstBlock		    "Matrix\nConcatenation"
+		    DstPort		    32
+		    }
+		    Branch {
+		    ZOrder		    531
+		    Points		    [0, 20]
+		    DstBlock		    "Matrix\nConcatenation"
+		    DstPort		    33
+		    }
+		    }
+		    Branch {
+		    ZOrder		    530
+		    DstBlock		    "Matrix\nConcatenation"
+		    DstPort		    30
+		    }
+		    }
+		    Branch {
+		    ZOrder		    529
+		    DstBlock		    "Matrix\nConcatenation"
+		    DstPort		    28
+		    }
+		    }
+		    }
+		    }
+		    Branch {
+		    ZOrder		    528
+		    DstBlock		    "Matrix\nConcatenation"
+		    DstPort		    22
+		    }
+		    }
+		    }
+		    Branch {
+		    ZOrder		    527
+		    DstBlock		    "Matrix\nConcatenation"
+		    DstPort		    18
+		    }
+		    }
+		    }
+		  }
+		  Branch {
+		    ZOrder		    526
+		    DstBlock		    "Matrix\nConcatenation"
+		    DstPort		    12
+		  }
+		}
+	      }
+	    }
+	  }
+	}
+      }
+      Branch {
+	ZOrder			525
+	DstBlock		"Matrix\nConcatenation"
+	DstPort			1
+      }
+    }
+    Line {
+      ZOrder		      560
+      SrcBlock		      "Complex to\nReal-Imag"
+      SrcPort		      1
+      Points		      [93, 0; 0, -10]
+      DstBlock		      "Scope"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      561
+      SrcBlock		      "Complex to\nReal-Imag"
+      SrcPort		      2
+      Points		      [142, 0; 0, -15]
+      DstBlock		      "Scope"
+      DstPort		      2
+    }
+    Line {
+      ZOrder		      562
+      SrcBlock		      "Subcarrier\nOrdering1"
+      SrcPort		      1
+      DstBlock		      "Matrix\nConcatenation"
+      DstPort		      5
+    }
+    Line {
+      ZOrder		      563
+      SrcBlock		      "Subcarrier\nOrdering14"
+      SrcPort		      1
+      DstBlock		      "Matrix\nConcatenation"
+      DstPort		      29
+    }
+    Line {
+      ZOrder		      564
+      SrcBlock		      "Subcarrier\nOrdering12"
+      SrcPort		      1
+      DstBlock		      "Matrix\nConcatenation"
+      DstPort		      25
+    }
+    Line {
+      ZOrder		      565
+      SrcBlock		      "Matrix\nConcatenation"
+      SrcPort		      1
+      DstBlock		      "Unbuffer"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      566
+      SrcBlock		      "Unbuffer"
+      SrcPort		      1
+      DstBlock		      "IFFT\nHDL Optimized"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      567
+      SrcBlock		      "Subcarrier\nOrdering2"
+      SrcPort		      1
+      DstBlock		      "Matrix\nConcatenation"
+      DstPort		      3
+    }
+    Line {
+      ZOrder		      580
+      SrcBlock		      "IFFT\nHDL Optimized1"
+      SrcPort		      1
+      Points		      [21, 0]
+      Branch {
+	ZOrder			663
+	Points			[0, -180]
+	DstBlock		"Spectrum\nAnalyzer"
+	DstPort			1
+      }
+      Branch {
+	ZOrder			662
+	DstBlock		"Complex to\nReal-Imag1"
+	DstPort			1
+      }
+    }
+    Line {
+      ZOrder		      647
+      SrcBlock		      "Complex to\nReal-Imag1"
+      SrcPort		      1
+      Points		      [96, 0; 0, -230]
+      DstBlock		      "ofdm symbol"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      648
+      SrcBlock		      "Complex to\nReal-Imag1"
+      SrcPort		      2
+      Points		      [128, 0; 0, -220]
+      DstBlock		      "ofdm symbol"
+      DstPort		      2
+    }
+    Line {
+      ZOrder		      649
+      SrcBlock		      "IFFT\nHDL Optimized1"
+      SrcPort		      2
+      Points		      [44, 0; 0, 17; 243, 0; 0, -237]
+      DstBlock		      "ofdm symbol"
+      DstPort		      3
+    }
+    Line {
+      ZOrder		      650
+      SrcBlock		      "IFFT\nHDL Optimized1"
+      SrcPort		      3
+      Points		      [323, 0; 0, -230]
+      DstBlock		      "ofdm symbol"
+      DstPort		      4
+    }
+    Line {
+      ZOrder		      651
+      SrcBlock		      "IFFT\nHDL Optimized1"
+      SrcPort		      4
+      Points		      [354, 0; 0, -240]
+      DstBlock		      "ofdm symbol"
+      DstPort		      5
     }
   }
 }
@@ -2451,11 +2791,11 @@ Stateflow {
       "uffered\nbuffered = 0;\nif (read_index > write_index)\n    buffered = (length(buffer_i) - read_index) + write_in"
       "dex;\nelseif (read_index <= write_index)\n    buffered = (write_index - read_index);\nend\n\n% if we have room f"
       "or more symbols, request another byte\navailable = length(buffer_i) - buffered;\nout_request_byte = (in_empty =="
-      " 0) && (available >= symbols_per_byte);\nfprintf('request %d length %d buffered %d\\n', ...\n        int8(out_re"
-      "quest_byte), int8(length(buffer_i)), int8(buffered));\n\n% if there's buffered data, output a symbol\nif in_requ"
-      "est_symbol && (read_index ~= write_index)\n    out_valid = true;\n    out_i = buffer_i(read_index + 1);\n    out"
-      "_q = buffer_q(read_index + 1);\n    read_index = read_index + 1;\n    if read_index >= length(buffer_i)\n       "
-      " read_index = 0;\n    end\nend\n\n"
+      " 0) && (available >= symbols_per_byte);\n%fprintf('request %d length %d buffered %d\\n', ...\n%        int8(out_"
+      "request_byte), int8(length(buffer_i)), int8(buffered));\n\n% if there's buffered data, output a symbol\nif in_re"
+      "quest_symbol && (read_index ~= write_index)\n    out_valid = true;\n    out_i = buffer_i(read_index + 1);\n    o"
+      "ut_q = buffer_q(read_index + 1);\n    read_index = read_index + 1;\n    if read_index >= length(buffer_i)\n     "
+      "   read_index = 0;\n    end\nend\n\n"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
@@ -2880,47 +3220,59 @@ Stateflow {
     decomposition	    CLUSTER_STATE
     eml {
       isEML		      1
-      script		      "function [out_valid, out_i, out_q, out_request_symbol] = fcn(in_valid, in_i, in_q)\n%#codegen\n\n"
+      script		      "function [out_i, out_q, out_valid, out_request_symbol] = fcn(in_valid, in_i, in_q)\n%#codegen\n\n"
       "null = fi(0,1,12,7);\nframe_size = 64;\n% the number of symbols grouped in contiguous subcarries\nsymbols_per_ru"
       "n = 3;\n% pilots are inserted between symbol runs\npilots_i = fi([1 0 -1 0],1,12,7);\npilots_q = fi([0 1 0 -1],1"
       ",12,7);\n\n% this creates a frame that looks like:\n% [ null (pilot run)+ null ]\n% given the current parameters"
       ", that means\n% 45 modulation symbols / ofdm frame\n% 2 bits / modulation symbol\n% 90 bits / ofdm frame\n\n% de"
-      "fault behavior\nout_request_symbol = true;\nout_valid = false;\nout_i = null;\nout_q = null;\n\n% circular buffe"
-      "r for symbol storage\npersistent buffer_i\nif isempty(buffer_i)  \n    buffer_i = repmat(null,1,frame_size);\nen"
-      "d\npersistent buffer_q\nif isempty(buffer_q)  \n    buffer_q = repmat(null,1,frame_size);\nend\npersistent read_"
-      "index\nif isempty(read_index)\n    read_index = 0;\nend\npersistent write_index\nif isempty(write_index)\n    wr"
-      "ite_index = 0;\nend\n\n% framing state\npersistent frame_index\npersistent pilot_index\nif isempty(pilot_index)\n"
-      "    pilot_index = 1;\nend\npersistent symbol_count\nif isempty(symbol_count)\n    symbol_count = 0;\nend\n\n% is"
-      " this the first symbol in a frame?\nframe_begin = (write_index == 0);\n% is this the last symbol in a run?\nsymb"
-      "ol_end = (symbol_count == (symbols_per_run - 1));\n% is this the last write in the frame?\n% the frame will end "
-      "with a (symbol)(pilot)(null)\nframe_end = ((write_index + 3) == (frame_size - 1));\n\n% The following scenarios "
-      "can occur:\n% (dc null)(pilot)(symbol)\n% (symbol)\n% (symbol)(pilot)\n% (symbol)(pilot)(dc null)\nif in_valid\n"
-      "    \n    % write the dc null and pilot if we're starting a frame\n    if frame_begin\n        buffer_i(write_in"
-      "dex+1) = null;\n        buffer_q(write_index+1) = null;\n        write_index = write_index + 1;\n        buffer_"
-      "i(write_index+1) = pilots_i(pilot_index);\n        buffer_q(write_index+1) = pilots_q(pilot_index);\n        wri"
-      "te_index = write_index + 1;\n        pilot_index = pilot_index + 1;\n        if pilot_index == length(pilots_i)\n"
-      "            pilot_index = 1;\n        end\n    end\n\n    % write the symbol\n    buffer_i(write_index+1) = in_i"
-      ";\n    buffer_q(write_index+1) = in_q;\n    write_index = write_index + 1;\n    symbol_count = symbol_count + 1;"
-      "\n    if symbol_count >= symbols_per_run\n        symbol_count = 0;\n    end\n    \n    % write the pilot at the"
-      " end of a run\n    if symbol_end\n        buffer_i(write_index+1) = pilots_i(pilot_index);\n        buffer_q(wri"
-      "te_index+1) = pilots_q(pilot_index);\n        write_index = write_index + 1;\n        pilot_index = pilot_index "
-      "+ 1;\n        if pilot_index == length(pilots_i)\n            pilot_index = 1;\n        end\n    end\n\n    % wr"
-      "ite the dc null on frame end\n    if frame_end\n        buffer_i(write_index+1) = null;\n        buffer_q(write_"
-      "index+1) = null;\n    end\n    if write_index >= length(buffer_i)\n        write_index = 0;\n    end\nend\n\n% d"
-      "etermine how many symbols are buffered\nbuffered = 0;\nif (read_index > write_index)\n    buffered = (length(buf"
-      "fer_i) - read_index) + write_index;\nelseif (read_index <= write_index)\n    buffered = (write_index - read_inde"
-      "x);\nend\n\n% we can write at *most* a null, a pilot, and a symbol\n% if there's room enough to support as much,"
-      " request a symbol\navailable = length(buffer_i) - buffered;\nout_request_symbol = (available >= 3);\n\n% output "
-      "i/q if there's something buffered\nif read_index ~= write_index\n    out_valid = true;\n    out_i = buffer_i(rea"
-      "d_index + 1);\n    out_q = buffer_q(read_index + 1);\n    read_index = read_index + 1;\n    if read_index >= len"
-      "gth(buffer_i)\n        read_index = 0;\n    end\nend"
+      "fault behavior\nout_request_symbol = false;\nout_valid = false;\nout_i = null;\nout_q = null;\n\n% circular buff"
+      "er for symbol storage\npersistent buffer_i\nif isempty(buffer_i)  \n    buffer_i = repmat(null,1,frame_size);\ne"
+      "nd\npersistent buffer_q\nif isempty(buffer_q)  \n    buffer_q = repmat(null,1,frame_size);\nend\npersistent read"
+      "_index\nif isempty(read_index)\n    read_index = 0;\nend\npersistent write_index\nif isempty(write_index)\n    w"
+      "rite_index = 0;\nend\n\n% framing state\npersistent frame_index\npersistent pilot_index\nif isempty(pilot_index)"
+      "\n    pilot_index = 1;\nend\npersistent symbol_count\nif isempty(symbol_count)\n    symbol_count = 0;\nend\n\n% "
+      "is this the first symbol in a frame?\nframe_begin = (write_index == 0);\n% is this the last symbol in a run?\nru"
+      "n_end = (symbol_count == (symbols_per_run - 1));\n% is this the last write in the frame?\n% the frame will end w"
+      "ith a (symbol)(pilot)(null)\nframe_end = ((write_index + 2) == (frame_size - 1));\nfprintf('valid %d %f,%f write"
+      " %d frame begin %d end %d run %d end %d\\n', ...\n    int8(in_valid), double(in_i), double(in_q), ...\n    int8("
+      "write_index), ...\n    int8(frame_begin), int8(frame_end), ...\n    int8(symbol_count), int8(run_end));\n\n% The"
+      " following scenarios can occur:\n% (null)(null)(pilot)(symbol)\n% (symbol)(pilot)(null)\n% (symbol)(pilot)\n% (s"
+      "ymbol)\nif in_valid\n    if frame_begin\n        % (null)(null)(pilot)(symbol)\n        fprintf('write %d nullx2"
+      " pilot %d %d,%d symbol %d %d,%d\\n', ...\n            int8(write_index), ...\n            int8(pilot_index), int"
+      "8(pilots_i(pilot_index)), int8(pilots_q(pilot_index)), ...\n            int8(symbol_count), int8(in_i), int8(in_"
+      "q));\n        buffer_i(write_index+1) = null;\n        buffer_q(write_index+1) = null;\n        buffer_i(write_i"
+      "ndex+2) = null;\n        buffer_q(write_index+2) = null;\n        buffer_i(write_index+3) = pilots_i(1);\n      "
+      "  buffer_q(write_index+3) = pilots_q(1);\n        buffer_i(write_index+4) = in_i;\n        buffer_q(write_index+"
+      "4) = in_q;\n        write_index = 4;\n        symbol_count = 1;\n        pilot_index = 2;\n    elseif frame_end\n"
+      "        % (symbol)(pilot)(null)\n        fprintf('write %d symbol %d %d,%d pilot %d %d,%d null\\n', ...\n       "
+      "     int8(write_index), ...\n            int8(symbol_count), int8(in_i), int8(in_q), ...\n            int8(pilot"
+      "_index), int8(pilots_i(pilot_index)), int8(pilots_q(pilot_index)));\n        buffer_i(write_index+1) = in_i;\n  "
+      "      buffer_q(write_index+1) = in_q;\n        buffer_i(write_index+2) = pilots_i(pilot_index);\n        buffer_"
+      "q(write_index+2) = pilots_q(pilot_index);\n        buffer_i(write_index+3) = null;\n        buffer_q(write_index"
+      "+3) = null;\n        write_index = 0;\n        symbol_count = 0;\n        pilot_index = 1;\n    elseif run_end\n"
+      "        % (symbol)(pilot)\n        fprintf('write %d symbol %d %d,%d pilot %d %d,%d\\n', ...\n            int8(w"
+      "rite_index), ...\n            int8(symbol_count), int8(in_i), int8(in_q), ...\n            int8(pilot_index), in"
+      "t8(pilots_i(pilot_index)), int8(pilots_q(pilot_index)));\n        buffer_i(write_index+1) = in_i;\n        buffe"
+      "r_q(write_index+1) = in_q;\n        buffer_i(write_index+2) = pilots_i(pilot_index);\n        buffer_q(write_ind"
+      "ex+2) = pilots_q(pilot_index);\n        write_index = write_index + 2;\n        symbol_count = 0;\n        pilot"
+      "_index = pilot_index + 1;\n        if pilot_index == length(pilots_i)\n            pilot_index = 1;\n        end"
+      "\n    else\n        % (symbol)\n        fprintf('write %d symbol %d %d,%d\\n', ...\n            int8(write_index"
+      "), ...\n            int8(symbol_count), int8(in_i), int8(in_q));\n        buffer_i(write_index+1) = in_i;\n     "
+      "   buffer_q(write_index+1) = in_q;\n        write_index = write_index + 1;\n        symbol_count = symbol_count "
+      "+ 1;\n    end\nend\n\n% determine how many symbols are buffered\nbuffered = 0;\nif (read_index > write_index)\n "
+      "   buffered = (length(buffer_i) - read_index) + write_index;\nelseif (read_index <= write_index)\n    buffered ="
+      " (write_index - read_index);\nend\n\n% we can write at *most* a 2xnull, a pilot, and a symbol\n% if there's room"
+      " enough to support as much, request a symbol\navailable = length(buffer_i) - buffered;\nout_request_symbol = (av"
+      "ailable >= 4);\n\n% output i/q if there's something buffered\nif read_index ~= write_index\n    out_valid = true"
+      ";\n    out_i = buffer_i(read_index + 1);\n    out_q = buffer_q(read_index + 1);\n    read_index = read_index + 1"
+      ";\n    if read_index >= length(buffer_i)\n        read_index = 0;\n    end\nend"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
   data {
     id			    26
-    ssIdNumber		    8
-    name		    "out_valid"
+    ssIdNumber		    9
+    name		    "out_i"
     linkNode		    [24 0 27]
     scope		    OUTPUT_DATA
     machine		    1
@@ -2941,8 +3293,8 @@ Stateflow {
   }
   data {
     id			    27
-    ssIdNumber		    9
-    name		    "out_i"
+    ssIdNumber		    10
+    name		    "out_q"
     linkNode		    [24 26 28]
     scope		    OUTPUT_DATA
     machine		    1
@@ -2963,10 +3315,10 @@ Stateflow {
   }
   data {
     id			    28
-    ssIdNumber		    10
-    name		    "out_q"
+    ssIdNumber		    4
+    name		    "in_valid"
     linkNode		    [24 27 29]
-    scope		    OUTPUT_DATA
+    scope		    INPUT_DATA
     machine		    1
     props {
       array {
@@ -2975,18 +3327,15 @@ Stateflow {
       type {
 	method			SF_INHERITED_TYPE
 	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
       }
       complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
     }
     dataType		    "Inherit: Same as Simulink"
   }
   data {
     id			    29
-    ssIdNumber		    4
-    name		    "in_valid"
+    ssIdNumber		    6
+    name		    "in_i"
     linkNode		    [24 28 30]
     scope		    INPUT_DATA
     machine		    1
@@ -2997,16 +3346,63 @@ Stateflow {
       type {
 	method			SF_INHERITED_TYPE
 	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
       }
       complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
     }
     dataType		    "Inherit: Same as Simulink"
   }
   data {
     id			    30
+    ssIdNumber		    7
+    name		    "in_q"
+    linkNode		    [24 29 31]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    31
+    ssIdNumber		    8
+    name		    "out_valid"
+    linkNode		    [24 30 32]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    32
     ssIdNumber		    5
     name		    "out_request_symbol"
-    linkNode		    [24 29 31]
+    linkNode		    [24 31 0]
     scope		    OUTPUT_DATA
     machine		    1
     props {
@@ -3019,50 +3415,6 @@ Stateflow {
       }
       complexity	      SF_COMPLEX_INHERITED
       frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    31
-    ssIdNumber		    6
-    name		    "in_i"
-    linkNode		    [24 30 32]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_INHERITED
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    32
-    ssIdNumber		    7
-    name		    "in_q"
-    linkNode		    [24 31 0]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_INHERITED
     }
     dataType		    "Inherit: Same as Simulink"
   }
