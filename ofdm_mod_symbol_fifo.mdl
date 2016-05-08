@@ -7,7 +7,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.665"
+    ComputedModelVersion    "1.684"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -54,8 +54,8 @@ Model {
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
 	Extents			[1234.0, 594.0]
-	ZoomFactor		[1.0]
-	Offset			[618.4033430035438, 102.05102948298054]
+	ZoomFactor		[0.8]
+	Offset			[-1.3466569964562041, 37.926031882067491]
       }
     }
   }
@@ -65,9 +65,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "C4Josh"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sat May 07 22:49:09 2016"
-  RTWModifiedTimeStamp	  384562011
-  ModelVersionFormat	  "1.%<AutoIncrement:665>"
+  LastModifiedDate	  "Sat May 07 23:16:28 2016"
+  RTWModifiedTimeStamp	  384563758
+  ModelVersionFormat	  "1.%<AutoIncrement:684>"
   ConfigurationManager	  "none"
   SampleTimeColors	  on
   SampleTimeAnnotations	  on
@@ -182,7 +182,7 @@ Model {
 	  $ObjectID		  8
 	  Version		  "1.15.0"
 	  StartTime		  "0.0"
-	  StopTime		  "(64+10000)/20e6"
+	  StopTime		  "inf"
 	  AbsTol		  "auto"
 	  FixedStep		  "auto"
 	  InitialStep		  "auto"
@@ -966,15 +966,15 @@ Model {
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "100"
+    ZoomFactor		    "80"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "56"
+    SIDHighWatermark	    "59"
     Block {
       BlockType		      TimeScope
       Name		      " modulation symbol"
       SID		      "56"
       Ports		      [4]
-      Position		      [840, 210, 945, 345]
+      Position		      [905, 115, 1010, 250]
       ZOrder		      279
       UserDataPersistent      on
       DefaultConfigurationName "spbscopes.TimeScopeBlockCfg"
@@ -1018,7 +1018,7 @@ Model {
       ",struct('Line',1),'tcursors',struct('XCoordinates',[2e-07 1.7375e-05],'YCoordinates',[0.1875 0.8125],'CursorChan"
       "nels',[1 2],'WaveformCursors',true,'ShowHorizontal',false,'ShowVertical',true,'LockCursorSpacing',false,'SnapToD"
       "ata',1,'SettingsPanelOpen',1,'MeasurementsPanelOpen',1)),'Version','2015a')),'Version','2015a','Position',[1 45 "
-      "1280 689],'VisibleAtModelOpen','on')"
+      "1280 689],'OpenAtMdlStart',false)"
       NumInputPorts	      "4"
     }
     Block {
@@ -1102,11 +1102,55 @@ Model {
       Mode		      "Multidimensional array"
     }
     Block {
+      BlockType		      Reference
+      Name		      "Raised Cosine\nTransmit Filter"
+      SID		      "58"
+      Ports		      [1, 1]
+      Position		      [2080, 438, 2160, 482]
+      ZOrder		      281
+      LibraryVersion	      "1.618"
+      UserDataPersistent      on
+      UserData		      "DataTag0"
+      SourceBlock	      "commfilt2/Raised Cosine\nTransmit Filter"
+      SourceType	      "Raised Cosine Transmit Filter"
+      ContentPreviewEnabled   off
+      filtType		      "Square root"
+      filtSpan		      "10"
+      currentFiltSpan	      "10"
+      D			      "5"
+      R			      "0.1"
+      sampMode		      "Mute"
+      saveAsFlag	      "0"
+      N			      "8"
+      framing		      "Allow multirate processing"
+      InputProcessing	      "Elements as channels (sample based)"
+      checkGain		      "Normalized"
+      filterGain	      "1"
+      checkCoeff	      on
+      variableName	      "rcTxFilt"
+      launchFVT		      on
+      roundingMode	      "Floor"
+      overflowMode	      on
+      coeffMode		      "Same word length as input"
+      coeffWordLength	      "16"
+      coeffFracLength	      "15"
+      prodOutputMode	      "Inherit via internal rule"
+      prodOutputWordLength    "32"
+      prodOutputFracLength    "30"
+      accumMode		      "Inherit via internal rule"
+      accumWordLength	      "32"
+      accumFracLength	      "30"
+      outputMode	      "Same as accumulator"
+      outputWordLength	      "16"
+      outputFracLength	      "15"
+      LockScale		      off
+    }
+    Block {
       BlockType		      RealImagToComplex
       Name		      "Real-Imag to\nComplex"
       SID		      "46"
       Ports		      [2, 1]
-      Position		      [1340, 370, 1390, 425]
+      Position		      [1350, 370, 1400, 425]
       ZOrder		      229
     }
     Block {
@@ -1145,7 +1189,7 @@ Model {
       Name		      "Spectrum\nAnalyzer"
       SID		      "54"
       Ports		      [1]
-      Position		      [1735, 174, 1780, 226]
+      Position		      [1700, 154, 1745, 206]
       ZOrder		      277
       ScopeSpecificationString "spbscopes.SpectrumAnalyzerBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(ext"
       "mgr.Configuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('"
@@ -1202,18 +1246,95 @@ Model {
       ",'on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','"
       "on'}),'MinYLim','-415.25975888477319','MaxYLim','40.775129511063199','SampleRate','20000000','Span','20000000','"
       "StartFrequency','-10000000','StopFrequency','10000000','IsSpanValuesValid',true),extmgr.Configuration('Tools','P"
-      "lot Navigation',true),extmgr.Configuration('Tools','Measurements',true,'Version','2015a'),extmgr.Configuration('"
-      "Sources','Simulink',false),extmgr.Configuration('Visuals','Constellation',false),extmgr.Configuration('Visuals',"
-      "'Eye Diagram',false),extmgr.Configuration('Visuals','Array Plot',false),extmgr.Configuration('Visuals','Logic An"
-      "alyzer',false),extmgr.Configuration('Sources','SimulinkEvent',false),extmgr.Configuration('Visuals','TimeVisual'"
-      ",false),extmgr.Configuration('Tools','Requirement viewer',false),extmgr.Configuration('Tools','Check block zoom'"
-      ",false),extmgr.Configuration('Sources','File',false),extmgr.Configuration('Sources','Workspace',false),extmgr.Co"
-      "nfiguration('Sources','Streaming',false),extmgr.Configuration('Visuals','Time Domain',false),extmgr.Configuratio"
-      "n('Visuals','Matrix',false),extmgr.Configuration('Tools','Instrumentation Sets',false),extmgr.Configuration('Sou"
-      "rces','SPTool',false),extmgr.Configuration('Visuals','BodeVisual',false),extmgr.Configuration('Visuals','PZMapVi"
-      "sual',false),extmgr.Configuration('Visuals','NicholsVisual',false),extmgr.Configuration('Visuals','MarginsVisual"
-      "',false),extmgr.Configuration('Visuals','SigmaVisual',false),extmgr.Configuration('Visuals','LinearStepVisual',f"
-      "alse)),'Version','2015a','VisibleAtModelOpen','on','OpenAtMdlStart',false)"
+      "lot Navigation',true,'PreviousAutoscale','XY'),extmgr.Configuration('Tools','Measurements',true,'Version','2015a"
+      "'),extmgr.Configuration('Sources','Simulink',false),extmgr.Configuration('Visuals','Constellation',false),extmgr"
+      ".Configuration('Visuals','Eye Diagram',false),extmgr.Configuration('Visuals','Array Plot',false),extmgr.Configur"
+      "ation('Visuals','Logic Analyzer',false),extmgr.Configuration('Sources','SimulinkEvent',false),extmgr.Configurati"
+      "on('Visuals','TimeVisual',false),extmgr.Configuration('Tools','Requirement viewer',false),extmgr.Configuration('"
+      "Tools','Check block zoom',false),extmgr.Configuration('Sources','File',false),extmgr.Configuration('Sources','Wo"
+      "rkspace',false),extmgr.Configuration('Sources','Streaming',false),extmgr.Configuration('Visuals','Time Domain',f"
+      "alse),extmgr.Configuration('Visuals','Matrix',false),extmgr.Configuration('Tools','Instrumentation Sets',false),"
+      "extmgr.Configuration('Sources','SPTool',false),extmgr.Configuration('Visuals','BodeVisual',false),extmgr.Configu"
+      "ration('Visuals','PZMapVisual',false),extmgr.Configuration('Visuals','NicholsVisual',false),extmgr.Configuration"
+      "('Visuals','MarginsVisual',false),extmgr.Configuration('Visuals','SigmaVisual',false),extmgr.Configuration('Visu"
+      "als','LinearStepVisual',false)),'Version','2015a','Position',[1 45 1280 664],'VisibleAtModelOpen','on','OpenAtMd"
+      "lStart',false)"
+    }
+    Block {
+      BlockType		      SpectrumAnalyzer
+      Name		      "Spectrum\nAnalyzer1"
+      SID		      "59"
+      Ports		      [1]
+      Position		      [2210, 434, 2255, 486]
+      ZOrder		      282
+      ScopeSpecificationString "spbscopes.SpectrumAnalyzerBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(ext"
+      "mgr.Configuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('"
+      "Sources','WiredSimulink',true),extmgr.Configuration('Sources','Simulink',false),extmgr.Configuration('Sources','"
+      "SimulinkEvent',false),extmgr.Configuration('Sources','File',false),extmgr.Configuration('Sources','Workspace',fa"
+      "lse),extmgr.Configuration('Sources','Streaming',false),extmgr.Configuration('Sources','SPTool',false),extmgr.Con"
+      "figuration('Visuals','Spectrum',true,'AxesProperties',struct('Color',[0 0 0],'XColor',[0.686274509803922 0.68627"
+      "4509803922 0.686274509803922],'YColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ZColor',[0.68627"
+      "4509803922 0.686274509803922 0.686274509803922],'XGrid','on','YGrid','on','ZGrid','off','Box','on','XScale','lin"
+      "ear','YScale','linear','ZScale','linear','XDir','normal','YDir','normal','ZDir','normal','XTickMode','auto','YTi"
+      "ckMode','auto','ZTickMode','auto','XTickLabelMode','manual','YTickLabelMode','auto','ZTickLabelMode','manual','X"
+      "TickLabel',['-80';'-60';'-40';'-20';'  0';' 20';' 40';' 60';' 80'],'ZTickLabel','','FontName','Helvetica','FontS"
+      "ize',8.5,'FontUnits','points','FontWeight','normal','Title','','XLabel','Frequency (MHz)','YLabel',' dBm','ZLabe"
+      "l',''),'LineProperties',struct('DisplayName',{'','','','','','','','','','','','','','','','','','','','','','',"
+      "'','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','"
+      "','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','',''"
+      ",'','',''},'Color',{[1 1 0.0666666666666667],[1 0 1],[0 1 1],[1 0 0],[0 1 0],[0 0 1],[1 1 0],[1 0 1],[0 1 1],[1 "
+      "0 0],[0 1 0],[0 0 1],[1 1 0],[1 0 1],[0 1 1],[1 0 0],[0 1 0],[0 0 1],[1 1 0],[1 0 1],[0 1 1],[1 0 0],[0 1 0],[0 "
+      "0 1],[1 1 0],[1 0 1],[0 1 1],[1 0 0],[0 1 0],[0 0 1],[1 1 0],[1 0 1],[0 1 1],[1 0 0],[0 1 0],[0 0 1],[1 1 0],[1 "
+      "0 1],[0 1 1],[1 0 0],[0 1 0],[0 0 1],[1 1 0],[1 0 1],[0 1 1],[1 0 0],[0 1 0],[0 0 1],[1 1 0],[1 0 1],[0 1 1],[1 "
+      "0 0],[0 1 0],[0 0 1],[1 1 0],[1 0 1],[0 1 1],[1 0 0],[0 1 0],[0 0 1],[1 1 0],[1 0 1],[0 1 1],[1 0 0],[0 1 0],[0 "
+      "0 1],[1 1 0],[1 0 1],[0 1 1],[1 0 0],[0 1 0],[0 0 1],[1 1 0],[1 0 1],[0 1 1],[1 0 0],[0 1 0],[0 0 1],[1 1 0],[1 "
+      "0 1],[0 1 1],[1 0 0],[0 1 0],[0 0 1],[1 1 0],[1 0 1],[0 1 1],[1 0 0],[0 1 0],[0 0 1],[1 1 0],[1 0 1],[0 1 1],[1 "
+      "0 0],[0 1 0],[0 0 1],[1 1 0],[1 0 1],[0 1 1],[1 0 0]},'LineStyle',{'-','-','-','-','-','-','-','-','-','-','-','"
+      "-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','"
+      "-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','"
+      "-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','"
+      "-','-','-','-','-'},'LineWidth',{0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5"
+      ",0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5"
+      ",0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5"
+      ",0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5},'Marker',{'non"
+      "e','none','none','none','none','none','none','none','none','none','none','none','none','none','none','none','non"
+      "e','none','none','none','none','none','none','none','none','none','none','none','none','none','none','none','non"
+      "e','none','none','none','none','none','none','none','none','none','none','none','none','none','none','none','non"
+      "e','none','none','none','none','none','none','none','none','none','none','none','none','none','none','none','non"
+      "e','none','none','none','none','none','none','none','none','none','none','none','none','none','none','none','non"
+      "e','none','none','none','none','none','none','none','none','none','none','none','none','none','none','none','non"
+      "e','none','none','none'},'MarkerSize',{6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6"
+      ",6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6"
+      ",6,6,6,6,6,6,6},'MarkerEdgeColor',{'auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto',"
+      "'auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto',"
+      "'auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto',"
+      "'auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto',"
+      "'auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto',"
+      "'auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto',"
+      "'auto','auto','auto','auto','auto','auto','auto','auto','auto'},'MarkerFaceColor',{'none','none','none','none','"
+      "none','none','none','none','none','none','none','none','none','none','none','none','none','none','none','none','"
+      "none','none','none','none','none','none','none','none','none','none','none','none','none','none','none','none','"
+      "none','none','none','none','none','none','none','none','none','none','none','none','none','none','none','none','"
+      "none','none','none','none','none','none','none','none','none','none','none','none','none','none','none','none','"
+      "none','none','none','none','none','none','none','none','none','none','none','none','none','none','none','none','"
+      "none','none','none','none','none','none','none','none','none','none','none','none','none','none','none','none'},"
+      "'Visible',{'on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','"
+      "on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on"
+      "','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on',"
+      "'on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','o"
+      "n','on','on','on','on','on','on','on','on','on','on','on','on'}),'MinYLim','-121.079988594754','MaxYLim','1.6809"
+      "485295295943','SampleRate','160000000','Span','160000000','StartFrequency','-80000000','StopFrequency','80000000"
+      "','IsSpanValuesValid',true),extmgr.Configuration('Visuals','Constellation',false),extmgr.Configuration('Visuals'"
+      ",'Eye Diagram',false),extmgr.Configuration('Visuals','Array Plot',false),extmgr.Configuration('Visuals','Logic A"
+      "nalyzer',false),extmgr.Configuration('Visuals','TimeVisual',false),extmgr.Configuration('Visuals','Time Domain',"
+      "false),extmgr.Configuration('Visuals','Matrix',false),extmgr.Configuration('Visuals','BodeVisual',false),extmgr."
+      "Configuration('Visuals','PZMapVisual',false),extmgr.Configuration('Visuals','NicholsVisual',false),extmgr.Config"
+      "uration('Visuals','MarginsVisual',false),extmgr.Configuration('Visuals','SigmaVisual',false),extmgr.Configuratio"
+      "n('Visuals','LinearStepVisual',false),extmgr.Configuration('Tools','Plot Navigation',true,'AutoscaleMode','Manua"
+      "l','OnceAtStop',false,'PreviousAutoscale','XY'),extmgr.Configuration('Tools','Measurements',true,'Version','2015"
+      "a'),extmgr.Configuration('Tools','Requirement viewer',false),extmgr.Configuration('Tools','Check block zoom',fal"
+      "se),extmgr.Configuration('Tools','Instrumentation Sets',false)),'Version','2015a','Position',[1 45 1280 664],'Op"
+      "enAtMdlStart',false)"
     }
     Block {
       BlockType		      Selector
@@ -1412,46 +1533,62 @@ Model {
       SampleTime	      "-1"
     }
     Block {
-      BlockType		      Scope
+      BlockType		      TimeScope
       Name		      "byte"
-      SID		      "50"
+      SID		      "57"
       Ports		      [4]
-      Position		      [375, 219, 470, 341]
-      ZOrder		      273
-      Floating		      off
-      Location		      [1, 45, 1281, 755]
-      Open		      off
+      Position		      [350, 115, 455, 250]
+      ZOrder		      280
+      UserDataPersistent      on
+      DefaultConfigurationName "spbscopes.TimeScopeBlockCfg"
+      ScopeSpecificationString "spbscopes.TimeScopeBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(extmgr.Con"
+      "figuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('Sources"
+      "','WiredSimulink',true),extmgr.Configuration('Visuals','Time Domain',true,'DisplayLayoutDimensions',[4 1],'Displ"
+      "ayPropertyDefaults',struct('YLabelReal','Amplitude','AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686"
+      "274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0."
+      "411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.2745"
+      "09803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863]),'SerializedDisplays',{struct('MinY"
+      "LimReal','-0.125','MaxYLimReal','1.125','YLabelReal','Amplitude','MinYLimMag','0','MaxYLimMag','1.125','LegendVi"
+      "sibility','On','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.68627450980"
+      "3922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764"
+      "706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823"
+      "529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','','LinePropertie"
+      "sCache',{{}},'UserDefinedChannelNames',{{}},'NumLines',1,'LineNames',{{'Unit Delay'}},'ShowContent',true,'Placem"
+      "ent',1),struct('MinYLimReal','-1','MaxYLimReal','1','YLabelReal','Amplitude','MinYLimMag','0','MaxYLimMag','1.25"
+      "','LegendVisibility','Off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0"
+      ".686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0."
+      "623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0."
+      "717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','','L"
+      "inePropertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLines',1,'LineNames',{{'ofdm_input_fifo/out_empty'}}"
+      ",'ShowContent',true,'Placement',2),struct('MinYLimReal','-0.125','MaxYLimReal','1.125','YLabelReal','Amplitude',"
+      "'MinYLimMag','0','MaxYLimMag','1.25','LegendVisibility','Off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'Ax"
+      "esColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.066"
+      "6666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.83"
+      "1372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.07450980392156"
+      "86 0.650980392156863],'Title','','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLines',1,'LineNam"
+      "es',{{'ofdm_input_fifo/out_valid'}},'ShowContent',true,'Placement',3),struct('MinYLimReal','-9.58407','MaxYLimRe"
+      "al','232.54','YLabelReal','Amplitude','MinYLimMag','0','MaxYLimMag','1.25','LegendVisibility','Off','XGrid',true"
+      ",'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.68"
+      "6274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0"
+      ".16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0"
+      "588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','','LinePropertiesCache',{{}},'UserDefinedCh"
+      "annelNames',{{}},'NumLines',1,'LineNames',{{'ofdm_input_fifo/out_byte'}},'ShowContent',true,'Placement',4)}),ext"
+      "mgr.Configuration('Tools','Plot Navigation',true,'OnceAtStop',false,'PreviousAutoscale','XY'),extmgr.Configurati"
+      "on('Tools','Measurements',true,'Measurements',struct('triggers',struct('Mode','Auto','Position',0.5,'Type','Edge"
+      "','Polarity','Positive','AutoLevel',true,'Level',0.5,'Hysteresis',0,'UpperLevel',2.3,'LowerLevel',0.2,'MinTime',"
+      "0,'MaxTime',Inf,'Timeout',0,'Delay',0,'Holdoff',0,'SourceOffset',1,'MainPanelOpen',1,'TypePanelOpen',1,'Settings"
+      "PanelOpen',1,'OffsetPanelOpen',1),'traceselector',struct('Line',1),'tcursors',struct('XCoordinates',[2e-07 1.737"
+      "5e-05],'YCoordinates',[0.1875 0.8125],'CursorChannels',[1 2],'WaveformCursors',true,'ShowHorizontal',false,'Show"
+      "Vertical',true,'LockCursorSpacing',false,'SnapToData',1,'SettingsPanelOpen',1,'MeasurementsPanelOpen',1)),'Versi"
+      "on','2015a')),'Version','2015a','Position',[1 45 1280 689],'OpenAtMdlStart',false)"
       NumInputPorts	      "4"
-      ZoomMode		      "xonly"
-      List {
-	ListType		AxesTitles
-	axes1			"%<SignalLabel>"
-	axes2			"%<SignalLabel>"
-	axes3			"%<SignalLabel>"
-	axes4			"%<SignalLabel>"
-      }
-      List {
-	ListType		ScopeGraphics
-	FigureColor		"[0.5 0.5 0.5]"
-	AxesColor		"[0 0 0]"
-	AxesTickColor		"[1 1 1]"
-	LineColors		"[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
-	LineStyles		"-|-|-|-|-|-"
-	LineWidths		"[0.5 0.5 0.5 0.5 0.5 0.5]"
-	MarkerStyles		"none|none|none|none|none|none"
-      }
-      ShowLegends	      on
-      LegendLocations	      "0.88646     0.91033    0.083594    0.028638\n0.82474     0.67653     0.14531    0.028638\n"
-      "0.83021     0.44413     0.13984    0.028638\n0.83177     0.21033     0.13828    0.028638"
-      YMin		      "-5~-5~-5~-5"
-      YMax		      "5~5~5~5"
     }
     Block {
       BlockType		      TimeScope
       Name		      "ofdm frame"
       SID		      "55"
       Ports		      [4]
-      Position		      [1310, 180, 1415, 315]
+      Position		      [1350, 115, 1455, 250]
       ZOrder		      278
       UserDataPersistent      on
       DefaultConfigurationName "spbscopes.TimeScopeBlockCfg"
@@ -1475,27 +1612,27 @@ Model {
       ";0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647"
       " 1 1;1 0.0745098039215686 0.650980392156863],'Title','','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{}"
       "},'NumLines',1,'LineNames',{{'ofdym_framing/out_i'}},'ShowContent',true,'Placement',2),struct('MinYLimReal','-1."
-      "25','MaxYLimReal','1.25','YLabelReal','Amplitude','MinYLimMag','0','MaxYLimMag','1.25','LegendVisibility','Off',"
-      "'XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.68627450"
-      "9803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.41176"
-      "4705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803"
-      "921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','','LinePropertiesCache',{{}},'U"
-      "serDefinedChannelNames',{{}},'NumLines',1,'LineNames',{{'ofdym_framing/out_q'}},'ShowContent',true,'Placement',3"
-      "),struct('MinYLimReal','-0.125','MaxYLimReal','1.125','YLabelReal','Amplitude','MinYLimMag','0','MaxYLimMag','1."
-      "25','LegendVisibility','Off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',"
-      "[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 "
-      "0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;"
-      "0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','',"
-      "'LinePropertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLines',1,'LineNames',{{'ofdym_framing/out_request_"
-      "symbol'}},'ShowContent',true,'Placement',4)}),extmgr.Configuration('Tools','Plot Navigation',true,'OnceAtStop',f"
-      "alse,'PreviousAutoscale','XY'),extmgr.Configuration('Tools','Measurements',true,'Measurements',struct('tracesele"
-      "ctor',struct('Line',1),'tcursors',struct('XCoordinates',[1e-06 1.7375e-05],'YCoordinates',[1 1],'CursorChannels'"
-      ",[1 2],'WaveformCursors',true,'ShowHorizontal',false,'ShowVertical',true,'LockCursorSpacing',false,'SnapToData',"
-      "1,'SettingsPanelOpen',1,'MeasurementsPanelOpen',1),'triggers',struct('Mode','Auto','Position',0.5,'Type','Edge',"
-      "'Polarity','Positive','AutoLevel',true,'Level',0.5,'Hysteresis',0,'UpperLevel',2.3,'LowerLevel',0.2,'MinTime',0,"
-      "'MaxTime',Inf,'Timeout',0,'Delay',0,'Holdoff',0,'SourceOffset',1,'MainPanelOpen',1,'TypePanelOpen',1,'SettingsPa"
-      "nelOpen',1,'OffsetPanelOpen',1)),'Version','2015a')),'Version','2015a','Position',[1 45 1280 689],'VisibleAtMode"
-      "lOpen','on')"
+      "1051','MaxYLimReal','1.01815','YLabelReal','Amplitude','MinYLimMag','0','MaxYLimMag','1.25','LegendVisibility','"
+      "Off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686"
+      "274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0."
+      "411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.2745"
+      "09803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','','LinePropertiesCache',{{"
+      "}},'UserDefinedChannelNames',{{}},'NumLines',1,'LineNames',{{'ofdym_framing/out_q'}},'ShowContent',true,'Placeme"
+      "nt',3),struct('MinYLimReal','-0.125','MaxYLimReal','1.125','YLabelReal','Amplitude','MinYLimMag','0','MaxYLimMag"
+      "','1.25','LegendVisibility','Off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickCo"
+      "lor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.074509803921"
+      "5686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.074509803921"
+      "5686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title"
+      "','','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLines',1,'LineNames',{{'ofdym_framing/out_req"
+      "uest_symbol'}},'ShowContent',true,'Placement',4)}),extmgr.Configuration('Tools','Plot Navigation',true,'OnceAtSt"
+      "op',false,'PreviousZoomMode','Pan','PreviousAutoscale','XY'),extmgr.Configuration('Tools','Measurements',true,'M"
+      "easurements',struct('traceselector',struct('Line',1),'tcursors',struct('XCoordinates',[6.55e-06 5.155e-05],'YCoo"
+      "rdinates',[1 0],'CursorChannels',[1 2],'WaveformCursors',true,'ShowHorizontal',false,'ShowVertical',true,'LockCu"
+      "rsorSpacing',false,'SnapToData',1,'SettingsPanelOpen',1,'MeasurementsPanelOpen',1),'triggers',struct('Mode','Aut"
+      "o','Position',0.5,'Type','Edge','Polarity','Positive','AutoLevel',true,'Level',0.5,'Hysteresis',0,'UpperLevel',2"
+      ".3,'LowerLevel',0.2,'MinTime',0,'MaxTime',Inf,'Timeout',0,'Delay',0,'Holdoff',0,'SourceOffset',1,'MainPanelOpen'"
+      ",1,'TypePanelOpen',1,'SettingsPanelOpen',1,'OffsetPanelOpen',1)),'Version','2015a')),'Version','2015a','Position"
+      "',[1 45 1280 689],'OpenAtMdlStart',false)"
       NumInputPorts	      "4"
     }
     Block {
@@ -1503,11 +1640,11 @@ Model {
       Name		      "ofdm symbol"
       SID		      "52"
       Ports		      [5]
-      Position		      [2080, 116, 2205, 294]
+      Position		      [2070, 56, 2195, 234]
       ZOrder		      275
       Floating		      off
       Location		      [1, 45, 1281, 755]
-      Open		      off
+      Open		      on
       NumInputPorts	      "5"
       List {
 	ListType		AxesTitles
@@ -1931,7 +2068,7 @@ Model {
       Name		      "ofdym_framing"
       SID		      "43"
       Ports		      [3, 4]
-      Position		      [940, 374, 1105, 471]
+      Position		      [865, 374, 1030, 471]
       ZOrder		      226
       LibraryVersion	      "1.32"
       ErrorFcn		      "Stateflow.Translate.translate"
@@ -2155,8 +2292,8 @@ Model {
       SrcPort		      1
       Points		      [42, 0]
       Branch {
-	ZOrder			627
-	Points			[0, -130]
+	ZOrder			684
+	Points			[0, -230]
 	DstBlock		"byte"
 	DstPort			2
       }
@@ -2172,8 +2309,8 @@ Model {
       SrcPort		      2
       Points		      [68, 0]
       Branch {
-	ZOrder			626
-	Points			[0, -130]
+	ZOrder			685
+	Points			[0, -225]
 	DstBlock		"byte"
 	DstPort			3
       }
@@ -2189,8 +2326,8 @@ Model {
       SrcPort		      3
       Points		      [104, 0]
       Branch {
-	ZOrder			625
-	Points			[0, -130]
+	ZOrder			686
+	Points			[0, -220]
 	DstBlock		"byte"
 	DstPort			4
       }
@@ -2206,8 +2343,8 @@ Model {
       SrcPort		      1
       Points		      [-364, 0; 0, -105]
       Branch {
-	ZOrder			628
-	Points			[0, -190]
+	ZOrder			683
+	Points			[0, -295]
 	DstBlock		"byte"
 	DstPort			1
       }
@@ -2224,7 +2361,7 @@ Model {
       Points		      [74, 0]
       Branch {
 	ZOrder			680
-	Points			[0, -135]
+	Points			[0, -230]
 	DstBlock		" modulation symbol"
 	DstPort			2
       }
@@ -2241,7 +2378,7 @@ Model {
       Points		      [-386, 0; 0, -85; 40, 0]
       Branch {
 	ZOrder			679
-	Points			[0, -260]
+	Points			[0, -355]
 	DstBlock		" modulation symbol"
 	DstPort			1
       }
@@ -2258,7 +2395,7 @@ Model {
       Points		      [88, 0]
       Branch {
 	ZOrder			681
-	Points			[0, -130]
+	Points			[0, -225]
 	DstBlock		" modulation symbol"
 	DstPort			3
       }
@@ -2275,7 +2412,7 @@ Model {
       Points		      [106, 0]
       Branch {
 	ZOrder			682
-	Points			[0, -125]
+	Points			[0, -220]
 	DstBlock		" modulation symbol"
 	DstPort			4
       }
@@ -2289,10 +2426,10 @@ Model {
       ZOrder		      359
       SrcBlock		      "ofdym_framing"
       SrcPort		      4
-      Points		      [72, 0]
+      Points		      [147, 0]
       Branch {
 	ZOrder			678
-	Points			[0, -160]
+	Points			[0, -225]
 	DstBlock		"ofdm frame"
 	DstPort			4
       }
@@ -2307,10 +2444,10 @@ Model {
       ZOrder		      416
       SrcBlock		      "ofdym_framing"
       SrcPort		      3
-      Points		      [15, 0]
+      Points		      [90, 0]
       Branch {
 	ZOrder			669
-	Points			[0, -240]
+	Points			[0, -305]
 	DstBlock		"ofdm frame"
 	DstPort			1
       }
@@ -2325,10 +2462,10 @@ Model {
       ZOrder		      417
       SrcBlock		      "ofdym_framing"
       SrcPort		      1
-      Points		      [35, 0]
+      Points		      [110, 0]
       Branch {
 	ZOrder			672
-	Points			[0, -155]
+	Points			[0, -220]
 	DstBlock		"ofdm frame"
 	DstPort			2
       }
@@ -2342,10 +2479,10 @@ Model {
       ZOrder		      418
       SrcBlock		      "ofdym_framing"
       SrcPort		      2
-      Points		      [56, 0]
+      Points		      [131, 0]
       Branch {
 	ZOrder			674
-	Points			[0, -145]
+	Points			[0, -210]
 	DstBlock		"ofdm frame"
 	DstPort			3
       }
@@ -2680,21 +2817,31 @@ Model {
       Points		      [21, 0]
       Branch {
 	ZOrder			663
-	Points			[0, -180]
+	Points			[0, -200]
 	DstBlock		"Spectrum\nAnalyzer"
 	DstPort			1
       }
       Branch {
 	ZOrder			662
-	DstBlock		"Complex to\nReal-Imag1"
-	DstPort			1
+	Points			[34, 0]
+	Branch {
+	  ZOrder		  688
+	  Points		  [2, 0; 0, 80]
+	  DstBlock		  "Raised Cosine\nTransmit Filter"
+	  DstPort		  1
+	}
+	Branch {
+	  ZOrder		  687
+	  DstBlock		  "Complex to\nReal-Imag1"
+	  DstPort		  1
+	}
       }
     }
     Line {
       ZOrder		      647
       SrcBlock		      "Complex to\nReal-Imag1"
       SrcPort		      1
-      Points		      [96, 0; 0, -230]
+      Points		      [96, 0; 0, -290]
       DstBlock		      "ofdm symbol"
       DstPort		      1
     }
@@ -2702,7 +2849,7 @@ Model {
       ZOrder		      648
       SrcBlock		      "Complex to\nReal-Imag1"
       SrcPort		      2
-      Points		      [128, 0; 0, -220]
+      Points		      [128, 0; 0, -280]
       DstBlock		      "ofdm symbol"
       DstPort		      2
     }
@@ -2710,7 +2857,7 @@ Model {
       ZOrder		      649
       SrcBlock		      "IFFT\nHDL Optimized1"
       SrcPort		      2
-      Points		      [44, 0; 0, 17; 243, 0; 0, -237]
+      Points		      [44, 0; 0, 17; 243, 0; 0, -297]
       DstBlock		      "ofdm symbol"
       DstPort		      3
     }
@@ -2718,7 +2865,7 @@ Model {
       ZOrder		      650
       SrcBlock		      "IFFT\nHDL Optimized1"
       SrcPort		      3
-      Points		      [323, 0; 0, -230]
+      Points		      [323, 0; 0, -290]
       DstBlock		      "ofdm symbol"
       DstPort		      4
     }
@@ -2726,10 +2873,47 @@ Model {
       ZOrder		      651
       SrcBlock		      "IFFT\nHDL Optimized1"
       SrcPort		      4
-      Points		      [354, 0; 0, -240]
+      Points		      [354, 0; 0, -300]
       DstBlock		      "ofdm symbol"
       DstPort		      5
     }
+    Line {
+      ZOrder		      690
+      SrcBlock		      "Raised Cosine\nTransmit Filter"
+      SrcPort		      1
+      DstBlock		      "Spectrum\nAnalyzer1"
+      DstPort		      1
+    }
+  }
+}
+MatData {
+  NumRecords		  1
+  DataRecord {
+    Tag			    DataTag0
+    Data		    "  %)30     .    D 0   8    (     @         %    \"     $    !     0         %  0 %@    $   !8    9FEL=&"
+    "5R0V]N<W1R=6-T;W(      &9I;'1E<D-O;G-T<G5C=&]R07)G<P!H87-);FAE<FET961/<'1I;VX     9G9T;V]L                      X "
+    "  !     !@    @    $          4    (     0    L    !         !     +    9&9I;'0N9&9F:7(       X   #H @  !@    @   "
+    " !          4    (     0    $    !          X   \"X @  !@    @    &          4    (     0   %$    !          D   \""
+    "( @  I)^A#<S)?K\\8')1&,GA0OVMDJ=!9?GD_D#^^LT6@BC_M1E<#3Y*2/[G^MR0Q'94_MH+P$PM'E#_+3W+? ].//[B9S_K*Y8 _/0H%$CO\\4;_"
+    "JYES]=L&&OU*JV.2-I)2_3*\"[PVQ#F[__P%\"E<-^=O^-FSL7-I)N_N%#C^C-YE+_[A/IVVR*\"OQ&=FV(F870_?&,=UT7NDS\\#8\"-J[X*@/\\Z"
+    "Y2,7G_*0__=N&,2=FIC\\'</M_4B&D/Q53>IX)+)P_-<H(83 /@S]Q=&V,7?V*OP<L_\"9$WJ*_/1%'4ANPK;\\Y1I\\!@)FROPC\\(9J$Q[._B=BF"
+    "B%FLL;\\K*\\C'O,FGOXPTQ&,*H8._P^Q;B@MJI#^0-K&]W#VY/P)N9HB O,0_5/#QB'S!S#_0BUFU)/K1/[< Y@\\:U-0_0+SZ3)>HUC_;3?^ !DK"
+    "7/T\"\\^DR7J-8_MP#F#QK4U#_0BUFU)/K1/U3P\\8A\\P<P_ FYFB(\"\\Q#^0-K&]W#VY/\\/L6XH+:J0_C#3$8PJA@[\\K*\\C'O,FGOXG8IHA9"
+    "K+&_\"/PAFH3'L[\\Y1I\\!@)FROST11U(;L*V_!RS\\)D3>HK]Q=&V,7?V*OS7*\"&$P#X,_%5-ZG@DLG#\\'</M_4B&D/_W;AC$G9J8_SKE(Q>?\\"
+    "I#\\#8\"-J[X*@/WQC'==%[I,_$9V;8B9A=#_[A/IVVR*\"O[A0X_HS>92_XV;.Q<VDF[__P%\"E<-^=OTR@N\\-L0YN_4JK8Y(VDE+_JYES]=L&&O"
+    "ST*!1([_%&_N)G/^LKE@#_+3W+? ].//[:\"\\!,+1Y0_N?ZW)#$=E3_M1E<#3Y*2/Y _OK-%H(H_:V2IT%E^>3\\8')1&,GA0OZ2?H0W,R7Z_#@  "
+    " #     &    \"     D\"        !0    @    !     0    $          @ !  $    .    B     8    (    $0         !        "
+    "  $ ! !-0T]3 0   !    !M871L86(N=6DN1FEG=7)E#@   $@    &    \"     T         !0    @    &     0    $         !@   "
+    "!@       #= @    $    !          $    .    Z (   8    (    \"0         %    \"     $   \"X @   0         \"    N ("
+    "    !24T     #@   !@\"   &    \"     (         !0    @    !     0    $         !0 $  4    !    !0   $U#3U,     #@ "
+    "  - !   &    \"    !$          0         !  0 34-/4P$    -    1FEL95=R87!P97)?7P    X   \"0 0  !@    @    !       "
+    "   4    (     P    $    !          X   \"H    !@    @    )          4    (    >     $    !          (   !X     @  "
+    "  (   !     8    &    !X    >    '@              $9I9W5R90!M871L86(N=6D                                \"     0   "
+    "                                           #@         .    J     8    (     0         %    \"     (    !     0    "
+    "     .    .     8    (     @         %    \"     $          0         %  0  0    $         #@   #@    &    \"     "
+    "(         !0    @    !          $         !0 $  $    !          X   \"(    !@    @    )          4    (     0   %@"
+    "    !          (   !8      %)30     .    2     8    (     @         %    \"     $    !     0         %  0 !0    $ "
+    "   %    34-/4P     .          "
   }
 }
 #Finite State Machines
@@ -2808,13 +2992,13 @@ Stateflow {
       "ffered\nbuffered = 0;\nif (read_index > write_index)\n    buffered = (length(buffer_i) - read_index) + write_ind"
       "ex;\nelseif (read_index <= write_index)\n    buffered = (write_index - read_index);\nend\n\n% if we have room fo"
       "r more symbols, request another byte\navailable = length(buffer_i) - buffered;\nout_request_byte = (in_empty == "
-      "0) && (available >= symbols_per_byte);\nfprintf('[mod]read %d write %d request %d length %d buffered %d\\n', ..."
-      "\n    int8(read_index), int8(write_index), ...\n    int8(out_request_byte), int8(length(buffer_i)), int8(buffere"
-      "d));\n\n% if there's buffered data, output a symbol\nif in_request_symbol && (read_index ~= write_index)\n    ou"
-      "t_valid = true;\n    out_i = buffer_i(read_index + 1);\n    out_q = buffer_q(read_index + 1);\n    fprintf('[mod"
-      "]read %d write %d symbol %d,%d\\n', ...\n        int8(read_index), int8(write_index), ...\n        int8(out_i), "
-      "int8(out_q));\n    read_index = read_index + 1;\n    if read_index >= length(buffer_i)\n        read_index = 0;\n"
-      "    end\nend\n\n"
+      "0) && (available >= symbols_per_byte);\n%fprintf('[mod]read %d write %d request %d length %d buffered %d\\n', .."
+      ".\n%    int8(read_index), int8(write_index), ...\n%    int8(out_request_byte), int8(length(buffer_i)), int8(buff"
+      "ered));\n\n% if there's buffered data, output a symbol\nif in_request_symbol && (read_index ~= write_index)\n   "
+      " out_valid = true;\n    out_i = buffer_i(read_index + 1);\n    out_q = buffer_q(read_index + 1);\n%    fprintf('"
+      "[mod]read %d write %d symbol %d,%d\\n', ...\n%        int8(read_index), int8(write_index), ...\n%        int8(ou"
+      "t_i), int8(out_q));\n    read_index = read_index + 1;\n    if read_index >= length(buffer_i)\n        read_index"
+      " = 0;\n    end\nend\n\n"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
@@ -3242,49 +3426,50 @@ Stateflow {
       script		      "function [out_i, out_q, out_valid, out_request_symbol] = fcn(in_valid, in_i, in_q)\n%#codegen\n\n"
       "null = fi(0,1,12,7);\nframe_size = 64;\n% the number of symbols grouped in contiguous subcarries\nsymbols_per_ru"
       "n = 3;\n% pilots are inserted between symbol runs\npilots_i = fi([1 0 -1 0],1,12,7);\npilots_q = fi([0 1 0 -1],1"
-      ",12,7);\n\n% this creates a frame that looks like:\n% [ null (pilot run)+ null ]\n% given the current parameters"
-      ", that means\n% 45 modulation symbols / ofdm frame\n% 2 bits / modulation symbol\n% 90 bits / ofdm frame\n\n% de"
-      "fault behavior\nout_request_symbol = false;\nout_valid = false;\nout_i = null;\nout_q = null;\n\n% circular buff"
-      "er for symbol storage\npersistent buffer_i\nif isempty(buffer_i)  \n    buffer_i = repmat(null,1,frame_size);\ne"
-      "nd\npersistent buffer_q\nif isempty(buffer_q)  \n    buffer_q = repmat(null,1,frame_size);\nend\npersistent read"
-      "_index\nif isempty(read_index)\n    read_index = 0;\nend\npersistent write_index\nif isempty(write_index)\n    w"
-      "rite_index = 0;\nend\n\n% framing state\npersistent frame_index\npersistent pilot_index\nif isempty(pilot_index)"
-      "\n    pilot_index = 1;\nend\npersistent symbol_count\nif isempty(symbol_count)\n    symbol_count = 0;\nend\n\n% "
-      "is this the first symbol in a frame?\nframe_begin = (write_index == 0);\n% is this the last symbol in a run?\nru"
-      "n_end = (symbol_count == (symbols_per_run - 1));\n% is this the last write in the frame?\n% the frame will end w"
-      "ith a (symbol)(pilot)(null)\nframe_end = ((write_index + 2) == (frame_size - 1));\nfprintf('[frm]valid %d %f,%f "
-      "write %d frame begin %d end %d run %d end %d\\n', ...\n    int8(in_valid), double(in_i), double(in_q), ...\n    "
-      "int8(write_index), ...\n    int8(frame_begin), int8(frame_end), ...\n    int8(symbol_count), int8(run_end));\n\n"
-      "% The following scenarios can occur:\n% (null)(null)(pilot)(symbol)\n% (symbol)(pilot)(null)\n% (symbol)(pilot)\n"
-      "% (symbol)\nif in_valid\n    if frame_begin\n        % (null)(null)(pilot)(symbol)\n        fprintf('[frm]write "
-      "%d nullx2 pilot %d %d,%d symbol %d %d,%d\\n', ...\n            int8(write_index), ...\n            int8(pilot_in"
-      "dex), int8(pilots_i(pilot_index)), int8(pilots_q(pilot_index)), ...\n            int8(symbol_count), int8(in_i),"
-      " int8(in_q));\n        buffer_i(write_index+1) = null;\n        buffer_q(write_index+1) = null;\n        buffer_"
-      "i(write_index+2) = null;\n        buffer_q(write_index+2) = null;\n        buffer_i(write_index+3) = pilots_i(1)"
-      ";\n        buffer_q(write_index+3) = pilots_q(1);\n        buffer_i(write_index+4) = in_i;\n        buffer_q(wri"
-      "te_index+4) = in_q;\n        write_index = 4;\n        symbol_count = 1;\n        pilot_index = 2;\n    elseif f"
-      "rame_end\n        % (symbol)(pilot)(null)\n        fprintf('[frm]write %d symbol %d %d,%d pilot %d %d,%d null\\n"
-      "', ...\n            int8(write_index), ...\n            int8(symbol_count), int8(in_i), int8(in_q), ...\n       "
-      "     int8(pilot_index), int8(pilots_i(pilot_index)), int8(pilots_q(pilot_index)));\n        buffer_i(write_index"
-      "+1) = in_i;\n        buffer_q(write_index+1) = in_q;\n        buffer_i(write_index+2) = pilots_i(pilot_index);\n"
-      "        buffer_q(write_index+2) = pilots_q(pilot_index);\n        buffer_i(write_index+3) = null;\n        buffe"
-      "r_q(write_index+3) = null;\n        write_index = 0;\n        symbol_count = 0;\n        pilot_index = 1;\n    e"
-      "lseif run_end\n        % (symbol)(pilot)\n        fprintf('[frm]write %d symbol %d %d,%d pilot %d %d,%d\\n', ..."
-      "\n            int8(write_index), ...\n            int8(symbol_count), int8(in_i), int8(in_q), ...\n            i"
-      "nt8(pilot_index), int8(pilots_i(pilot_index)), int8(pilots_q(pilot_index)));\n        buffer_i(write_index+1) = "
-      "in_i;\n        buffer_q(write_index+1) = in_q;\n        buffer_i(write_index+2) = pilots_i(pilot_index);\n      "
-      "  buffer_q(write_index+2) = pilots_q(pilot_index);\n        write_index = write_index + 2;\n        symbol_count"
-      " = 0;\n        pilot_index = pilot_index + 1;\n        if pilot_index == length(pilots_i)\n            pilot_ind"
-      "ex = 1;\n        end\n    else\n        % (symbol)\n        fprintf('[frm]write %d symbol %d %d,%d\\n', ...\n   "
-      "         int8(write_index), ...\n            int8(symbol_count), int8(in_i), int8(in_q));\n        buffer_i(writ"
-      "e_index+1) = in_i;\n        buffer_q(write_index+1) = in_q;\n        write_index = write_index + 1;\n        sym"
-      "bol_count = symbol_count + 1;\n    end\nend\n\n% determine how many symbols are buffered\nbuffered = 0;\nif (rea"
-      "d_index > write_index)\n    buffered = (length(buffer_i) - read_index) + write_index;\nelseif (read_index <= wri"
-      "te_index)\n    buffered = (write_index - read_index);\nend\n\n% we can write at *most* a 2xnull, a pilot, and a "
-      "symbol\n% if there's room enough to support as much, request a symbol\navailable = length(buffer_i) - buffered;\n"
-      "out_request_symbol = (available >= 4);\n\n% output i/q if there's something buffered\nif read_index ~= write_ind"
-      "ex\n    out_valid = true;\n    out_i = buffer_i(read_index + 1);\n    out_q = buffer_q(read_index + 1);\n    rea"
-      "d_index = read_index + 1;\n    if read_index >= length(buffer_i)\n        read_index = 0;\n    end\nend"
+      ",12,7);\n\n% this creates a frame that looks like:\n% [ null null (pilot run)+ null ]\n% given the current param"
+      "eters, that means\n% 16 pilots / ofdm frame\n% 3xnull / ofdm frame\n% 45 modulation symbols / ofdm frame\n% 2 bi"
+      "ts / modulation symbol\n% 90 bits / ofdm frame\n\n% default behavior\nout_request_symbol = false;\nout_valid = f"
+      "alse;\nout_i = null;\nout_q = null;\n\n% circular buffer for symbol storage\npersistent buffer_i\nif isempty(buf"
+      "fer_i)  \n    buffer_i = repmat(null,1,frame_size);\nend\npersistent buffer_q\nif isempty(buffer_q)  \n    buffe"
+      "r_q = repmat(null,1,frame_size);\nend\npersistent read_index\nif isempty(read_index)\n    read_index = 0;\nend\n"
+      "persistent write_index\nif isempty(write_index)\n    write_index = 0;\nend\n\n% framing state\npersistent frame_"
+      "index\npersistent pilot_index\nif isempty(pilot_index)\n    pilot_index = 1;\nend\npersistent symbol_count\nif i"
+      "sempty(symbol_count)\n    symbol_count = 0;\nend\n\n% is this the first symbol in a frame?\nframe_begin = (write"
+      "_index == 0);\n% is this the last symbol in a run?\nrun_end = (symbol_count == (symbols_per_run - 1));\n% is thi"
+      "s the last write in the frame?\n% the frame will end with a (symbol)(pilot)(null)\nframe_end = ((write_index + 2"
+      ") == (frame_size - 1));\n%fprintf('[frm]valid %d %f,%f write %d frame begin %d end %d run %d end %d\\n', ...\n% "
+      "   int8(in_valid), double(in_i), double(in_q), ...\n%    int8(write_index), ...\n%    int8(frame_begin), int8(fr"
+      "ame_end), ...\n%    int8(symbol_count), int8(run_end));\n\n% The following scenarios can occur:\n% (null)(null)("
+      "pilot)(symbol)\n% (symbol)(pilot)(null)\n% (symbol)(pilot)\n% (symbol)\nif in_valid\n    if frame_begin\n       "
+      " % (null)(null)(pilot)(symbol)\n%        fprintf('[frm]write %d nullx2 pilot %d %d,%d symbol %d %d,%d\\n', ...\n"
+      "%            int8(write_index), ...\n%            int8(pilot_index), int8(pilots_i(pilot_index)), int8(pilots_q("
+      "pilot_index)), ...\n%            int8(symbol_count), int8(in_i), int8(in_q));\n        buffer_i(write_index+1) ="
+      " null;\n        buffer_q(write_index+1) = null;\n        buffer_i(write_index+2) = null;\n        buffer_q(write"
+      "_index+2) = null;\n        buffer_i(write_index+3) = pilots_i(1);\n        buffer_q(write_index+3) = pilots_q(1)"
+      ";\n        buffer_i(write_index+4) = in_i;\n        buffer_q(write_index+4) = in_q;\n        write_index = 4;\n "
+      "       symbol_count = 1;\n        pilot_index = 2;\n    elseif frame_end\n        % (symbol)(pilot)(null)\n%    "
+      "    fprintf('[frm]write %d symbol %d %d,%d pilot %d %d,%d null\\n', ...\n%            int8(write_index), ...\n% "
+      "           int8(symbol_count), int8(in_i), int8(in_q), ...\n%            int8(pilot_index), int8(pilots_i(pilot_"
+      "index)), int8(pilots_q(pilot_index)));\n        buffer_i(write_index+1) = in_i;\n        buffer_q(write_index+1)"
+      " = in_q;\n        buffer_i(write_index+2) = pilots_i(pilot_index);\n        buffer_q(write_index+2) = pilots_q(p"
+      "ilot_index);\n        buffer_i(write_index+3) = null;\n        buffer_q(write_index+3) = null;\n        write_in"
+      "dex = 0;\n        symbol_count = 0;\n        pilot_index = 1;\n    elseif run_end\n        % (symbol)(pilot)\n% "
+      "       fprintf('[frm]write %d symbol %d %d,%d pilot %d %d,%d\\n', ...\n%            int8(write_index), ...\n%   "
+      "         int8(symbol_count), int8(in_i), int8(in_q), ...\n%            int8(pilot_index), int8(pilots_i(pilot_in"
+      "dex)), int8(pilots_q(pilot_index)));\n        buffer_i(write_index+1) = in_i;\n        buffer_q(write_index+1) ="
+      " in_q;\n        buffer_i(write_index+2) = pilots_i(pilot_index);\n        buffer_q(write_index+2) = pilots_q(pil"
+      "ot_index);\n        write_index = write_index + 2;\n        symbol_count = 0;\n        pilot_index = pilot_index"
+      " + 1;\n        if pilot_index == length(pilots_i)\n            pilot_index = 1;\n        end\n    else\n        "
+      "% (symbol)\n%        fprintf('[frm]write %d symbol %d %d,%d\\n', ...\n%            int8(write_index), ...\n%    "
+      "        int8(symbol_count), int8(in_i), int8(in_q));\n        buffer_i(write_index+1) = in_i;\n        buffer_q("
+      "write_index+1) = in_q;\n        write_index = write_index + 1;\n        symbol_count = symbol_count + 1;\n    en"
+      "d\nend\n\n% determine how many symbols are buffered\nbuffered = 0;\nif (read_index > write_index)\n    buffered "
+      "= (length(buffer_i) - read_index) + write_index;\nelseif (read_index <= write_index)\n    buffered = (write_inde"
+      "x - read_index);\nend\n\n% we can write at *most* a 2xnull, a pilot, and a symbol\n% if there's room enough to s"
+      "upport as much, reques t a symbol\navailable = length(buffer_i) - buffered;\nout_request_symbol = (available >= "
+      "4);\n\n% output i/q if there's something buffered\nif read_index ~= write_index\n    out_valid = true;\n    out_"
+      "i = buffer_i(read_index + 1);\n    out_q = buffer_q(read_index + 1);\n    read_index = read_index + 1;\n    if r"
+      "ead_index >= length(buffer_i)\n        read_index = 0;\n    end\nend"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
