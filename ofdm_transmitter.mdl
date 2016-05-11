@@ -1,5 +1,5 @@
 Model {
-  Name			  "ofdm_mod_symbol_fifo"
+  Name			  "ofdm_transmitter"
   Version		  8.5
   MdlSubVersion		  0
   SavedCharacterEncoding  "windows-1252"
@@ -7,7 +7,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.792"
+    ComputedModelVersion    "1.820"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -16,9 +16,9 @@ Model {
     $ObjectID		    1
     Array {
       Type		      "Cell"
-      Dimension		      18
+      Dimension		      20
       Cell		      "HDLSubsystem"
-      Cell		      "ofdm_mod_symbol_fifo/ofdm_transmitter"
+      Cell		      "ofdm_transmitter/ofdm_transmitter"
       Cell		      "SynthesisTool"
       Cell		      "Xilinx ISE"
       Cell		      "SynthesisToolChipFamily"
@@ -31,6 +31,8 @@ Model {
       Cell		      "-1"
       Cell		      "TargetDirectory"
       Cell		      "hdl_prj\\hdlsrc"
+      Cell		      "TargetLanguage"
+      Cell		      "Verilog"
       Cell		      "TargetPlatform"
       Cell		      "Generic Xilinx Platform"
       Cell		      "Workflow"
@@ -82,7 +84,7 @@ Model {
 	LoadSaveID		"75"
 	Extents			[1328.0, 572.0]
 	ZoomFactor		[1.25]
-	Offset			[7.7999999999999545, 270.15]
+	Offset			[1386.8899999999999, 92.550000000000011]
       }
     }
   }
@@ -92,9 +94,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "C4Josh"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue May 10 22:27:36 2016"
-  RTWModifiedTimeStamp	  384819839
-  ModelVersionFormat	  "1.%<AutoIncrement:792>"
+  LastModifiedDate	  "Tue May 10 22:51:40 2016"
+  RTWModifiedTimeStamp	  384821309
+  ModelVersionFormat	  "1.%<AutoIncrement:820>"
   ConfigurationManager	  "none"
   SampleTimeColors	  on
   SampleTimeAnnotations	  on
@@ -735,7 +737,7 @@ Model {
 	    Cell		    " "
 	    PropName		    "HDLConfigFile"
 	  }
-	  HDLCActiveTab		  "0"
+	  HDLCActiveTab		  "3"
 	}
 	PropName		"Components"
       }
@@ -980,7 +982,7 @@ Model {
     }
   }
   System {
-    Name		    "ofdm_mod_symbol_fifo"
+    Name		    "ofdm_transmitter"
     Location		    [-4, 0, 1368, 732]
     Open		    off
     ModelBrowserVisibility  off
@@ -1503,29 +1505,6 @@ Model {
 	  ZOrder		  566
 	}
 	Block {
-	  BlockType		  Reference
-	  Name			  "IFFT\nHDL Optimized1"
-	  SID			  "45"
-	  Ports			  [2, 4]
-	  Position		  [1485, 203, 1680, 392]
-	  ZOrder		  522
-	  ForegroundColor	  "green"
-	  LibraryVersion	  "1.485"
-	  SourceBlock		  "dspxfrm3/IFFT\nHDL Optimized"
-	  SourceType		  "IFFT HDL Optimized"
-	  BitReversedOutput	  off
-	  Normalize		  on
-	  FFTLengthSource	  "Property"
-	  FFTLength		  "64"
-	  RoundingMethod	  "Floor"
-	  OverflowAction	  "Saturate"
-	  ValidInputPort	  on
-	  ResetInputPort	  off
-	  StartOutputPort	  on
-	  EndOutputPort		  on
-	  SimulateUsing		  "Code generation"
-	}
-	Block {
 	  BlockType		  RealImagToComplex
 	  Name			  "Real-Imag to\nComplex"
 	  SID			  "46"
@@ -1827,7 +1806,7 @@ Model {
 	      BlockType		      S-Function
 	      Name		      " SFunction "
 	      SID		      "63::58"
-	      Tag		      "Stateflow S-Function ofdm_mod_symbol_fifo 4"
+	      Tag		      "Stateflow S-Function ofdm_transmitter 4"
 	      Ports		      [3, 3]
 	      Position		      [180, 110, 230, 190]
 	      ZOrder		      49
@@ -1994,7 +1973,7 @@ Model {
 	      BlockType		      S-Function
 	      Name		      " SFunction "
 	      SID		      "43::16"
-	      Tag		      "Stateflow S-Function ofdm_mod_symbol_fifo 3"
+	      Tag		      "Stateflow S-Function ofdm_transmitter 3"
 	      Ports		      [3, 5]
 	      Position		      [180, 105, 230, 225]
 	      ZOrder		      7
@@ -2142,6 +2121,29 @@ Model {
 	  }
 	}
 	Block {
+	  BlockType		  Reference
+	  Name			  "ofdm_ifft"
+	  SID			  "45"
+	  Ports			  [2, 4]
+	  Position		  [1485, 203, 1680, 392]
+	  ZOrder		  522
+	  ForegroundColor	  "green"
+	  LibraryVersion	  "1.485"
+	  SourceBlock		  "dspxfrm3/IFFT\nHDL Optimized"
+	  SourceType		  "IFFT HDL Optimized"
+	  BitReversedOutput	  off
+	  Normalize		  on
+	  FFTLengthSource	  "Property"
+	  FFTLength		  "64"
+	  RoundingMethod	  "Floor"
+	  OverflowAction	  "Saturate"
+	  ValidInputPort	  on
+	  ResetInputPort	  off
+	  StartOutputPort	  on
+	  EndOutputPort		  on
+	  SimulateUsing		  "Code generation"
+	}
+	Block {
 	  BlockType		  SubSystem
 	  Name			  "ofdm_modulation_symbols"
 	  SID			  "34"
@@ -2218,7 +2220,7 @@ Model {
 	      BlockType		      S-Function
 	      Name		      " SFunction "
 	      SID		      "34::58"
-	      Tag		      "Stateflow S-Function ofdm_mod_symbol_fifo 1"
+	      Tag		      "Stateflow S-Function ofdm_transmitter 1"
 	      Ports		      [4, 5]
 	      Position		      [180, 115, 230, 235]
 	      ZOrder		      49
@@ -2385,7 +2387,6 @@ Model {
 	  Open			  off
 	  NumInputPorts		  "2"
 	  TickLabels		  "on"
-	  ZoomMode		  "xonly"
 	  List {
 	    ListType		    AxesTitles
 	    axes1		    "%<SignalLabel>"
@@ -2403,8 +2404,8 @@ Model {
 	  }
 	  ShowLegends		  on
 	  TimeRange		  "800"
-	  YMin			  "0.95~-0.4"
-	  YMax			  "1.05~0.4"
+	  YMin			  "-0.4~-0.7"
+	  YMax			  "0.35~0.7"
 	  SaveName		  "ScopeData1"
 	}
 	Block {
@@ -2642,7 +2643,7 @@ Model {
 	  Branch {
 	    ZOrder		    861
 	    Points		    [340, 0]
-	    DstBlock		    "IFFT\nHDL Optimized1"
+	    DstBlock		    "ofdm_ifft"
 	    DstPort		    2
 	  }
 	}
@@ -2687,12 +2688,12 @@ Model {
 	  SrcBlock		  "Real-Imag to\nComplex"
 	  SrcPort		  1
 	  Points		  [130, 0]
-	  DstBlock		  "IFFT\nHDL Optimized1"
+	  DstBlock		  "ofdm_ifft"
 	  DstPort		  1
 	}
 	Line {
 	  ZOrder		  580
-	  SrcBlock		  "IFFT\nHDL Optimized1"
+	  SrcBlock		  "ofdm_ifft"
 	  SrcPort		  1
 	  Points		  [49, 0]
 	  Branch {
@@ -2745,7 +2746,7 @@ Model {
 	}
 	Line {
 	  ZOrder		  649
-	  SrcBlock		  "IFFT\nHDL Optimized1"
+	  SrcBlock		  "ofdm_ifft"
 	  SrcPort		  2
 	  Points		  [30, 0; 0, 17; 242, 0; 0, -182]
 	  DstBlock		  "ofdm symbol"
@@ -2753,7 +2754,7 @@ Model {
 	}
 	Line {
 	  ZOrder		  650
-	  SrcBlock		  "IFFT\nHDL Optimized1"
+	  SrcBlock		  "ofdm_ifft"
 	  SrcPort		  3
 	  Points		  [308, 0; 0, -175]
 	  DstBlock		  "ofdm symbol"
@@ -2761,7 +2762,7 @@ Model {
 	}
 	Line {
 	  ZOrder		  651
-	  SrcBlock		  "IFFT\nHDL Optimized1"
+	  SrcBlock		  "ofdm_ifft"
 	  SrcPort		  4
 	  Points		  [92, 0]
 	  Branch {
@@ -2864,7 +2865,7 @@ Model {
 	  BlockType		  S-Function
 	  Name			  " SFunction "
 	  SID			  "33::58"
-	  Tag			  "Stateflow S-Function ofdm_mod_symbol_fifo 2"
+	  Tag			  "Stateflow S-Function ofdm_transmitter 2"
 	  Ports			  [1, 4]
 	  Position		  [180, 102, 230, 203]
 	  ZOrder		  49
@@ -3352,7 +3353,7 @@ Model {
 Stateflow {
   machine {
     id			    1
-    name		    "ofdm_mod_symbol_fifo"
+    name		    "ofdm_transmitter"
     created		    "30-Apr-2016 22:31:33"
     isLibrary		    0
     firstTarget		    46
@@ -3368,7 +3369,10 @@ Stateflow {
     firstTransition	    13
     firstJunction	    12
     viewObj		    2
+    visible		    1
     machine		    1
+    subviewS {
+    }
     ssIdHighWaterMark	    14
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
@@ -3396,32 +3400,32 @@ Stateflow {
       script		      "function [out_valid, out_i, out_q, out_request_byte] = fcn(in_empty, in_valid, in_byte, in_reques"
       "t_symbol)\n%#codegen\n\nnull = fi(0,1,12,7);\n\n% MODULATION SYMBOL FORMAT\n% 4-QAM, Grey coded, Minimum distanc"
       "e 2\n%symbols = fi([-1+j -1-j 1+j 1-j],1,12,7);\nsymbols_i = fi([-1 -1 1 1],1,12,7);\nsymbols_q = fi([1 -1 1 -1]"
-      ",1,12,7);\nbits_per_symbol = 2;\nsymbols_per_byte = 8/bits_per_symbol;\n    \n% by default, do nothing\nout_requ"
-      "est_byte = false;\nout_i = null;\nout_q = null;\nout_valid = false;\n\n% circular buffer for symbol storage\n% t"
-      "he buffer length should evenly divide the number of symbols/byte\npersistent buffer_i\nif isempty(buffer_i)  \n "
-      "   buffer_i = repmat(null,1,2*symbols_per_byte);\nend\npersistent buffer_q\nif isempty(buffer_q)  \n    buffer_q"
-      " = repmat(null,1,2*symbols_per_byte);\nend\npersistent read_index\nif isempty(read_index)\n    read_index = 0;\n"
-      "end\npersistent write_index\nif isempty(write_index)\n    write_index = 0;\nend\n\n% we only receive valid input"
-      " if we requested it\n% if we have valid input, store the input\n% this should *never* overflow\nif in_valid\n   "
-      " \n    % There are four symbols per byte\n    % Map two bits to each symbol\n    % This makes assumptions about "
-      "the length of buffer\n    % @review Is this the best way to do this?\n    symbol1 = 1+bitand(bitshift(in_byte,-0"
-      "),3);\n    buffer_i(write_index+1) = symbols_i(symbol1);\n    buffer_q(write_index+1) = symbols_q(symbol1);\n   "
-      " \n    symbol2 = 1+bitand(bitshift(in_byte,-2),3);\n    buffer_i(write_index+2) = symbols_i(symbol2);\n    buffe"
-      "r_q(write_index+2) = symbols_q(symbol2);\n    \n    symbol3 = 1+bitand(bitshift(in_byte,-4),3);\n    buffer_i(wr"
-      "ite_index+3) = symbols_i(symbol3);\n    buffer_q(write_index+3) = symbols_q(symbol3);\n    \n    symbol4 = 1+bit"
-      "and(bitshift(in_byte,-6),3);\n    buffer_i(write_index+4) = symbols_i(symbol4);\n    buffer_q(write_index+4) = s"
-      "ymbols_q(symbol4);\n\n    % we just wrote four symbols\n    write_index = write_index + symbols_per_byte;\n    i"
-      "f write_index >= length(buffer_i)\n        write_index = 0;\n    end\nend\n\n% determine how many symbols are bu"
-      "ffered\nbuffered = 0;\nif (read_index > write_index)\n    buffered = (length(buffer_i) - read_index) + write_ind"
-      "ex;\nelseif (read_index <= write_index)\n    buffered = (write_index - read_index);\nend\n\n% if we have room fo"
-      "r more symbols, request another byte\navailable = length(buffer_i) - buffered;\nout_request_byte = (in_empty == "
-      "0) && (available >= symbols_per_byte);\n%fprintf('[mod]read %d write %d request %d length %d buffered %d\\n', .."
-      ".\n%    int8(read_index), int8(write_index), ...\n%    int8(out_request_byte), int8(length(buffer_i)), int8(buff"
-      "ered));\n\n% if there's buffered data, output a symbol\nif in_request_symbol && (read_index ~= write_index)\n   "
-      " out_valid = true;\n    out_i = buffer_i(read_index + 1);\n    out_q = buffer_q(read_index + 1);\n%    fprintf('"
-      "[mod]read %d write %d symbol %d,%d\\n', ...\n%        int8(read_index), int8(write_index), ...\n%        int8(ou"
-      "t_i), int8(out_q));\n    read_index = read_index + 1;\n    if read_index >= length(buffer_i)\n        read_index"
-      " = 0;\n    end\nend\n\n"
+      ",1,12,7);\nbits_per_symbol = int8(2);\nsymbols_per_byte = 8/bits_per_symbol;\n    \n% by default, do nothing\nou"
+      "t_request_byte = false;\nout_i = null;\nout_q = null;\nout_valid = false;\n\n% circular buffer for symbol storag"
+      "e\n% the buffer length should evenly divide the number of symbols/byte\npersistent buffer_i\nif isempty(buffer_i"
+      ")  \n    buffer_i = repmat(null,1,2*symbols_per_byte);\nend\npersistent buffer_q\nif isempty(buffer_q)  \n    bu"
+      "ffer_q = repmat(null,1,2*symbols_per_byte);\nend\npersistent read_index\nif isempty(read_index)\n    read_index "
+      "= int8(0)\nend\npersistent write_index\nif isempty(write_index)\n    write_index = int8(0);\nend\n\n% we only re"
+      "ceive valid input if we requested it\n% if we have valid input, store the input\n% this should *never* overflow\n"
+      "if in_valid\n    \n    % There are four symbols per byte\n    % Map two bits to each symbol\n    % This makes as"
+      "sumptions about the length of buffer\n    % @review Is this the best way to do this?\n    symbol1 = 1+bitand(bit"
+      "shift(in_byte,-0),3);\n    buffer_i(write_index+1) = symbols_i(symbol1);\n    buffer_q(write_index+1) = symbols_"
+      "q(symbol1);\n    \n    symbol2 = 1+bitand(bitshift(in_byte,-2),3);\n    buffer_i(write_index+2) = symbols_i(symb"
+      "ol2);\n    buffer_q(write_index+2) = symbols_q(symbol2);\n    \n    symbol3 = 1+bitand(bitshift(in_byte,-4),3);\n"
+      "    buffer_i(write_index+3) = symbols_i(symbol3);\n    buffer_q(write_index+3) = symbols_q(symbol3);\n    \n    "
+      "symbol4 = 1+bitand(bitshift(in_byte,-6),3);\n    buffer_i(write_index+4) = symbols_i(symbol4);\n    buffer_q(wri"
+      "te_index+4) = symbols_q(symbol4);\n\n    % we just wrote four symbols\n    write_index = write_index + symbols_p"
+      "er_byte;\n    if write_index >= length(buffer_i)\n        write_index = int8(0);\n    end\nend\n\n% determine ho"
+      "w many symbols are buffered\nbuffered = int8(0);\nif (read_index > write_index)\n    buffered = (length(buffer_i"
+      ") - read_index) + write_index;\nelseif (read_index <= write_index)\n    buffered = (write_index - read_index);\n"
+      "end\n\n% if we have room for more symbols, request another byte\navailable = length(buffer_i) - buffered;\nout_r"
+      "equest_byte = (in_empty == 0) && (available >= symbols_per_byte);\n%fprintf('[mod]read %d write %d request %d le"
+      "ngth %d buffered %d\\n', ...\n%    int8(read_index), int8(write_index), ...\n%    int8(out_request_byte), int8(l"
+      "ength(buffer_i)), int8(buffered));\n\n% if there's buffered data, output a symbol\nif in_request_symbol && (read"
+      "_index ~= write_index)\n    out_valid = true;\n    out_i = buffer_i(read_index + 1);\n    out_q = buffer_q(read_"
+      "index + 1);\n%    fprintf('[mod]read %d write %d symbol %d,%d\\n', ...\n%        int8(read_index), int8(write_in"
+      "dex), ...\n%        int8(out_i), int8(out_q));\n    read_index = read_index + 1;\n    if read_index >= length(bu"
+      "ffer_i)\n        read_index = int8(0);\n    end\nend\n\n"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
@@ -3654,10 +3658,7 @@ Stateflow {
     firstTransition	    22
     firstJunction	    21
     viewObj		    15
-    visible		    1
     machine		    1
-    subviewS {
-    }
     ssIdHighWaterMark	    7
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
@@ -3818,7 +3819,10 @@ Stateflow {
     firstTransition	    34
     firstJunction	    33
     viewObj		    24
+    visible		    1
     machine		    1
+    subviewS {
+    }
     ssIdHighWaterMark	    11
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
@@ -3844,52 +3848,53 @@ Stateflow {
     eml {
       isEML		      1
       script		      "function [out_i, out_q, out_valid, out_request_symbol] = fcn(in_valid, in_i, in_q)\n%#codegen\n\n"
-      "null = fi(0,1,12,7);\nframe_size = 64;\n% the number of symbols grouped in contiguous subcarries\nsymbols_per_ru"
-      "n = 3;\n% pilots are inserted between symbol runs\npilots_i = fi([1 0 -1 0],1,12,7);\npilots_q = fi([0 1 0 -1],1"
-      ",12,7);\n\n% this creates a frame that looks like:\n% [ null null (pilot run)+ null ]\n% given the current param"
-      "eters, that means\n% 16 pilots / ofdm frame\n% 3xnull / ofdm frame\n% 45 modulation symbols / ofdm frame\n% 2 bi"
-      "ts / modulation symbol\n% 90 bits / ofdm frame\n\n% default behavior\nout_request_symbol = false;\nout_valid = f"
-      "alse;\nout_i = null;\nout_q = null;\n\n% circular buffer for symbol storage\npersistent buffer_i\nif isempty(buf"
-      "fer_i)  \n    buffer_i = repmat(null,1,frame_size);\nend\npersistent buffer_q\nif isempty(buffer_q)  \n    buffe"
-      "r_q = repmat(null,1,frame_size);\nend\npersistent read_index\nif isempty(read_index)\n    read_index = 0;\nend\n"
-      "persistent write_index\nif isempty(write_index)\n    write_index = 0;\nend\n\n% framing state\npersistent frame_"
-      "index\npersistent pilot_index\nif isempty(pilot_index)\n    pilot_index = 1;\nend\npersistent symbol_count\nif i"
-      "sempty(symbol_count)\n    symbol_count = 0;\nend\n\n% is this the first symbol in a frame?\nframe_begin = (write"
-      "_index == 0);\n% is this the last symbol in a run?\nrun_end = (symbol_count == (symbols_per_run - 1));\n% is thi"
-      "s the last write in the frame?\n% the frame will end with a (symbol)(pilot)(null)\nframe_end = ((write_index + 2"
-      ") == (frame_size - 1));\n%fprintf('[frm]valid %d %f,%f write %d frame begin %d end %d run %d end %d\\n', ...\n% "
-      "   int8(in_valid), double(in_i), double(in_q), ...\n%    int8(write_index), ...\n%    int8(frame_begin), int8(fr"
-      "ame_end), ...\n%    int8(symbol_count), int8(run_end));\n\n% The following scenarios can occur:\n% (null)(null)("
-      "pilot)(symbol)\n% (symbol)(pilot)(null)\n% (symbol)(pilot)\n% (symbol)\nif in_valid\n    if frame_begin\n       "
-      " % (null)(null)(pilot)(symbol)\n%        fprintf('[frm]write %d nullx2 pilot %d %d,%d symbol %d %d,%d\\n', ...\n"
-      "%            int8(write_index), ...\n%            int8(pilot_index), int8(pilots_i(pilot_index)), int8(pilots_q("
-      "pilot_index)), ...\n%            int8(symbol_count), int8(in_i), int8(in_q));\n        buffer_i(write_index+1) ="
-      " null;\n        buffer_q(write_index+1) = null;\n        buffer_i(write_index+2) = null;\n        buffer_q(write"
-      "_index+2) = null;\n        buffer_i(write_index+3) = pilots_i(1);\n        buffer_q(write_index+3) = pilots_q(1)"
-      ";\n        buffer_i(write_index+4) = in_i;\n        buffer_q(write_index+4) = in_q;\n        write_index = 4;\n "
-      "       symbol_count = 1;\n        pilot_index = 2;\n    elseif frame_end\n        % (symbol)(pilot)(null)\n%    "
-      "    fprintf('[frm]write %d symbol %d %d,%d pilot %d %d,%d null\\n', ...\n%            int8(write_index), ...\n% "
-      "           int8(symbol_count), int8(in_i), int8(in_q), ...\n%            int8(pilot_index), int8(pilots_i(pilot_"
-      "index)), int8(pilots_q(pilot_index)));\n        buffer_i(write_index+1) = in_i;\n        buffer_q(write_index+1)"
-      " = in_q;\n        buffer_i(write_index+2) = pilots_i(pilot_index);\n        buffer_q(write_index+2) = pilots_q(p"
-      "ilot_index);\n        buffer_i(write_index+3) = null;\n        buffer_q(write_index+3) = null;\n        write_in"
-      "dex = 0;\n        symbol_count = 0;\n        pilot_index = 1;\n    elseif run_end\n        % (symbol)(pilot)\n% "
-      "       fprintf('[frm]write %d symbol %d %d,%d pilot %d %d,%d\\n', ...\n%            int8(write_index), ...\n%   "
-      "         int8(symbol_count), int8(in_i), int8(in_q), ...\n%            int8(pilot_index), int8(pilots_i(pilot_in"
-      "dex)), int8(pilots_q(pilot_index)));\n        buffer_i(write_index+1) = in_i;\n        buffer_q(write_index+1) ="
-      " in_q;\n        buffer_i(write_index+2) = pilots_i(pilot_index);\n        buffer_q(write_index+2) = pilots_q(pil"
-      "ot_index);\n        write_index = write_index + 2;\n        symbol_count = 0;\n        pilot_index = pilot_index"
-      " + 1;\n        if pilot_index == length(pilots_i)\n            pilot_index = 1;\n        end\n    else\n        "
-      "% (symbol)\n%        fprintf('[frm]write %d symbol %d %d,%d\\n', ...\n%            int8(write_index), ...\n%    "
-      "        int8(symbol_count), int8(in_i), int8(in_q));\n        buffer_i(write_index+1) = in_i;\n        buffer_q("
-      "write_index+1) = in_q;\n        write_index = write_index + 1;\n        symbol_count = symbol_count + 1;\n    en"
-      "d\nend\n\n% determine how many symbols are buffered\nbuffered = 0;\nif (read_index > write_index)\n    buffered "
-      "= (length(buffer_i) - read_index) + write_index;\nelseif (read_index <= write_index)\n    buffered = (write_inde"
-      "x - read_index);\nend\n\n% we can write at *most* a 2xnull, a pilot, and a symbol\n% if there's room enough to s"
-      "upport as much, reques t a symbol\navailable = length(buffer_i) - buffered;\nout_request_symbol = (available >= "
-      "4);\n\n% output i/q if there's something buffered\nif read_index ~= write_index\n    out_valid = true;\n    out_"
-      "i = buffer_i(read_index + 1);\n    out_q = buffer_q(read_index + 1);\n    read_index = read_index + 1;\n    if r"
-      "ead_index >= length(buffer_i)\n        read_index = 0;\n    end\nend"
+      "null = fi(0,1,12,7);\nframe_size = int8(64);\n% the number of symbols grouped in contiguous subcarries\nsymbols_"
+      "per_run = 3;\n% pilots are inserted between symbol runs\npilots_i = fi([1 0 -1 0],1,12,7);\npilots_q = fi([0 1 0"
+      " -1],1,12,7);\n\n% this creates a frame that looks like:\n% [ null null (pilot run)+ null ]\n% given the current"
+      " parameters, that means\n% 16 pilots / ofdm frame\n% 3xnull / ofdm frame\n% 45 modulation symbols / ofdm frame\n"
+      "% 2 bits / modulation symbol\n% 90 bits / ofdm frame\n\n% default behavior\nout_request_symbol = false;\nout_val"
+      "id = false;\nout_i = null;\nout_q = null;\n\n% circular buffer for symbol storage\npersistent buffer_i\nif isemp"
+      "ty(buffer_i)  \n    buffer_i = repmat(null,1,frame_size);\nend\npersistent buffer_q\nif isempty(buffer_q)  \n   "
+      " buffer_q = repmat(null,1,frame_size);\nend\npersistent read_index\nif isempty(read_index)\n    read_index = int"
+      "8(0);\nend\npersistent write_index\nif isempty(write_index)\n    write_index = int8(0);\nend\n\n% framing state\n"
+      "persistent frame_index\npersistent pilot_index\nif isempty(pilot_index)\n    pilot_index = int8(1);\nend\npersis"
+      "tent symbol_count\nif isempty(symbol_count)\n    symbol_count = int8(0);\nend\n\n% is this the first symbol in a"
+      " frame?\nframe_begin = (write_index == 0);\n% is this the last symbol in a run?\nrun_end = (symbol_count == (sym"
+      "bols_per_run - 1));\n% is this the last write in the frame?\n% the frame will end with a (symbol)(pilot)(null)\n"
+      "frame_end = ((write_index + 2) == (frame_size - 1));\n%fprintf('[frm]valid %d %f,%f write %d frame begin %d end "
+      "%d run %d end %d\\n', ...\n%    int8(in_valid), double(in_i), double(in_q), ...\n%    int8(write_index), ...\n% "
+      "   int8(frame_begin), int8(frame_end), ...\n%    int8(symbol_count), int8(run_end));\n\n% The following scenario"
+      "s can occur:\n% (null)(null)(pilot)(symbol)\n% (symbol)(pilot)(null)\n% (symbol)(pilot)\n% (symbol)\nif in_valid"
+      "\n    if frame_begin\n        % (null)(null)(pilot)(symbol)\n%        fprintf('[frm]write %d nullx2 pilot %d %d,"
+      "%d symbol %d %d,%d\\n', ...\n%            int8(write_index), ...\n%            int8(pilot_index), int8(pilots_i("
+      "pilot_index)), int8(pilots_q(pilot_index)), ...\n%            int8(symbol_count), int8(in_i), int8(in_q));\n    "
+      "    buffer_i(write_index+1) = null;\n        buffer_q(write_index+1) = null;\n        buffer_i(write_index+2) = "
+      "null;\n        buffer_q(write_index+2) = null;\n        buffer_i(write_index+3) = pilots_i(1);\n        buffer_q"
+      "(write_index+3) = pilots_q(1);\n        buffer_i(write_index+4) = in_i;\n        buffer_q(write_index+4) = in_q;"
+      "\n        write_index = int8(4);\n        symbol_count = int8(1);\n        pilot_index = int8(2);\n    elseif fr"
+      "ame_end\n        % (symbol)(pilot)(null)\n%        fprintf('[frm]write %d symbol %d %d,%d pilot %d %d,%d null\\n"
+      "', ...\n%            int8(write_index), ...\n%            int8(symbol_count), int8(in_i), int8(in_q), ...\n%    "
+      "        int8(pilot_index), int8(pilots_i(pilot_index)), int8(pilots_q(pilot_index)));\n        buffer_i(write_in"
+      "dex+1) = in_i;\n        buffer_q(write_index+1) = in_q;\n        buffer_i(write_index+2) = pilots_i(pilot_index)"
+      ";\n        buffer_q(write_index+2) = pilots_q(pilot_index);\n        buffer_i(write_index+3) = null;\n        bu"
+      "ffer_q(write_index+3) = null;\n        write_index = int8(0);\n        symbol_count = int8(0);\n        pilot_in"
+      "dex = int8(1);\n    elseif run_end\n        % (symbol)(pilot)\n%        fprintf('[frm]write %d symbol %d %d,%d p"
+      "ilot %d %d,%d\\n', ...\n%            int8(write_index), ...\n%            int8(symbol_count), int8(in_i), int8(i"
+      "n_q), ...\n%            int8(pilot_index), int8(pilots_i(pilot_index)), int8(pilots_q(pilot_index)));\n        b"
+      "uffer_i(write_index+1) = in_i;\n        buffer_q(write_index+1) = in_q;\n        buffer_i(write_index+2) = pilot"
+      "s_i(pilot_index);\n        buffer_q(write_index+2) = pilots_q(pilot_index);\n        write_index = write_index +"
+      " 2;\n        symbol_count = int8(0);\n        pilot_index = pilot_index + 1;\n        if pilot_index == length(p"
+      "ilots_i)\n            pilot_index = int8(1);\n        end\n    else\n        % (symbol)\n%        fprintf('[frm]"
+      "write %d symbol %d %d,%d\\n', ...\n%            int8(write_index), ...\n%            int8(symbol_count), int8(in"
+      "_i), int8(in_q));\n        buffer_i(write_index+1) = in_i;\n        buffer_q(write_index+1) = in_q;\n        wri"
+      "te_index = write_index + 1;\n        symbol_count = symbol_count + 1;\n    end\nend\n\n% determine how many symb"
+      "ols are buffered\nbuffered = int8(0);\nif (read_index > write_index)\n    buffered = (length(buffer_i) - read_in"
+      "dex) + write_index;\nelseif (read_index <= write_index)\n    buffered = (write_index - read_index);\nend\n\n% we"
+      " can write at *most* a 2xnull, a pilot, and a symbol\n% if there's room enough to support as much, reques t a sy"
+      "mbol\navailable = length(buffer_i) - buffered;\nout_request_symbol = (available >= 4);\n\n% output i/q if there'"
+      "s something buffered\nif read_index ~= write_index\n    out_valid = true;\n    out_i = buffer_i(read_index + 1);"
+      "\n    out_q = buffer_q(read_index + 1);\n    read_index = read_index + 1;\n    if read_index >= length(buffer_i)"
+      "\n        read_index = int8(0);\n    end\nend"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
@@ -4093,6 +4098,8 @@ Stateflow {
     viewObj		    36
     visible		    1
     machine		    1
+    subviewS {
+    }
     ssIdHighWaterMark	    10
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
@@ -4120,19 +4127,19 @@ Stateflow {
       script		      "function [out_i, out_q]  = fcn(in_i, in_q, in_valid)\n%#codegen\n\n% constants\n% ifft_size = 64;"
       "\n% cyclic_prefix = 16;\nnull = fi(0,1,12,7);\n\n% persistent state\npersistent buffer_i\nif isempty(buffer_i)  "
       "\n    buffer_i = repmat(null,1,80);\nend\npersistent buffer_q\nif isempty(buffer_q)  \n    buffer_q = repmat(nul"
-      "l,1,80);\nend\npersistent read_index\nif isempty(read_index)\n    read_index = 0;\nend\npersistent write_index\n"
-      "if isempty(write_index)\n    write_index = 16;\nend\n\n% default behavior\nout_i = null;\nout_q = null;\n\n% det"
-      "ermine how many samples are buffered\nbuffered = 0;\nif (read_index > write_index)\n    buffered = (length(buffe"
-      "r_i) - read_index) + write_index;\nelseif (read_index <= write_index)\n    buffered = (write_index - read_index)"
-      ";\nend\n\n% if there's more than a cyclic prefix worth of space available,\n% request input\navailable = length("
-      "buffer_i) - buffered;\n\n% if the input is valid and there's space available, store the input\nif in_valid && (a"
-      "vailable > 0)\n%    fprintf('[cp]write %d symbol %f,%f\\n', ...\n%        int8(write_index), double(in_i), doubl"
-      "e(in_q));\n    buffer_i(write_index + 1) = in_i;\n    buffer_q(write_index + 1) = in_q;\n    write_index = write"
-      "_index + 1;\n    if write_index >= length(buffer_i)\n        write_index = 16;\n    end\nend\n\n% if there are s"
-      "amples buffered, output\nif read_index ~= write_index\n    out_i = buffer_i(read_index + 1);\n    out_q = buffer"
-      "_q(read_index + 1);\n%    fprintf('[cp]read %d symbol %f,%f\\n', ...\n%        int8(read_index), double(out_i), "
-      "double(out_q));\n    read_index = read_index + 1;\n    if read_index >= length(buffer_i)\n        read_index = 0"
-      ";\n    end\nend"
+      "l,1,80);\nend\npersistent read_index\nif isempty(read_index)\n    read_index = int8(0);\nend\npersistent write_i"
+      "ndex\nif isempty(write_index)\n    write_index = int8(16);\nend\n\n% default behavior\nout_i = null;\nout_q = nu"
+      "ll;\n\n% determine how many samples are buffered\nbuffered = int8(0);\nif (read_index > write_index)\n    buffer"
+      "ed = (length(buffer_i) - read_index) + write_index;\nelseif (read_index <= write_index)\n    buffered = (write_i"
+      "ndex - read_index);\nend\n\n% if there's more than a cyclic prefix worth of space available,\n% request input\na"
+      "vailable = length(buffer_i) - buffered;\n\n% if the input is valid and there's space available, store the input\n"
+      "if in_valid && (available > 0)\n%    fprintf('[cp]write %d symbol %f,%f\\n', ...\n%        int8(write_index), do"
+      "uble(in_i), double(in_q));\n    buffer_i(write_index + 1) = in_i;\n    buffer_q(write_index + 1) = in_q;\n    wr"
+      "ite_index = write_index + 1;\n    if write_index >= length(buffer_i)\n        write_index = int8(16);\n    end\n"
+      "end\n\n% if there are samples buffered, output\nif read_index ~= write_index\n    out_i = buffer_i(read_index + "
+      "1);\n    out_q = buffer_q(read_index + 1);\n%    fprintf('[cp]read %d symbol %f,%f\\n', ...\n%        int8(read_"
+      "index), double(out_i), double(out_q));\n    read_index = read_index + 1;\n    if read_index >= length(buffer_i)\n"
+      "        read_index = int8(0);\n    end\nend"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
