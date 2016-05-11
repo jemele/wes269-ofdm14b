@@ -7,7 +7,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "2.36"
+    ComputedModelVersion    "2.38"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -52,7 +52,7 @@ Model {
       $ObjectID		      3
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [-4.0, 0.0, 1288.0, 764.0]
+      Location		      [-4.0, -4.0, 1372.0, 732.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		4
@@ -76,19 +76,19 @@ Model {
 	  $ObjectID		  6
 	  IsActive		  [1]
 	  ViewObjType		  "SimulinkSubsys"
-	  LoadSaveID		  "280"
-	  Extents		  [1244.0, 601.0]
-	  ZoomFactor		  [1.0]
-	  Offset		  [-3.75, -102.48750075697899]
+	  LoadSaveID		  "562"
+	  Extents		  [1328.0, 569.0]
+	  ZoomFactor		  [0.4]
+	  Offset		  [-21.0, -15.0]
 	}
 	Object {
 	  $ObjectID		  7
 	  IsActive		  [0]
 	  ViewObjType		  "SimulinkSubsys"
-	  LoadSaveID		  "237"
-	  Extents		  [1244.0, 601.0]
+	  LoadSaveID		  "81"
+	  Extents		  [1328.0, 569.0]
 	  ZoomFactor		  [1.0]
-	  Offset		  [-8.875, -8.5]
+	  Offset		  [0.0, -13.0]
 	}
 	PropName		"EditorsInfo"
       }
@@ -100,10 +100,10 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "C4Josh"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sun Apr 24 14:00:19 2016"
-  RTWModifiedTimeStamp	  383407212
+  LastModifiedDate	  "Tue May 10 21:44:37 2016"
+  RTWModifiedTimeStamp	  384817173
   ModifiedHistory	  "12/8/07  D&C \n12/03/08  Added BER, tuned control loops, enhanced channel model."
-  ModelVersionFormat	  "2.%<AutoIncrement:36>"
+  ModelVersionFormat	  "2.%<AutoIncrement:38>"
   ConfigurationManager	  "none"
   SampleTimeColors	  on
   SampleTimeAnnotations	  off
@@ -891,6 +891,11 @@ Model {
       Interpolate	      on
     }
     Block {
+      BlockType		      Fcn
+      Expr		      "sin(u[1])"
+      SampleTime	      "-1"
+    }
+    Block {
       BlockType		      FrameConversion
       InheritSamplingMode     off
       OutFrame		      "Frame-based"
@@ -1043,6 +1048,14 @@ Model {
       SampleTime	      "-1"
     }
     Block {
+      BlockType		      S-Function
+      FunctionName	      "system"
+      SFunctionModules	      "''"
+      PortCounts	      "[]"
+      SFunctionDeploymentMode off
+      EnableBusSupport	      off
+    }
+    Block {
       BlockType		      Saturate
       UpperLimitSource	      "Dialog"
       UpperLimit	      "0.5"
@@ -1158,6 +1171,11 @@ Model {
       BlockType		      Terminator
     }
     Block {
+      BlockType		      TimeScope
+      DefaultConfigurationName "Simulink.scopes.TimeScopeBlockCfg"
+      Floating		      off
+    }
+    Block {
       BlockType		      Trigonometry
       Operator		      "sin"
       ApproximationMethod     "None"
@@ -1177,7 +1195,7 @@ Model {
   }
   System {
     Name		    "ofdm_14b"
-    Location		    [-4, 0, 1284, 764]
+    Location		    [-4, -4, 1368, 728]
     Open		    off
     ModelBrowserVisibility  off
     ModelBrowserWidth	    212
@@ -1191,7 +1209,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "90"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "548"
+    SIDHighWatermark	    "580"
     Block {
       BlockType		      Reference
       Name		      "Carrier Freq\nIn Hz"
@@ -1216,7 +1234,7 @@ Model {
       Position		      [705, 509, 735, 541]
       ZOrder		      -2
       Floating		      off
-      Location		      [964, 219, 1271, 354]
+      Location		      [1039, 219, 1346, 354]
       Open		      on
       NumInputPorts	      "1"
       ZoomMode		      "xonly"
@@ -1248,13 +1266,13 @@ Model {
       Name		      "Channel"
       SID		      "3"
       Ports		      [3, 1]
-      Position		      [625, 40, 785, 180]
+      Position		      [1055, 40, 1215, 180]
       ZOrder		      -3
       BackgroundColor	      "magenta"
       RequestExecContextInheritance off
       System {
 	Name			"Channel"
-	Location		[14, 3, 973, 783]
+	Location		[-4, -4, 1368, 728]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -2909,8 +2927,8 @@ Model {
       RequestExecContextInheritance off
       System {
 	Name			"Farrow Variable Delay"
-	Location		[14, 3, 1329, 783]
-	Open			off
+	Location		[-4, -4, 1368, 728]
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -2960,7 +2978,7 @@ Model {
 	  RequestExecContextInheritance	off
 	  System {
 	    Name		    "Calculate Filter"
-	    Location		    [-4, -4, 1284, 760]
+	    Location		    [-4, -4, 1368, 728]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -3071,7 +3089,7 @@ Model {
 	      Position		      [745, 51, 800, 279]
 	      ZOrder		      4
 	      Floating		      off
-	      Location		      [947, 60, 1271, 723]
+	      Location		      [958, 60, 1282, 723]
 	      Open		      on
 	      NumInputPorts	      "8"
 	      List {
@@ -4113,19 +4131,19 @@ Model {
 	  "extmgr.Configuration('Core','General UI',true,'MessageLogAutoOpenMode','for warn/fail messages','ShowConfiguration'"
 	  ",true,'ShowCloseAll',true,'ShowBringAllForward',true),extmgr.Configuration('Core','Source UI',true,'PlaybackToolbar"
 	  "',true,'ShowPlaybackCmdMode',false),extmgr.Configuration('Sources','WiredSimulink',true),extmgr.Configuration('Visu"
-	  "als','Constellation',true,'MinYLim','-1.603','MaxYLim','1.585','MinXLim','-1.2842','MaxXLim','1.2662','SymbolsToDis"
-	  "playFromInput',false,'SymbolsToDisplay','100','Marker','square','ShowRefConstellation',false,'Title','Scatter Plot'"
-	  ",'LineProperties',struct('DisplayName','','Color',[1 1 0.0666666666666667],'LineStyle','none','LineWidth',0.5,'Mark"
-	  "er','.','MarkerSize',6,'MarkerEdgeColor','auto','MarkerFaceColor','none','Visible','on'),'AxesProperties',struct('C"
-	  "olor',[0 0 0],'XColor',[0.686274509803922 0.686274509803922 0.686274509803922],'YColor',[0.686274509803922 0.686274"
-	  "509803922 0.686274509803922],'ZColor',[0.686274509803922 0.686274509803922 0.686274509803922],'XGrid','on','YGrid',"
-	  "'on','ZGrid','off','Box','on','XScale','linear','YScale','linear','ZScale','linear','XDir','normal','YDir','normal'"
-	  ",'ZDir','normal','XTickMode','auto','YTickMode','auto','ZTickMode','auto','XTickLabelMode','auto','YTickLabelMode',"
-	  "'auto','ZTickLabelMode','auto','FontName','Helvetica','FontSize',10,'FontUnits','points','FontWeight','normal','Tit"
-	  "le','Scatter Plot','XLabel','In-phase Amplitude','YLabel','Quadrature Amplitude','ZLabel','')),extmgr.Configuration"
-	  "('Tools','Measurements',true,'Threshold','0','NumPeaks','Inf','MinPeakDistance','1','MinPeakHeight','-Inf','ShowTex"
-	  "t',false,'TextFormat','%.1f,%.1f','TextValues','xy','Version','2015a'),extmgr.Configuration('Tools','Plot Navigatio"
-	  "n',true,'OnceAtStop',true)),'Version','2015a','Position',[756 183 194 194],'VisibleAtModelOpen','on')"
+	  "als','Constellation',true,'MinYLim','-171.4142','MaxYLim','366.6288','MinXLim','-117.6099','MaxXLim','312.8245','Sy"
+	  "mbolsToDisplayFromInput',false,'SymbolsToDisplay','100','Marker','square','ShowRefConstellation',false,'Title','Sca"
+	  "tter Plot','LineProperties',struct('DisplayName','','Color',[1 1 0.0666666666666667],'LineStyle','none','LineWidth'"
+	  ",0.5,'Marker','.','MarkerSize',6,'MarkerEdgeColor','auto','MarkerFaceColor','none','Visible','on'),'AxesProperties'"
+	  ",struct('Color',[0 0 0],'XColor',[0.686274509803922 0.686274509803922 0.686274509803922],'YColor',[0.68627450980392"
+	  "2 0.686274509803922 0.686274509803922],'ZColor',[0.686274509803922 0.686274509803922 0.686274509803922],'XGrid','on"
+	  "','YGrid','on','ZGrid','off','Box','on','XScale','linear','YScale','linear','ZScale','linear','XDir','normal','YDir"
+	  "','normal','ZDir','normal','XTickMode','auto','YTickMode','auto','ZTickMode','auto','XTickLabelMode','auto','YTickL"
+	  "abelMode','auto','ZTickLabelMode','auto','FontName','Helvetica','FontSize',10,'FontUnits','points','FontWeight','no"
+	  "rmal','Title','Scatter Plot','XLabel','In-phase Amplitude','YLabel','Quadrature Amplitude','ZLabel','')),extmgr.Con"
+	  "figuration('Tools','Measurements',true,'Threshold','0','NumPeaks','Inf','MinPeakDistance','1','MinPeakHeight','-Inf"
+	  "','ShowText',false,'TextFormat','%.1f,%.1f','TextValues','xy','Version','2015a'),extmgr.Configuration('Tools','Plot"
+	  " Navigation',true,'OnceAtStop',true)),'Version','2015a','Position',[363 105 194 194],'VisibleAtModelOpen','on')"
 	}
 	Block {
 	  BlockType		  Reference
@@ -5969,19 +5987,19 @@ Model {
 	  "extmgr.Configuration('Core','General UI',true,'MessageLogAutoOpenMode','for warn/fail messages','ShowConfiguration'"
 	  ",true,'ShowCloseAll',true,'ShowBringAllForward',true),extmgr.Configuration('Core','Source UI',true,'PlaybackToolbar"
 	  "',true,'ShowPlaybackCmdMode',false),extmgr.Configuration('Sources','WiredSimulink',true),extmgr.Configuration('Visu"
-	  "als','Constellation',true,'MinYLim','-1.3251','MaxYLim','1.3752','MinXLim','-1.055','MaxXLim','1.1052','SymbolsToDi"
-	  "splayFromInput',false,'SymbolsToDisplay','100','Marker','*','ShowRefConstellation',false,'Title','Scatter Plot','Li"
-	  "neProperties',struct('DisplayName','','Color',[1 1 0.0666666666666667],'LineStyle','none','LineWidth',0.5,'Marker',"
-	  "'.','MarkerSize',6,'MarkerEdgeColor','auto','MarkerFaceColor','none','Visible','on'),'AxesProperties',struct('Color"
-	  "',[0 0 0],'XColor',[0.686274509803922 0.686274509803922 0.686274509803922],'YColor',[0.686274509803922 0.6862745098"
-	  "03922 0.686274509803922],'ZColor',[0.686274509803922 0.686274509803922 0.686274509803922],'XGrid','on','YGrid','on'"
-	  ",'ZGrid','off','Box','on','XScale','linear','YScale','linear','ZScale','linear','XDir','normal','YDir','normal','ZD"
-	  "ir','normal','XTickMode','auto','YTickMode','auto','ZTickMode','auto','XTickLabelMode','auto','YTickLabelMode','aut"
-	  "o','ZTickLabelMode','auto','FontName','Helvetica','FontSize',10,'FontUnits','points','FontWeight','normal','Title',"
-	  "'Scatter Plot','XLabel','In-phase Amplitude','YLabel','Quadrature Amplitude','ZLabel','')),extmgr.Configuration('To"
-	  "ols','Measurements',true,'Threshold','0','NumPeaks','Inf','MinPeakDistance','1','MinPeakHeight','-Inf','ShowText',f"
-	  "alse,'TextFormat','%.1f,%.1f','TextValues','xy','Version','2015a'),extmgr.Configuration('Tools','Plot Navigation',t"
-	  "rue,'OnceAtStop',true)),'Version','2015a','Position',[545 305 191 191],'VisibleAtModelOpen','on')"
+	  "als','Constellation',true,'MinYLim','-0.88387','MaxYLim','0.88387','MinXLim','-0.7071','MaxXLim','0.7071','SymbolsT"
+	  "oDisplayFromInput',false,'SymbolsToDisplay','100','Marker','*','ShowRefConstellation',false,'Title','Scatter Plot',"
+	  "'LineProperties',struct('DisplayName','','Color',[1 1 0.0666666666666667],'LineStyle','none','LineWidth',0.5,'Marke"
+	  "r','.','MarkerSize',6,'MarkerEdgeColor','auto','MarkerFaceColor','none','Visible','on'),'AxesProperties',struct('Co"
+	  "lor',[0 0 0],'XColor',[0.686274509803922 0.686274509803922 0.686274509803922],'YColor',[0.686274509803922 0.6862745"
+	  "09803922 0.686274509803922],'ZColor',[0.686274509803922 0.686274509803922 0.686274509803922],'XGrid','on','YGrid','"
+	  "on','ZGrid','off','Box','on','XScale','linear','YScale','linear','ZScale','linear','XDir','normal','YDir','normal',"
+	  "'ZDir','normal','XTickMode','auto','YTickMode','auto','ZTickMode','auto','XTickLabelMode','auto','YTickLabelMode','"
+	  "auto','ZTickLabelMode','auto','FontName','Helvetica','FontSize',10,'FontUnits','points','FontWeight','normal','Titl"
+	  "e','Scatter Plot','XLabel','In-phase Amplitude','YLabel','Quadrature Amplitude','ZLabel','')),extmgr.Configuration("
+	  "'Tools','Measurements',true,'Threshold','0','NumPeaks','Inf','MinPeakDistance','1','MinPeakHeight','-Inf','ShowText"
+	  "',false,'TextFormat','%.1f,%.1f','TextValues','xy','Version','2015a'),extmgr.Configuration('Tools','Plot Navigation"
+	  "',true,'OnceAtStop',true)),'Version','2015a','Position',[676 56 191 191],'VisibleAtModelOpen','on')"
 	}
 	Block {
 	  BlockType		  Selector
@@ -6618,8 +6636,8 @@ Model {
       RequestExecContextInheritance off
       System {
 	Name			"OFDM Transmitter with Variable\nSymbol Timing and Carrier Frequency Error"
-	Location		[-4, 0, 1284, 764]
-	Open			on
+	Location		[-4, -4, 1368, 728]
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -6647,25 +6665,6 @@ Model {
 	  ZOrder		  -2
 	  Port			  "2"
 	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "Bernoulli Random\nBinary Generator"
-	  SID			  "293"
-	  Ports			  [0, 1]
-	  Position		  [175, 148, 255, 192]
-	  ZOrder		  2
-	  LibraryVersion	  "1.112"
-	  SourceBlock		  "commrandsrc2/Bernoulli Binary\nGenerator"
-	  SourceType		  "Bernoulli Binary Generator"
-	  ContentPreviewEnabled	  off
-	  P			  "0.5"
-	  seed			  "123"
-	  Ts			  "-1 "
-	  frameBased		  on
-	  sampPerFrame		  "1"
-	  orient		  off
-	  outDataType		  "uint8"
 	}
 	Block {
 	  BlockType		  Buffer
@@ -7111,7 +7110,7 @@ Model {
 	  RequestExecContextInheritance	off
 	  System {
 	    Name		    "Farrow Variable Delay"
-	    Location		    [-4, 0, 1284, 764]
+	    Location		    [35, 390, 597, 877]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -7311,7 +7310,7 @@ Model {
 	      RequestExecContextInheritance off
 	      System {
 		Name			"MADS"
-		Location		[-4, 0, 1284, 764]
+		Location		[134, 60, 915, 476]
 		Open			off
 		ModelBrowserVisibility	off
 		ModelBrowserWidth	200
@@ -7469,7 +7468,7 @@ Model {
 		  ZOrder		  5
 		  SrcBlock		  "mu"
 		  SrcPort		  1
-		  Points		  [195, 0]
+		  Points		  [0, 0; 195, 0]
 		  Branch {
 		    ZOrder		    6
 		    Points		    [125, 0]
@@ -7615,14 +7614,14 @@ Model {
 	  BlockType		  SubSystem
 	  Name			  "OFDM Symbol Gen"
 	  SID			  "280"
-	  Ports			  [1, 1, 1]
+	  Ports			  [0, 1, 1]
 	  Position		  [350, 73, 450, 137]
 	  ZOrder		  -9
 	  RequestExecContextInheritance	off
 	  System {
 	    Name		    "OFDM Symbol Gen"
-	    Location		    [-4, 0, 1284, 764]
-	    Open		    on
+	    Location		    [-4, -4, 1368, 728]
+	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
 	    ScreenColor		    "white"
@@ -7635,67 +7634,212 @@ Model {
 	    ShowPageBoundaries	    off
 	    ZoomFactor		    "100"
 	    Block {
-	      BlockType		      Inport
-	      Name		      "in_data"
-	      SID		      "548"
-	      Position		      [55, 228, 85, 242]
-	      ZOrder		      19
-	      IconDisplay	      "Port number"
-	      OutDataTypeStr	      "uint8"
-	    }
-	    Block {
 	      BlockType		      EnablePort
 	      Name		      "Enable"
 	      SID		      "281"
 	      Ports		      []
-	      Position		      [60, 325, 80, 345]
+	      Position		      [60, 150, 80, 170]
 	      ZOrder		      -1
 	    }
 	    Block {
-	      BlockType		      Sum
-	      Name		      "Add"
-	      SID		      "542"
-	      Ports		      [2, 1]
-	      Position		      [105, 37, 135, 68]
-	      ZOrder		      9
-	      InputSameDT	      off
-	      AccumDataTypeStr	      "Inherit: Same as first input"
-	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
-	      SaturateOnIntegerOverflow	off
-	    }
-	    Block {
-	      BlockType		      Constant
-	      Name		      "Constant"
-	      SID		      "543"
-	      Position		      [25, 115, 55, 145]
-	      ZOrder		      10
-	      OutDataTypeStr	      "fixdt(1,12,0)"
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "Counter\nLimited"
-	      SID		      "539"
-	      Ports		      [0, 1]
-	      Position		      [25, 30, 55, 60]
-	      ZOrder		      6
-	      LibraryVersion	      "1.356"
-	      SourceBlock	      "simulink/Sources/Counter\nLimited"
-	      SourceType	      "Counter Limited"
-	      ContentPreviewEnabled   off
-	      uplimit		      "OFDM_Frame-1"
-	      tsamp		      "-1"
+	      BlockType		      SubSystem
+	      Name		      "Divide by \nOFDM_Frame length"
+	      SID		      "282"
+	      Ports		      [0, 2]
+	      Position		      [35, 26, 80, 104]
+	      ZOrder		      -2
+	      TreatAsAtomicUnit	      on
+	      RequestExecContextInheritance off
+	      Object {
+		$PropName		"MaskObject"
+		$ObjectID		35
+		$ClassName		"Simulink.Mask"
+		Type			"Pulse Divider"
+		Array {
+		  Type			  "Simulink.MaskParameter"
+		  Dimension		  2
+		  Object {
+		    $ObjectID		    36
+		    Type		    "edit"
+		    Name		    "div"
+		    Prompt		    "Modulo:"
+		    Value		    "OFDM_Frame"
+		  }
+		  Object {
+		    $ObjectID		    37
+		    Type		    "edit"
+		    Name		    "ph"
+		    Prompt		    "Initial Phase Delay (cycles):"
+		    Value		    "0"
+		  }
+		  PropName		  "Parameters"
+		}
+	      }
+	      System {
+		Name			"Divide by \nOFDM_Frame length"
+		Location		[72, 73, 679, 416]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+		TiledPageScale		1
+		ShowPageBoundaries	off
+		ZoomFactor		"100"
+		Block {
+		  BlockType		  Constant
+		  Name			  "Constant1"
+		  SID			  "283"
+		  Position		  [178, 90, 212, 110]
+		  ZOrder		  -1
+		  BlockRotation		  270
+		  ShowName		  off
+		  Value			  "div"
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "Constant2"
+		  SID			  "284"
+		  Position		  [35, 35, 55, 55]
+		  ZOrder		  -2
+		  ShowName		  off
+		}
+		Block {
+		  BlockType		  Fcn
+		  Name			  "Fcn4"
+		  SID			  "285"
+		  Position		  [290, 42, 340, 68]
+		  ZOrder		  -3
+		  ShowName		  off
+		  Expr			  "u<1"
+		}
+		Block {
+		  BlockType		  Math
+		  Name			  "Math\nFunction"
+		  SID			  "286"
+		  Ports			  [2, 1]
+		  Position		  [220, 39, 245, 66]
+		  ZOrder		  -4
+		  ShowName		  off
+		  Operator		  "mod"
+		}
+		Block {
+		  BlockType		  Sum
+		  Name			  "Sum"
+		  SID			  "287"
+		  Ports			  [2, 1]
+		  Position		  [85, 35, 105, 55]
+		  ZOrder		  -5
+		  ShowName		  off
+		  IconShape		  "round"
+		  Inputs		  "|++"
+		}
+		Block {
+		  BlockType		  UnitDelay
+		  Name			  "Unit Delay"
+		  SID			  "288"
+		  Position		  [150, 25, 185, 65]
+		  ZOrder		  -6
+		  InitialCondition	  "div-ph"
+		  SampleTime		  "-1"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "Enable"
+		  SID			  "289"
+		  Position		  [380, 48, 410, 62]
+		  ZOrder		  -7
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "Count"
+		  SID			  "290"
+		  Position		  [380, 13, 410, 27]
+		  ZOrder		  -8
+		  Port			  "2"
+		  IconDisplay		  "Port number"
+		}
+		Line {
+		  ZOrder		  1
+		  SrcBlock		  "Sum"
+		  SrcPort		  1
+		  Points		  [10, 0]
+		  Branch {
+		    ZOrder		    2
+		    DstBlock		    "Unit Delay"
+		    DstPort		    1
+		  }
+		  Branch {
+		    ZOrder		    3
+		    Points		    [0, -25]
+		    DstBlock		    "Count"
+		    DstPort		    1
+		  }
+		}
+		Line {
+		  ZOrder		  4
+		  SrcBlock		  "Constant2"
+		  SrcPort		  1
+		  DstBlock		  "Sum"
+		  DstPort		  1
+		}
+		Line {
+		  ZOrder		  5
+		  SrcBlock		  "Unit Delay"
+		  SrcPort		  1
+		  DstBlock		  "Math\nFunction"
+		  DstPort		  1
+		}
+		Line {
+		  ZOrder		  6
+		  SrcBlock		  "Math\nFunction"
+		  SrcPort		  1
+		  Points		  [0, 0; 15, 0]
+		  Branch {
+		    ZOrder		    7
+		    Points		    [0, 65; -170, 0]
+		    DstBlock		    "Sum"
+		    DstPort		    2
+		  }
+		  Branch {
+		    ZOrder		    8
+		    DstBlock		    "Fcn4"
+		    DstPort		    1
+		  }
+		}
+		Line {
+		  ZOrder		  9
+		  SrcBlock		  "Constant1"
+		  SrcPort		  1
+		  Points		  [0, -25]
+		  DstBlock		  "Math\nFunction"
+		  DstPort		  2
+		}
+		Line {
+		  ZOrder		  10
+		  SrcBlock		  "Fcn4"
+		  SrcPort		  1
+		  DstBlock		  "Enable"
+		  DstPort		  1
+		}
+	      }
 	    }
 	    Block {
 	      BlockType		      SubSystem
 	      Name		      "OFDM Generator"
 	      SID		      "291"
-	      Ports		      [1, 1, 1]
-	      Position		      [155, 205, 265, 265]
+	      Ports		      [0, 1, 1]
+	      Position		      [145, 105, 255, 165]
 	      ZOrder		      -3
 	      RequestExecContextInheritance off
 	      System {
 		Name			"OFDM Generator"
-		Location		[-4, 0, 1284, 764]
+		Location		[14, 3, 973, 783]
 		Open			off
 		ModelBrowserVisibility	off
 		ModelBrowserWidth	200
@@ -7709,15 +7853,6 @@ Model {
 		ShowPageBoundaries	off
 		ZoomFactor		"97"
 		Block {
-		  BlockType		  Inport
-		  Name			  "in_data"
-		  SID			  "546"
-		  Position		  [30, 48, 60, 62]
-		  ZOrder		  4
-		  IconDisplay		  "Port number"
-		  OutDataTypeStr	  "uint8"
-		}
-		Block {
 		  BlockType		  EnablePort
 		  Name			  "Enable"
 		  SID			  "292"
@@ -7726,20 +7861,30 @@ Model {
 		  ZOrder		  -1
 		}
 		Block {
-		  BlockType		  Buffer
-		  Name			  "Buffer"
-		  SID			  "547"
-		  Position		  [95, 74, 145, 126]
-		  ZOrder		  5
-		  N			  "Bits_per_Frame"
-		  TreatMby1Signals	  "One channel"
+		  BlockType		  Reference
+		  Name			  "Bernoulli Random\nBinary Generator"
+		  SID			  "293"
+		  Ports			  [0, 1]
+		  Position		  [25, 38, 105, 82]
+		  ZOrder		  -2
+		  LibraryVersion	  "1.112"
+		  SourceBlock		  "commrandsrc2/Bernoulli Binary\nGenerator"
+		  SourceType		  "Bernoulli Binary Generator"
+		  ContentPreviewEnabled	  off
+		  P			  "0.5"
+		  seed			  "123"
+		  Ts			  "-1 "
+		  frameBased		  on
+		  sampPerFrame		  "Bits_per_Frame"
+		  orient		  off
+		  outDataType		  "double"
 		}
 		Block {
 		  BlockType		  FrameConversion
 		  Name			  "Frame Conversion"
 		  SID			  "294"
 		  Ports			  [1, 1]
-		  Position		  [770, 200, 825, 240]
+		  Position		  [605, 40, 660, 80]
 		  ZOrder		  -3
 		  OutFrame		  "Sample-based"
 		}
@@ -7747,7 +7892,7 @@ Model {
 		  BlockType		  Gain
 		  Name			  "Gain"
 		  SID			  "295"
-		  Position		  [620, 120, 650, 150]
+		  Position		  [550, 45, 580, 75]
 		  ZOrder		  -4
 		  Gain			  "D"
 		  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
@@ -7774,13 +7919,13 @@ Model {
 		  RequestExecContextInheritance	off
 		  Object {
 		    $PropName		    "MaskObject"
-		    $ObjectID		    35
+		    $ObjectID		    38
 		    $ClassName		    "Simulink.Mask"
 		    Display		    "disp('OFDM\\nTransmitter')"
 		  }
 		  System {
 		    Name		    "OFDM Transmitter1"
-		    Location		    [-4, 0, 1284, 764]
+		    Location		    [14, 3, 973, 783]
 		    Open		    off
 		    ModelBrowserVisibility  off
 		    ModelBrowserWidth	    200
@@ -7818,7 +7963,6 @@ Model {
 		    Position		    [140, 125, 170, 155]
 		    ZOrder		    -3
 		    Value		    "[0,0]"
-		    OutDataTypeStr	    "fixdt(1,12,7)"
 		    }
 		    Block {
 		    BlockType		    Constant
@@ -7827,7 +7971,6 @@ Model {
 		    Position		    [125, 765, 155, 795]
 		    ZOrder		    -4
 		    Value		    "0"
-		    OutDataTypeStr	    "fixdt(1,12,7)"
 		    }
 		    Block {
 		    BlockType		    Demux
@@ -7908,7 +8051,6 @@ Model {
 		    Position		    [65, 35, 165, 65]
 		    ZOrder		    -8
 		    Value		    "[1 j -1 -j   ]*Pilot_Level"
-		    OutDataTypeStr	    "fixdt(1,12,7)"
 		    }
 		    Block {
 		    BlockType		    Selector
@@ -8555,25 +8697,24 @@ Model {
 		  AvgPow		  "1"
 		  PeakPow		  "1"
 		  Ph			  "0"
-		  outDtype		  "Fixed-point"
-		  outWordLen		  "12"
+		  outDtype		  "double"
+		  outWordLen		  "16"
 		  outUDDataType		  "sfix(16)"
-		  outFracLenMode	  "User-defined"
-		  outFracLen		  "7"
+		  outFracLenMode	  "Best precision"
+		  outFracLen		  "15"
 		}
 		Block {
 		  BlockType		  Outport
 		  Name			  "Out1"
 		  SID			  "324"
-		  Position		  [1015, 253, 1045, 267]
+		  Position		  [685, 53, 715, 67]
 		  ZOrder		  -8
 		  IconDisplay		  "Port number"
 		}
 		Line {
-		  ZOrder		  8
-		  SrcBlock		  "Buffer"
+		  ZOrder		  1
+		  SrcBlock		  "Bernoulli Random\nBinary Generator"
 		  SrcPort		  1
-		  Points		  [9, 0; 0, -40]
 		  DstBlock		  "Rectangular QAM\nModulator\nBaseband1"
 		  DstPort		  1
 		}
@@ -8581,7 +8722,6 @@ Model {
 		  ZOrder		  2
 		  SrcBlock		  "OFDM Transmitter1"
 		  SrcPort		  1
-		  Points		  [48, 0; 0, 75]
 		  DstBlock		  "Gain"
 		  DstPort		  1
 		}
@@ -8596,7 +8736,6 @@ Model {
 		  ZOrder		  4
 		  SrcBlock		  "Gain"
 		  SrcPort		  1
-		  Points		  [9, 0; 0, 85]
 		  DstBlock		  "Frame Conversion"
 		  DstPort		  1
 		}
@@ -8611,16 +8750,7 @@ Model {
 		  ZOrder		  6
 		  SrcBlock		  "Frame Conversion"
 		  SrcPort		  1
-		  Points		  [95, 0; 0, 40]
 		  DstBlock		  "Out1"
-		  DstPort		  1
-		}
-		Line {
-		  ZOrder		  9
-		  SrcBlock		  "in_data"
-		  SrcPort		  1
-		  Points		  [13, 0; 0, 45]
-		  DstBlock		  "Buffer"
 		  DstPort		  1
 		}
 		Annotation {
@@ -8635,22 +8765,11 @@ Model {
 	      }
 	    }
 	    Block {
-	      BlockType		      RelationalOperator
-	      Name		      "Relational\nOperator"
-	      SID		      "544"
-	      Ports		      [2, 1]
-	      Position		      [170, 107, 200, 138]
-	      ZOrder		      17
-	      Operator		      "<="
-	      InputSameDT	      off
-	      OutDataTypeStr	      "boolean"
-	    }
-	    Block {
 	      BlockType		      Selector
 	      Name		      "Selector"
 	      SID		      "325"
 	      Ports		      [2, 1]
-	      Position		      [410, 171, 450, 209]
+	      Position		      [350, 126, 390, 164]
 	      ZOrder		      -4
 	      InputPortWidth	      "80"
 	      IndexOptions	      "Index vector (port)"
@@ -8660,7 +8779,7 @@ Model {
 	      BlockType		      Outport
 	      Name		      "Serial Samples Out"
 	      SID		      "326"
-	      Position		      [560, 183, 590, 197]
+	      Position		      [440, 138, 470, 152]
 	      ZOrder		      -5
 	      IconDisplay	      "Port number"
 	      OutputWhenDisabled      "reset"
@@ -8670,9 +8789,16 @@ Model {
 	      ZOrder		      1
 	      SrcBlock		      "OFDM Generator"
 	      SrcPort		      1
-	      Points		      [85, 0; 0, -55]
 	      DstBlock		      "Selector"
 	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      2
+	      SrcBlock		      "Divide by \nOFDM_Frame length"
+	      SrcPort		      1
+	      Points		      [115, 0]
+	      DstBlock		      "OFDM Generator"
+	      DstPort		      enable
 	    }
 	    Line {
 	      ZOrder		      3
@@ -8682,66 +8808,17 @@ Model {
 	      DstPort		      1
 	    }
 	    Line {
-	      ZOrder		      36
-	      SrcBlock		      "Constant"
-	      SrcPort		      1
-	      Points		      [22, 0]
-	      Branch {
-		ZOrder			64
-		Points			[0, -70]
-		DstBlock		"Add"
-		DstPort			2
-	      }
-	      Branch {
-		ZOrder			63
-		DstBlock		"Relational\nOperator"
-		DstPort			2
-	      }
-	    }
-	    Line {
-	      ZOrder		      37
-	      SrcBlock		      "Add"
-	      SrcPort		      1
-	      Points		      [12, 0]
-	      Branch {
-		ZOrder			69
-		Points			[150, 0; 0, 145]
-		DstBlock		"Selector"
-		DstPort			2
-	      }
-	      Branch {
-		ZOrder			67
-		Points			[0, 60]
-		DstBlock		"Relational\nOperator"
-		DstPort			1
-	      }
-	    }
-	    Line {
-	      ZOrder		      42
-	      SrcBlock		      "Relational\nOperator"
-	      SrcPort		      1
-	      Points		      [5, 0]
-	      DstBlock		      "OFDM Generator"
-	      DstPort		      enable
-	    }
-	    Line {
-	      ZOrder		      65
-	      SrcBlock		      "Counter\nLimited"
-	      SrcPort		      1
-	      DstBlock		      "Add"
-	      DstPort		      1
-	    }
-	    Line {
-	      ZOrder		      82
-	      SrcBlock		      "in_data"
-	      SrcPort		      1
-	      DstBlock		      "OFDM Generator"
-	      DstPort		      1
+	      ZOrder		      4
+	      SrcBlock		      "Divide by \nOFDM_Frame length"
+	      SrcPort		      2
+	      Points		      [40, 0; 0, 110; 185, 0; 0, -40]
+	      DstBlock		      "Selector"
+	      DstPort		      2
 	    }
 	    Annotation {
 	      SID		      "515"
 	      Name		      "Output Samples Serially"
-	      Position		      [381, 284, 498, 299]
+	      Position		      [381, 109, 498, 124]
 	      InternalMargins	      [0, 0, 0, 0]
 	      FixedHeight	      off
 	      FixedWidth	      off
@@ -8751,13 +8828,21 @@ Model {
 	      SID		      "516"
 	      Name		      "Note: Ouptut is SET TO ZERO\nwhen not enabled. \nThis effecitvly inserts ZEROS in the stream \nfor"
 	      " proper interpolation. "
-	      Position		      [389, 327, 593, 381]
+	      Position		      [404, 212, 608, 266]
 	      InternalMargins	      [0, 0, 0, 0]
 	      FixedHeight	      off
 	      FixedWidth	      off
 	      ZOrder		      -2
 	    }
 	  }
+	}
+	Block {
+	  BlockType		  RealImagToComplex
+	  Name			  "Real-Imag to\nComplex1"
+	  SID			  "561"
+	  Ports			  [2, 1]
+	  Position		  [435, 315, 485, 370]
+	  ZOrder		  298
 	}
 	Block {
 	  BlockType		  Product
@@ -8789,7 +8874,7 @@ Model {
 	  RequestExecContextInheritance	off
 	  System {
 	    Name		    "Timing Control Unit1"
-	    Location		    [-4, -4, 1284, 760]
+	    Location		    [134, 52, 1076, 562]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -9184,6 +9269,1540 @@ Model {
 	  }
 	}
 	Block {
+	  BlockType		  SubSystem
+	  Name			  "ofdm_transmitter"
+	  SID			  "562"
+	  Ports			  [0, 2]
+	  Position		  [320, 310, 360, 370]
+	  ZOrder		  297
+	  RequestExecContextInheritance	off
+	  System {
+	    Name		    "ofdm_transmitter"
+	    Location		    [-4, -4, 1368, 728]
+	    Open		    on
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "40"
+	    Block {
+	      BlockType		      TimeScope
+	      Name		      " modulation symbol"
+	      SID		      "563"
+	      Ports		      [4]
+	      Position		      [905, 25, 1010, 160]
+	      ZOrder		      279
+	      UserDataPersistent      on
+	      DefaultConfigurationName "spbscopes.TimeScopeBlockCfg"
+	      ScopeSpecificationString "spbscopes.TimeScopeBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(extmgr.Co"
+	      "nfiguration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('Sourc"
+	      "es','WiredSimulink',true,'DataLoggingVariableName','ScopeData1'),extmgr.Configuration('Visuals','Time Domain',t"
+	      "rue,'DisplayLayoutDimensions',[4 1],'DisplayPropertyDefaults',struct('YLabelReal','Amplitude','AxesColor',[0 0 "
+	      "0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667"
+	      ";0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.83137254901960"
+	      "8 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980"
+	      "392156863]),'SerializedDisplays',{struct('MinYLimReal','-0.125','MaxYLimReal','1.125','YLabelReal','Amplitude',"
+	      "'MinYLimMag','0','MaxYLimMag','1.125','LegendVisibility','On','XGrid',true,'YGrid',true,'PlotMagPhase',false,'A"
+	      "xesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0"
+	      "666666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0"
+	      ".831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039"
+	      "215686 0.650980392156863],'Title','','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLines',1,'Li"
+	      "neNames',{{'Unit Delay1'}},'ShowContent',true,'Placement',1),struct('MinYLimReal','-0.125','MaxYLimReal','1.125"
+	      "','YLabelReal','Amplitude','MinYLimMag','0','MaxYLimMag','1.25','LegendVisibility','Off','XGrid',true,'YGrid',t"
+	      "rue,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.68627450980"
+	      "3922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.1607843"
+	      "1372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.05882352"
+	      "94117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','','LinePropertiesCache',{{}},'UserDefinedChannelN"
+	      "ames',{{}},'NumLines',1,'LineNames',{{'ofdm_modulation_symbols/out_valid'}},'ShowContent',true,'Placement',2),s"
+	      "truct('MinYLimReal','-1.25','MaxYLimReal','1.25','YLabelReal','Amplitude','MinYLimMag','0','MaxYLimMag','1.25',"
+	      "'LegendVisibility','Off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0."
+	      "686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0."
+	      "623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0"
+	      ".717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','',"
+	      "'LinePropertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLines',1,'LineNames',{{'ofdm_modulation_symbols/o"
+	      "ut_i'}},'ShowContent',true,'Placement',3),struct('MinYLimReal','-1.25','MaxYLimReal','1.25','YLabelReal','Ampli"
+	      "tude','MinYLimMag','0','MaxYLimMag','1.25','LegendVisibility','Off','XGrid',true,'YGrid',true,'PlotMagPhase',fa"
+	      "lse,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1"
+	      " 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.39215686274"
+	      "5098 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745"
+	      "098039215686 0.650980392156863],'Title','','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLines'"
+	      ",1,'LineNames',{{'ofdm_modulation_symbols/out_q'}},'ShowContent',true,'Placement',4)}),extmgr.Configuration('To"
+	      "ols','Plot Navigation',true,'OnceAtStop',false,'PreviousAutoscale','XY'),extmgr.Configuration('Tools','Measurem"
+	      "ents',true,'Measurements',struct('triggers',struct('Mode','Auto','Position',0.5,'Type','Edge','Polarity','Posit"
+	      "ive','AutoLevel',true,'Level',0.5,'Hysteresis',0,'UpperLevel',2.3,'LowerLevel',0.2,'MinTime',0,'MaxTime',Inf,'T"
+	      "imeout',0,'Delay',0,'Holdoff',0,'SourceOffset',1,'MainPanelOpen',1,'TypePanelOpen',1,'SettingsPanelOpen',1,'Off"
+	      "setPanelOpen',1),'traceselector',struct('Line',1),'tcursors',struct('XCoordinates',[2e-07 1.7375e-05],'YCoordin"
+	      "ates',[0.1875 0.8125],'CursorChannels',[1 2],'WaveformCursors',true,'ShowHorizontal',false,'ShowVertical',true,"
+	      "'LockCursorSpacing',false,'SnapToData',1,'SettingsPanelOpen',1,'MeasurementsPanelOpen',1)),'Version','2015a')),"
+	      "'Version','2015a','Position',[1 45 1280 689],'OpenAtMdlStart',false)"
+	      NumInputPorts	      "4"
+	    }
+	    Block {
+	      BlockType		      ComplexToRealImag
+	      Name		      "Complex to\nReal-Imag1"
+	      SID		      "564"
+	      Ports		      [1, 2]
+	      Position		      [1745, 203, 1790, 252]
+	      ZOrder		      272
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "IFFT\nHDL Optimized1"
+	      SID		      "565"
+	      Ports		      [2, 4]
+	      Position		      [1480, 203, 1675, 392]
+	      ZOrder		      228
+	      ForegroundColor	      "green"
+	      LibraryVersion	      "1.485"
+	      SourceBlock	      "dspxfrm3/IFFT\nHDL Optimized"
+	      SourceType	      "IFFT HDL Optimized"
+	      BitReversedOutput	      off
+	      Normalize		      on
+	      FFTLengthSource	      "Property"
+	      FFTLength		      "64"
+	      RoundingMethod	      "Floor"
+	      OverflowAction	      "Saturate"
+	      ValidInputPort	      on
+	      ResetInputPort	      off
+	      StartOutputPort	      on
+	      EndOutputPort	      on
+	      SimulateUsing	      "Code generation"
+	    }
+	    Block {
+	      BlockType		      RealImagToComplex
+	      Name		      "Real-Imag to\nComplex"
+	      SID		      "566"
+	      Ports		      [2, 1]
+	      Position		      [1280, 265, 1330, 320]
+	      ZOrder		      229
+	    }
+	    Block {
+	      BlockType		      SpectrumAnalyzer
+	      Name		      "Spectrum\nAnalyzer"
+	      SID		      "567"
+	      Ports		      [1]
+	      Position		      [1785, 64, 1830, 116]
+	      ZOrder		      277
+	      ScopeSpecificationString "spbscopes.SpectrumAnalyzerBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(ex"
+	      "tmgr.Configuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration"
+	      "('Sources','WiredSimulink',true),extmgr.Configuration('Sources','Simulink',false),extmgr.Configuration('Sources"
+	      "','SimulinkEvent',false),extmgr.Configuration('Sources','File',false),extmgr.Configuration('Sources','Workspace"
+	      "',false),extmgr.Configuration('Sources','Streaming',false),extmgr.Configuration('Sources','SPTool',false),extmg"
+	      "r.Configuration('Visuals','Spectrum',true,'AxesProperties',struct('Color',[0 0 0],'XColor',[0.686274509803922 0"
+	      ".686274509803922 0.686274509803922],'YColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ZColor',["
+	      "0.686274509803922 0.686274509803922 0.686274509803922],'XGrid','on','YGrid','on','ZGrid','off','Box','on','XSca"
+	      "le','linear','YScale','linear','ZScale','linear','XDir','normal','YDir','normal','ZDir','normal','XTickMode','a"
+	      "uto','YTickMode','auto','ZTickMode','auto','XTickLabelMode','manual','YTickLabelMode','auto','ZTickLabelMode','"
+	      "manual','XTickLabel',['-500';'-400';'-300';'-200';'-100';'   0';' 100';' 200';' 300';' 400';' 500'],'ZTickLabel"
+	      "','','FontName','Helvetica','FontSize',8.5,'FontUnits','points','FontWeight','normal','Title','','XLabel','Freq"
+	      "uency (mHz)','YLabel',' dBm','ZLabel',''),'LineProperties',struct('DisplayName',{'','','','','','','','','','',"
+	      "'','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','',"
+	      "'','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','',"
+	      "'','','','','','','','','','','','','','','',''},'Color',{[1 1 0.0666666666666667],[1 0 1],[0 1 1],[1 0 0],[0 1"
+	      " 0],[0 0 1],[1 1 0],[1 0 1],[0 1 1],[1 0 0],[0 1 0],[0 0 1],[1 1 0],[1 0 1],[0 1 1],[1 0 0],[0 1 0],[0 0 1],[1 "
+	      "1 0],[1 0 1],[0 1 1],[1 0 0],[0 1 0],[0 0 1],[1 1 0],[1 0 1],[0 1 1],[1 0 0],[0 1 0],[0 0 1],[1 1 0],[1 0 1],[0"
+	      " 1 1],[1 0 0],[0 1 0],[0 0 1],[1 1 0],[1 0 1],[0 1 1],[1 0 0],[0 1 0],[0 0 1],[1 1 0],[1 0 1],[0 1 1],[1 0 0],["
+	      "0 1 0],[0 0 1],[1 1 0],[1 0 1],[0 1 1],[1 0 0],[0 1 0],[0 0 1],[1 1 0],[1 0 1],[0 1 1],[1 0 0],[0 1 0],[0 0 1],"
+	      "[1 1 0],[1 0 1],[0 1 1],[1 0 0],[0 1 0],[0 0 1],[1 1 0],[1 0 1],[0 1 1],[1 0 0],[0 1 0],[0 0 1],[1 1 0],[1 0 1]"
+	      ",[0 1 1],[1 0 0],[0 1 0],[0 0 1],[1 1 0],[1 0 1],[0 1 1],[1 0 0],[0 1 0],[0 0 1],[1 1 0],[1 0 1],[0 1 1],[1 0 0"
+	      "],[0 1 0],[0 0 1],[1 1 0],[1 0 1],[0 1 1],[1 0 0],[0 1 0],[0 0 1],[1 1 0],[1 0 1],[0 1 1],[1 0 0]},'LineStyle',"
+	      "{'-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-"
+	      "','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','"
+	      "-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-',"
+	      "'-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-'},'LineWidth',{0.5,0.5,0.5,0.5,0.5,0.5,0.5,0"
+	      ".5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,"
+	      "0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5"
+	      ",0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0."
+	      "5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5},'Marker',{'none','none','none','none','none','none','none','none','none'"
+	      ",'none','none','none','none','none','none','none','none','none','none','none','none','none','none','none','none"
+	      "','none','none','none','none','none','none','none','none','none','none','none','none','none','none','none','non"
+	      "e','none','none','none','none','none','none','none','none','none','none','none','none','none','none','none','no"
+	      "ne','none','none','none','none','none','none','none','none','none','none','none','none','none','none','none','n"
+	      "one','none','none','none','none','none','none','none','none','none','none','none','none','none','none','none','"
+	      "none','none','none','none','none','none','none','none','none','none','none','none'},'MarkerSize',{6,6,6,6,6,6,6"
+	      ",6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,"
+	      "6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6},'MarkerEdgeColor',{'auto','auto','"
+	      "auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto',"
+	      "'auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto'"
+	      ",'auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto"
+	      "','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','aut"
+	      "o','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','au"
+	      "to','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','auto','a"
+	      "uto','auto','auto'},'MarkerFaceColor',{'none','none','none','none','none','none','none','none','none','none','n"
+	      "one','none','none','none','none','none','none','none','none','none','none','none','none','none','none','none','"
+	      "none','none','none','none','none','none','none','none','none','none','none','none','none','none','none','none',"
+	      "'none','none','none','none','none','none','none','none','none','none','none','none','none','none','none','none'"
+	      ",'none','none','none','none','none','none','none','none','none','none','none','none','none','none','none','none"
+	      "','none','none','none','none','none','none','none','none','none','none','none','none','none','none','none','non"
+	      "e','none','none','none','none','none','none','none','none','none','none'},'Visible',{'on','on','on','on','on','"
+	      "on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','o"
+	      "n','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on"
+	      "','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on'"
+	      ",'on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on','on',"
+	      "'on','on','on','on','on','on'}),'MinYLim','-406.929442012675','MaxYLim','39.84953874749673','SampleRate','1','S"
+	      "pan','1','StartFrequency','-0.5','StopFrequency','0.5','IsSpanValuesValid',true),extmgr.Configuration('Visuals'"
+	      ",'Constellation',false),extmgr.Configuration('Visuals','Eye Diagram',false),extmgr.Configuration('Visuals','Arr"
+	      "ay Plot',false),extmgr.Configuration('Visuals','Logic Analyzer',false),extmgr.Configuration('Visuals','TimeVisu"
+	      "al',false),extmgr.Configuration('Visuals','Time Domain',false),extmgr.Configuration('Visuals','Matrix',false),e"
+	      "xtmgr.Configuration('Visuals','BodeVisual',false),extmgr.Configuration('Visuals','PZMapVisual',false),extmgr.Co"
+	      "nfiguration('Visuals','NicholsVisual',false),extmgr.Configuration('Visuals','MarginsVisual',false),extmgr.Confi"
+	      "guration('Visuals','SigmaVisual',false),extmgr.Configuration('Visuals','LinearStepVisual',false),extmgr.Configu"
+	      "ration('Tools','Plot Navigation',true),extmgr.Configuration('Tools','Measurements',true,'Version','2015a'),extm"
+	      "gr.Configuration('Tools','Requirement viewer',false),extmgr.Configuration('Tools','Check block zoom',false),ext"
+	      "mgr.Configuration('Tools','Instrumentation Sets',false)),'Version','2015a','Position',[1 45 1280 664],'OpenAtMd"
+	      "lStart',false)"
+	    }
+	    Block {
+	      BlockType		      UnitDelay
+	      Name		      "Unit Delay"
+	      SID		      "568"
+	      Position		      [385, 423, 420, 457]
+	      ZOrder		      222
+	      BlockMirror	      on
+	      NamePlacement	      "alternate"
+	      InputProcessing	      "Elements as channels (sample based)"
+	      SampleTime	      "-1"
+	    }
+	    Block {
+	      BlockType		      UnitDelay
+	      Name		      "Unit Delay1"
+	      SID		      "569"
+	      Position		      [965, 473, 1000, 507]
+	      ZOrder		      227
+	      BlockMirror	      on
+	      NamePlacement	      "alternate"
+	      InputProcessing	      "Elements as channels (sample based)"
+	      SampleTime	      "-1"
+	    }
+	    Block {
+	      BlockType		      TimeScope
+	      Name		      "byte"
+	      SID		      "570"
+	      Ports		      [4]
+	      Position		      [350, 25, 455, 160]
+	      ZOrder		      280
+	      UserDataPersistent      on
+	      DefaultConfigurationName "spbscopes.TimeScopeBlockCfg"
+	      ScopeSpecificationString "spbscopes.TimeScopeBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(extmgr.Co"
+	      "nfiguration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('Sourc"
+	      "es','WiredSimulink',true),extmgr.Configuration('Visuals','Time Domain',true,'DisplayLayoutDimensions',[4 1],'Di"
+	      "splayPropertyDefaults',struct('YLabelReal','Amplitude','AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0"
+	      ".686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1"
+	      ";1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 "
+	      "0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863]),'SerializedDisplays',{struc"
+	      "t('MinYLimReal','-0.125','MaxYLimReal','1.125','YLabelReal','Amplitude','MinYLimMag','0','MaxYLimMag','1.125','"
+	      "LegendVisibility','On','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.68"
+	      "6274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.62"
+	      "3529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.7"
+	      "17647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','','L"
+	      "inePropertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLines',1,'LineNames',{{'Unit Delay'}},'ShowContent'"
+	      ",true,'Placement',1),struct('MinYLimReal','-1','MaxYLimReal','1','YLabelReal','Amplitude','MinYLimMag','0','Max"
+	      "YLimMag','1.25','LegendVisibility','Off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'Ax"
+	      "esTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.074"
+	      "5098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.07"
+	      "45098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156"
+	      "863],'Title','','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLines',1,'LineNames',{{'ofdm_inpu"
+	      "t_fifo/out_empty'}},'ShowContent',true,'Placement',2),struct('MinYLimReal','-0.125','MaxYLimReal','1.125','YLab"
+	      "elReal','Amplitude','MinYLimMag','0','MaxYLimMag','1.25','LegendVisibility','Off','XGrid',true,'YGrid',true,'Pl"
+	      "otMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'"
+	      "ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549"
+	      ";0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.058823529411764"
+	      "7 1 1;1 0.0745098039215686 0.650980392156863],'Title','','LinePropertiesCache',{{}},'UserDefinedChannelNames',{"
+	      "{}},'NumLines',1,'LineNames',{{'ofdm_input_fifo/out_valid'}},'ShowContent',true,'Placement',3),struct('MinYLimR"
+	      "eal','-28.5','MaxYLimReal','256.5','YLabelReal','Amplitude','MinYLimMag','0','MaxYLimMag','1.25','LegendVisibil"
+	      "ity','Off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.68627450980392"
+	      "2 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.62352941176470"
+	      "6 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.7176470588235"
+	      "29 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','','LinePropertie"
+	      "sCache',{{}},'UserDefinedChannelNames',{{}},'NumLines',1,'LineNames',{{'ofdm_input_fifo/out_byte'}},'ShowConten"
+	      "t',true,'Placement',4)}),extmgr.Configuration('Tools','Plot Navigation',true,'OnceAtStop',false,'PreviousAutosc"
+	      "ale','XY'),extmgr.Configuration('Tools','Measurements',true,'Measurements',struct('triggers',struct('Mode','Aut"
+	      "o','Position',0.5,'Type','Edge','Polarity','Positive','AutoLevel',true,'Level',0.5,'Hysteresis',0,'UpperLevel',"
+	      "2.3,'LowerLevel',0.2,'MinTime',0,'MaxTime',Inf,'Timeout',0,'Delay',0,'Holdoff',0,'SourceOffset',1,'MainPanelOpe"
+	      "n',1,'TypePanelOpen',1,'SettingsPanelOpen',1,'OffsetPanelOpen',1),'traceselector',struct('Line',1),'tcursors',s"
+	      "truct('XCoordinates',[2e-07 1.7375e-05],'YCoordinates',[0.1875 0.8125],'CursorChannels',[1 2],'WaveformCursors'"
+	      ",true,'ShowHorizontal',false,'ShowVertical',true,'LockCursorSpacing',false,'SnapToData',1,'SettingsPanelOpen',1"
+	      ",'MeasurementsPanelOpen',1)),'Version','2015a')),'Version','2015a','Position',[1 45 1280 689],'OpenAtMdlStart',"
+	      "false)"
+	      NumInputPorts	      "4"
+	    }
+	    Block {
+	      BlockType		      TimeScope
+	      Name		      "ofdm frame"
+	      SID		      "571"
+	      Ports		      [4]
+	      Position		      [1350, 25, 1455, 160]
+	      ZOrder		      278
+	      UserDataPersistent      on
+	      DefaultConfigurationName "spbscopes.TimeScopeBlockCfg"
+	      ScopeSpecificationString "spbscopes.TimeScopeBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(extmgr.Co"
+	      "nfiguration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('Sourc"
+	      "es','WiredSimulink',true,'DataLoggingVariableName','ScopeData4'),extmgr.Configuration('Visuals','Time Domain',t"
+	      "rue,'DisplayLayoutDimensions',[4 1],'DisplayPropertyDefaults',struct('YLabelReal','Amplitude','AxesColor',[0 0 "
+	      "0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667"
+	      ";0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.83137254901960"
+	      "8 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980"
+	      "392156863]),'SerializedDisplays',{struct('MinYLimReal','-0.125','MaxYLimReal','1.125','YLabelReal','Amplitude',"
+	      "'MinYLimMag','0','MaxYLimMag','1.125','LegendVisibility','On','XGrid',true,'YGrid',true,'PlotMagPhase',false,'A"
+	      "xesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0"
+	      "666666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0"
+	      ".831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039"
+	      "215686 0.650980392156863],'Title','','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLines',1,'Li"
+	      "neNames',{{'ofdm_framing/out_valid'}},'ShowContent',true,'Placement',1),struct('MinYLimReal','-1.45264','MaxYLi"
+	      "mReal','1.19518','YLabelReal','Amplitude','MinYLimMag','0','MaxYLimMag','1.25','LegendVisibility','Off','XGrid'"
+	      ",true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.68627450980392"
+	      "2 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.4117647058"
+	      "82353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.2745098039215"
+	      "69 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','','LinePropertiesCache',{{}},'User"
+	      "DefinedChannelNames',{{}},'NumLines',1,'LineNames',{{'ofdm_framing/out_i'}},'ShowContent',true,'Placement',2),s"
+	      "truct('MinYLimReal','-1.25','MaxYLimReal','1.25','YLabelReal','Amplitude','MinYLimMag','0','MaxYLimMag','1.25',"
+	      "'LegendVisibility','Off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0."
+	      "686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0."
+	      "623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0"
+	      ".717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','',"
+	      "'LinePropertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLines',1,'LineNames',{{'ofdm_framing/out_q'}},'Sh"
+	      "owContent',true,'Placement',3),struct('MinYLimReal','-0.125','MaxYLimReal','1.125','YLabelReal','Amplitude','Mi"
+	      "nYLimMag','0','MaxYLimMag','1.25','LegendVisibility','Off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'Axes"
+	      "Color',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666"
+	      "666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.83"
+	      "1372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215"
+	      "686 0.650980392156863],'Title','','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLines',1,'LineN"
+	      "ames',{{'ofdm_framing/out_request_symbol'}},'ShowContent',true,'Placement',4)}),extmgr.Configuration('Tools','P"
+	      "lot Navigation',true,'OnceAtStop',false,'PreviousAutoscale','XY'),extmgr.Configuration('Tools','Measurements',t"
+	      "rue,'Measurements',struct('triggers',struct('Mode','Auto','Position',0.5,'Type','Edge','Polarity','Positive','A"
+	      "utoLevel',true,'Level',0.5,'Hysteresis',0,'UpperLevel',2.3,'LowerLevel',0.2,'MinTime',0,'MaxTime',Inf,'Timeout'"
+	      ",0,'Delay',0,'Holdoff',0,'SourceOffset',1,'MainPanelOpen',1,'TypePanelOpen',1,'SettingsPanelOpen',1,'OffsetPane"
+	      "lOpen',1),'traceselector',struct('Line',1),'tcursors',struct('XCoordinates',[1.28e-05 5.155e-05],'YCoordinates'"
+	      ",[0.1875 0.8125],'CursorChannels',[1 2],'WaveformCursors',true,'ShowHorizontal',false,'ShowVertical',true,'Lock"
+	      "CursorSpacing',false,'SnapToData',1,'SettingsPanelOpen',1,'MeasurementsPanelOpen',1)),'Version','2015a')),'Vers"
+	      "ion','2015a','Position',[1 45 1280 689],'OpenAtMdlStart',false)"
+	      NumInputPorts	      "4"
+	    }
+	    Block {
+	      BlockType		      Scope
+	      Name		      "ofdm symbol"
+	      SID		      "572"
+	      Ports		      [5]
+	      Position		      [2070, 21, 2195, 199]
+	      ZOrder		      275
+	      Floating		      off
+	      Location		      [10, 60, 1374, 738]
+	      Open		      off
+	      NumInputPorts	      "5"
+	      List {
+		ListType		AxesTitles
+		axes1			"%<SignalLabel>"
+		axes2			"%<SignalLabel>"
+		axes3			"%<SignalLabel>"
+		axes4			"%<SignalLabel>"
+		axes5			"%<SignalLabel>"
+	      }
+	      List {
+		ListType		ScopeGraphics
+		FigureColor		"[0.5 0.5 0.5]"
+		AxesColor		"[0 0 0]"
+		AxesTickColor		"[1 1 1]"
+		LineColors		"[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
+		LineStyles		"-|-|-|-|-|-"
+		LineWidths		"[0.5 0.5 0.5 0.5 0.5 0.5]"
+		MarkerStyles		"none|none|none|none|none|none"
+	      }
+	      ShowLegends	      on
+	      YMin		      "-0.4~-0.75~0~0~0.95"
+	      YMax		      "0.4~0.75~1~1~1.05"
+	      SaveName		      "ScopeData3"
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "ofdm_cyclic_prefix"
+	      SID		      "573"
+	      Ports		      [3, 2]
+	      Position		      [1930, 400, 2070, 510]
+	      ZOrder		      286
+	      LibraryVersion	      "1.165"
+	      ErrorFcn		      "Stateflow.Translate.translate"
+	      PermitHierarchicalResolution "ExplicitOnly"
+	      TreatAsAtomicUnit	      on
+	      RequestExecContextInheritance off
+	      SFBlockType	      "MATLAB Function"
+	      System {
+		Name			"ofdm_cyclic_prefix"
+		Location		[223, 338, 826, 833]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+		TiledPageScale		1
+		ShowPageBoundaries	off
+		ZoomFactor		"100"
+		SIDHighWatermark	"65"
+		Block {
+		  BlockType		  Inport
+		  Name			  "in_i"
+		  SID			  "573::1"
+		  Position		  [20, 101, 40, 119]
+		  ZOrder		  -1
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "in_q"
+		  SID			  "573::61"
+		  Position		  [20, 136, 40, 154]
+		  ZOrder		  52
+		  Port			  "2"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "in_valid"
+		  SID			  "573::62"
+		  Position		  [20, 171, 40, 189]
+		  ZOrder		  53
+		  Port			  "3"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Demux
+		  Name			  " Demux "
+		  SID			  "573::59"
+		  Ports			  [1, 1]
+		  Position		  [270, 230, 320, 270]
+		  ZOrder		  50
+		  Outputs		  "1"
+		}
+		Block {
+		  BlockType		  S-Function
+		  Name			  " SFunction "
+		  SID			  "573::58"
+		  Tag			  "Stateflow S-Function ofdm_14b 5"
+		  Ports			  [3, 3]
+		  Position		  [180, 110, 230, 190]
+		  ZOrder		  49
+		  FunctionName		  "sf_sfun"
+		  PortCounts		  "[3 3]"
+		  EnableBusSupport	  on
+		  Port {
+		    PortNumber		    2
+		    Name		    "out_i"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		  Port {
+		    PortNumber		    3
+		    Name		    "out_q"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		}
+		Block {
+		  BlockType		  Terminator
+		  Name			  " Terminator "
+		  SID			  "573::60"
+		  Position		  [460, 241, 480, 259]
+		  ZOrder		  51
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "out_i"
+		  SID			  "573::64"
+		  Position		  [460, 101, 480, 119]
+		  ZOrder		  55
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "out_q"
+		  SID			  "573::65"
+		  Position		  [460, 136, 480, 154]
+		  ZOrder		  56
+		  Port			  "2"
+		  IconDisplay		  "Port number"
+		}
+		Line {
+		  ZOrder		  1
+		  SrcBlock		  "in_i"
+		  SrcPort		  1
+		  DstBlock		  " SFunction "
+		  DstPort		  1
+		}
+		Line {
+		  ZOrder		  2
+		  SrcBlock		  "in_q"
+		  SrcPort		  1
+		  DstBlock		  " SFunction "
+		  DstPort		  2
+		}
+		Line {
+		  ZOrder		  3
+		  SrcBlock		  "in_valid"
+		  SrcPort		  1
+		  DstBlock		  " SFunction "
+		  DstPort		  3
+		}
+		Line {
+		  Name			  "out_i"
+		  ZOrder		  4
+		  Labels		  [0, 0]
+		  SrcBlock		  " SFunction "
+		  SrcPort		  2
+		  DstBlock		  "out_i"
+		  DstPort		  1
+		}
+		Line {
+		  Name			  "out_q"
+		  ZOrder		  5
+		  Labels		  [0, 0]
+		  SrcBlock		  " SFunction "
+		  SrcPort		  3
+		  DstBlock		  "out_q"
+		  DstPort		  1
+		}
+		Line {
+		  ZOrder		  6
+		  SrcBlock		  " Demux "
+		  SrcPort		  1
+		  DstBlock		  " Terminator "
+		  DstPort		  1
+		}
+		Line {
+		  ZOrder		  7
+		  SrcBlock		  " SFunction "
+		  SrcPort		  1
+		  DstBlock		  " Demux "
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "ofdm_framing"
+	      SID		      "574"
+	      Ports		      [3, 4]
+	      Position		      [900, 293, 1065, 407]
+	      ZOrder		      226
+	      LibraryVersion	      "1.32"
+	      ErrorFcn		      "Stateflow.Translate.translate"
+	      PermitHierarchicalResolution "ExplicitOnly"
+	      TreatAsAtomicUnit	      on
+	      RequestExecContextInheritance off
+	      SFBlockType	      "MATLAB Function"
+	      System {
+		Name			"ofdm_framing"
+		Location		[223, 338, 826, 833]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+		TiledPageScale		1
+		ShowPageBoundaries	off
+		ZoomFactor		"100"
+		SIDHighWatermark	"24"
+		Block {
+		  BlockType		  Inport
+		  Name			  "in_valid"
+		  SID			  "574::1"
+		  Position		  [20, 101, 40, 119]
+		  ZOrder		  -1
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "in_i"
+		  SID			  "574::19"
+		  Position		  [20, 136, 40, 154]
+		  ZOrder		  10
+		  Port			  "2"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "in_q"
+		  SID			  "574::20"
+		  Position		  [20, 171, 40, 189]
+		  ZOrder		  11
+		  Port			  "3"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Demux
+		  Name			  " Demux "
+		  SID			  "574::17"
+		  Ports			  [1, 1]
+		  Position		  [270, 280, 320, 320]
+		  ZOrder		  8
+		  Outputs		  "1"
+		}
+		Block {
+		  BlockType		  S-Function
+		  Name			  " SFunction "
+		  SID			  "574::16"
+		  Tag			  "Stateflow S-Function ofdm_14b 6"
+		  Ports			  [3, 5]
+		  Position		  [180, 105, 230, 225]
+		  ZOrder		  7
+		  FunctionName		  "sf_sfun"
+		  PortCounts		  "[3 5]"
+		  EnableBusSupport	  on
+		  Port {
+		    PortNumber		    2
+		    Name		    "out_i"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		  Port {
+		    PortNumber		    3
+		    Name		    "out_q"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		  Port {
+		    PortNumber		    4
+		    Name		    "out_valid"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		  Port {
+		    PortNumber		    5
+		    Name		    "out_request_symbol"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		}
+		Block {
+		  BlockType		  Terminator
+		  Name			  " Terminator "
+		  SID			  "574::18"
+		  Position		  [460, 291, 480, 309]
+		  ZOrder		  9
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "out_i"
+		  SID			  "574::22"
+		  Position		  [460, 101, 480, 119]
+		  ZOrder		  13
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "out_q"
+		  SID			  "574::23"
+		  Position		  [460, 136, 480, 154]
+		  ZOrder		  14
+		  Port			  "2"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "out_valid"
+		  SID			  "574::21"
+		  Position		  [460, 171, 480, 189]
+		  ZOrder		  12
+		  Port			  "3"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "out_request_symbol"
+		  SID			  "574::5"
+		  Position		  [460, 206, 480, 224]
+		  ZOrder		  -5
+		  Port			  "4"
+		  IconDisplay		  "Port number"
+		}
+		Line {
+		  ZOrder		  1
+		  SrcBlock		  "in_valid"
+		  SrcPort		  1
+		  DstBlock		  " SFunction "
+		  DstPort		  1
+		}
+		Line {
+		  ZOrder		  2
+		  SrcBlock		  "in_i"
+		  SrcPort		  1
+		  DstBlock		  " SFunction "
+		  DstPort		  2
+		}
+		Line {
+		  ZOrder		  3
+		  SrcBlock		  "in_q"
+		  SrcPort		  1
+		  DstBlock		  " SFunction "
+		  DstPort		  3
+		}
+		Line {
+		  Name			  "out_i"
+		  ZOrder		  4
+		  Labels		  [0, 0]
+		  SrcBlock		  " SFunction "
+		  SrcPort		  2
+		  DstBlock		  "out_i"
+		  DstPort		  1
+		}
+		Line {
+		  Name			  "out_q"
+		  ZOrder		  5
+		  Labels		  [0, 0]
+		  SrcBlock		  " SFunction "
+		  SrcPort		  3
+		  DstBlock		  "out_q"
+		  DstPort		  1
+		}
+		Line {
+		  Name			  "out_valid"
+		  ZOrder		  6
+		  Labels		  [0, 0]
+		  SrcBlock		  " SFunction "
+		  SrcPort		  4
+		  DstBlock		  "out_valid"
+		  DstPort		  1
+		}
+		Line {
+		  Name			  "out_request_symbol"
+		  ZOrder		  7
+		  Labels		  [0, 0]
+		  SrcBlock		  " SFunction "
+		  SrcPort		  5
+		  DstBlock		  "out_request_symbol"
+		  DstPort		  1
+		}
+		Line {
+		  ZOrder		  8
+		  SrcBlock		  " Demux "
+		  SrcPort		  1
+		  DstBlock		  " Terminator "
+		  DstPort		  1
+		}
+		Line {
+		  ZOrder		  9
+		  SrcBlock		  " SFunction "
+		  SrcPort		  1
+		  DstBlock		  " Demux "
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "ofdm_input_fifo"
+	      SID		      "575"
+	      Ports		      [1, 3]
+	      Position		      [65, 286, 220, 384]
+	      ZOrder		      216
+	      LibraryVersion	      "1.165"
+	      ErrorFcn		      "Stateflow.Translate.translate"
+	      PermitHierarchicalResolution "ExplicitOnly"
+	      TreatAsAtomicUnit	      on
+	      SystemSampleTime	      "(9e-05)/640"
+	      RequestExecContextInheritance off
+	      SFBlockType	      "MATLAB Function"
+	      System {
+		Name			"ofdm_input_fifo"
+		Location		[223, 338, 826, 833]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+		TiledPageScale		1
+		ShowPageBoundaries	off
+		ZoomFactor		"100"
+		SIDHighWatermark	"62"
+		Block {
+		  BlockType		  Inport
+		  Name			  "in_request_byte"
+		  SID			  "575::1"
+		  Position		  [20, 101, 40, 119]
+		  ZOrder		  -1
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Demux
+		  Name			  " Demux "
+		  SID			  "575::59"
+		  Ports			  [1, 1]
+		  Position		  [270, 245, 320, 285]
+		  ZOrder		  50
+		  Outputs		  "1"
+		}
+		Block {
+		  BlockType		  S-Function
+		  Name			  " SFunction "
+		  SID			  "575::58"
+		  Tag			  "Stateflow S-Function ofdm_14b 7"
+		  Ports			  [1, 4]
+		  Position		  [180, 102, 230, 203]
+		  ZOrder		  49
+		  FunctionName		  "sf_sfun"
+		  PortCounts		  "[1 4]"
+		  EnableBusSupport	  on
+		  Port {
+		    PortNumber		    2
+		    Name		    "out_empty"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		  Port {
+		    PortNumber		    3
+		    Name		    "out_valid"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		  Port {
+		    PortNumber		    4
+		    Name		    "out_byte"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		}
+		Block {
+		  BlockType		  Terminator
+		  Name			  " Terminator "
+		  SID			  "575::60"
+		  Position		  [460, 256, 480, 274]
+		  ZOrder		  51
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "out_empty"
+		  SID			  "575::61"
+		  Position		  [460, 101, 480, 119]
+		  ZOrder		  52
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "out_valid"
+		  SID			  "575::62"
+		  Position		  [460, 136, 480, 154]
+		  ZOrder		  53
+		  Port			  "2"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "out_byte"
+		  SID			  "575::5"
+		  Position		  [460, 171, 480, 189]
+		  ZOrder		  -5
+		  Port			  "3"
+		  IconDisplay		  "Port number"
+		}
+		Line {
+		  ZOrder		  1
+		  SrcBlock		  "in_request_byte"
+		  SrcPort		  1
+		  DstBlock		  " SFunction "
+		  DstPort		  1
+		}
+		Line {
+		  Name			  "out_empty"
+		  ZOrder		  2
+		  Labels		  [0, 0]
+		  SrcBlock		  " SFunction "
+		  SrcPort		  2
+		  DstBlock		  "out_empty"
+		  DstPort		  1
+		}
+		Line {
+		  Name			  "out_valid"
+		  ZOrder		  3
+		  Labels		  [0, 0]
+		  SrcBlock		  " SFunction "
+		  SrcPort		  3
+		  DstBlock		  "out_valid"
+		  DstPort		  1
+		}
+		Line {
+		  Name			  "out_byte"
+		  ZOrder		  4
+		  Labels		  [0, 0]
+		  SrcBlock		  " SFunction "
+		  SrcPort		  4
+		  DstBlock		  "out_byte"
+		  DstPort		  1
+		}
+		Line {
+		  ZOrder		  5
+		  SrcBlock		  " Demux "
+		  SrcPort		  1
+		  DstBlock		  " Terminator "
+		  DstPort		  1
+		}
+		Line {
+		  ZOrder		  6
+		  SrcBlock		  " SFunction "
+		  SrcPort		  1
+		  DstBlock		  " Demux "
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "ofdm_modulation_symbols"
+	      SID		      "576"
+	      Ports		      [4, 4]
+	      Position		      [540, 292, 690, 408]
+	      ZOrder		      217
+	      LibraryVersion	      "1.165"
+	      ErrorFcn		      "Stateflow.Translate.translate"
+	      PermitHierarchicalResolution "ExplicitOnly"
+	      TreatAsAtomicUnit	      on
+	      RequestExecContextInheritance off
+	      SFBlockType	      "MATLAB Function"
+	      System {
+		Name			"ofdm_modulation_symbols"
+		Location		[223, 338, 826, 833]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+		TiledPageScale		1
+		ShowPageBoundaries	off
+		ZoomFactor		"100"
+		SIDHighWatermark	"69"
+		Block {
+		  BlockType		  Inport
+		  Name			  "in_empty"
+		  SID			  "576::62"
+		  Position		  [20, 101, 40, 119]
+		  ZOrder		  53
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "in_valid"
+		  SID			  "576::64"
+		  Position		  [20, 136, 40, 154]
+		  ZOrder		  55
+		  Port			  "2"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "in_byte"
+		  SID			  "576::61"
+		  Position		  [20, 171, 40, 189]
+		  ZOrder		  52
+		  Port			  "3"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "in_request_symbol"
+		  SID			  "576::69"
+		  Position		  [20, 206, 40, 224]
+		  ZOrder		  58
+		  Port			  "4"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Demux
+		  Name			  " Demux "
+		  SID			  "576::59"
+		  Ports			  [1, 1]
+		  Position		  [270, 280, 320, 320]
+		  ZOrder		  50
+		  Outputs		  "1"
+		}
+		Block {
+		  BlockType		  S-Function
+		  Name			  " SFunction "
+		  SID			  "576::58"
+		  Tag			  "Stateflow S-Function ofdm_14b 8"
+		  Ports			  [4, 5]
+		  Position		  [180, 115, 230, 235]
+		  ZOrder		  49
+		  FunctionName		  "sf_sfun"
+		  PortCounts		  "[4 5]"
+		  EnableBusSupport	  on
+		  Port {
+		    PortNumber		    2
+		    Name		    "out_valid"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		  Port {
+		    PortNumber		    3
+		    Name		    "out_i"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		  Port {
+		    PortNumber		    4
+		    Name		    "out_q"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		  Port {
+		    PortNumber		    5
+		    Name		    "out_request_byte"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		}
+		Block {
+		  BlockType		  Terminator
+		  Name			  " Terminator "
+		  SID			  "576::60"
+		  Position		  [460, 291, 480, 309]
+		  ZOrder		  51
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "out_valid"
+		  SID			  "576::67"
+		  Position		  [460, 101, 480, 119]
+		  ZOrder		  56
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "out_i"
+		  SID			  "576::63"
+		  Position		  [460, 136, 480, 154]
+		  ZOrder		  54
+		  Port			  "2"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "out_q"
+		  SID			  "576::68"
+		  Position		  [460, 171, 480, 189]
+		  ZOrder		  57
+		  Port			  "3"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "out_request_byte"
+		  SID			  "576::5"
+		  Position		  [460, 206, 480, 224]
+		  ZOrder		  -5
+		  Port			  "4"
+		  IconDisplay		  "Port number"
+		}
+		Line {
+		  ZOrder		  1
+		  SrcBlock		  "in_empty"
+		  SrcPort		  1
+		  DstBlock		  " SFunction "
+		  DstPort		  1
+		}
+		Line {
+		  ZOrder		  2
+		  SrcBlock		  "in_valid"
+		  SrcPort		  1
+		  DstBlock		  " SFunction "
+		  DstPort		  2
+		}
+		Line {
+		  ZOrder		  3
+		  SrcBlock		  "in_byte"
+		  SrcPort		  1
+		  DstBlock		  " SFunction "
+		  DstPort		  3
+		}
+		Line {
+		  ZOrder		  4
+		  SrcBlock		  "in_request_symbol"
+		  SrcPort		  1
+		  DstBlock		  " SFunction "
+		  DstPort		  4
+		}
+		Line {
+		  Name			  "out_valid"
+		  ZOrder		  5
+		  Labels		  [0, 0]
+		  SrcBlock		  " SFunction "
+		  SrcPort		  2
+		  DstBlock		  "out_valid"
+		  DstPort		  1
+		}
+		Line {
+		  Name			  "out_i"
+		  ZOrder		  6
+		  Labels		  [0, 0]
+		  SrcBlock		  " SFunction "
+		  SrcPort		  3
+		  DstBlock		  "out_i"
+		  DstPort		  1
+		}
+		Line {
+		  Name			  "out_q"
+		  ZOrder		  7
+		  Labels		  [0, 0]
+		  SrcBlock		  " SFunction "
+		  SrcPort		  4
+		  DstBlock		  "out_q"
+		  DstPort		  1
+		}
+		Line {
+		  Name			  "out_request_byte"
+		  ZOrder		  8
+		  Labels		  [0, 0]
+		  SrcBlock		  " SFunction "
+		  SrcPort		  5
+		  DstBlock		  "out_request_byte"
+		  DstPort		  1
+		}
+		Line {
+		  ZOrder		  9
+		  SrcBlock		  " Demux "
+		  SrcPort		  1
+		  DstBlock		  " Terminator "
+		  DstPort		  1
+		}
+		Line {
+		  ZOrder		  10
+		  SrcBlock		  " SFunction "
+		  SrcPort		  1
+		  DstBlock		  " Demux "
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      Scope
+	      Name		      "ofdm_output_frame"
+	      SID		      "577"
+	      Ports		      [2]
+	      Position		      [2295, 20, 2420, 200]
+	      ZOrder		      289
+	      Floating		      off
+	      Location		      [11, 69, 1291, 779]
+	      Open		      on
+	      NumInputPorts	      "2"
+	      TickLabels	      "on"
+	      ZoomMode		      "xonly"
+	      List {
+		ListType		AxesTitles
+		axes1			"%<SignalLabel>"
+		axes2			"%<SignalLabel>"
+	      }
+	      List {
+		ListType		ScopeGraphics
+		FigureColor		"[0.5 0.5 0.5]"
+		AxesColor		"[0 0 0]"
+		AxesTickColor		"[1 1 1]"
+		LineColors		"[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
+		LineStyles		"-|-|-|-|-|-"
+		LineWidths		"[0.5 0.5 0.5 0.5 0.5 0.5]"
+		MarkerStyles		"none|none|none|none|none|none"
+	      }
+	      ShowLegends	      on
+	      TimeRange		      "800"
+	      YMin		      "0.95~-0.4"
+	      YMax		      "1.05~0.4"
+	      SaveName		      "ScopeData1"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out1"
+	      SID		      "578"
+	      Position		      [2580, 423, 2610, 437]
+	      ZOrder		      290
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out2"
+	      SID		      "579"
+	      Position		      [2580, 448, 2610, 462]
+	      ZOrder		      291
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      ZOrder		      1
+	      SrcBlock		      "ofdm_modulation_symbols"
+	      SrcPort		      4
+	      Points		      [55, 0; 0, 45]
+	      DstBlock		      "Unit Delay"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      2
+	      SrcBlock		      "ofdm_input_fifo"
+	      SrcPort		      1
+	      Points		      [42, 0]
+	      Branch {
+		ZOrder			3
+		Points			[0, -230]
+		DstBlock		"byte"
+		DstPort			2
+	      }
+	      Branch {
+		ZOrder			4
+		DstBlock		"ofdm_modulation_symbols"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      ZOrder		      5
+	      SrcBlock		      "ofdm_input_fifo"
+	      SrcPort		      2
+	      Points		      [68, 0]
+	      Branch {
+		ZOrder			6
+		Points			[0, -225]
+		DstBlock		"byte"
+		DstPort			3
+	      }
+	      Branch {
+		ZOrder			7
+		DstBlock		"ofdm_modulation_symbols"
+		DstPort			2
+	      }
+	    }
+	    Line {
+	      ZOrder		      8
+	      SrcBlock		      "ofdm_input_fifo"
+	      SrcPort		      3
+	      Points		      [104, 0]
+	      Branch {
+		ZOrder			9
+		Points			[0, -220]
+		DstBlock		"byte"
+		DstPort			4
+	      }
+	      Branch {
+		ZOrder			10
+		DstBlock		"ofdm_modulation_symbols"
+		DstPort			3
+	      }
+	    }
+	    Line {
+	      ZOrder		      11
+	      SrcBlock		      "Unit Delay"
+	      SrcPort		      1
+	      Points		      [-364, 0; 0, -105]
+	      Branch {
+		ZOrder			12
+		Points			[0, -295]
+		DstBlock		"byte"
+		DstPort			1
+	      }
+	      Branch {
+		ZOrder			13
+		DstBlock		"ofdm_input_fifo"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      ZOrder		      14
+	      SrcBlock		      "ofdm_modulation_symbols"
+	      SrcPort		      1
+	      Points		      [74, 0]
+	      Branch {
+		ZOrder			15
+		Points			[0, -230]
+		DstBlock		" modulation symbol"
+		DstPort			2
+	      }
+	      Branch {
+		ZOrder			16
+		Points			[116, 0]
+		DstBlock		"ofdm_framing"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      ZOrder		      17
+	      SrcBlock		      "Unit Delay1"
+	      SrcPort		      1
+	      Points		      [-486, 0; 0, -95; 40, 0]
+	      Branch {
+		ZOrder			18
+		Points			[0, -355]
+		DstBlock		" modulation symbol"
+		DstPort			1
+	      }
+	      Branch {
+		ZOrder			19
+		DstBlock		"ofdm_modulation_symbols"
+		DstPort			4
+	      }
+	    }
+	    Line {
+	      ZOrder		      20
+	      SrcBlock		      "ofdm_modulation_symbols"
+	      SrcPort		      2
+	      Points		      [88, 0]
+	      Branch {
+		ZOrder			21
+		Points			[0, -225]
+		DstBlock		" modulation symbol"
+		DstPort			3
+	      }
+	      Branch {
+		ZOrder			22
+		Points			[102, 0]
+		DstBlock		"ofdm_framing"
+		DstPort			2
+	      }
+	    }
+	    Line {
+	      ZOrder		      23
+	      SrcBlock		      "ofdm_modulation_symbols"
+	      SrcPort		      3
+	      Points		      [106, 0]
+	      Branch {
+		ZOrder			24
+		Points			[0, -220]
+		DstBlock		" modulation symbol"
+		DstPort			4
+	      }
+	      Branch {
+		ZOrder			25
+		Points			[84, 0]
+		DstBlock		"ofdm_framing"
+		DstPort			3
+	      }
+	    }
+	    Line {
+	      ZOrder		      26
+	      SrcBlock		      "ofdm_framing"
+	      SrcPort		      4
+	      Points		      [112, 0]
+	      Branch {
+		ZOrder			27
+		Points			[0, -250]
+		DstBlock		"ofdm frame"
+		DstPort			4
+	      }
+	      Branch {
+		ZOrder			28
+		Points			[52, 0; 0, 95]
+		DstBlock		"Unit Delay1"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      ZOrder		      29
+	      SrcBlock		      "ofdm_framing"
+	      SrcPort		      3
+	      Points		      [55, 0]
+	      Branch {
+		ZOrder			30
+		Points			[0, -325]
+		DstBlock		"ofdm frame"
+		DstPort			1
+	      }
+	      Branch {
+		ZOrder			31
+		Points			[340, 0]
+		DstBlock		"IFFT\nHDL Optimized1"
+		DstPort			2
+	      }
+	    }
+	    Line {
+	      ZOrder		      32
+	      SrcBlock		      "ofdm_framing"
+	      SrcPort		      1
+	      Points		      [75, 0]
+	      Branch {
+		ZOrder			33
+		Points			[0, -230]
+		DstBlock		"ofdm frame"
+		DstPort			2
+	      }
+	      Branch {
+		ZOrder			34
+		Points			[120, 0]
+		DstBlock		"Real-Imag to\nComplex"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      ZOrder		      35
+	      SrcBlock		      "ofdm_framing"
+	      SrcPort		      2
+	      Points		      [96, 0]
+	      Branch {
+		ZOrder			36
+		Points			[0, -225]
+		DstBlock		"ofdm frame"
+		DstPort			3
+	      }
+	      Branch {
+		ZOrder			37
+		Points			[100, 0; 0, -30]
+		DstBlock		"Real-Imag to\nComplex"
+		DstPort			2
+	      }
+	    }
+	    Line {
+	      ZOrder		      38
+	      SrcBlock		      "Real-Imag to\nComplex"
+	      SrcPort		      1
+	      Points		      [130, 0]
+	      DstBlock		      "IFFT\nHDL Optimized1"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      39
+	      SrcBlock		      "IFFT\nHDL Optimized1"
+	      SrcPort		      1
+	      Points		      [49, 0]
+	      Branch {
+		ZOrder			40
+		DstBlock		"Complex to\nReal-Imag1"
+		DstPort			1
+	      }
+	      Branch {
+		ZOrder			41
+		Points			[0, -140]
+		DstBlock		"Spectrum\nAnalyzer"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      ZOrder		      42
+	      SrcBlock		      "Complex to\nReal-Imag1"
+	      SrcPort		      1
+	      Points		      [30, 0]
+	      Branch {
+		ZOrder			43
+		Points			[0, 205]
+		DstBlock		"ofdm_cyclic_prefix"
+		DstPort			1
+	      }
+	      Branch {
+		ZOrder			44
+		Points			[69, 0; 0, -175]
+		DstBlock		"ofdm symbol"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      ZOrder		      45
+	      SrcBlock		      "Complex to\nReal-Imag1"
+	      SrcPort		      2
+	      Points		      [12, 0]
+	      Branch {
+		ZOrder			46
+		Points			[0, 215]
+		DstBlock		"ofdm_cyclic_prefix"
+		DstPort			2
+	      }
+	      Branch {
+		ZOrder			47
+		Points			[106, 0; 0, -165]
+		DstBlock		"ofdm symbol"
+		DstPort			2
+	      }
+	    }
+	    Line {
+	      ZOrder		      48
+	      SrcBlock		      "IFFT\nHDL Optimized1"
+	      SrcPort		      2
+	      Points		      [30, 0; 0, 17; 242, 0; 0, -182]
+	      DstBlock		      "ofdm symbol"
+	      DstPort		      3
+	    }
+	    Line {
+	      ZOrder		      49
+	      SrcBlock		      "IFFT\nHDL Optimized1"
+	      SrcPort		      3
+	      Points		      [308, 0; 0, -175]
+	      DstBlock		      "ofdm symbol"
+	      DstPort		      4
+	    }
+	    Line {
+	      ZOrder		      50
+	      SrcBlock		      "IFFT\nHDL Optimized1"
+	      SrcPort		      4
+	      Points		      [92, 0]
+	      Branch {
+		ZOrder			51
+		Points			[0, 125]
+		DstBlock		"ofdm_cyclic_prefix"
+		DstPort			3
+	      }
+	      Branch {
+		ZOrder			52
+		Points			[247, 0; 0, -185]
+		DstBlock		"ofdm symbol"
+		DstPort			5
+	      }
+	    }
+	    Line {
+	      ZOrder		      53
+	      SrcBlock		      "ofdm_cyclic_prefix"
+	      SrcPort		      1
+	      Points		      [0, 10; 168, 0; 0, -10]
+	      Branch {
+		ZOrder			54
+		DstBlock		"Out1"
+		DstPort			1
+	      }
+	      Branch {
+		ZOrder			55
+		Points			[0, -365]
+		DstBlock		"ofdm_output_frame"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      ZOrder		      56
+	      SrcBlock		      "ofdm_cyclic_prefix"
+	      SrcPort		      2
+	      Points		      [0, -20; 185, 0; 0, -10]
+	      Branch {
+		ZOrder			57
+		DstBlock		"Out2"
+		DstPort			1
+	      }
+	      Branch {
+		ZOrder			58
+		Points			[0, -300]
+		DstBlock		"ofdm_output_frame"
+		DstPort			2
+	      }
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  ManualSwitch
+	  Name			  "tx switch"
+	  SID			  "580"
+	  Position		  [605, 142, 635, 178]
+	  ZOrder		  300
+	  BackgroundColor	  "magenta"
+	  NamePlacement		  "alternate"
+	  CurrentSetting	  "0"
+	}
+	Block {
 	  BlockType		  Outport
 	  Name			  "Tx Out"
 	  SID			  "349"
@@ -9206,10 +10825,11 @@ Model {
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  3
+	  ZOrder		  19
 	  SrcBlock		  "Farrow Variable Delay"
 	  SrcPort		  1
-	  DstBlock		  "Buffer"
+	  Points		  [10, 0]
+	  DstBlock		  "tx switch"
 	  DstPort		  1
 	}
 	Line {
@@ -9287,11 +10907,34 @@ Model {
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  14
-	  SrcBlock		  "Bernoulli Random\nBinary Generator"
+	  ZOrder		  15
+	  SrcBlock		  "ofdm_transmitter"
 	  SrcPort		  1
-	  Points		  [33, 0; 0, -65]
-	  DstBlock		  "OFDM Symbol Gen"
+	  Points		  [33, 0; 0, 5]
+	  DstBlock		  "Real-Imag to\nComplex1"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  16
+	  SrcBlock		  "ofdm_transmitter"
+	  SrcPort		  2
+	  DstBlock		  "Real-Imag to\nComplex1"
+	  DstPort		  2
+	}
+	Line {
+	  ZOrder		  21
+	  SrcBlock		  "Real-Imag to\nComplex1"
+	  SrcPort		  1
+	  Points		  [100, 0]
+	  DstBlock		  "tx switch"
+	  DstPort		  2
+	}
+	Line {
+	  ZOrder		  20
+	  SrcBlock		  "tx switch"
+	  SrcPort		  1
+	  Points		  [5, 0]
+	  DstBlock		  "Buffer"
 	  DstPort		  1
 	}
 	Annotation {
@@ -9647,7 +11290,7 @@ Model {
       "alid',true,'IsSpanCFSettingDirty',true,'IsFstartFstopSettingDirty',true,'TreatMby1SignalsAsOneChannel',false,'Se"
       "gLen','80','WindowLength','80','FrequencyResolutionMethod','WindowLength','IsValidSettingsDialogReadouts',false)"
       ",extmgr.Configuration('Tools','Plot Navigation',true,'AutoscaleMode','Manual','OnceAtStop',false),extmgr.Configu"
-      "ration('Tools','Measurements',true,'Version','2015a')),'Version','2015a','Position',[1001 449 194 174],'VisibleA"
+      "ration('Tools','Measurements',true,'Version','2015a')),'Version','2015a','Position',[1120 458 194 174],'VisibleA"
       "tModelOpen','on')"
     }
     Block {
@@ -11588,7 +13231,7 @@ Model {
       Position		      [705, 579, 735, 611]
       ZOrder		      -26
       Floating		      off
-      Location		      [960, 418, 1271, 554]
+      Location		      [1035, 418, 1346, 554]
       Open		      on
       NumInputPorts	      "1"
       ZoomMode		      "xonly"
@@ -11721,13 +13364,6 @@ Model {
       DstPort		      1
     }
     Line {
-      ZOrder		      6
-      SrcBlock		      "OFDM Transmitter with Variable\nSymbol Timing and Carrier Frequency Error"
-      SrcPort		      1
-      DstBlock		      "Channel"
-      DstPort		      2
-    }
-    Line {
       ZOrder		      7
       Labels		      [0, 0]
       SrcBlock		      "Timing Control Unit"
@@ -11784,7 +13420,7 @@ Model {
       ZOrder		      15
       SrcBlock		      "Channel"
       SrcPort		      1
-      Points		      [205, 0; 0, 135]
+      Points		      [9, 0; 0, 135; -234, 0]
       Branch {
 	ZOrder			48
 	DstBlock		"Probe"
@@ -12011,6 +13647,13 @@ Model {
       DstBlock		      "Farrow Variable Delay"
       DstPort		      1
     }
+    Line {
+      ZOrder		      94
+      SrcBlock		      "OFDM Transmitter with Variable\nSymbol Timing and Carrier Frequency Error"
+      SrcPort		      1
+      DstBlock		      "Channel"
+      DstPort		      2
+    }
     Annotation {
       SID		      "525"
       Name		      "  Pilot Directed Continuous Synchronization of OFDM"
@@ -12224,11 +13867,972 @@ Stateflow {
     name		    "ofdm_14b"
     created		    "27-Nov-2007 12:36:21"
     isLibrary		    0
-    firstTarget		    2
+    firstTarget		    46
     sfVersion		    80000005
   }
-  target {
+  chart {
     id			    2
+    name		    "OFDM Transmitter with Variable\nSymbol Timing and Carrier Frequency Error/ofdm_transmitter/ofdm_cyclic_"
+    "prefix"
+    windowPosition	    [357.12 483.496 167 391]
+    viewLimits		    [0 156.75 0 153.75]
+    screen		    [1 1 1280 1024 1.041666666666667]
+    treeNode		    [0 3 0 0]
+    firstTransition	    10
+    firstJunction	    9
+    viewObj		    2
+    machine		    1
+    subviewS {
+    }
+    ssIdHighWaterMark	    10
+    decomposition	    CLUSTER_CHART
+    type		    EML_CHART
+    firstData		    4
+    chartFileNumber	    5
+    disableImplicitCasting  1
+    eml {
+      name		      "fcn"
+    }
+  }
+  state {
+    id			    3
+    labelString		    "eML_blk_kernel()"
+    position		    [18 64.5 118 66]
+    fontSize		    12
+    chart		    2
+    treeNode		    [2 0 0 0]
+    superState		    SUBCHART
+    subviewer		    2
+    ssIdNumber		    1
+    type		    FUNC_STATE
+    decomposition	    CLUSTER_STATE
+    eml {
+      isEML		      1
+      script		      "function [out_i, out_q]  = fcn(in_i, in_q, in_valid)\n%#codegen\n\n% constants\n% ifft_size = 64;"
+      "\n% cyclic_prefix = 16;\nnull = fi(0,1,12,7);\n\n% persistent state\npersistent buffer_i\nif isempty(buffer_i)  "
+      "\n    buffer_i = repmat(null,1,80);\nend\npersistent buffer_q\nif isempty(buffer_q)  \n    buffer_q = repmat(nul"
+      "l,1,80);\nend\npersistent read_index\nif isempty(read_index)\n    read_index = 0;\nend\npersistent write_index\n"
+      "if isempty(write_index)\n    write_index = 16;\nend\n\n% default behavior\nout_i = null;\nout_q = null;\n\n% det"
+      "ermine how many samples are buffered\nbuffered = 0;\nif (read_index > write_index)\n    buffered = (length(buffe"
+      "r_i) - read_index) + write_index;\nelseif (read_index <= write_index)\n    buffered = (write_index - read_index)"
+      ";\nend\n\n% if there's more than a cyclic prefix worth of space available,\n% request input\navailable = length("
+      "buffer_i) - buffered;\n\n% if the input is valid and there's space available, store the input\nif in_valid && (a"
+      "vailable > 0)\n    fprintf('[cp]write %d symbol %f,%f\\n', ...\n        int8(write_index), double(in_i), double("
+      "in_q));\n    buffer_i(write_index + 1) = in_i;\n    buffer_q(write_index + 1) = in_q;\n    write_index = write_i"
+      "ndex + 1;\n    if write_index >= length(buffer_i)\n        write_index = 16;\n    end\nend\n\n% if there are sam"
+      "ples buffered, output\nif read_index ~= write_index\n    out_i = buffer_i(read_index + 1);\n    out_q = buffer_q"
+      "(read_index + 1);\n    fprintf('[cp]read %d symbol %f,%f\\n', ...\n        int8(read_index), double(out_i), doub"
+      "le(out_q));\n    read_index = read_index + 1;\n    if read_index >= length(buffer_i)\n        read_index = 0;\n "
+      "   end\nend"
+      editorLayout	      "100 M4x1[10 5 700 500]"
+    }
+  }
+  data {
+    id			    4
+    ssIdNumber		    9
+    name		    "out_i"
+    linkNode		    [2 0 5]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"1"
+      }
+      type {
+	method			SF_CUSTOM_INTEGER_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"12"
+	fixpt {
+	  scalingMode		  SF_FIXPT_BINARY_POINT
+	  fractionLength	  "7"
+	  slope			  "2^0"
+	  bias			  "0"
+	}
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "fixdt(1,12,7)"
+  }
+  data {
+    id			    5
+    ssIdNumber		    10
+    name		    "out_q"
+    linkNode		    [2 4 6]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"1"
+      }
+      type {
+	method			SF_CUSTOM_INTEGER_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"12"
+	fixpt {
+	  scalingMode		  SF_FIXPT_BINARY_POINT
+	  fractionLength	  "7"
+	  slope			  "2^0"
+	  bias			  "0"
+	}
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "fixdt(1,12,7)"
+  }
+  data {
+    id			    6
+    ssIdNumber		    4
+    name		    "in_i"
+    linkNode		    [2 5 7]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"1"
+      }
+      type {
+	method			SF_CUSTOM_INTEGER_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"12"
+	fixpt {
+	  scalingMode		  SF_FIXPT_BINARY_POINT
+	  fractionLength	  "7"
+	  slope			  "2^0"
+	  bias			  "0"
+	}
+      }
+      complexity	      SF_COMPLEX_INHERITED
+    }
+    dataType		    "fixdt(1,12,7)"
+  }
+  data {
+    id			    7
+    ssIdNumber		    6
+    name		    "in_q"
+    linkNode		    [2 6 8]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"1"
+      }
+      type {
+	method			SF_CUSTOM_INTEGER_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"12"
+	fixpt {
+	  scalingMode		  SF_FIXPT_BINARY_POINT
+	  fractionLength	  "7"
+	  slope			  "2^0"
+	  bias			  "0"
+	}
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "fixdt(1,12,7)"
+  }
+  data {
+    id			    8
+    ssIdNumber		    7
+    name		    "in_valid"
+    linkNode		    [2 7 0]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"1"
+      }
+      type {
+	primitive		SF_BOOLEAN_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "boolean"
+  }
+  junction {
+    id			    9
+    position		    [23.5747 49.5747 7]
+    chart		    2
+    linkNode		    [2 0 0]
+    subviewer		    2
+    ssIdNumber		    3
+    type		    CONNECTIVE_JUNCTION
+  }
+  transition {
+    id			    10
+    labelString		    "{eML_blk_kernel();}"
+    labelPosition	    [32.125 19.875 102.544 14.964]
+    fontSize		    12
+    src {
+      intersection	      [0 0 1 0 23.5747 14.625 0 0]
+    }
+    dst {
+      id		      9
+      intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
+    }
+    midPoint		    [23.5747 24.9468]
+    chart		    2
+    linkNode		    [2 0 0]
+    dataLimits		    [21.175 25.975 14.625 42.575]
+    subviewer		    2
+    drawStyle		    SMART
+    slide {
+      sticky		      BOTH_STICK
+    }
+    executionOrder	    1
+    ssIdNumber		    2
+  }
+  instance {
+    id			    11
+    name		    "OFDM Transmitter with Variable\nSymbol Timing and Carrier Frequency Error/ofdm_transmitter/ofdm_cyclic_"
+    "prefix"
+    machine		    1
+    chart		    2
+  }
+  chart {
+    id			    12
+    name		    "OFDM Transmitter with Variable\nSymbol Timing and Carrier Frequency Error/ofdm_transmitter/ofdm_framing"
+    windowPosition	    [422 539.941 189 413]
+    viewLimits		    [0 156.75 0 153.75]
+    screen		    [1 1 3600 1200 1.180555555555556]
+    treeNode		    [0 13 0 0]
+    firstTransition	    22
+    firstJunction	    21
+    viewObj		    12
+    visible		    1
+    machine		    1
+    subviewS {
+    }
+    ssIdHighWaterMark	    11
+    decomposition	    CLUSTER_CHART
+    type		    EML_CHART
+    firstData		    14
+    chartFileNumber	    6
+    disableImplicitCasting  1
+    eml {
+      name		      "fcn"
+    }
+  }
+  state {
+    id			    13
+    labelString		    "eML_blk_kernel()"
+    position		    [18 64.5 118 66]
+    fontSize		    12
+    chart		    12
+    treeNode		    [12 0 0 0]
+    superState		    SUBCHART
+    subviewer		    12
+    ssIdNumber		    1
+    type		    FUNC_STATE
+    decomposition	    CLUSTER_STATE
+    eml {
+      isEML		      1
+      script		      "function [out_i, out_q, out_valid, out_request_symbol] = fcn(in_valid, in_i, in_q)\n%#codegen\n\n"
+      "null = fi(0,1,12,7);\nframe_size = 64;\n% the number of symbols grouped in contiguous subcarries\nsymbols_per_ru"
+      "n = 3;\n% pilots are inserted between symbol runs\npilots_i = fi([1 0 -1 0],1,12,7);\npilots_q = fi([0 1 0 -1],1"
+      ",12,7);\n\n% this creates a frame that looks like:\n% [ null null (pilot run)+ null ]\n% given the current param"
+      "eters, that means\n% 16 pilots / ofdm frame\n% 3xnull / ofdm frame\n% 45 modulation symbols / ofdm frame\n% 2 bi"
+      "ts / modulation symbol\n% 90 bits / ofdm frame\n\n% default behavior\nout_request_symbol = false;\nout_valid = f"
+      "alse;\nout_i = null;\nout_q = null;\n\n% circular buffer for symbol storage\npersistent buffer_i\nif isempty(buf"
+      "fer_i)  \n    buffer_i = repmat(null,1,frame_size);\nend\npersistent buffer_q\nif isempty(buffer_q)  \n    buffe"
+      "r_q = repmat(null,1,frame_size);\nend\npersistent read_index\nif isempty(read_index)\n    read_index = 0;\nend\n"
+      "persistent write_index\nif isempty(write_index)\n    write_index = 0;\nend\n\n% framing state\npersistent frame_"
+      "index\npersistent pilot_index\nif isempty(pilot_index)\n    pilot_index = 1;\nend\npersistent symbol_count\nif i"
+      "sempty(symbol_count)\n    symbol_count = 0;\nend\n\n% is this the first symbol in a frame?\nframe_begin = (write"
+      "_index == 0);\n% is this the last symbol in a run?\nrun_end = (symbol_count == (symbols_per_run - 1));\n% is thi"
+      "s the last write in the frame?\n% the frame will end with a (symbol)(pilot)(null)\nframe_end = ((write_index + 2"
+      ") == (frame_size - 1));\n%fprintf('[frm]valid %d %f,%f write %d frame begin %d end %d run %d end %d\\n', ...\n% "
+      "   int8(in_valid), double(in_i), double(in_q), ...\n%    int8(write_index), ...\n%    int8(frame_begin), int8(fr"
+      "ame_end), ...\n%    int8(symbol_count), int8(run_end));\n\n% The following scenarios can occur:\n% (null)(null)("
+      "pilot)(symbol)\n% (symbol)(pilot)(null)\n% (symbol)(pilot)\n% (symbol)\nif in_valid\n    if frame_begin\n       "
+      " % (null)(null)(pilot)(symbol)\n%        fprintf('[frm]write %d nullx2 pilot %d %d,%d symbol %d %d,%d\\n', ...\n"
+      "%            int8(write_index), ...\n%            int8(pilot_index), int8(pilots_i(pilot_index)), int8(pilots_q("
+      "pilot_index)), ...\n%            int8(symbol_count), int8(in_i), int8(in_q));\n        buffer_i(write_index+1) ="
+      " null;\n        buffer_q(write_index+1) = null;\n        buffer_i(write_index+2) = null;\n        buffer_q(write"
+      "_index+2) = null;\n        buffer_i(write_index+3) = pilots_i(1);\n        buffer_q(write_index+3) = pilots_q(1)"
+      ";\n        buffer_i(write_index+4) = in_i;\n        buffer_q(write_index+4) = in_q;\n        write_index = 4;\n "
+      "       symbol_count = 1;\n        pilot_index = 2;\n    elseif frame_end\n        % (symbol)(pilot)(null)\n%    "
+      "    fprintf('[frm]write %d symbol %d %d,%d pilot %d %d,%d null\\n', ...\n%            int8(write_index), ...\n% "
+      "           int8(symbol_count), int8(in_i), int8(in_q), ...\n%            int8(pilot_index), int8(pilots_i(pilot_"
+      "index)), int8(pilots_q(pilot_index)));\n        buffer_i(write_index+1) = in_i;\n        buffer_q(write_index+1)"
+      " = in_q;\n        buffer_i(write_index+2) = pilots_i(pilot_index);\n        buffer_q(write_index+2) = pilots_q(p"
+      "ilot_index);\n        buffer_i(write_index+3) = null;\n        buffer_q(write_index+3) = null;\n        write_in"
+      "dex = 0;\n        symbol_count = 0;\n        pilot_index = 1;\n    elseif run_end\n        % (symbol)(pilot)\n% "
+      "       fprintf('[frm]write %d symbol %d %d,%d pilot %d %d,%d\\n', ...\n%            int8(write_index), ...\n%   "
+      "         int8(symbol_count), int8(in_i), int8(in_q), ...\n%            int8(pilot_index), int8(pilots_i(pilot_in"
+      "dex)), int8(pilots_q(pilot_index)));\n        buffer_i(write_index+1) = in_i;\n        buffer_q(write_index+1) ="
+      " in_q;\n        buffer_i(write_index+2) = pilots_i(pilot_index);\n        buffer_q(write_index+2) = pilots_q(pil"
+      "ot_index);\n        write_index = write_index + 2;\n        symbol_count = 0;\n        pilot_index = pilot_index"
+      " + 1;\n        if pilot_index == length(pilots_i)\n            pilot_index = 1;\n        end\n    else\n        "
+      "% (symbol)\n%        fprintf('[frm]write %d symbol %d %d,%d\\n', ...\n%            int8(write_index), ...\n%    "
+      "        int8(symbol_count), int8(in_i), int8(in_q));\n        buffer_i(write_index+1) = in_i;\n        buffer_q("
+      "write_index+1) = in_q;\n        write_index = write_index + 1;\n        symbol_count = symbol_count + 1;\n    en"
+      "d\nend\n\n% determine how many symbols are buffered\nbuffered = 0;\nif (read_index > write_index)\n    buffered "
+      "= (length(buffer_i) - read_index) + write_index;\nelseif (read_index <= write_index)\n    buffered = (write_inde"
+      "x - read_index);\nend\n\n% we can write at *most* a 2xnull, a pilot, and a symbol\n% if there's room enough to s"
+      "upport as much, reques t a symbol\navailable = length(buffer_i) - buffered;\nout_request_symbol = (available >= "
+      "4);\n\n% output i/q if there's something buffered\nif read_index ~= write_index\n    out_valid = true;\n    out_"
+      "i = buffer_i(read_index + 1);\n    out_q = buffer_q(read_index + 1);\n    read_index = read_index + 1;\n    if r"
+      "ead_index >= length(buffer_i)\n        read_index = 0;\n    end\nend"
+      editorLayout	      "100 M4x1[10 5 700 500]"
+    }
+  }
+  data {
+    id			    14
+    ssIdNumber		    9
+    name		    "out_i"
+    linkNode		    [12 0 15]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    15
+    ssIdNumber		    10
+    name		    "out_q"
+    linkNode		    [12 14 16]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    16
+    ssIdNumber		    4
+    name		    "in_valid"
+    linkNode		    [12 15 17]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+      }
+      complexity	      SF_COMPLEX_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    17
+    ssIdNumber		    6
+    name		    "in_i"
+    linkNode		    [12 16 18]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    18
+    ssIdNumber		    7
+    name		    "in_q"
+    linkNode		    [12 17 19]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    19
+    ssIdNumber		    8
+    name		    "out_valid"
+    linkNode		    [12 18 20]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    20
+    ssIdNumber		    5
+    name		    "out_request_symbol"
+    linkNode		    [12 19 0]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  junction {
+    id			    21
+    position		    [23.5747 49.5747 7]
+    chart		    12
+    linkNode		    [12 0 0]
+    subviewer		    12
+    ssIdNumber		    3
+    type		    CONNECTIVE_JUNCTION
+  }
+  transition {
+    id			    22
+    labelString		    "{eML_blk_kernel();}"
+    labelPosition	    [28.125 13.875 102.544 14.964]
+    fontSize		    12
+    src {
+      intersection	      [0 0 1 0 23.5747 14.625 0 0]
+    }
+    dst {
+      id		      21
+      intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
+    }
+    midPoint		    [23.5747 24.9468]
+    chart		    12
+    linkNode		    [12 0 0]
+    dataLimits		    [21.175 25.975 14.625 42.575]
+    subviewer		    12
+    drawStyle		    SMART
+    slide {
+      sticky		      BOTH_STICK
+    }
+    executionOrder	    1
+    ssIdNumber		    2
+  }
+  instance {
+    id			    23
+    name		    "OFDM Transmitter with Variable\nSymbol Timing and Carrier Frequency Error/ofdm_transmitter/ofdm_framing"
+    machine		    1
+    chart		    12
+  }
+  chart {
+    id			    24
+    name		    "OFDM Transmitter with Variable\nSymbol Timing and Carrier Frequency Error/ofdm_transmitter/ofdm_input_f"
+    "ifo"
+    windowPosition	    [357.12 483.496 167 391]
+    viewLimits		    [0 156.75 0 153.75]
+    screen		    [1 1 1280 1024 1.041666666666667]
+    treeNode		    [0 25 0 0]
+    firstTransition	    31
+    firstJunction	    30
+    viewObj		    24
+    visible		    1
+    machine		    1
+    subviewS {
+    }
+    ssIdHighWaterMark	    7
+    decomposition	    CLUSTER_CHART
+    type		    EML_CHART
+    firstData		    26
+    chartFileNumber	    7
+    disableImplicitCasting  1
+    eml {
+      name		      "fcn"
+    }
+  }
+  state {
+    id			    25
+    labelString		    "eML_blk_kernel()"
+    position		    [18 64.5 118 66]
+    fontSize		    12
+    chart		    24
+    treeNode		    [24 0 0 0]
+    superState		    SUBCHART
+    subviewer		    24
+    ssIdNumber		    1
+    type		    FUNC_STATE
+    decomposition	    CLUSTER_STATE
+    eml {
+      isEML		      1
+      script		      "function [out_empty, out_valid, out_byte] = fcn(in_request_byte)\n%#codegen\n\n% assume we never "
+      "empty\nout_empty = false;\n\n% we do not output by default\nout_byte = uint8(0);\nout_valid = false;\n\n% fake d"
+      "ata for our never empty source\npersistent fake_data\nif isempty(fake_data)\n    fake_data = 3;\nend\n\n% if a b"
+      "yte is requested, supply a byte's worth of data\nif in_request_byte\n    out_byte = uint8(228);\n    out_valid ="
+      " true;\nend"
+      editorLayout	      "100 M4x1[10 5 700 500]"
+    }
+  }
+  data {
+    id			    26
+    ssIdNumber		    6
+    name		    "out_empty"
+    linkNode		    [24 0 27]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"1"
+      }
+      type {
+	primitive		SF_BOOLEAN_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "boolean"
+  }
+  data {
+    id			    27
+    ssIdNumber		    7
+    name		    "out_valid"
+    linkNode		    [24 26 28]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"1"
+      }
+      type {
+	primitive		SF_BOOLEAN_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "boolean"
+  }
+  data {
+    id			    28
+    ssIdNumber		    4
+    name		    "in_request_byte"
+    linkNode		    [24 27 29]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"1"
+      }
+      type {
+	primitive		SF_BOOLEAN_TYPE
+      }
+      complexity	      SF_COMPLEX_INHERITED
+    }
+    dataType		    "boolean"
+  }
+  data {
+    id			    29
+    ssIdNumber		    5
+    name		    "out_byte"
+    linkNode		    [24 28 0]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"1"
+      }
+      type {
+	primitive		SF_UINT8_TYPE
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "uint8"
+  }
+  junction {
+    id			    30
+    position		    [23.5747 49.5747 7]
+    chart		    24
+    linkNode		    [24 0 0]
+    subviewer		    24
+    ssIdNumber		    3
+    type		    CONNECTIVE_JUNCTION
+  }
+  transition {
+    id			    31
+    labelString		    "{eML_blk_kernel();}"
+    labelPosition	    [32.125 19.875 102.544 14.964]
+    fontSize		    12
+    src {
+      intersection	      [0 0 1 0 23.5747 14.625 0 0]
+    }
+    dst {
+      id		      30
+      intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
+    }
+    midPoint		    [23.5747 24.9468]
+    chart		    24
+    linkNode		    [24 0 0]
+    dataLimits		    [21.175 25.975 14.625 42.575]
+    subviewer		    24
+    drawStyle		    SMART
+    slide {
+      sticky		      BOTH_STICK
+    }
+    executionOrder	    1
+    ssIdNumber		    2
+  }
+  instance {
+    id			    32
+    name		    "OFDM Transmitter with Variable\nSymbol Timing and Carrier Frequency Error/ofdm_transmitter/ofdm_input_f"
+    "ifo"
+    machine		    1
+    chart		    24
+  }
+  chart {
+    id			    33
+    name		    "OFDM Transmitter with Variable\nSymbol Timing and Carrier Frequency Error/ofdm_transmitter/ofdm_modulat"
+    "ion_symbols"
+    windowPosition	    [357.12 483.496 167 391]
+    viewLimits		    [0 156.75 0 153.75]
+    screen		    [1 1 1280 1024 1.041666666666667]
+    treeNode		    [0 34 0 0]
+    firstTransition	    44
+    firstJunction	    43
+    viewObj		    33
+    machine		    1
+    subviewS {
+    }
+    ssIdHighWaterMark	    14
+    decomposition	    CLUSTER_CHART
+    type		    EML_CHART
+    firstData		    35
+    chartFileNumber	    8
+    disableImplicitCasting  1
+    eml {
+      name		      "fcn"
+    }
+  }
+  state {
+    id			    34
+    labelString		    "eML_blk_kernel()"
+    position		    [18 64.5 118 66]
+    fontSize		    12
+    chart		    33
+    treeNode		    [33 0 0 0]
+    superState		    SUBCHART
+    subviewer		    33
+    ssIdNumber		    1
+    type		    FUNC_STATE
+    decomposition	    CLUSTER_STATE
+    eml {
+      isEML		      1
+      script		      "function [out_valid, out_i, out_q, out_request_byte] = fcn(in_empty, in_valid, in_byte, in_reques"
+      "t_symbol)\n%#codegen\n\nnull = fi(0,1,12,7);\n\n% MODULATION SYMBOL FORMAT\n% 4-QAM, Grey coded, Minimum distanc"
+      "e 2\n%symbols = fi([-1+j -1-j 1+j 1-j],1,12,7);\nsymbols_i = fi([-1 -1 1 1],1,12,7);\nsymbols_q = fi([1 -1 1 -1]"
+      ",1,12,7);\nbits_per_symbol = 2;\nsymbols_per_byte = 8/bits_per_symbol;\n    \n% by default, do nothing\nout_requ"
+      "est_byte = false;\nout_i = null;\nout_q = null;\nout_valid = false;\n\n% circular buffer for symbol storage\n% t"
+      "he buffer length should evenly divide the number of symbols/byte\npersistent buffer_i\nif isempty(buffer_i)  \n "
+      "   buffer_i = repmat(null,1,2*symbols_per_byte);\nend\npersistent buffer_q\nif isempty(buffer_q)  \n    buffer_q"
+      " = repmat(null,1,2*symbols_per_byte);\nend\npersistent read_index\nif isempty(read_index)\n    read_index = 0;\n"
+      "end\npersistent write_index\nif isempty(write_index)\n    write_index = 0;\nend\n\n% we only receive valid input"
+      " if we requested it\n% if we have valid input, store the input\n% this should *never* overflow\nif in_valid\n   "
+      " \n    % There are four symbols per byte\n    % Map two bits to each symbol\n    % This makes assumptions about "
+      "the length of buffer\n    % @review Is this the best way to do this?\n    symbol1 = 1+bitand(bitshift(in_byte,-0"
+      "),3);\n    buffer_i(write_index+1) = symbols_i(symbol1);\n    buffer_q(write_index+1) = symbols_q(symbol1);\n   "
+      " \n    symbol2 = 1+bitand(bitshift(in_byte,-2),3);\n    buffer_i(write_index+2) = symbols_i(symbol2);\n    buffe"
+      "r_q(write_index+2) = symbols_q(symbol2);\n    \n    symbol3 = 1+bitand(bitshift(in_byte,-4),3);\n    buffer_i(wr"
+      "ite_index+3) = symbols_i(symbol3);\n    buffer_q(write_index+3) = symbols_q(symbol3);\n    \n    symbol4 = 1+bit"
+      "and(bitshift(in_byte,-6),3);\n    buffer_i(write_index+4) = symbols_i(symbol4);\n    buffer_q(write_index+4) = s"
+      "ymbols_q(symbol4);\n\n    % we just wrote four symbols\n    write_index = write_index + symbols_per_byte;\n    i"
+      "f write_index >= length(buffer_i)\n        write_index = 0;\n    end\nend\n\n% determine how many symbols are bu"
+      "ffered\nbuffered = 0;\nif (read_index > write_index)\n    buffered = (length(buffer_i) - read_index) + write_ind"
+      "ex;\nelseif (read_index <= write_index)\n    buffered = (write_index - read_index);\nend\n\n% if we have room fo"
+      "r more symbols, request another byte\navailable = length(buffer_i) - buffered;\nout_request_byte = (in_empty == "
+      "0) && (available >= symbols_per_byte);\n%fprintf('[mod]read %d write %d request %d length %d buffered %d\\n', .."
+      ".\n%    int8(read_index), int8(write_index), ...\n%    int8(out_request_byte), int8(length(buffer_i)), int8(buff"
+      "ered));\n\n% if there's buffered data, output a symbol\nif in_request_symbol && (read_index ~= write_index)\n   "
+      " out_valid = true;\n    out_i = buffer_i(read_index + 1);\n    out_q = buffer_q(read_index + 1);\n%    fprintf('"
+      "[mod]read %d write %d symbol %d,%d\\n', ...\n%        int8(read_index), int8(write_index), ...\n%        int8(ou"
+      "t_i), int8(out_q));\n    read_index = read_index + 1;\n    if read_index >= length(buffer_i)\n        read_index"
+      " = 0;\n    end\nend\n\n"
+      editorLayout	      "100 M4x1[10 5 700 500]"
+    }
+  }
+  data {
+    id			    35
+    ssIdNumber		    12
+    name		    "out_valid"
+    linkNode		    [33 0 36]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"1"
+      }
+      type {
+	primitive		SF_BOOLEAN_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "boolean"
+  }
+  data {
+    id			    36
+    ssIdNumber		    8
+    name		    "out_i"
+    linkNode		    [33 35 37]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"1"
+      }
+      type {
+	method			SF_CUSTOM_INTEGER_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"12"
+	fixpt {
+	  scalingMode		  SF_FIXPT_BINARY_POINT
+	  fractionLength	  "7"
+	  slope			  "2^0"
+	  bias			  "0"
+	}
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "fixdt(1,12,7)"
+  }
+  data {
+    id			    37
+    ssIdNumber		    13
+    name		    "out_q"
+    linkNode		    [33 36 38]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"1"
+      }
+      type {
+	method			SF_CUSTOM_INTEGER_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"12"
+	fixpt {
+	  scalingMode		  SF_FIXPT_BINARY_POINT
+	  fractionLength	  "7"
+	  slope			  "2^0"
+	  bias			  "0"
+	}
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "fixdt(1,12,7)"
+  }
+  data {
+    id			    38
+    ssIdNumber		    7
+    name		    "in_empty"
+    linkNode		    [33 37 39]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"1"
+      }
+      type {
+	primitive		SF_BOOLEAN_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "boolean"
+  }
+  data {
+    id			    39
+    ssIdNumber		    9
+    name		    "in_valid"
+    linkNode		    [33 38 40]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"1"
+      }
+      type {
+	primitive		SF_BOOLEAN_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "boolean"
+  }
+  data {
+    id			    40
+    ssIdNumber		    5
+    name		    "out_request_byte"
+    linkNode		    [33 39 41]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"1"
+      }
+      type {
+	primitive		SF_BOOLEAN_TYPE
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+    }
+    dataType		    "boolean"
+  }
+  data {
+    id			    41
+    ssIdNumber		    6
+    name		    "in_byte"
+    linkNode		    [33 40 42]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"1"
+      }
+      type {
+	primitive		SF_UINT8_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "uint8"
+  }
+  data {
+    id			    42
+    ssIdNumber		    14
+    name		    "in_request_symbol"
+    linkNode		    [33 41 0]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"1"
+      }
+      type {
+	primitive		SF_BOOLEAN_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "boolean"
+  }
+  junction {
+    id			    43
+    position		    [23.5747 49.5747 7]
+    chart		    33
+    linkNode		    [33 0 0]
+    subviewer		    33
+    ssIdNumber		    3
+    type		    CONNECTIVE_JUNCTION
+  }
+  transition {
+    id			    44
+    labelString		    "{eML_blk_kernel();}"
+    labelPosition	    [32.125 19.875 102.544 14.964]
+    fontSize		    12
+    src {
+      intersection	      [0 0 1 0 23.5747 14.625 0 0]
+    }
+    dst {
+      id		      43
+      intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
+    }
+    midPoint		    [23.5747 24.9468]
+    chart		    33
+    linkNode		    [33 0 0]
+    dataLimits		    [21.175 25.975 14.625 42.575]
+    subviewer		    33
+    drawStyle		    SMART
+    slide {
+      sticky		      BOTH_STICK
+    }
+    executionOrder	    1
+    ssIdNumber		    2
+  }
+  instance {
+    id			    45
+    name		    "OFDM Transmitter with Variable\nSymbol Timing and Carrier Frequency Error/ofdm_transmitter/ofdm_modulat"
+    "ion_symbols"
+    machine		    1
+    chart		    33
+  }
+  target {
+    id			    46
     name		    "sfun"
     codeFlags		    ""
     machine		    1
