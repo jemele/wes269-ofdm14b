@@ -7,7 +7,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.820"
+    ComputedModelVersion    "1.822"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -84,7 +84,7 @@ Model {
 	LoadSaveID		"75"
 	Extents			[1328.0, 572.0]
 	ZoomFactor		[1.25]
-	Offset			[1386.8899999999999, 92.550000000000011]
+	Offset			[834.89000000000021, 92.550000000000011]
       }
     }
   }
@@ -94,9 +94,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "C4Josh"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue May 10 22:51:40 2016"
-  RTWModifiedTimeStamp	  384821309
-  ModelVersionFormat	  "1.%<AutoIncrement:820>"
+  LastModifiedDate	  "Tue May 10 22:56:54 2016"
+  RTWModifiedTimeStamp	  384821810
+  ModelVersionFormat	  "1.%<AutoIncrement:822>"
   ConfigurationManager	  "none"
   SampleTimeColors	  on
   SampleTimeAnnotations	  on
@@ -1501,7 +1501,7 @@ Model {
 	  Name			  "Complex to\nReal-Imag1"
 	  SID			  "47"
 	  Ports			  [1, 2]
-	  Position		  [1750, 203, 1795, 252]
+	  Position		  [1810, 203, 1855, 252]
 	  ZOrder		  566
 	}
 	Block {
@@ -1509,7 +1509,7 @@ Model {
 	  Name			  "Real-Imag to\nComplex"
 	  SID			  "46"
 	  Ports			  [2, 1]
-	  Position		  [1285, 265, 1335, 320]
+	  Position		  [1480, 220, 1530, 275]
 	  ZOrder		  523
 	}
 	Block {
@@ -1517,7 +1517,7 @@ Model {
 	  Name			  "Spectrum\nAnalyzer"
 	  SID			  "54"
 	  Ports			  [1]
-	  Position		  [1790, 64, 1835, 116]
+	  Position		  [1830, 104, 1875, 156]
 	  ZOrder		  571
 	  Commented		  "on"
 	  ScopeSpecificationString "spbscopes.SpectrumAnalyzerBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(extmgr"
@@ -1743,7 +1743,7 @@ Model {
 	  Name			  "ofdm_cyclic_prefix"
 	  SID			  "63"
 	  Ports			  [3, 2]
-	  Position		  [1935, 400, 2075, 510]
+	  Position		  [1990, 400, 2130, 510]
 	  ZOrder		  580
 	  LibraryVersion	  "1.165"
 	  ErrorFcn		  "Stateflow.Translate.translate"
@@ -2125,7 +2125,7 @@ Model {
 	  Name			  "ofdm_ifft"
 	  SID			  "45"
 	  Ports			  [2, 4]
-	  Position		  [1485, 203, 1680, 392]
+	  Position		  [1580, 203, 1775, 392]
 	  ZOrder		  522
 	  ForegroundColor	  "green"
 	  LibraryVersion	  "1.485"
@@ -2635,14 +2635,14 @@ Model {
 	  SrcPort		  3
 	  Points		  [55, 0]
 	  Branch {
-	    ZOrder		    862
+	    ZOrder		    1052
 	    Points		    [0, -325]
 	    DstBlock		    "ofdm frame"
 	    DstPort		    1
 	  }
 	  Branch {
 	    ZOrder		    861
-	    Points		    [340, 0]
+	    Points		    [435, 0]
 	    DstBlock		    "ofdm_ifft"
 	    DstPort		    2
 	  }
@@ -2651,16 +2651,15 @@ Model {
 	  ZOrder		  417
 	  SrcBlock		  "ofdm_framing"
 	  SrcPort		  1
-	  Points		  [75, 0]
+	  Points		  [75, 0; 0, -70]
 	  Branch {
-	    ZOrder		    846
-	    Points		    [0, -230]
+	    ZOrder		    1053
+	    Points		    [0, -160]
 	    DstBlock		    "ofdm frame"
 	    DstPort		    2
 	  }
 	  Branch {
 	    ZOrder		    670
-	    Points		    [120, 0]
 	    DstBlock		    "Real-Imag to\nComplex"
 	    DstPort		    1
 	  }
@@ -2678,7 +2677,7 @@ Model {
 	  }
 	  Branch {
 	    ZOrder		    673
-	    Points		    [100, 0; 0, -30]
+	    Points		    [133, 0; 0, -75]
 	    DstBlock		    "Real-Imag to\nComplex"
 	    DstPort		    2
 	  }
@@ -2687,7 +2686,6 @@ Model {
 	  ZOrder		  860
 	  SrcBlock		  "Real-Imag to\nComplex"
 	  SrcPort		  1
-	  Points		  [130, 0]
 	  DstBlock		  "ofdm_ifft"
 	  DstPort		  1
 	}
@@ -2695,16 +2693,16 @@ Model {
 	  ZOrder		  580
 	  SrcBlock		  "ofdm_ifft"
 	  SrcPort		  1
-	  Points		  [49, 0]
+	  Points		  [10, 0]
 	  Branch {
-	    ZOrder		    815
-	    DstBlock		    "Complex to\nReal-Imag1"
+	    ZOrder		    1048
+	    Points		    [0, -100]
+	    DstBlock		    "Spectrum\nAnalyzer"
 	    DstPort		    1
 	  }
 	  Branch {
-	    ZOrder		    663
-	    Points		    [0, -140]
-	    DstBlock		    "Spectrum\nAnalyzer"
+	    ZOrder		    815
+	    DstBlock		    "Complex to\nReal-Imag1"
 	    DstPort		    1
 	  }
 	}
@@ -2712,7 +2710,7 @@ Model {
 	  ZOrder		  647
 	  SrcBlock		  "Complex to\nReal-Imag1"
 	  SrcPort		  1
-	  Points		  [30, 0]
+	  Points		  [39, 0]
 	  Branch {
 	    ZOrder		    818
 	    Points		    [0, 205]
@@ -2721,7 +2719,7 @@ Model {
 	  }
 	  Branch {
 	    ZOrder		    817
-	    Points		    [69, 0; 0, -175]
+	    Points		    [0, -175]
 	    DstBlock		    "ofdm symbol"
 	    DstPort		    1
 	  }
@@ -2730,7 +2728,7 @@ Model {
 	  ZOrder		  648
 	  SrcBlock		  "Complex to\nReal-Imag1"
 	  SrcPort		  2
-	  Points		  [12, 0]
+	  Points		  [26, 0]
 	  Branch {
 	    ZOrder		    820
 	    Points		    [0, 215]
@@ -2739,7 +2737,7 @@ Model {
 	  }
 	  Branch {
 	    ZOrder		    819
-	    Points		    [106, 0; 0, -165]
+	    Points		    [32, 0; 0, -165]
 	    DstBlock		    "ofdm symbol"
 	    DstPort		    2
 	  }
@@ -2748,7 +2746,7 @@ Model {
 	  ZOrder		  649
 	  SrcBlock		  "ofdm_ifft"
 	  SrcPort		  2
-	  Points		  [30, 0; 0, 17; 242, 0; 0, -182]
+	  Points		  [9, 0; 0, 17; 168, 0; 0, -182]
 	  DstBlock		  "ofdm symbol"
 	  DstPort		  3
 	}
@@ -2756,7 +2754,7 @@ Model {
 	  ZOrder		  650
 	  SrcBlock		  "ofdm_ifft"
 	  SrcPort		  3
-	  Points		  [308, 0; 0, -175]
+	  Points		  [213, 0; 0, -175]
 	  DstBlock		  "ofdm symbol"
 	  DstPort		  4
 	}
@@ -2764,7 +2762,7 @@ Model {
 	  ZOrder		  651
 	  SrcBlock		  "ofdm_ifft"
 	  SrcPort		  4
-	  Points		  [92, 0]
+	  Points		  [95, 0]
 	  Branch {
 	    ZOrder		    823
 	    Points		    [0, 125]
@@ -2773,7 +2771,7 @@ Model {
 	  }
 	  Branch {
 	    ZOrder		    821
-	    Points		    [247, 0; 0, -185]
+	    Points		    [149, 0; 0, -185]
 	    DstBlock		    "ofdm symbol"
 	    DstPort		    5
 	  }
@@ -2782,7 +2780,7 @@ Model {
 	  ZOrder		  825
 	  SrcBlock		  "ofdm_cyclic_prefix"
 	  SrcPort		  2
-	  Points		  [185, 0]
+	  Points		  [130, 0]
 	  Branch {
 	    ZOrder		    986
 	    Points		    [0, -330]
@@ -2799,7 +2797,7 @@ Model {
 	  ZOrder		  824
 	  SrcBlock		  "ofdm_cyclic_prefix"
 	  SrcPort		  1
-	  Points		  [168, 0]
+	  Points		  [113, 0]
 	  Branch {
 	    ZOrder		    985
 	    Points		    [0, -365]
